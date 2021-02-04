@@ -396,13 +396,34 @@
                                     <segue destination="gan-u3-LoI" kind="unwind" identifier="unwindToSignInVCSegue" unwindAction="unwindToSignInFromRegistrationWithSegue:" id="nrF-GQ-BWQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJj-PN-hYi">
+                                <rect key="frame" x="30" y="517" width="315" height="60"/>
+                                <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MgY-iZ-hrG"/>
+                                </constraints>
+                                <state key="normal" title="Зарегистрироваться">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTY-Z8-kFl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cKT-hP-o5z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="sJj-PN-hYi" firstAttribute="centerX" secondItem="dN8-Qs-Htw" secondAttribute="centerX" id="Afr-1B-vy2"/>
                             <constraint firstAttribute="bottomMargin" secondItem="GOB-yz-Qko" secondAttribute="bottom" id="Cwp-Md-q2o"/>
+                            <constraint firstItem="cKT-hP-o5z" firstAttribute="bottom" secondItem="sJj-PN-hYi" secondAttribute="bottom" constant="90" id="D3j-DB-U1y"/>
                             <constraint firstItem="cKT-hP-o5z" firstAttribute="trailing" secondItem="GOB-yz-Qko" secondAttribute="trailing" id="JYz-if-ghb"/>
                             <constraint firstItem="AIt-P3-Tw7" firstAttribute="top" secondItem="cKT-hP-o5z" secondAttribute="top" constant="15" id="L8o-AH-7eZ"/>
+                            <constraint firstItem="sJj-PN-hYi" firstAttribute="leading" secondItem="cKT-hP-o5z" secondAttribute="leading" constant="30" id="b2h-9z-vGD"/>
                             <constraint firstItem="AIt-P3-Tw7" firstAttribute="leading" secondItem="cKT-hP-o5z" secondAttribute="leading" constant="15" id="hi3-Eg-QRB"/>
                             <constraint firstItem="GOB-yz-Qko" firstAttribute="leading" secondItem="cKT-hP-o5z" secondAttribute="leading" id="rkc-fP-6Ob"/>
                             <constraint firstItem="GOB-yz-Qko" firstAttribute="top" secondItem="dN8-Qs-Htw" secondAttribute="topMargin" id="ztC-68-ksd"/>

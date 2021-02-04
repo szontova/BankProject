@@ -84,6 +84,14 @@ class SignInViewController: UIViewController {
             }
     }
     
+    @IBAction func registrationButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "registrationSegue", sender: nil)
+    }
+    @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToSignInVCSegue" else {return}
+        guard let _ = segue.destination as? RegistrationViewController else {return}
+    }
+    
     @IBAction func hidErrorLabel(_ gesture: UITapGestureRecognizer){
         loginErrorLabel.isHidden.toggle()
         loginTextField.text = ""

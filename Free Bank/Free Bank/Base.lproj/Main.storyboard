@@ -238,6 +238,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ifW-sN-A9Y"/>
                                         </constraints>
                                         <state key="normal" title="Регистрация"/>
+                                        <connections>
+                                            <action selector="registrationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMi-5p-caE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE8-7a-gw8">
                                         <rect key="frame" x="210" y="216" width="120" height="44"/>
@@ -352,12 +355,65 @@
                         <outlet property="loginErrorLabel" destination="3Or-pz-qY3" id="4CC-CN-twK"/>
                         <outlet property="loginTextField" destination="HJk-1g-asK" id="liq-KT-OAG"/>
                         <outlet property="passwordTextField" destination="1IJ-ru-IFD" id="45L-L2-cML"/>
+                        <segue destination="y3B-F1-7Jn" kind="show" identifier="registrationSegue" id="DgN-XR-ELX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="T5N-lx-OuM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="26.399999999999999" y="86.806596701649184"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="9z1-qd-FxX">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="y3B-F1-7Jn" customClass="RegistrationViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dN8-Qs-Htw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GOB-yz-Qko">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIt-P3-Tw7">
+                                <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="28a-eP-79K"/>
+                                    <constraint firstAttribute="height" constant="40" id="wwR-xP-apd"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="gan-u3-LoI" kind="unwind" identifier="unwindToSignInVCSegue" unwindAction="unwindToSignInFromRegistrationWithSegue:" id="nrF-GQ-BWQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cKT-hP-o5z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="GOB-yz-Qko" secondAttribute="bottom" id="Cwp-Md-q2o"/>
+                            <constraint firstItem="cKT-hP-o5z" firstAttribute="trailing" secondItem="GOB-yz-Qko" secondAttribute="trailing" id="JYz-if-ghb"/>
+                            <constraint firstItem="AIt-P3-Tw7" firstAttribute="top" secondItem="cKT-hP-o5z" secondAttribute="top" constant="15" id="L8o-AH-7eZ"/>
+                            <constraint firstItem="AIt-P3-Tw7" firstAttribute="leading" secondItem="cKT-hP-o5z" secondAttribute="leading" constant="15" id="hi3-Eg-QRB"/>
+                            <constraint firstItem="GOB-yz-Qko" firstAttribute="leading" secondItem="cKT-hP-o5z" secondAttribute="leading" id="rkc-fP-6Ob"/>
+                            <constraint firstItem="GOB-yz-Qko" firstAttribute="top" secondItem="dN8-Qs-Htw" secondAttribute="topMargin" id="ztC-68-ksd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s7j-gg-ofS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EE0-4k-Dw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gan-u3-LoI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="847"/>
         </scene>
     </scenes>
     <resources>

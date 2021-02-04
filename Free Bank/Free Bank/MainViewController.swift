@@ -29,4 +29,9 @@ class MainViewController: UIViewController {
     @IBAction func moveToSignInButton(_ sender: UIButton) {
         performSegue(withIdentifier: "signInSegue", sender: nil)
     }
+    
+    @IBAction func unwindToMainViewController (segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToMainVCSegue" else {return}
+        guard let _ = segue.destination as? SignInViewController else {return}
+    }
 }

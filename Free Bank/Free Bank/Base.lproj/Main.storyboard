@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r4C-qd-pcf">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,14 +15,14 @@
             <objects>
                 <viewController id="r4C-qd-pcf" customClass="MainViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T2q-Td-pza">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="EZB-6Q-yQF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EfK-KI-Kwb">
-                                <rect key="frame" x="15" y="621" width="384" height="100"/>
+                                <rect key="frame" x="15" y="552" width="345" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Курс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4z-eH-QXD">
                                         <rect key="frame" x="20" y="78" width="60" height="20"/>
@@ -50,7 +51,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOQ-IG-Lbs">
-                                        <rect key="frame" x="162" y="15" width="60" height="60"/>
+                                        <rect key="frame" x="142.5" y="15" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="9yt-X8-FUl"/>
@@ -65,7 +66,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqT-Tj-QMD">
-                                        <rect key="frame" x="304" y="15" width="60" height="60"/>
+                                        <rect key="frame" x="265" y="15" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="CKT-oS-dvi"/>
@@ -80,7 +81,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4I-l6-d7Z">
-                                        <rect key="frame" x="162" y="78" width="60" height="20"/>
+                                        <rect key="frame" x="142.5" y="78" width="60" height="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="de8-TC-Ul0"/>
@@ -91,7 +92,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О банке" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vD4-n5-fGr">
-                                        <rect key="frame" x="304" y="78" width="60" height="20"/>
+                                        <rect key="frame" x="265" y="78" width="60" height="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Kps-mx-bSp"/>
@@ -127,7 +128,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u6-q9-UKg">
-                                <rect key="frame" x="30" y="418" width="354" height="60"/>
+                                <rect key="frame" x="30" y="383.5" width="315" height="60"/>
                                 <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WNI-Gu-tlz"/>
@@ -145,7 +146,7 @@
                                 </connections>
                             </button>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm5-dT-r3B">
-                                <rect key="frame" x="15" y="20" width="384" height="383"/>
+                                <rect key="frame" x="15" y="20" width="345" height="348.5"/>
                                 <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -187,17 +188,17 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SignInViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="gVH-EN-58Z">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bw3-lS-2kh">
-                                <rect key="frame" x="15" y="173" width="384" height="270"/>
+                                <rect key="frame" x="15" y="158.5" width="345" height="270"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HJk-1g-asK">
-                                        <rect key="frame" x="15" y="59" width="354" height="44"/>
+                                        <rect key="frame" x="15" y="59" width="315" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="hbc-47-uP4"/>
                                         </constraints>
@@ -220,7 +221,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1IJ-ru-IFD">
-                                        <rect key="frame" x="15" y="147" width="354" height="44"/>
+                                        <rect key="frame" x="15" y="147" width="315" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="aAL-tb-Usy"/>
                                         </constraints>
@@ -239,7 +240,7 @@
                                         <state key="normal" title="Регистрация"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE8-7a-gw8">
-                                        <rect key="frame" x="249" y="216" width="120" height="44"/>
+                                        <rect key="frame" x="210" y="216" width="120" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="A77-Jo-eUU"/>
                                             <constraint firstAttribute="height" constant="44" id="b6Q-vC-gUe"/>
@@ -247,7 +248,7 @@
                                         <state key="normal" title="Забыли пароль?"/>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ошибка ввода" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Or-pz-qY3">
-                                        <rect key="frame" x="219" y="108" width="150" height="17"/>
+                                        <rect key="frame" x="180" y="108" width="150" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="OqL-ru-xp0"/>
                                         </constraints>
@@ -288,7 +289,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtx-iN-5uq">
-                                <rect key="frame" x="30" y="483" width="354" height="60"/>
+                                <rect key="frame" x="30" y="468.5" width="315" height="60"/>
                                 <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="VNR-TX-Irw"/>
@@ -305,6 +306,28 @@
                                     <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Ny-Rc-rKt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK1-sE-nxC">
+                                <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="J8I-xr-jpK"/>
+                                    <constraint firstAttribute="width" constant="40" id="bOs-mP-WrK"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="T5N-lx-OuM" kind="unwind" identifier="unwindToMainVCSegue" unwindAction="unwindToMainViewControllerWithSegue:" id="Ie1-Nk-ZDq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -315,7 +338,9 @@
                             <constraint firstItem="Wtx-iN-5uq" firstAttribute="top" secondItem="bw3-lS-2kh" secondAttribute="bottom" constant="40" id="OlF-kv-ncw"/>
                             <constraint firstItem="bw3-lS-2kh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="Zgt-e3-oac"/>
                             <constraint firstItem="bw3-lS-2kh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c04-2m-gqk"/>
-                            <constraint firstItem="bw3-lS-2kh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="hc0-02-MmU"/>
+                            <constraint firstItem="bw3-lS-2kh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="hc0-02-MmU"/>
+                            <constraint firstItem="wK1-sE-nxC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="jxN-TY-Ohg"/>
+                            <constraint firstItem="wK1-sE-nxC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="qij-ZA-Z5x"/>
                             <constraint firstItem="Wtx-iN-5uq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r9f-Qf-pDn"/>
                             <constraint firstItem="gVH-EN-58Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rYs-0H-trp"/>
                             <constraint firstItem="bw3-lS-2kh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="snh-xE-C1f"/>
@@ -330,11 +355,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="T5N-lx-OuM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="27.536231884057973" y="87.228260869565219"/>
+            <point key="canvasLocation" x="26.399999999999999" y="86.806596701649184"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="bankIcon" width="50" height="50"/>
         <image name="courseIcon" width="50" height="50"/>
         <image name="mainBackground" width="1080" height="1920"/>

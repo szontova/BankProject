@@ -1,5 +1,5 @@
 //
-//  RegistrationViewController.swift
+//  SignUpViewController.swift
 //  Free Bank
 //
 //  Created by Пользователь on 4.02.21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class RegistrationViewController: UIViewController {
     */
 
 }
-extension RegistrationViewController: UITextFieldDelegate{
+extension SignUpViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

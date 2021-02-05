@@ -367,10 +367,10 @@
             </objects>
             <point key="canvasLocation" x="26.399999999999999" y="86.806596701649184"/>
         </scene>
-        <!--Registration View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="9z1-qd-FxX">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="y3B-F1-7Jn" customClass="RegistrationViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="y3B-F1-7Jn" customClass="SignUpViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dN8-Qs-Htw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,6 +9,9 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var loginLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -582,6 +582,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s7j-gg-ofS"/>
+                    <connections>
+                        <outlet property="loginLabel" destination="6CC-GM-NgN" id="DAO-JQ-zvQ"/>
+                        <outlet property="nameLabel" destination="Zaa-Vp-pQe" id="UFT-h7-Vkh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EE0-4k-Dw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="gan-u3-LoI" userLabel="Exit" sceneMemberID="exit"/>

@@ -85,7 +85,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func registrationButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "registrationSegue", sender: nil)
+        performSegue(withIdentifier: "toSignUpSegue", sender: nil)
     }
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToSignInVCSegue" else {return}

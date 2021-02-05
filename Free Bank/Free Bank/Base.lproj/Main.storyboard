@@ -389,6 +389,9 @@
                                     <segment title="Физ. лицо"/>
                                     <segment title="Юр. лицо"/>
                                 </segments>
+                                <connections>
+                                    <action selector="statusChangeSegmentedControl:" destination="y3B-F1-7Jn" eventType="valueChanged" id="D1p-hG-Nrh"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIt-P3-Tw7">
                                 <rect key="frame" x="15" y="15" width="40" height="40"/>
@@ -415,8 +418,8 @@
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCG-w9-So2">
                                 <rect key="frame" x="15" y="153.5" width="345" height="350"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФИО / Название компании" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zaa-Vp-pQe">
-                                        <rect key="frame" x="15" y="10" width="180" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ФИО" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zaa-Vp-pQe">
+                                        <rect key="frame" x="15" y="10" width="33" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -449,8 +452,8 @@
                                             <outlet property="delegate" destination="y3B-F1-7Jn" id="ELw-Mv-3EU"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин / УНП" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CC-GM-NgN">
-                                        <rect key="frame" x="15" y="141" width="82.5" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CC-GM-NgN">
+                                        <rect key="frame" x="15" y="141" width="41" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -584,7 +587,10 @@
                     <navigationItem key="navigationItem" id="s7j-gg-ofS"/>
                     <connections>
                         <outlet property="loginLabel" destination="6CC-GM-NgN" id="DAO-JQ-zvQ"/>
+                        <outlet property="loginTextField" destination="t33-9C-oqu" id="HbA-td-5tD"/>
                         <outlet property="nameLabel" destination="Zaa-Vp-pQe" id="UFT-h7-Vkh"/>
+                        <outlet property="nameTextField" destination="o9T-Qz-oGz" id="2Cj-4I-Xx1"/>
+                        <outlet property="statusSegmentedControl" destination="d28-gO-9Hr" id="sil-z2-7Jv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EE0-4k-Dw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

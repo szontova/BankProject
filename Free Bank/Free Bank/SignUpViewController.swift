@@ -10,7 +10,12 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    
     @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet weak var loginTextField: UITextField!
+    
+    @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +25,23 @@ class SignUpViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
+        switch statusSegmentedControl.selectedSegmentIndex {
+        case 0:
+            nameLabel.text = "ФИО"
+            nameTextField.placeholder = "Введите ФИО"
+            loginLabel.text = "Логин"
+            loginTextField.placeholder = "Введите логин"
+        case 1:
+            nameLabel.text = "Название компании"
+            nameTextField.placeholder = "Введите название компании"
+            loginLabel.text = "УНП"
+            loginTextField.placeholder = "Введите УНП"
+        default: break
+        }
     }
-    */
-
+    
 }
 extension SignUpViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

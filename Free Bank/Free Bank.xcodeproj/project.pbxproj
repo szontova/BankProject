@@ -15,6 +15,8 @@
 		597D66B025C80FA50051E84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597D66AF25C80FA50051E84A /* Assets.xcassets */; };
 		597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597D66B125C80FA50051E84A /* LaunchScreen.storyboard */; };
 		599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599E61DC25CAF51500DF5A38 /* MainViewController.swift */; };
+		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
+		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		597D66B225C80FA50051E84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		597D66B425C80FA50051E84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		599E61DC25CAF51500DF5A38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +66,41 @@
 			children = (
 				597D66A625C80FA40051E84A /* AppDelegate.swift */,
 				597D66A825C80FA40051E84A /* SceneDelegate.swift */,
-				597D66AA25C80FA40051E84A /* SignInViewController.swift */,
-				597D66AC25C80FA40051E84A /* Main.storyboard */,
-				59385FEF25CC50A9003600D2 /* SignUpViewController.swift */,
 				597D66AF25C80FA50051E84A /* Assets.xcassets */,
-				597D66B125C80FA50051E84A /* LaunchScreen.storyboard */,
 				597D66B425C80FA50051E84A /* Info.plist */,
-				599E61DC25CAF51500DF5A38 /* MainViewController.swift */,
+				597D66B125C80FA50051E84A /* LaunchScreen.storyboard */,
+				59E5DAB525CD90E700354F4B /* Main */,
+				59E5DAB325CD901700354F4B /* SignIn */,
+				59E5DAB425CD906C00354F4B /* SignUp */,
 			);
 			path = "Free Bank";
+			sourceTree = "<group>";
+		};
+		59E5DAB325CD901700354F4B /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */,
+				597D66AA25C80FA40051E84A /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		59E5DAB425CD906C00354F4B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */,
+				59385FEF25CC50A9003600D2 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		59E5DAB525CD90E700354F4B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				599E61DC25CAF51500DF5A38 /* MainViewController.swift */,
+				597D66AC25C80FA40051E84A /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
+				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,
+				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
 				597D66AE25C80FA40051E84A /* Main.storyboard in Resources */,
 			);

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59385FF025CC50A9003600D2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* RegistrationViewController.swift */; };
 		597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A625C80FA40051E84A /* AppDelegate.swift */; };
 		597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A825C80FA40051E84A /* SceneDelegate.swift */; };
 		597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66AA25C80FA40051E84A /* SignInViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59385FEF25CC50A9003600D2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		597D66A325C80FA40051E84A /* Free Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597D66A625C80FA40051E84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		597D66A825C80FA40051E84A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				597D66A825C80FA40051E84A /* SceneDelegate.swift */,
 				597D66AA25C80FA40051E84A /* SignInViewController.swift */,
 				597D66AC25C80FA40051E84A /* Main.storyboard */,
+				59385FEF25CC50A9003600D2 /* RegistrationViewController.swift */,
 				597D66AF25C80FA50051E84A /* Assets.xcassets */,
 				597D66B125C80FA50051E84A /* LaunchScreen.storyboard */,
 				597D66B425C80FA50051E84A /* Info.plist */,
@@ -144,6 +147,7 @@
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,
 				599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */,
+				59385FF025CC50A9003600D2 /* RegistrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

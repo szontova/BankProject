@@ -202,6 +202,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpButton:" destination="vx4-RO-IRZ" eventType="touchUpInside" id="mbz-fT-7rO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lO8-aE-HVl"/>
@@ -227,10 +230,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Goa-ah-Om1"/>
                     <connections>
+                        <outlet property="emailTextField" destination="iCZ-t4-Dor" id="Kz6-bX-JWe"/>
                         <outlet property="loginLabel" destination="65f-MZ-xGz" id="40n-7z-FTS"/>
                         <outlet property="loginTextField" destination="620-H8-ebs" id="Kcv-gl-u0G"/>
                         <outlet property="nameLabel" destination="TET-KM-NnC" id="n7w-xd-IiY"/>
                         <outlet property="nameTextField" destination="3Bj-UO-Bm4" id="Tyw-cv-7Ki"/>
+                        <outlet property="passwordTextField" destination="0tc-uN-0d8" id="gdc-Va-z6s"/>
+                        <outlet property="repeatPasswordTextField" destination="Tfd-jK-YqC" id="ujK-yK-O77"/>
                         <outlet property="statusSegmentedControl" destination="11Y-2m-eU0" id="xAu-TK-8cY"/>
                     </connections>
                 </viewController>

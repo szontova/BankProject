@@ -49,7 +49,7 @@ class SignInViewController: UIViewController {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-            if login == "" || password == "" {
+        if login.isEmpty || password.isEmpty {
                 showAlertError(title: "Ошибка", message: "Введите логин и пароль.")
                 //loginErrorLabel.text = "Данные не введены"
                 //loginErrorLabel.isHidden = false

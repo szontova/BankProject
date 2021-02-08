@@ -15,6 +15,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
     
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
@@ -24,6 +29,19 @@ class SignUpViewController: UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func showAlertError(title: String, message: String){
+        let alertError = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let attributedString = NSAttributedString(string: title, attributes: [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+            NSAttributedString.Key.foregroundColor : UIColor.red
+        ])
+        alertError.setValue(attributedString, forKey: "attributedTitle")
+        alertError.view.tintColor = UIColor.black
+        let okAction = UIAlertAction(title: "OK", style: .default){_ in}
+        alertError.addAction(okAction)
+        present(alertError, animated: true, completion: nil)
     }
     
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
@@ -40,6 +58,20 @@ class SignUpViewController: UIViewController {
             loginTextField.placeholder = "Введите УНП"
         default: break
         }
+    }
+    @IBAction func signUpButton(_ sender: UIButton) {
+        
+        let login = loginTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let repeatPassword = repeatPasswordTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        
+        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
+        showAlertError(title: "Ошибка", message: "Не все поля заполнены.")
+        }
+        
+        
     }
     
 }

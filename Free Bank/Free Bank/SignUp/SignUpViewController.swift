@@ -31,6 +31,21 @@ class SignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func checkDatas() -> Bool{
+        let login = loginTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let repeatPassword = repeatPasswordTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        
+        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
+        showAlertError(title: "Ошибка", message: "Не все поля заполнены.")
+            return false
+        }
+        
+        return true
+    }
+    
     func showAlertError(title: String, message: String){
         let alertError = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let attributedString = NSAttributedString(string: title, attributes: [
@@ -60,21 +75,12 @@ class SignUpViewController: UIViewController {
         }
     }
     @IBAction func signUpButton(_ sender: UIButton) {
-        
-        let login = loginTextField.text ?? ""
-        let name = nameTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let repeatPassword = repeatPasswordTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        
-        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
-        showAlertError(title: "Ошибка", message: "Не все поля заполнены.")
-        }
-        
-        
+        print("SignUp", terminator: " ")
+        checkDatas() ? print("datas right") : print("datas error")
     }
     
 }
+
 extension SignUpViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

@@ -87,6 +87,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
+        print("SignIn", terminator: " ")
         checkDatas() ? print("datas right") : print("datas error")
     }
     

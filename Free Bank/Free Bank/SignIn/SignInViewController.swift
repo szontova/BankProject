@@ -44,13 +44,13 @@ class SignInViewController: UIViewController {
         present(alertError, animated: true, completion: nil)
     }
     
-    @IBAction func signInButton(_ sender: UIButton) {
-    
+    func checkDatas() -> Bool{
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
         if login.isEmpty || password.isEmpty {
                 showAlertError(title: "Ошибка", message: "Введите логин и пароль.")
+            return false
                 //loginErrorLabel.text = "Данные не введены"
                 //loginErrorLabel.isHidden = false
             }
@@ -62,14 +62,15 @@ class SignInViewController: UIViewController {
                 
                 if login.count < 8 || login.count > 50 {
                     showAlertError(title: "Ошибка", message: "Неверный формат логина. Проверьте данные.")
+                    return false
                 }
                 else {
                     for symb in login {
                         if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
                             showAlertError(title: "Ошибка", message: "Неверно введен логин. Проверьте данные.")
+                            return false
                             //loginErrorLabel.text = "Данные введены неверно"
                             //loginErrorLabel.isHidden = false
-                            break
                         }
                     }
                 }
@@ -81,7 +82,12 @@ class SignInViewController: UIViewController {
 //                    //loginErrorLabel.isHidden = false
 //                    break
 //                }
-            }
+        }
+        return true
+    }
+    
+    @IBAction func signInButton(_ sender: UIButton) {
+        checkDatas() ? print("datas right") : print("datas error")
     }
     
     @IBAction func registrationButton(_ sender: UIButton) {

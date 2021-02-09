@@ -24,11 +24,17 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        changeSegmentedControl()
+      
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func changeSegmentedControl() {
+        statusSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+        statusSegmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
     }
     
     func checkDatas() -> Bool{

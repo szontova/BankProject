@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQZ-nS-3EE">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -15,14 +15,52 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="LQZ-nS-3EE" customClass="SignInViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ndd-s3-kMR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ly8-BA-m9R">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qs1-uz-UmW">
+                                <rect key="frame" x="15" y="59" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BMe-XH-Aci"/>
+                                    <constraint firstAttribute="width" constant="40" id="mNX-t0-91k"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="trN-7j-tdb" kind="unwind" identifier="unwindToMainVCSegue" unwindAction="unwindToMainViewControllerWithSegue:" id="NnI-DJ-JK5"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k0s-UI-qsp">
+                                <rect key="frame" x="70" y="64" width="343" height="31"/>
+                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Iwl-Jz-x6R"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="z6H-mM-bx6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Физ. лицо"/>
+                                    <segment title="Юр. лицо"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="statusChangeSegmentedControl:" destination="LQZ-nS-3EE" eventType="valueChanged" id="x3C-GR-cjd"/>
+                                </connections>
+                            </segmentedControl>
                             <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNl-Lb-uAY">
-                                <rect key="frame" x="15" y="158.5" width="345" height="270"/>
+                                <rect key="frame" x="15" y="288" width="398" height="270"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gb-Mp-nrX">
                                         <rect key="frame" x="15" y="40" width="41" height="17"/>
@@ -31,7 +69,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-vc-X48">
-                                        <rect key="frame" x="15" y="59" width="315" height="44"/>
+                                        <rect key="frame" x="15" y="59" width="368" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="gcp-c2-UQu"/>
@@ -49,7 +87,7 @@
                                         </connections>
                                     </textField>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ошибка ввода" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-6d-YbH">
-                                        <rect key="frame" x="180" y="108" width="150" height="17"/>
+                                        <rect key="frame" x="233" y="108" width="150" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="NVH-zw-gvz"/>
                                         </constraints>
@@ -64,7 +102,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Li9-1U-5LS">
-                                        <rect key="frame" x="15" y="147" width="315" height="44"/>
+                                        <rect key="frame" x="15" y="147" width="368" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kWS-6Z-DGV"/>
@@ -96,7 +134,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfJ-fG-Yes">
-                                        <rect key="frame" x="205" y="216" width="125" height="44"/>
+                                        <rect key="frame" x="258" y="216" width="125" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="TIA-7r-tBM"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="oG2-9J-dLE"/>
@@ -137,7 +175,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiX-lc-r1x">
-                                <rect key="frame" x="30" y="468.5" width="315" height="60"/>
+                                <rect key="frame" x="30" y="598" width="368" height="60"/>
                                 <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="iif-pN-vav"/>
@@ -154,41 +192,6 @@
                                     <action selector="signInButton:" destination="LQZ-nS-3EE" eventType="touchUpInside" id="QSX-QZ-ieh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qs1-uz-UmW">
-                                <rect key="frame" x="15" y="15" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="BMe-XH-Aci"/>
-                                    <constraint firstAttribute="width" constant="40" id="mNX-t0-91k"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="trN-7j-tdb" kind="unwind" identifier="unwindToMainVCSegue" unwindAction="unwindToMainViewControllerWithSegue:" id="NnI-DJ-JK5"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k0s-UI-qsp">
-                                <rect key="frame" x="70" y="20" width="290" height="31"/>
-                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Iwl-Jz-x6R"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="z6H-mM-bx6"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Физ. лицо"/>
-                                    <segment title="Юр. лицо"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IbN-fv-MiM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -214,8 +217,10 @@
                     <navigationItem key="navigationItem" id="d3B-gh-kQb"/>
                     <connections>
                         <outlet property="loginErrorLabel" destination="RBn-6d-YbH" id="wBb-ph-AyQ"/>
+                        <outlet property="loginLabel" destination="7gb-Mp-nrX" id="WMe-Us-mVm"/>
                         <outlet property="loginTextField" destination="aLb-vc-X48" id="afO-CT-c3c"/>
                         <outlet property="passwordTextField" destination="Li9-1U-5LS" id="Bbk-pC-5UZ"/>
+                        <outlet property="statusSegmentedControl" destination="k0s-UI-qsp" id="WsK-YX-w98"/>
                         <segue destination="sDX-Pu-kTN" kind="show" identifier="toSignUpSegue" id="gMd-uj-Cis"/>
                     </connections>
                 </viewController>

@@ -9,28 +9,91 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    //MARK: - @IBOutlet
+    @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginErrorLabel: UILabel!
     
+    @IBOutlet weak var passwordTextField: UITextField!
+  
+    //MARK: - LifeCycleMethods
+ 
+    
     override func viewDidLoad() {
+        print("ViewDidLoad")
         super.viewDidLoad()
-        
-        let touchErrorLabel = UITapGestureRecognizer(target: self, action: #selector(hidErrorLabel(_:)))
-        
-        touchErrorLabel.numberOfTapsRequired = 1
-        touchErrorLabel.numberOfTouchesRequired = 1
-        
-        loginErrorLabel.addGestureRecognizer(touchErrorLabel)
-        loginErrorLabel.isUserInteractionEnabled = true
-        loginErrorLabel.isHidden = true
+//
+//        let touchErrorLabel = UITapGestureRecognizer(target: self, action: #selector(hidErrorLabel(_:)))
+//
+//        touchErrorLabel.numberOfTapsRequired = 1
+//        touchErrorLabel.numberOfTouchesRequired = 1
+//
+//        loginErrorLabel.addGestureRecognizer(touchErrorLabel)
+//        loginErrorLabel.isUserInteractionEnabled = true
+//        loginErrorLabel.isHidden = true
         // Do any additional setup after loading the view.
     }
     
+    
+    override func loadView() {
+        super.loadView()
+        //print("loadView")
+        //для файлов свёрстанных кодом
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // только появится
+        // rf;lsq hfp rjulf gjgflftim yf 'rhfy
+        super.viewWillAppear(animated)
+        //print("viewWillAppear")
+    }
+
+    override func viewWillLayoutSubviews() {
+        //constraints
+        super.viewWillLayoutSubviews()
+        //print("viewWillLayoutSubviews")
+    }
+
+    override func viewDidLayoutSubviews() {
+        //
+        super.viewDidLayoutSubviews()
+        //print("viewDidLayoutSubviews")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        //
+        super.viewDidAppear(animated)
+        //print("viewDidAppear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        //
+        super.viewWillDisappear(animated)
+        //print("viewWillDisappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        //
+        super.viewDidDisappear(animated)
+        //print("viewDidDisappear")
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        //print("viewWillTransition")
+    }
+
+    deinit {
+        //print("deinit")
+    }
+    
+//MARK: - Override methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+//MARK: - Our methods
     func showAlertError(title: String, message: String){
         let alertError = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let attributedString = NSAttributedString(string: title, attributes: [
@@ -86,6 +149,20 @@ class SignInViewController: UIViewController {
         return true
     }
     
+    //MARK:- @IBAction
+    @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
+        switch statusSegmentedControl.selectedSegmentIndex {
+        case 0:
+            loginLabel.text = "Логин"
+            loginTextField.placeholder = "Введите логин"
+        case 1:
+    
+            loginLabel.text = "УНП"
+            loginTextField.placeholder = "Введите УНП"
+        default: break
+        }
+    }
+    
     @IBAction func signInButton(_ sender: UIButton) {
         print("SignIn", terminator: " ")
         checkDatas() ? print("datas right") : print("datas error")
@@ -107,6 +184,7 @@ class SignInViewController: UIViewController {
     
 }
 
+//MARK:- Extensions
 extension SignInViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

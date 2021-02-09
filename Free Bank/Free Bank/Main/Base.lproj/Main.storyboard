@@ -130,7 +130,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Курс" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-Lw-lIT">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="93b-rr-IbG"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="93b-rr-IbG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,7 +139,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbK-Fv-BQy">
                                                 <rect key="frame" x="98.666666666666657" y="0.0" width="60" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="SIc-jl-bfH"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="SIc-jl-bfH"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -148,7 +148,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Связь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eha-iX-dRj">
                                                 <rect key="frame" x="197" y="0.0" width="60" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="2cD-6F-5LO"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="2cD-6F-5LO"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

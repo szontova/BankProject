@@ -283,7 +283,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWL-4c-mlP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Nbv-s6-FUF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="23.188405797101453" y="845.75892857142856"/>
+            <point key="canvasLocation" x="207" y="779"/>
         </scene>
     </scenes>
     <resources>

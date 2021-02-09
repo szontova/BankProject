@@ -34,6 +34,7 @@ class SignInViewController: UIViewController {
     func showAlertError(title: String, message: String){
         let alertError = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertError.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
+       
         
         let attributedStringForTitle = NSAttributedString(string: title, attributes: [
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
@@ -52,6 +53,8 @@ class SignInViewController: UIViewController {
         okAction.setValue(UIColor.black, forKey: "titleTextColor")
         alertError.addAction(okAction)
         //поговорить по поводу полосочки
+        //alertError.view.subviews.first?.subviews.first?.subviews.first?.subviews.first = UIColor.red
+        //alertError.view.tintColor = .green
         present(alertError, animated: true, completion: nil)
     }
     

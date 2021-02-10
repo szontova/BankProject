@@ -39,25 +39,13 @@ class SignUpViewController: UIViewController {
         let email = emailTextField.text ?? ""
         
         if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
-        showAlertError(title: "Ошибка", message: "Не все поля заполнены.")
+            showAlertError(title: "Ошибка", message: "Не все поля заполнены.")
             return false
         }
         
         return true
     }
     
-    func showAlertError(title: String, message: String){
-        let alertError = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let attributedString = NSAttributedString(string: title, attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-            NSAttributedString.Key.foregroundColor : UIColor.red
-        ])
-        alertError.setValue(attributedString, forKey: "attributedTitle")
-        alertError.view.tintColor = UIColor.black
-        let okAction = UIAlertAction(title: "OK", style: .default){_ in}
-        alertError.addAction(okAction)
-        present(alertError, animated: true, completion: nil)
-    }
     
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {

@@ -10,6 +10,7 @@ import UIKit
 class SignInViewController: UIViewController {
 
     //MARK: - @IBOutlet
+    
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var loginLabel: UILabel!
@@ -19,23 +20,11 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
   
     //MARK: - LifeCycleMethods
- 
     
     override func viewDidLoad() {
-        print("ViewDidLoad")
+        //print("ViewDidLoad")
         super.viewDidLoad()
-//
-//        let touchErrorLabel = UITapGestureRecognizer(target: self, action: #selector(hidErrorLabel(_:)))
-//
-//        touchErrorLabel.numberOfTapsRequired = 1
-//        touchErrorLabel.numberOfTouchesRequired = 1
-//
-//        loginErrorLabel.addGestureRecognizer(touchErrorLabel)
-//        loginErrorLabel.isUserInteractionEnabled = true
-//        loginErrorLabel.isHidden = true
-        // Do any additional setup after loading the view.
     }
-    
     
     override func loadView() {
         super.loadView()
@@ -89,23 +78,13 @@ class SignInViewController: UIViewController {
     }
     
 //MARK: - Override methods
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
 //MARK: - Our methods
-    func showAlertError(title: String, message: String){
-        let alertError = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let attributedString = NSAttributedString(string: title, attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-            NSAttributedString.Key.foregroundColor : UIColor.red
-        ])
-        alertError.setValue(attributedString, forKey: "attributedTitle")
-        alertError.view.tintColor = UIColor.black
-        let okAction = UIAlertAction(title: "OK", style: .default){_ in}
-        alertError.addAction(okAction)
-        present(alertError, animated: true, completion: nil)
-    }
+    
     
     func checkDatas() -> Bool{
         let login = loginTextField.text ?? ""
@@ -175,11 +154,6 @@ class SignInViewController: UIViewController {
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
         guard let _ = segue.destination as? SignUpViewController else {return}
-    }
-    
-    @IBAction func hidErrorLabel(_ gesture: UITapGestureRecognizer){
-        loginErrorLabel.isHidden.toggle()
-        loginTextField.text = ""
     }
     
 }

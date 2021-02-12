@@ -67,6 +67,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="iC1-DX-2Y7" kind="show" id="lL4-uP-JBP"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-wR-F2a">
                                                 <rect key="frame" x="85" y="0.0" width="60" height="60"/>
@@ -219,6 +222,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LkO-Uq-EP5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-225" y="84"/>
+        </scene>
+        <!--ExchangeRate-->
+        <scene sceneID="rg7-2Y-iRM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ExchangeRate" id="iC1-DX-2Y7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="q6t-GT-gA9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Za6-xH-5PZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-982" y="470"/>
         </scene>
     </scenes>
     <resources>

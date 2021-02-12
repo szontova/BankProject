@@ -75,7 +75,9 @@ class ExchangeRateTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Rate", for: indexPath) as! RateTableViewCell
-
+        cell.flagImageView?.image = UIImage(named: currencies[indexPath.row].abbreviation!.lowercased())
+        cell.foreignRateLabel?.text = "\(currencies[indexPath.row].scale ?? 0) \(currencies[indexPath.row].abbreviation ?? "")"
+        cell.nationalRateLabel?.text = "\(currencies[indexPath.row].officialRate ?? 0.0) BYR"
         return cell
     }
 }

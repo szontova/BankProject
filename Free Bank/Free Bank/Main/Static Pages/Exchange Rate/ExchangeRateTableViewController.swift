@@ -42,6 +42,24 @@ class ExchangeRateTableViewController: UITableViewController {
             print("ExchangeRateTableViewController Error with url")
             return
             }
+        
+        URLSession.shared.dataTask(with: url){(data, response, error) in
+            guard let data = data else {return}
+            guard error == nil else {return} //print
+            
+            do{
+                self.currencies = try JSONDecoder().decode([Currency].self, from: data)
+                //print(self.currencies)
+                
+                DispatchQueue.main.async {
+                    //self.navigationController?.navigationBar.topItem?.title = "Курс Валют"
+                    self.tableView.reloadData()
+                }
+                
+            } catch let error{
+                print(error)
+            }
+        }.resume()
     }
 
     // MARK: - Table view data source
@@ -51,17 +69,13 @@ class ExchangeRateTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+       return currencies.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Rate", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Rate", for: indexPath) as! RateTableViewCell
+
         return cell
     }
-    
-
-    
-
 }

@@ -8,6 +8,9 @@
 import UIKit
 
 class RateTableViewCell: UITableViewCell{
+    @IBOutlet weak var flagImageView: UIImageView!
+    @IBOutlet weak var foreignRateLabel: UILabel!
+    @IBOutlet weak var nationalRateLabel: UILabel!
     
 }
 

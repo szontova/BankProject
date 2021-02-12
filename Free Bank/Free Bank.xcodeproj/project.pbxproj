@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
 		597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A625C80FA40051E84A /* AppDelegate.swift */; };
 		597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A825C80FA40051E84A /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		597D66A325C80FA40051E84A /* Free Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597D66A625C80FA40051E84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		592AE50925D3D3BA000C99E5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				592AE50A25D3D45D000C99E5 /* Alerts.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		597D669A25C80FA40051E84A = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		597D66A525C80FA40051E84A /* Free Bank */ = {
 			isa = PBXGroup;
 			children = (
+				592AE50925D3D3BA000C99E5 /* Utils */,
 				597D66A625C80FA40051E84A /* AppDelegate.swift */,
 				597D66A825C80FA40051E84A /* SceneDelegate.swift */,
 				597D66AF25C80FA50051E84A /* Assets.xcassets */,
@@ -179,6 +190,7 @@
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,
 				599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */,
+				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
 				59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

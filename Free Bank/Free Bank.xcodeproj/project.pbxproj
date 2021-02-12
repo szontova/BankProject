@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3148234D25D6D23E008288FC /* ExchangeRate.storyboard */; };
+		3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */; };
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
 		597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A625C80FA40051E84A /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3148234D25D6D23E008288FC /* ExchangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeRate.storyboard; sourceTree = "<group>"; };
+		3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewController.swift; sourceTree = "<group>"; };
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		597D66A325C80FA40051E84A /* Free Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +53,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3148234B25D6CED1008288FC /* Static Pages */ = {
+			isa = PBXGroup;
+			children = (
+				3148234C25D6CF79008288FC /* Exchange Rate */,
+			);
+			path = "Static Pages";
+			sourceTree = "<group>";
+		};
+		3148234C25D6CF79008288FC /* Exchange Rate */ = {
+			isa = PBXGroup;
+			children = (
+				3148234D25D6D23E008288FC /* ExchangeRate.storyboard */,
+				3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */,
+			);
+			path = "Exchange Rate";
+			sourceTree = "<group>";
+		};
 		592AE50925D3D3BA000C99E5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +132,7 @@
 		59E5DAB525CD90E700354F4B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3148234B25D6CED1008288FC /* Static Pages */,
 				599E61DC25CAF51500DF5A38 /* MainViewController.swift */,
 				597D66AC25C80FA40051E84A /* Main.storyboard */,
 			);
@@ -179,6 +201,7 @@
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
 				597D66AE25C80FA40051E84A /* Main.storyboard in Resources */,
+				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +218,7 @@
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,
 				599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */,
 				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
+				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
 				59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,7 @@
 		597D66B025C80FA50051E84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597D66AF25C80FA50051E84A /* Assets.xcassets */; };
 		597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597D66B125C80FA50051E84A /* LaunchScreen.storyboard */; };
 		599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599E61DC25CAF51500DF5A38 /* MainViewController.swift */; };
+		59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		597D66B225C80FA50051E84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		597D66B425C80FA50051E84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		599E61DC25CAF51500DF5A38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Free Bank.xcdatamodel"; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				59E5DAB525CD90E700354F4B /* Main */,
 				59E5DAB325CD901700354F4B /* SignIn */,
 				59E5DAB425CD906C00354F4B /* SignUp */,
+				59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */,
 			);
 			path = "Free Bank";
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
+				59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */,
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,
 				599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */,
@@ -395,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */,
+			);
+			currentVersion = 59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */;
+			path = "Free Bank.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 597D669B25C80FA40051E84A /* Project object */;
 }

@@ -35,6 +35,8 @@ class ExchangeRateTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        changeTableBackground()
+        
         let urlComponents = NSURLComponents(string: "https://www.nbrb.by/api/exrates/rates")!
                 urlComponents.queryItems = [URLQueryItem(name: "periodicity", value: "0")]
                 
@@ -62,6 +64,10 @@ class ExchangeRateTableViewController: UITableViewController {
         }.resume()
     }
 
+    func changeTableBackground() {
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "mainBackground"))
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

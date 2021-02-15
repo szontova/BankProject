@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" backIndicatorImage="mainBackground" id="nhW-vs-4Su">
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="nhW-vs-4Su">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -28,11 +28,10 @@
                             </textAttributes>
                             <items>
                                 <navigationItem title="Курс Валют" id="kcy-n5-6Mn">
-                                    <barButtonItem key="leftBarButtonItem" style="plain" id="RKd-Ea-7gw">
+                                    <barButtonItem key="leftBarButtonItem" style="done" id="RKd-Ea-7gw">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Zz-AR-0Gz">
                                             <rect key="frame" x="20" y="7" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal">
                                                 <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
@@ -62,14 +61,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sYg-sl-Lhk">
                                             <rect key="frame" x="15" y="0.0" width="384" height="75"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-tH-0Oj">
-                                                    <rect key="frame" x="0.0" y="10" width="77.5" height="55"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-tH-0Oj">
+                                                    <rect key="frame" x="0.0" y="10" width="91" height="55"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="77.5" id="PMS-A8-3EX"/>
+                                                        <constraint firstAttribute="width" constant="91" id="PMS-A8-3EX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-nJ-pyM">
-                                                    <rect key="frame" x="115.5" y="0.0" width="132" height="75"/>
+                                                    <rect key="frame" x="119" y="0.0" width="132" height="75"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="75" id="92M-EY-KOK"/>
                                                         <constraint firstAttribute="width" constant="132" id="wOF-GJ-Gzt"/>
@@ -126,7 +125,6 @@
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="mainBackground" width="1080" height="1920"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -40,7 +40,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="trN-7j-tdb" kind="unwind" identifier="unwindToMainVCSegue" unwindAction="unwindToMainViewControllerWithSegue:" id="NnI-DJ-JK5"/>
+                                    <segue destination="trN-7j-tdb" kind="unwind" identifier="unwindToMainVCSegue" unwindAction="unwindToMainVCFromSignInVCWithSegue:" id="NnI-DJ-JK5"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k0s-UI-qsp">

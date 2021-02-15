@@ -11,7 +11,7 @@
         <!--Exchange Rate Table View Controller-->
         <scene sceneID="UqX-KR-uao">
             <objects>
-                <tableViewController id="7bG-dm-C6Z" customClass="ExchangeRateTableViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="7bG-dm-C6Z" customClass="ExchangeRateTableViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kwa-C9-Cl8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Курс Валют" id="kcy-n5-6Mn"/>
+                                <navigationItem title="Курс Валют" id="kcy-n5-6Mn">
+                                    <barButtonItem key="leftBarButtonItem" style="plain" id="RKd-Ea-7gw">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4Zz-AR-0Gz">
+                                            <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <segue destination="5HN-lI-Sin" kind="unwind" identifier="unwindToMainFromExRateSegue" unwindAction="unwindToMainVCFromExchangeRateTVCWithSegue:" id="oUw-pC-mkv"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
@@ -84,8 +95,9 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAS-CQ-zIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="5HN-lI-Sin" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-39.130434782608695" y="66.964285714285708"/>
+            <point key="canvasLocation" x="157" y="-56"/>
         </scene>
     </scenes>
     <resources>

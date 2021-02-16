@@ -15,7 +15,7 @@ extension UIViewController{
         let allowSymbols: Set<Character> = [".","_"]
         
         if login.count < 8 || login.count > 30 {
-            showAlertError( message: "Неверный формат логина Проверьте данные.")
+            showAlertError( message: "Неверный формат логина. Проверьте данные.")
             return false
         }
         
@@ -50,7 +50,6 @@ extension UIViewController{
     func checkPersonName (name: String) -> Bool {
         let allowLetters: Range<Character> = "А"..<"я"
         let words = name.components(separatedBy: [" "])
-     
         if words.count != 3 {
             showAlertError(message: "ФИО должно состоять из трёх слов")
             return false

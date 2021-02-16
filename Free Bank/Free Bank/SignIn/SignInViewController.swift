@@ -87,45 +87,73 @@ class SignInViewController: UIViewController {
     
     
     func checkDatas() -> Bool{
+        
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
         if login.isEmpty || password.isEmpty {
-                showAlertError( message: "Введите логин и пароль.")
+            showAlertError( message: "Введите логин и пароль.")
             return false
-                //loginErrorLabel.text = "Данные не введены"
-                //loginErrorLabel.isHidden = false
-            }
-            
-            else{
-                loginErrorLabel.isHidden = true
-                let allowLetters: Range<Character> = "A"..<"z"
-                let allowSymbols: Set<Character> = [".","_"]
-                
-                if login.count < 8 || login.count > 50 {
-                    showAlertError( message: "Неверный формат логина. Проверьте данные.")
-                    return false
-                }
-                else {
-                    for symb in login {
-                        if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
-                            showAlertError( message: "Неверно введен логин. Проверьте данные.")
-                            return false
-                            //loginErrorLabel.text = "Данные введены неверно"
-                            //loginErrorLabel.isHidden = false
-                        }
-                    }
-                }
-                
-                //сделать пароль
-//                else if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
-//                    showAlertError(title: "Ошибка", message: "Неверно введен логин. Проверьте данные.")
-//                    //loginErrorLabel.text = "Данные введены неверно"
-//                    //loginErrorLabel.isHidden = false
-//                    break
-//                }
         }
+        
+        switch statusSegmentedControl.selectedSegmentIndex{
+        
+        case 0:
+            if checkLogin(login: login) {
+            //code with using login
+            }
+            else { return false }
+            
+        case 1:
+            if let _ = checkUNP(unp: login) {
+                //code with using unp
+            }
+            else { return false }
+        
+        default: break
+        }
+        
+        //password check
+        //сделать пароль
+        
         return true
+    }
+    
+
+    func checkLogin(login: String) -> Bool{
+        let allowLetters: Range<Character> = "A"..<"z"
+        let allowSymbols: Set<Character> = [".","_"]
+        
+        if login.count < 8 || login.count > 30 {
+            showAlertError( message: "Неверный формат логина. Проверьте данные.")
+            return false
+        }
+        
+        for symb in login {
+            if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
+                showAlertError( message: "Неверно введен логин. Проверьте данные.")
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func checkUNP(unp: String) -> Int? {
+              
+        if unp.count != 9 {
+            showAlertError( message: "УНП введён неверно. Проверьте данные.")
+            return nil
+        }
+        
+        if let unpInt = Int(unp) {
+            return unpInt
+        }
+        else {
+            showAlertError( message: "УНП введён неверно. Проверьте данные.")
+            return nil
+        }
+            
     }
     
     func showAlertForgotPassword(message: String){

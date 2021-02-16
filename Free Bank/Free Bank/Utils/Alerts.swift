@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func showAlertError(message: String){
+        func showAlertError(message: String){
         let alertError = UIAlertController(title: "", message: message, preferredStyle: .alert)
                 
         let attributedString = NSAttributedString(string: "Ошибка", attributes: [

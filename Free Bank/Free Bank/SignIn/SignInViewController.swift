@@ -86,7 +86,7 @@ class SignInViewController: UIViewController {
 //MARK: - Our methods
     
     
-    func checkDatas() -> Bool{
+    func checkSignInDatas() -> Bool{
         
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
@@ -214,7 +214,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButton(_ sender: UIButton) {
         print("SignIn", terminator: " ")
-        checkDatas() ? print("datas right") : print("datas error")
+        checkSignInDatas() ? print("datas right") : print("datas error")
     }
     
     @IBAction func registrationButton(_ sender: UIButton) {

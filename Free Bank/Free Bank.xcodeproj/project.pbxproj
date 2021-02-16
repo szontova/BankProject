@@ -19,6 +19,7 @@
 		597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597D66B125C80FA50051E84A /* LaunchScreen.storyboard */; };
 		599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599E61DC25CAF51500DF5A38 /* MainViewController.swift */; };
 		59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */; };
+		59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		597D66B425C80FA50051E84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		599E61DC25CAF51500DF5A38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Free Bank.xcdatamodel"; sourceTree = "<group>"; };
+		59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataFunctions.swift; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				592AE50A25D3D45D000C99E5 /* Alerts.swift */,
+				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */,
 				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
+				59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */,
 				59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

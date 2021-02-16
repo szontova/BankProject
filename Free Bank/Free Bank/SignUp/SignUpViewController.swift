@@ -29,18 +29,50 @@ class SignUpViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        print("Sign Up We are here")
     }
     
     func checkDatas() -> Bool{
-        let login = loginTextField.text ?? ""
         let name = nameTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let repeatPassword = repeatPasswordTextField.text ?? ""
-        let email = emailTextField.text ?? ""
+       // let email = emailTextField.text ?? ""
+        let login = loginTextField.text ?? ""
+       // let password = passwordTextField.text ?? ""
+       // let repeatPassword = repeatPasswordTextField.text ?? ""
+       
         
-        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
-            showAlertError(message: "Не все поля заполнены.")
-            return false
+//        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
+//            showAlertError(message: "Не все поля заполнены.")
+//            return false
+//        }
+        
+        switch statusSegmentedControl.selectedSegmentIndex{
+        
+        case 0:
+            
+            if checkPersonName(name: name) {
+                //use name
+            }
+            else { return false }
+            
+            if checkLogin(login: login) {
+                //use login
+            }
+            else { return false }
+            
+
+        case 1:
+            
+            if checkOrgName(name: name){
+                //use name
+            }
+            else { return false }
+            
+            if let _ = checkUNP(unp: login) {
+                //use unp
+            }
+            else { return false }
+            
+        default: break
         }
         
         return true

@@ -128,6 +128,48 @@ class SignInViewController: UIViewController {
         return true
     }
     
+    func showAlertForgotPassword(message: String){
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+            
+        let attributedString = NSAttributedString(string: "Восстановление пароля", attributes: [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+            NSAttributedString.Key.foregroundColor : UIColor.black
+        ])
+        alert.setValue(attributedString, forKey: "attributedTitle")
+                
+        alert.view.tintColor = UIColor.black
+        
+        alert.addTextField(configurationHandler: {
+            (textField) in
+            textField.placeholder = self.loginTextField.placeholder
+            textField.text = self.loginTextField.text ?? ""
+            textField.borderStyle = UITextField.BorderStyle.roundedRect
+        })
+        
+        alert.addTextField(configurationHandler: {
+            (textField) in
+            textField.placeholder = "Введите email"
+            textField.borderStyle = UITextField.BorderStyle.roundedRect
+        })
+        
+        for textField in alert.textFields! {
+            let container = textField.superview
+            let effectView = container?.superview?.subviews[0]
+            if (effectView != nil) {
+                container?.backgroundColor = UIColor.clear
+                effectView?.removeFromSuperview()
+            }
+        }
+                
+        let okAction = UIAlertAction(title: "Восстановить", style: .default){ _ in }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+                
+        present(alert, animated: true, completion: nil)
+    }
+    
     //MARK:- @IBAction
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
@@ -152,7 +194,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
-        showAlertForgotPassword(message: "Введите логин и email.", login: loginTextField.text)
+        showAlertForgotPassword(message: "Введите логин и email.")
     }
     
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){

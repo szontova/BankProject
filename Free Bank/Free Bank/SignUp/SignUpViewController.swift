@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController {
         let email = emailTextField.text ?? ""
         
         if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
-            showAlertError(title: "Ошибка", message: "Не все поля заполнены.")
+            showAlertError(message: "Не все поля заполнены.")
             return false
         }
         

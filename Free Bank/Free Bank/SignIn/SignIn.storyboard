@@ -141,6 +141,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Забыли пароль?"/>
+                                        <connections>
+                                            <action selector="forgotPasswordButton:" destination="LQZ-nS-3EE" eventType="touchUpInside" id="cBZ-cJ-56j"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.67287141080000001" green="0.54466165450000004" blue="0.51873044359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

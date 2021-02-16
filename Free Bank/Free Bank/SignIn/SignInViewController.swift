@@ -91,7 +91,7 @@ class SignInViewController: UIViewController {
         let password = passwordTextField.text ?? ""
         
         if login.isEmpty || password.isEmpty {
-                showAlertError(title: "Ошибка", message: "Введите логин и пароль.")
+                showAlertError( message: "Введите логин и пароль.")
             return false
                 //loginErrorLabel.text = "Данные не введены"
                 //loginErrorLabel.isHidden = false
@@ -103,13 +103,13 @@ class SignInViewController: UIViewController {
                 let allowSymbols: Set<Character> = [".","_"]
                 
                 if login.count < 8 || login.count > 50 {
-                    showAlertError(title: "Ошибка", message: "Неверный формат логина. Проверьте данные.")
+                    showAlertError( message: "Неверный формат логина. Проверьте данные.")
                     return false
                 }
                 else {
                     for symb in login {
                         if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
-                            showAlertError(title: "Ошибка", message: "Неверно введен логин. Проверьте данные.")
+                            showAlertError( message: "Неверно введен логин. Проверьте данные.")
                             return false
                             //loginErrorLabel.text = "Данные введены неверно"
                             //loginErrorLabel.isHidden = false
@@ -151,6 +151,10 @@ class SignInViewController: UIViewController {
         performSegue(withIdentifier: "toSignUpSegue", sender: nil)
     }
     
+    @IBAction func forgotPasswordButton(_ sender: UIButton) {
+        showAlertForgotPassword(message: "Введите логин и email.", login: loginTextField.text)
+    }
+    
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
         guard let _ = segue.destination as? SignUpViewController else {return}
@@ -164,6 +168,7 @@ extension SignInViewController: UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
+    
 }
 
 extension UITextField{

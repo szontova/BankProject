@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController{
     
     func checkLogin(login: String) -> Bool{
-        let allowLetters: Range<Character> = "A"..<"z"
+        let allowLetters: ClosedRange<Character> = "A"..."z"
         let allowSymbols: Set<Character> = [".","_"]
         
         if login.count < 8 || login.count > 30 {
@@ -30,28 +30,36 @@ extension UIViewController{
     }
     
     func checkPassword(password: String) -> Bool{
+        
         if password.count < 8 || password.count > 50 {
             showAlertError( message: "Пароль должен быть не короче 8 и не длиннее 50 символов. Проверьте данные.")
             return false
         }
-        let allowNumbers: Range<Character> = "0"..<"9"
+        
+        let allowNumbers: ClosedRange<Character> = "0"..."9"
         //большая буква, маленькая буква, цифра
         var hasUpChar = false
         var hasLowChar = false
         var hasNumber = false
         
         for symb in password {
-            if String(symb).lowercased() == String(symb) {
-                hasLowChar = true
-                if hasUpChar && hasLowChar && hasNumber { break }
+            if !hasLowChar{
+                if String(symb).lowercased() == String(symb) {
+                    hasLowChar = true
+                    if hasUpChar && hasLowChar && hasNumber { break }
+                }
             }
-            if String(symb).uppercased() == String(symb) {
-                hasUpChar = true
-                if hasUpChar && hasLowChar && hasNumber { break }
+            if !hasUpChar{
+                if String(symb).uppercased() == String(symb) {
+                    hasUpChar = true
+                    if hasUpChar && hasLowChar && hasNumber { break }
+                }
             }
-            if allowNumbers.contains(symb) {
-                hasNumber = true
-                if hasUpChar && hasLowChar && hasNumber { break }
+            if !hasNumber{
+                if allowNumbers.contains(symb) {
+                    hasNumber = true
+                    if hasUpChar && hasLowChar && hasNumber { break }
+                }
             }
         }
         
@@ -78,7 +86,7 @@ extension UIViewController{
     }
     
     func checkPersonName (name: String) -> Bool {
-        let allowLetters: Range<Character> = "А"..<"я"
+        let allowLetters: ClosedRange<Character> = "А"..."я"
         let words = name.components(separatedBy: [" "])
         if words.count != 3 {
             showAlertError(message: "ФИО должно состоять из трёх слов")
@@ -86,11 +94,7 @@ extension UIViewController{
         }
         
         for word in words {
-            if String(word.first!) == String(word.first!).lowercased() {
-                showAlertError(message: "Неверный формат ФИО")
-                return false
-            }
-            
+          
             for symb in word {
                 if  !allowLetters.contains(symb) {
                     showAlertError( message: "ФИО содержит посторонние символы")
@@ -104,8 +108,8 @@ extension UIViewController{
     }
     
     func checkOrgName (name: String) -> Bool {
-        let allowLetters: Range<Character> = "А"..<"я"
-        let allowNumbers: Range<Character> = "0"..<"9"
+        let allowLetters: ClosedRange<Character> = "А"..."я"
+        let allowNumbers: ClosedRange<Character> = "0"..."9"
         let allowSymbols: Set<Character> = [" ", "-"]
        
         if name.count > 50 {
@@ -123,6 +127,12 @@ extension UIViewController{
     }
     
     func checkEmail (email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        if !emailPred.evaluate(with: email) {
+            showAlertError(message: "Email ведён некорректно")
+            return false
+        }
         return true
     }
     

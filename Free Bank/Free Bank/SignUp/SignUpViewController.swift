@@ -24,12 +24,10 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        print("Sign Up We are here")
     }
     
        
@@ -59,7 +57,7 @@ class SignUpViewController: UIViewController {
         let password = passwordTextField.text ?? ""
         let repeatPassword = repeatPasswordTextField.text ?? ""
        
-        print("SignUp", terminator: " ")
+        print("Sign Up", terminator: " ")
         checkSignUpDatas(status, name, email, login, password, repeatPassword) ? print("datas right") : print("datas error")
     }
     

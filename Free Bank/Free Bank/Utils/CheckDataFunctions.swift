@@ -171,6 +171,7 @@ extension UIViewController{
             
         default: break
         }
+        if !checkEmail(email: email) { return false }
         
         if !checkPassword(password: password) { return false }
         

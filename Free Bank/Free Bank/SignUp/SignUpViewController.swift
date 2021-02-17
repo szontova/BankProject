@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController {
        // let email = emailTextField.text ?? ""
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-       // let repeatPassword = repeatPasswordTextField.text ?? ""
+        let repeatPassword = repeatPasswordTextField.text ?? ""
        
         
 //        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
@@ -78,6 +78,10 @@ class SignUpViewController: UIViewController {
         if checkPassword(password: password){
             //use password
         } else { return false }
+        
+        if password != repeatPassword {
+            showAlertError(message: "Пароли не совпадают")
+        }
         
         return true
     }

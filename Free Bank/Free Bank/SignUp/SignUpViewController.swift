@@ -32,60 +32,7 @@ class SignUpViewController: UIViewController {
         print("Sign Up We are here")
     }
     
-    func checkDatas() -> Bool{
-        let name = nameTextField.text ?? ""
-       // let email = emailTextField.text ?? ""
-        let login = loginTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let repeatPassword = repeatPasswordTextField.text ?? ""
        
-        
-//        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
-//            showAlertError(message: "Не все поля заполнены.")
-//            return false
-//        }
-        
-        switch statusSegmentedControl.selectedSegmentIndex{
-        
-        case 0:
-            
-            if checkPersonName(name: name) {
-                //use name
-            }
-            else { return false }
-            
-            if checkLogin(login: login) {
-                //use login
-            }
-            else { return false }
-            
-
-        case 1:
-            
-            if checkOrgName(name: name){
-                //use organization name
-            }
-            else { return false }
-            
-            if let _ = checkUNP(unp: login) {
-                //use unp
-            }
-            else { return false }
-            
-        default: break
-        }
-        
-        if checkPassword(password: password){
-            //use password
-        } else { return false }
-        
-        if password != repeatPassword {
-            showAlertError(message: "Пароли не совпадают")
-        }
-        
-        return true
-    }
-    
     
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
@@ -104,8 +51,16 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: UIButton) {
+        
+        let status = statusSegmentedControl.selectedSegmentIndex
+        let name = nameTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let login = loginTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let repeatPassword = repeatPasswordTextField.text ?? ""
+       
         print("SignUp", terminator: " ")
-        checkDatas() ? print("datas right") : print("datas error")
+        checkSignUpDatas(status, name, email, login, password, repeatPassword) ? print("datas right") : print("datas error")
     }
     
 }

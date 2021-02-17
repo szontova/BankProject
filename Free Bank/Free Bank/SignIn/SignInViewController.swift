@@ -85,41 +85,6 @@ class SignInViewController: UIViewController {
     
 //MARK: - Our methods
     
-    
-    func checkSignInDatas() -> Bool{
-        
-        let login = loginTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        
-        if login.isEmpty || password.isEmpty {
-            showAlertError( message: "Введите логин и пароль.")
-            return false
-        }
-        
-        switch statusSegmentedControl.selectedSegmentIndex{
-        
-        case 0:
-            if checkLogin(login: login) {
-            //code with using login
-            }
-            else { return false }
-            
-        case 1:
-            if let _ = checkUNP(unp: login) {
-                //code with using unp
-            }
-            else { return false }
-        
-        default: break
-        }
-        
-        //password check
-        //сделать пароль
-        
-        return true
-    }
-    
-    
     func showAlertForgotPassword(message: String){
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
             
@@ -177,8 +142,14 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
+        let status = statusSegmentedControl.selectedSegmentIndex
+        let login = loginTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
         print("SignIn", terminator: " ")
-        checkSignInDatas() ? print("datas right") : print("datas error")
+        checkSignInDatas(status, login, password) ? print("datas right") : print("datas error")
+        
+        
     }
     
     @IBAction func registrationButton(_ sender: UIButton) {

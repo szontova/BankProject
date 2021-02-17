@@ -64,21 +64,17 @@ extension UIViewController{
                 
     }
     
-    func checkUNP(unp: String) -> Int? {
+    func checkUNP(unp: String) -> Bool {
               
         if unp.count != 9 {
             showAlertError( message: "Неверный формат УНП. Проверьте данные.")
-            return nil
+            return false
         }
         
-        if let unpInt = Int(unp) {
-            return unpInt
-        }
-        else {
-            showAlertError( message: "УНП содержит посторонние символы. Проверьте данные.")
-            return nil
-        }
-            
+        if let _ = Int(unp) { return true }
+        
+        showAlertError( message: "УНП содержит посторонние символы. Проверьте данные.")
+        return false
     }
     
     func checkPersonName (name: String) -> Bool {
@@ -126,5 +122,64 @@ extension UIViewController{
         return true
     }
     
+    func checkEmail (email: String) -> Bool {
+        return true
+    }
+    
+    func checkSignInDatas(_ status: Int,  _ login: String, _ password: String) -> Bool{
+             
+        if login.isEmpty || password.isEmpty {
+            showAlertError( message: "Введите логин и пароль.")
+            return false
+        }
+        
+        switch status{
+        
+        case 0:
+            if !checkLogin(login: login) { return false }
+            
+        case 1:
+            if !checkUNP(unp: login) { return false }
+        
+        default: break
+        }
+        
+        return true
+    }
+    
+    func checkSignUpDatas(_ status: Int, _ name: String, _ email: String, _ login: String, _ password: String, _ repeatPassword: String) -> Bool{
+       
+        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
+            showAlertError(message: "Не все поля заполнены.")
+            return false
+        }
+        
+        switch status{
+        
+        case 0:
+            
+            if !checkPersonName(name: name) { return false }
+            
+            if !checkLogin(login: login) { return false }
+            
+
+        case 1:
+            
+            if !checkOrgName(name: name) { return false }
+            
+            if !checkUNP(unp: login) { return false }
+            
+        default: break
+        }
+        
+        if !checkPassword(password: password) { return false }
+        
+        if password != repeatPassword {
+            showAlertError(message: "Пароли не совпадают")
+            return false
+        }
+        
+        return true
+    }
     
 }

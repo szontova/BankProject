@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
         let name = nameTextField.text ?? ""
        // let email = emailTextField.text ?? ""
         let login = loginTextField.text ?? ""
-       // let password = passwordTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
        // let repeatPassword = repeatPasswordTextField.text ?? ""
        
         
@@ -63,7 +63,7 @@ class SignUpViewController: UIViewController {
         case 1:
             
             if checkOrgName(name: name){
-                //use name
+                //use organization name
             }
             else { return false }
             
@@ -74,6 +74,10 @@ class SignUpViewController: UIViewController {
             
         default: break
         }
+        
+        if checkPassword(password: password){
+            //use password
+        } else { return false }
         
         return true
     }

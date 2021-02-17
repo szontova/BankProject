@@ -21,7 +21,7 @@ extension UIViewController{
         
         for symb in login {
             if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
-                showAlertError( message: "Неверно введен логин. Проверьте данные.")
+                showAlertError( message: "Логин содержит недопустимые символы. Проверьте данные.")
                 return false
             }
         }
@@ -29,6 +29,40 @@ extension UIViewController{
         return true
     }
     
+    func checkPassword(password: String) -> Bool{
+        if password.count < 8 || password.count > 50 {
+            showAlertError( message: "Пароль должен быть не короче 8 и не длиннее 50 символов. Проверьте данные.")
+            return false
+        }
+        let allowNumbers: Range<Character> = "0"..<"9"
+        //большая буква, маленькая буква, цифра
+        var hasUpChar = false
+        var hasLowChar = false
+        var hasNumber = false
+        
+        for symb in password {
+            if String(symb).lowercased() == String(symb) {
+                hasLowChar = true
+                if hasUpChar && hasLowChar && hasNumber { break }
+            }
+            if String(symb).uppercased() == String(symb) {
+                hasUpChar = true
+                if hasUpChar && hasLowChar && hasNumber { break }
+            }
+            if allowNumbers.contains(symb) {
+                hasNumber = true
+                if hasUpChar && hasLowChar && hasNumber { break }
+            }
+        }
+        
+        if (!hasNumber) || (!hasUpChar) || (!hasLowChar) {
+            showAlertError(message: "Пароль должен содержать минимум одну цифру, одну строчную и одну прописную букву.")
+            return false
+        }
+        
+       return true
+                
+    }
     
     func checkUNP(unp: String) -> Int? {
               

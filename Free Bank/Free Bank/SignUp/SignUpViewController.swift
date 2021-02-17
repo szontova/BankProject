@@ -24,28 +24,13 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    func checkDatas() -> Bool{
-        let login = loginTextField.text ?? ""
-        let name = nameTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let repeatPassword = repeatPasswordTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        
-        if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
-            showAlertError(title: "Ошибка", message: "Не все поля заполнены.")
-            return false
-        }
-        
-        return true
-    }
-    
+       
     
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
@@ -64,8 +49,17 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: UIButton) {
-        print("SignUp", terminator: " ")
-        checkDatas() ? print("datas right") : print("datas error")
+        
+        let status = statusSegmentedControl.selectedSegmentIndex
+        let name = nameTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let login = loginTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let repeatPassword = repeatPasswordTextField.text ?? ""
+       
+        print("Sign Up", terminator: " ")
+        checkSignUpDatas(status, name, email, login, password, repeatPassword) ? print("datas right") : print("datas error")
+        //add company or person to database
     }
     
 }

@@ -29,7 +29,18 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "toSignInSegue", sender: nil)
     }
     
-    @IBAction func unwindToMainViewController (segue: UIStoryboardSegue){
+    @IBAction func moveToExchangeRateButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toExchangeRateSegue", sender: nil)
+    }
+    
+    
+    @IBAction func unwindToMainVCFromExchangeRateTVC(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToMainFromExRateSegue" else {return}
+        print(segue.destination)
+        guard let _ = segue.destination as? ExchangeRateTableViewController else {return}
+    }
+    
+    @IBAction func unwindToMainVCFromSignInVC (segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToMainVCSegue" else {return}
         guard let _ = segue.destination as? SignInViewController else {return}
     }

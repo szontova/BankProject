@@ -86,47 +86,6 @@ class SignInViewController: UIViewController {
 //MARK: - Our methods
     
     
-    func checkDatas() -> Bool{
-        let login = loginTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        
-        if login.isEmpty || password.isEmpty {
-                showAlertError(title: "Ошибка", message: "Введите логин и пароль.")
-            return false
-                //loginErrorLabel.text = "Данные не введены"
-                //loginErrorLabel.isHidden = false
-            }
-            
-            else{
-                loginErrorLabel.isHidden = true
-                let allowLetters: Range<Character> = "A"..<"z"
-                let allowSymbols: Set<Character> = [".","_"]
-                
-                if login.count < 8 || login.count > 50 {
-                    showAlertError(title: "Ошибка", message: "Неверный формат логина. Проверьте данные.")
-                    return false
-                }
-                else {
-                    for symb in login {
-                        if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
-                            showAlertError(title: "Ошибка", message: "Неверно введен логин. Проверьте данные.")
-                            return false
-                            //loginErrorLabel.text = "Данные введены неверно"
-                            //loginErrorLabel.isHidden = false
-                        }
-                    }
-                }
-                
-                //сделать пароль
-//                else if  (!allowLetters.contains(symb)) && (!allowSymbols.contains(symb)) {
-//                    showAlertError(title: "Ошибка", message: "Неверно введен логин. Проверьте данные.")
-//                    //loginErrorLabel.text = "Данные введены неверно"
-//                    //loginErrorLabel.isHidden = false
-//                    break
-//                }
-        }
-        return true
-    }
     
     //MARK:- @IBAction
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
@@ -134,8 +93,8 @@ class SignInViewController: UIViewController {
         case 0:
             loginLabel.text = "Логин"
             loginTextField.placeholder = "Введите логин"
+            
         case 1:
-    
             loginLabel.text = "УНП"
             loginTextField.placeholder = "Введите УНП"
         default: break
@@ -143,12 +102,24 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
-        print("SignIn", terminator: " ")
-        checkDatas() ? print("datas right") : print("datas error")
+        let status = statusSegmentedControl.selectedSegmentIndex
+        let login = loginTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        print("Sign In", terminator: " ")
+        checkSignInDatas(status, login, password) ? print("datas right") : print("datas error")
+        //find login or UNP in database and compare passwords
+        
     }
     
     @IBAction func registrationButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignUpSegue", sender: nil)
+    }
+    
+    @IBAction func forgotPasswordButton(_ sender: UIButton) {
+        let status = statusSegmentedControl.selectedSegmentIndex
+        let login = loginTextField.text ?? ""
+        showAlertForgotPassword(status, login)
     }
     
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
@@ -164,6 +135,7 @@ extension SignInViewController: UITextFieldDelegate{
         textField.resignFirstResponder()
         return true
     }
+    
 }
 
 extension UITextField{

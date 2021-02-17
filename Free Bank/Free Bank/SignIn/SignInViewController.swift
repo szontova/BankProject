@@ -108,7 +108,7 @@ class SignInViewController: UIViewController {
         
         print("Sign In", terminator: " ")
         checkSignInDatas(status, login, password) ? print("datas right") : print("datas error")
-        
+        //find login or UNP in database and compare passwords
         
     }
     

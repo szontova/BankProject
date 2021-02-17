@@ -59,6 +59,7 @@ class SignUpViewController: UIViewController {
        
         print("Sign Up", terminator: " ")
         checkSignUpDatas(status, name, email, login, password, repeatPassword) ? print("datas right") : print("datas error")
+        //add company or person to database
     }
     
 }

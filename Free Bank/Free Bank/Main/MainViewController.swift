@@ -17,10 +17,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
-        //collectionView.isScrollEnabled = false
                 
-        //print("MainViewController: it works")
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -82,7 +81,8 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: viewFofCollectionView.bounds.width - 20, height: viewFofCollectionView.bounds.width)
+       // self.automaticallyAdjustsScrollViewInsets = false
+        return CGSize(width: viewFofCollectionView.bounds.width - 10, height: (viewFofCollectionView.bounds.width))
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

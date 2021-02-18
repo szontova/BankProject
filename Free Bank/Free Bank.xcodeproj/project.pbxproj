@@ -58,6 +58,7 @@
 		3148234B25D6CED1008288FC /* Static Pages */ = {
 			isa = PBXGroup;
 			children = (
+				596A697E25DE70F90068099E /* CollectionView */,
 				3148234C25D6CF79008288FC /* Exchange Rate */,
 			);
 			path = "Static Pages";
@@ -79,6 +80,13 @@
 				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		596A697E25DE70F90068099E /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		597D669A25C80FA40051E84A = {

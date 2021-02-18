@@ -12,11 +12,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewFofCollectionView: UIView!
     
+    private let images = ["cards", "bank", "successfulPeople"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
-        
+        //collectionView.isScrollEnabled = false
+                
         //print("MainViewController: it works")
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -58,18 +61,19 @@ extension MainViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("you tapped me")
+        //go to//
+        print("you tapped me \(indexPath.row)")
     }
 }
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
-        cell.configure(with: UIImage(named: "cards")!)
+        cell.configure(with: UIImage(named: images[indexPath.row])!)
         return cell
     }
     
@@ -78,7 +82,7 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: viewFofCollectionView.bounds.width - 10, height: viewFofCollectionView.bounds.width)
+        return CGSize(width: viewFofCollectionView.bounds.width - 20, height: viewFofCollectionView.bounds.width)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -88,5 +92,6 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
     }
+    
     
 }

@@ -67,15 +67,29 @@ extension MainViewController: UICollectionViewDelegate {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return images.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
-        cell.configure(with: UIImage(named: images[indexPath.row])!)
+        cell.configure(with: UIImage(named: images[indexPath.row % images.count])!)
         return cell
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageFloat = (scrollView.contentOffset.x / scrollView.frame.size.width)
+        let pageInt = Int(round(pageFloat))
+             
+        switch pageInt {
+            case 0:
+                collectionView.scrollToItem(at: [0, images.count], at: .left, animated: false)
+            case images.count :
+                collectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
+            default:
+                break
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {

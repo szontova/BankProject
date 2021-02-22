@@ -24,9 +24,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with image: UIImage) {
-        //imageView.layer.cornerRadius = 20.0
         imageView.image = image
-      //  self.backgroundColor = .white
         self.layer.cornerRadius = 20.0
     }
     

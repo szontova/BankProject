@@ -34,12 +34,14 @@ extension MainViewController: UICollectionViewDataSource {
         let pageInt = Int(round(pageFloat))
              
         switch pageInt {
-            case 0:
-                collectionView.scrollToItem(at: [0, getImages().count], at: .left, animated: false)
-            case getImages().count :
-                collectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
-            default:
-                break
+        case 0:
+            collectionView.scrollToItem(at: [0, getImages().count], at: .left, animated: false)
+            
+        case getImages().count :
+            collectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
+            
+        default:
+            break
         }
     }
 }

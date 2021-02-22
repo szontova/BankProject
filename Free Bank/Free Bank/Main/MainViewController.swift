@@ -81,16 +81,38 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       // self.automaticallyAdjustsScrollViewInsets = false
-        return CGSize(width: viewFofCollectionView.bounds.width - 10, height: (viewFofCollectionView.bounds.width))
+        
+        let width = viewFofCollectionView.bounds.width
+        let height = viewFofCollectionView.bounds.height
+        
+        if height > width {
+            return CGSize(width: width - 10 , height: width - 10)
+        } else {
+            return CGSize(width: height - 10 , height: height - 10)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        let width = viewFofCollectionView.bounds.width
+        let height = viewFofCollectionView.bounds.height
+        
+        if height < width {
+            return (width - height + 10)
+        }
         return 10
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        var indent: CGFloat = 5.0
+        
+        let width = viewFofCollectionView.bounds.width
+        let height = viewFofCollectionView.bounds.height
+        
+        if height < width {
+            indent = (width - height) / 2 + 5
+        }
+        return UIEdgeInsets(top: 0, left: indent, bottom: 0, right: indent)
     }
     
     

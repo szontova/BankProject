@@ -8,22 +8,25 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //print("MainViewController: it works")
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var viewFofCollectionView: UIView!
+    
+    private let images = ["cards", "bank", "successfulPeople"]
+    
+    func getImages() -> [String] {
+        return images
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+                
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
-    */
+    
 
     @IBAction func moveToSignInButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignInSegue", sender: nil)
@@ -33,10 +36,8 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "toExchangeRateSegue", sender: nil)
     }
     
-    
     @IBAction func unwindToMainVCFromExchangeRateTVC(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToMainFromExRateSegue" else {return}
-        print(segue.destination)
         guard let _ = segue.destination as? ExchangeRateTableViewController else {return}
     }
     

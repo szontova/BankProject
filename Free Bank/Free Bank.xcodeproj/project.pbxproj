@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3148234D25D6D23E008288FC /* ExchangeRate.storyboard */; };
 		3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */; };
+		59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59298A5D25E3EDD3007F0622 /* CollectionView.swift */; };
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
+		596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A698025DE7FEE0068099E /* CollectionViewCell.swift */; };
+		596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596A698125DE7FEE0068099E /* CollectionViewCell.xib */; };
 		597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A625C80FA40051E84A /* AppDelegate.swift */; };
 		597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A825C80FA40051E84A /* SceneDelegate.swift */; };
 		597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66AA25C80FA40051E84A /* SignInViewController.swift */; };
@@ -27,8 +30,11 @@
 /* Begin PBXFileReference section */
 		3148234D25D6D23E008288FC /* ExchangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeRate.storyboard; sourceTree = "<group>"; };
 		3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewController.swift; sourceTree = "<group>"; };
+		59298A5D25E3EDD3007F0622 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		596A698025DE7FEE0068099E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		596A698125DE7FEE0068099E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		597D66A325C80FA40051E84A /* Free Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597D66A625C80FA40051E84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		597D66A825C80FA40051E84A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,7 @@
 		3148234B25D6CED1008288FC /* Static Pages */ = {
 			isa = PBXGroup;
 			children = (
+				596A697E25DE70F90068099E /* CollectionView */,
 				3148234C25D6CF79008288FC /* Exchange Rate */,
 			);
 			path = "Static Pages";
@@ -77,8 +84,18 @@
 			children = (
 				592AE50A25D3D45D000C99E5 /* Alerts.swift */,
 				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
+				59298A5D25E3EDD3007F0622 /* CollectionView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		596A697E25DE70F90068099E /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				596A698025DE7FEE0068099E /* CollectionViewCell.swift */,
+				596A698125DE7FEE0068099E /* CollectionViewCell.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		597D669A25C80FA40051E84A = {
@@ -200,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
+				596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */,
 				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
@@ -215,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
 				59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */,
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,
@@ -223,6 +242,7 @@
 				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
 				59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */,
+				59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */,
 				59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

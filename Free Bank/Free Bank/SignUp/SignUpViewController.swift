@@ -27,6 +27,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        printAllIndividual()
+        printAllOrganization()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -67,7 +69,9 @@ class SignUpViewController: UIViewController {
             
             switch status {
             case 0:
-               addIndividal(status, name, email, login, password)
+               addIndividal( name, email, login, password)
+            case 1:
+                addOrganization( name, email, login, password)
             default: break
             }
             
@@ -76,7 +80,7 @@ class SignUpViewController: UIViewController {
         //add company or person to database
     }
     
-    func addIndividal (_ status: Int, _ name: String, _ email: String, _ login: String, _ password: String) {
+    func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String) {
         
         let newIndivid = Individual(context: self.context)
         
@@ -87,22 +91,50 @@ class SignUpViewController: UIViewController {
         
         //add account
         
-        let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         do {
             self.context.insert(newIndivid)
             try self.context.save()
-            let items = try context.fetch(request)
-            print(items)
         }
         catch { print("SignUpVC: Error in add individual") }
     }
     
-    func printIndividual(){
+    func addOrganization ( _ name: String, _ email: String, _ login: String, _ password: String) {
+        
+        let newOrganization = Organization(context: self.context)
+        
+        newOrganization.name = name
+        newOrganization.email = email
+        newOrganization.prn = login
+        newOrganization.password = password
+        
+        //add account
+        
+        do {
+            self.context.insert(newOrganization)
+            try self.context.save()
+        }
+        catch { print("SignUpVC: Error in add organization") }
+    }
+    
+    
+    func printAllIndividual(){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         do {
             let items = try context.fetch(request)
             for i in 0..<items.count {
                 print(items[i].login ?? "Nothing")
+            }
+            
+        }
+        catch { print("SignUpVC: Error in print people") }
+    }
+    
+    func printAllOrganization(){
+        let request = Organization.fetchRequest() as NSFetchRequest<Organization>
+        do {
+            let items = try context.fetch(request)
+            for i in 0..<items.count {
+                print(items[i].name ?? "Nothing")
             }
             
         }

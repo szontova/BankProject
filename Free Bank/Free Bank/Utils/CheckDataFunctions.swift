@@ -93,10 +93,23 @@ extension UIViewController{
             return false
         }
         
-        if let _ = Int(unp) { return true }
-        
-        showAlertError( message: "УНП содержит посторонние символы. Проверьте данные.")
-        return false
+        if let _ = Int(unp) {
+            let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
+            orgRequest.predicate = NSPredicate(format: "prn == %@", unp)
+            do {
+                let items = try context.fetch(orgRequest)
+                if items.count != 0 {
+                    showAlertError( message: "Вы ввели уже существующий УНП")
+                    return false
+                }
+            } catch {
+                print("Error in check login")
+            }
+        } else {
+            showAlertError( message: "УНП содержит посторонние символы. Проверьте данные.")
+            return false
+        }
+        return true
     }
     
     func checkPersonName (name: String) -> Bool {

@@ -29,17 +29,6 @@ extension UIViewController{
             }
         }
         
-        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
-        individRequest.predicate = NSPredicate(format: "login == %@", login)
-        do {
-            let items = try context.fetch(individRequest)
-            if items.count != 0 {
-                showAlertError( message: "Данный логин занят другим пользователем")
-                return false
-            }
-        } catch {
-            print("Error in check login")
-        }
         return true
     }
     
@@ -94,22 +83,40 @@ extension UIViewController{
         }
         
         if let _ = Int(unp) {
-            let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
-            orgRequest.predicate = NSPredicate(format: "prn == %@", unp)
-            do {
-                let items = try context.fetch(orgRequest)
-                if items.count != 0 {
-                    showAlertError( message: "Вы ввели уже существующий УНП")
-                    return false
-                }
-            } catch {
-                print("Error in check login")
-            }
+           //
         } else {
             showAlertError( message: "УНП содержит посторонние символы. Проверьте данные.")
             return false
         }
         return true
+    }
+    
+    func findIndivididual(by login: String) -> Bool{
+        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
+        individRequest.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                return true
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return false
+    }
+    
+    func findOrganization(by prn: String) -> Bool{
+        let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
+        orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
+        do {
+            let items = try context.fetch(orgRequest)
+            if items.count != 0 {
+            return true
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return false
     }
     
     func checkPersonName (name: String) -> Bool {
@@ -199,13 +206,21 @@ extension UIViewController{
             
             if !checkLogin(login: login) { return false }
             
-
+            if findIndivididual(by: login) {
+                showAlertError( message: "Данный логин занят другим пользователем")
+                return false
+            }
+            
         case 1:
             
             if !checkOrgName(name: name) { return false }
             
             if !checkUNP(unp: login) { return false }
             
+            if findOrganization(by: login) {
+                showAlertError( message: "Вы ввели уже существующий УНП")
+                return false
+            }
         default: break
         }
         if !checkEmail(email: email) { return false }

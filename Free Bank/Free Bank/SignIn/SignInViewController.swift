@@ -107,7 +107,20 @@ class SignInViewController: UIViewController {
         let password = passwordTextField.text ?? ""
         
         print("Sign In", terminator: " ")
-        checkSignInDatas(status, login, password) ? print("datas right") : print("datas error")
+        if checkSignInDatas(status, login, password) {
+            print("datas right")
+            switch status {
+            case 0:
+                if findIndivididual(by: login) {print("we find individ")}
+            case 1:
+                if findOrganization(by: login) {print("we find organization")}
+            default: break
+            }
+        } else {
+            print("datas error")
+        }
+        
+       
         //find login or UNP in database and compare passwords
         
     }

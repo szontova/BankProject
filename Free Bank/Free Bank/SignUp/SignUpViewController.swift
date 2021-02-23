@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SignUpViewController: UIViewController {
 
@@ -21,6 +22,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
+    
+    private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +61,52 @@ class SignUpViewController: UIViewController {
         let repeatPassword = repeatPasswordTextField.text ?? ""
        
         print("Sign Up", terminator: " ")
-        checkSignUpDatas(status, name, email, login, password, repeatPassword) ? print("datas right") : print("datas error")
+        if checkSignUpDatas(status, name, email, login, password, repeatPassword) {
+            //проверка логина
+            print("SignUpVC: datas right")
+            
+            switch status {
+            case 0:
+               addIndividal(status, name, email, login, password)
+            default: break
+            }
+            
+        }  else{ print("SignUpVC: datas error") }
+        
         //add company or person to database
+    }
+    
+    func addIndividal (_ status: Int, _ name: String, _ email: String, _ login: String, _ password: String) {
+        
+        let newIndivid = Individual(context: self.context)
+        
+        newIndivid.fullName = name
+        newIndivid.email = email
+        newIndivid.login = login
+        newIndivid.password = password
+        
+        //add account
+        
+        let request = Individual.fetchRequest() as NSFetchRequest<Individual>
+        do {
+            self.context.insert(newIndivid)
+            try self.context.save()
+            let items = try context.fetch(request)
+            print(items)
+        }
+        catch { print("SignUpVC: Error in add individual") }
+    }
+    
+    func printIndividual(){
+        let request = Individual.fetchRequest() as NSFetchRequest<Individual>
+        do {
+            let items = try context.fetch(request)
+            for i in 0..<items.count {
+                print(items[i].login ?? "Nothing")
+            }
+            
+        }
+        catch { print("SignUpVC: Error in print people") }
     }
     
 }

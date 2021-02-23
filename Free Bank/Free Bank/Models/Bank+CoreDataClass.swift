@@ -2,14 +2,14 @@
 //  Bank+CoreDataClass.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 2/23/21.
+//  Created by Пользователь on 23.02.21.
 //
 //
 
 import Foundation
 import CoreData
 
-@objc(Bank)
+
 public class Bank: NSManagedObject {
 
 }

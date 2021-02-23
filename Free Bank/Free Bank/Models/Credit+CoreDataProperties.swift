@@ -2,7 +2,7 @@
 //  Credit+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 2/23/21.
+//  Created by Пользователь on 23.02.21.
 //
 //
 
@@ -16,13 +16,13 @@ extension Credit {
         return NSFetchRequest<Credit>(entityName: "Credit")
     }
 
-    @NSManaged public var idNumber: Int64
     @NSManaged public var amount: Int64
+    @NSManaged public var date: Date?
+    @NSManaged public var idNumber: Int64
     @NSManaged public var procent: Int16
     @NSManaged public var term: Int64
-    @NSManaged public var date: Date?
-    @NSManaged public var indBorrower: Individual?
     @NSManaged public var account: Account?
+    @NSManaged public var indBorrower: Individual?
     @NSManaged public var orgBorrower: Organization?
 
 }

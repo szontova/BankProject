@@ -2,7 +2,7 @@
 //  Account+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 2/23/21.
+//  Created by Пользователь on 23.02.21.
 //
 //
 
@@ -16,14 +16,14 @@ extension Account {
         return NSFetchRequest<Account>(entityName: "Account")
     }
 
-    @NSManaged public var idNumber: String?
     @NSManaged public var balance: Int64
-    @NSManaged public var owner: Individual?
-    @NSManaged public var cards: NSSet?
-    @NSManaged public var transactions: NSSet?
-    @NSManaged public var credit: Credit?
-    @NSManaged public var company: Organization?
+    @NSManaged public var idNumber: String?
     @NSManaged public var bank: Bank?
+    @NSManaged public var cards: NSSet?
+    @NSManaged public var company: Organization?
+    @NSManaged public var credit: Credit?
+    @NSManaged public var owner: Individual?
+    @NSManaged public var transactions: NSSet?
 
 }
 

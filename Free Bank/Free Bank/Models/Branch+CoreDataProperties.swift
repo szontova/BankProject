@@ -2,7 +2,7 @@
 //  Branch+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 2/23/21.
+//  Created by Пользователь on 23.02.21.
 //
 //
 
@@ -16,8 +16,8 @@ extension Branch {
         return NSFetchRequest<Branch>(entityName: "Branch")
     }
 
-    @NSManaged public var idNumber: Int64
     @NSManaged public var address: String?
+    @NSManaged public var idNumber: Int64
     @NSManaged public var bank: Bank?
 
 }

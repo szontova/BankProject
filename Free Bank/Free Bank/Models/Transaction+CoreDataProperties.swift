@@ -2,7 +2,7 @@
 //  Transaction+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 2/23/21.
+//  Created by Пользователь on 23.02.21.
 //
 //
 
@@ -16,11 +16,11 @@ extension Transaction {
         return NSFetchRequest<Transaction>(entityName: "Transaction")
     }
 
-    @NSManaged public var idNumber: Int64
-    @NSManaged public var sender: String?
-    @NSManaged public var receiver: String?
     @NSManaged public var amount: Int64
     @NSManaged public var date: Date?
+    @NSManaged public var idNumber: Int64
+    @NSManaged public var receiver: String?
+    @NSManaged public var sender: String?
     @NSManaged public var accounts: NSSet?
 
 }

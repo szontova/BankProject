@@ -7,6 +7,9 @@
 
 import Foundation
 import UIKit
+import CoreData
+
+private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 extension UIViewController{
     
@@ -26,6 +29,17 @@ extension UIViewController{
             }
         }
         
+        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
+        individRequest.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                showAlertError( message: "Данный логин занят другим пользователем")
+                return false
+            }
+        } catch {
+            print("Error in check login")
+        }
         return true
     }
     

@@ -2,7 +2,7 @@
 //  Organization+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 2/23/21.
+//  Created by Пользователь on 23.02.21.
 //
 //
 
@@ -16,13 +16,13 @@ extension Organization {
         return NSFetchRequest<Organization>(entityName: "Organization")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var prn: String?
-    @NSManaged public var password: String?
     @NSManaged public var email: String?
+    @NSManaged public var name: String?
+    @NSManaged public var password: String?
+    @NSManaged public var prn: String?
     @NSManaged public var accounts: NSSet?
-    @NSManaged public var staff: NSSet?
     @NSManaged public var credits: NSSet?
+    @NSManaged public var staff: NSSet?
 
 }
 
@@ -43,23 +43,6 @@ extension Organization {
 
 }
 
-// MARK: Generated accessors for staff
-extension Organization {
-
-    @objc(addStaffObject:)
-    @NSManaged public func addToStaff(_ value: Individual)
-
-    @objc(removeStaffObject:)
-    @NSManaged public func removeFromStaff(_ value: Individual)
-
-    @objc(addStaff:)
-    @NSManaged public func addToStaff(_ values: NSSet)
-
-    @objc(removeStaff:)
-    @NSManaged public func removeFromStaff(_ values: NSSet)
-
-}
-
 // MARK: Generated accessors for credits
 extension Organization {
 
@@ -74,6 +57,23 @@ extension Organization {
 
     @objc(removeCredits:)
     @NSManaged public func removeFromCredits(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for staff
+extension Organization {
+
+    @objc(addStaffObject:)
+    @NSManaged public func addToStaff(_ value: Individual)
+
+    @objc(removeStaffObject:)
+    @NSManaged public func removeFromStaff(_ value: Individual)
+
+    @objc(addStaff:)
+    @NSManaged public func addToStaff(_ values: NSSet)
+
+    @objc(removeStaff:)
+    @NSManaged public func removeFromStaff(_ values: NSSet)
 
 }
 

@@ -112,8 +112,10 @@ class SignInViewController: UIViewController {
             switch status {
             case 0:
                 if findIndivididual(by: login) {print("we find individ")}
+                else {showAlertError(message: "Пользователь не найден.")}
             case 1:
                 if findOrganization(by: login) {print("we find organization")}
+                else {showAlertError(message: "Пользователь не найден.")}
             default: break
             }
         } else {

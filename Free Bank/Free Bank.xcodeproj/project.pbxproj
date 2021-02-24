@@ -13,6 +13,7 @@
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
 		593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593AE04E25E692FF00DEB157 /* Home.storyboard */; };
+		593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE05525E6A00200DEB157 /* HomeTabBarController.swift */; };
 		596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A698025DE7FEE0068099E /* CollectionViewCell.swift */; };
 		596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596A698125DE7FEE0068099E /* CollectionViewCell.xib */; };
 		597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A625C80FA40051E84A /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		593AE04E25E692FF00DEB157 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		593AE05525E6A00200DEB157 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		596A698025DE7FEE0068099E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		596A698125DE7FEE0068099E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		597D66A325C80FA40051E84A /* Free Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				593AE04E25E692FF00DEB157 /* Home.storyboard */,
+				593AE05525E6A00200DEB157 /* HomeTabBarController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				5996B4AE25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift in Sources */,
 				5996B4AA25E54C3A00FB0BDB /* Account+CoreDataProperties.swift in Sources */,
 				5996B4A225E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift in Sources */,
+				593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */,
 				5996B4AC25E54C3A00FB0BDB /* Bank+CoreDataProperties.swift in Sources */,
 				5996B4A125E54C3A00FB0BDB /* Transaction+CoreDataClass.swift in Sources */,
 				59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */,

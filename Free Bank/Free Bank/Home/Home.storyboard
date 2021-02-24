@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-645" y="763"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar Controller-->
         <scene sceneID="cyv-13-P47">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="N03-CN-J2D" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="N03-CN-J2D" customClass="HomeTabBarController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3H-In-mUc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -83,6 +83,13 @@ class SignInViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toHomeSegue" else { return }
+        guard let destinationTBC = segue.destination as? HomeTabBarController else { return }
+        destinationTBC.setLogin(loginTextField.text!)
+        destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
+    }
+    
 //MARK: - Our methods
     
     
@@ -105,7 +112,7 @@ class SignInViewController: UIViewController {
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        performSegue(withIdentifier: "toHomeSegue", sender: nil)
+      
         
         print("Sign In:", terminator: " ")
         if checkSignInDatas(status, login, password) {
@@ -120,8 +127,11 @@ class SignInViewController: UIViewController {
                     showAlertError(message: "Пользователь не найден.")
                 }
             case 1:
-                if findOrganization(by: login) {print("we find organization")}
-                else {showAlertError(message: "Пользователь не найден.")}
+                if findOrganization(by: login) {
+                    print("we find organization")}
+                else {
+                    showAlertError(message: "Пользователь не найден.")
+                }
             default: break
             }
         } else {

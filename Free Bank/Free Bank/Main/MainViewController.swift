@@ -27,6 +27,10 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         
         startCollectionViewTimer()
+        
+        createBank()
+        createTemplateIndividuals()
+        createTemplateOrganizations()
     }
     
     func startCollectionViewTimer() {

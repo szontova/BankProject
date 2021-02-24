@@ -43,6 +43,7 @@
 		59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
+		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataFunctions.swift; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEntities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				592AE50A25D3D45D000C99E5 /* Alerts.swift */,
 				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
 				59298A5D25E3EDD3007F0622 /* CollectionView.swift */,
+				59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				5996B4B025E54C3A00FB0BDB /* Card+CoreDataProperties.swift in Sources */,
 				5996B4A425E54C3A00FB0BDB /* Organization+CoreDataProperties.swift in Sources */,
 				596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */,
+				59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
 				59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */,
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,

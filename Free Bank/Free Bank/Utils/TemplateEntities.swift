@@ -16,51 +16,59 @@ extension UIViewController {
     func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String) {
         
         let newIndivid = Individual(context: context)
+        let newAccount = Account(context: context)
         
         newIndivid.fullName = name
         newIndivid.email = email
         newIndivid.login = login
         newIndivid.password = password
-        
-        //add account
-        
+       
+        newAccount.idNumber = generationIdAccount("S")
+        newIndivid.addToAccounts(newAccount)
+     
         do {
             context.insert(newIndivid)
+            context.insert(newAccount)
             try context.save()
+        } catch {
+            print("addIndividal: error in add individual")
         }
-        catch { print("SignUpVC: Error in add individual") }
+        
     }
     
     func addOrganization ( _ name: String, _ email: String, _ login: String, _ password: String) {
         
         let newOrganization = Organization(context: context)
+        let newAccount = Account(context: context)
         
         newOrganization.name = name
         newOrganization.email = email
         newOrganization.prn = login
         newOrganization.password = password
         
-        //add account
+        newAccount.idNumber = generationIdAccount("S")
+        newOrganization.addToAccounts(newAccount)
         
         do {
             context.insert(newOrganization)
+            context.insert(newAccount)
             try context.save()
         }
-        catch { print("SignUpVC: Error in add organization") }
+        catch { print("addOrganization: error in add organization") }
     }
     
-    func generationAccount (_ category: String) -> String {
+    func generationIdAccount (_ category: String) -> String {
         var result: String = ""
         
         let request = Account.fetchRequest() as NSFetchRequest<Account>
-        print("Im here")
-        let predicate = NSPredicate(format: "idNumber LIKE %@",  "????????????????"+category+"???????????")
+        let predicate = NSPredicate(format: "idNumber LIKE %@",  "????????????????" + category + "???????????")
         request.predicate = predicate
         do{
             
-            let items = try context.fetch(request)
+            var items = try context.fetch(request)
+            items.sort(by: {str1,str2 in return str1.idNumber! < str2.idNumber!})
             if (items.count == 0){
-                result = "BY00FREE000000FB"+category+"00000000000"
+                result = "BY00FREE000000FB" + category + "00000000000"
                 return result
             }
             else{
@@ -69,7 +77,7 @@ extension UIViewController {
                 return result
             }
         } catch{
-            print("SignUpVC: Error in create accounts")
+            print("generationAccount: error in create accounts")
         }
         
         return result
@@ -80,11 +88,23 @@ extension UIViewController {
         do {
             let items = try context.fetch(request)
             for i in 0..<items.count {
-                print(items[i].login ?? "Nothing")
+                print(items[i].string())
             }
             
         }
-        catch { print("SignUpVC: Error in print people") }
+        catch { print("printAllIndividual: error in print people") }
+    }
+    
+    func printAllAccounts(){
+        let request = Account.fetchRequest() as NSFetchRequest<Account>
+        do {
+            let items = try context.fetch(request)
+            for i in 0..<items.count {
+                print(items[i].string())
+            }
+            
+        }
+        catch { print("printAllAccounts: error in print accounts") }
     }
     
     func printAllOrganization(){
@@ -96,7 +116,7 @@ extension UIViewController {
             }
             
         }
-        catch { print("SignUpVC: Error in print people") }
+        catch { print("printAllOrganization: error in print people") }
     }
     
     
@@ -115,9 +135,11 @@ extension UIViewController {
                 context.insert(ourBank)
                 context.insert(bankAccount)
                 try context.save()
+            } else {
+                print("createBank: bank is here")
             }
         } catch {
-            print("createBank: Error in creating bank")
+            print("createBank: error in creating bank")
         }
     }
    
@@ -127,14 +149,18 @@ extension UIViewController {
         let tempLogins = ["lerachubakova","shzontova","ilchekun"]
         let tempEmails = ["valeri_1605@mail.ru", "shzontova@gmail.com", "ilchekun@bsuir.by"]
         let tempPassword = "Qwerty1234"
-        
+
         if findIndivididual(by: tempLogins[0]) {
-            print("template people are here")
+            print("createTemplateIndividuals: template people are here")
+//            for i in 0..<tempLogins.count {
+//                deleteIndividual(by: tempLogins[i])
+//            }
         } else {
             for i in 0..<tempLogins.count {
             addIndividal(tempNames[i], tempEmails[i], tempLogins[i], tempPassword)
             }
         }
+
                 
     }
     
@@ -152,13 +178,50 @@ extension UIViewController {
                 context.delete(items[i])
                 try context.save()
             }
+            print("deleteIndividual: \(login) deleted")
         } catch {
             print("deleteIndividual: Error in deleting")
         }
     }
     
+    func deleteAccount(by idNumber: String){
+        let request = Account.fetchRequest() as NSFetchRequest<Account>
+        request.predicate = NSPredicate(format: "idNumber == %@", idNumber)
+        do {
+            let items = try context.fetch(request)
+            if items.count == 0 {
+                print("deleteAccount: nithing to delete")
+                return
+            }
+            
+            for i in 0..<items.count {
+                context.delete(items[i])
+                try context.save()
+            }
+            print("deleteAccount: \(idNumber) deleted")
+        } catch {
+            print("deleteAccount: Error in deleting")
+        }
+    }
+    
     func createTemplateOrganizations (){
         
+        let tempNames = ["ЕАС Профессионал", "ГазПром"]
+        let tempPRNs = ["139567099","333287012"]
+        let tempEmails = ["prof@mail.ru", "gazprom@gmail.com"]
+        let tempPassword = "Qwerty1234"
+
+        if findOrganization(by: tempPRNs[0]) {
+            print("createTemplateOrganizations: template organization are here")
+//            for i in 0..<tempPRNs.count {
+//                deleteIndividual(by: tempLogins[i])
+//            }
+        } else {
+            for i in 0..<tempPRNs.count {
+            addOrganization(tempNames[i], tempEmails[i], tempPRNs[i], tempPassword)
+            }
+        }
+                
     }
     
 }
@@ -178,6 +241,26 @@ extension Bank {
     }
 }
 
+extension Individual {
+    
+    func string() -> String{
+        
+        let null = "Nothing"
+        var result = "Login: "
+        result += self.login ?? null
+        result += "\nAccounts: \n\t"
+        if let accs = self.accounts?.allObjects {
+            for acc in accs {
+                if let h = acc as? Account {
+                   result += h.string()
+                }
+            }
+        }
+        return result
+        
+    }
+}
+
 extension Account{
     
     func string() -> String{
@@ -185,6 +268,12 @@ extension Account{
         var result =  "id: \(self.idNumber ?? null), balance: \(self.balance / 100)р."
         if let bank = self.bank {
             result += " bank: \(bank.name ?? null)"
+        }
+        if let owner = self.owner {
+            result += " owner: \(owner.login ?? null)"
+        }
+        if let company = self.company {
+            result += " company: \(company.name ?? null)"
         }
         return result
     }

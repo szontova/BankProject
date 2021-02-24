@@ -12,6 +12,7 @@
 		59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59298A5D25E3EDD3007F0622 /* CollectionView.swift */; };
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
+		593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593AE04E25E692FF00DEB157 /* Home.storyboard */; };
 		596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A698025DE7FEE0068099E /* CollectionViewCell.swift */; };
 		596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596A698125DE7FEE0068099E /* CollectionViewCell.xib */; };
 		597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A625C80FA40051E84A /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		59298A5D25E3EDD3007F0622 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		593AE04E25E692FF00DEB157 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		596A698025DE7FEE0068099E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		596A698125DE7FEE0068099E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		597D66A325C80FA40051E84A /* Free Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		593AE04D25E6909700DEB157 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				593AE04E25E692FF00DEB157 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		596A697E25DE70F90068099E /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 				59E5DAB525CD90E700354F4B /* Main */,
 				59E5DAB325CD901700354F4B /* SignIn */,
 				59E5DAB425CD906C00354F4B /* SignUp */,
+				593AE04D25E6909700DEB157 /* Home */,
 				59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */,
 			);
 			path = "Free Bank";
@@ -288,6 +299,7 @@
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
 				597D66AE25C80FA40051E84A /* Main.storyboard in Resources */,
 				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
+				593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

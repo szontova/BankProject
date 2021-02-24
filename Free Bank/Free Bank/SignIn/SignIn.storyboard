@@ -225,6 +225,7 @@
                         <outlet property="passwordTextField" destination="Li9-1U-5LS" id="Bbk-pC-5UZ"/>
                         <outlet property="statusSegmentedControl" destination="k0s-UI-qsp" id="WsK-YX-w98"/>
                         <segue destination="sDX-Pu-kTN" kind="show" identifier="toSignUpSegue" id="gMd-uj-Cis"/>
+                        <segue destination="Zwc-qk-v56" kind="show" identifier="toHomeSegue" id="ulp-af-Dso"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtG-Fb-QcU" sceneMemberID="firstResponder"/>
@@ -241,6 +242,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCs-QC-33t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="551" y="86"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="xdz-Qy-DlL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="Zwc-qk-v56" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="A4D-g4-huN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7f-8V-NCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="190"/>
         </scene>
     </scenes>
     <resources>

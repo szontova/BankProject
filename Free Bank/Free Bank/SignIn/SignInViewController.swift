@@ -105,14 +105,20 @@ class SignInViewController: UIViewController {
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
+        performSegue(withIdentifier: "toHomeSegue", sender: nil)
         
-        print("Sign In", terminator: " ")
+        print("Sign In:", terminator: " ")
         if checkSignInDatas(status, login, password) {
             print("datas right")
             switch status {
             case 0:
-                if findIndivididual(by: login) {print("we find individ")}
-                else {showAlertError(message: "Пользователь не найден.")}
+                if findIndivididual(by: login) {
+                    //print("we find individ")
+                    performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                }
+                else {
+                    showAlertError(message: "Пользователь не найден.")
+                }
             case 1:
                 if findOrganization(by: login) {print("we find organization")}
                 else {showAlertError(message: "Пользователь не найден.")}

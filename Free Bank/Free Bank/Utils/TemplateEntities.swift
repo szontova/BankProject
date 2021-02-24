@@ -97,7 +97,39 @@ extension UIViewController {
     }
    
     func createTemplateIndividuals (){
+ 
+        let tempNames = ["Чубакова Валерия Вадимовна", "Зонтова Александра Юрьевна", "Чекун Илья Леонидович"]
+        let tempLogins = ["lerachubakova","shzontova","ilchekun"]
+        let tempEmails = ["valeri_1605@mail.ru", "shzontova@gmail.com", "ilchekun@bsuir.by"]
+        let tempPassword = "Qwerty1234"
         
+        if findIndivididual(by: tempLogins[0]) {
+            print("template people are here")
+        } else {
+            for i in 0..<tempLogins.count {
+            addIndividal(tempNames[i], tempEmails[i], tempLogins[i], tempPassword)
+            }
+        }
+                
+    }
+    
+    func deleteIndividual(by login: String){
+        let request = Individual.fetchRequest() as NSFetchRequest<Individual>
+        request.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(request)
+            if items.count == 0 {
+                print("deleteIndividual: nobody deleted")
+                return
+            }
+            
+            for i in 0..<items.count {
+                context.delete(items[i])
+                try context.save()
+            }
+        } catch {
+            print("deleteIndividual: Error in deleting")
+        }
     }
     
     func createTemplateOrganizations (){

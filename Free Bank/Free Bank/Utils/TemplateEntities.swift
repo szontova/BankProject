@@ -13,6 +13,68 @@ private let context: NSManagedObjectContext = (UIApplication.shared.delegate as!
 
 extension UIViewController {
     
+    func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String) {
+        
+        let newIndivid = Individual(context: context)
+        
+        newIndivid.fullName = name
+        newIndivid.email = email
+        newIndivid.login = login
+        newIndivid.password = password
+        
+        //add account
+        
+        do {
+            context.insert(newIndivid)
+            try context.save()
+        }
+        catch { print("SignUpVC: Error in add individual") }
+    }
+    
+    func addOrganization ( _ name: String, _ email: String, _ login: String, _ password: String) {
+        
+        let newOrganization = Organization(context: context)
+        
+        newOrganization.name = name
+        newOrganization.email = email
+        newOrganization.prn = login
+        newOrganization.password = password
+        
+        //add account
+        
+        do {
+            context.insert(newOrganization)
+            try context.save()
+        }
+        catch { print("SignUpVC: Error in add organization") }
+    }
+    
+    
+    func printAllIndividual(){
+        let request = Individual.fetchRequest() as NSFetchRequest<Individual>
+        do {
+            let items = try context.fetch(request)
+            for i in 0..<items.count {
+                print(items[i].login ?? "Nothing")
+            }
+            
+        }
+        catch { print("SignUpVC: Error in print people") }
+    }
+    
+    func printAllOrganization(){
+        let request = Organization.fetchRequest() as NSFetchRequest<Organization>
+        do {
+            let items = try context.fetch(request)
+            for i in 0..<items.count {
+                print(items[i].name ?? "Nothing")
+            }
+            
+        }
+        catch { print("SignUpVC: Error in print people") }
+    }
+    
+    
     func createBank (){
         let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
         do {

@@ -49,6 +49,31 @@ extension UIViewController {
         catch { print("SignUpVC: Error in add organization") }
     }
     
+    func generationAccount (_ category: String) -> String {
+        var result: String = ""
+        
+        let request = Account.fetchRequest() as NSFetchRequest<Account>
+        print("Im here")
+        let predicate = NSPredicate(format: "idNumber LIKE %@",  "????????????????"+category+"???????????")
+        request.predicate = predicate
+        do{
+            
+            let items = try context.fetch(request)
+            if (items.count == 0){
+                result = "BY00FREE000000FB"+category+"00000000000"
+                return result
+            }
+            else{
+                let lastpart = (Int(items.last!.idNumber?.suffix(11) ?? "0") ?? 0) + 1
+                result = items.last!.idNumber!.prefix(items.last!.idNumber!.count - String(lastpart).count) + String(lastpart)
+                return result
+            }
+        } catch{
+            print("SignUpVC: Error in create accounts")
+        }
+        
+        return result
+    }
     
     func printAllIndividual(){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>

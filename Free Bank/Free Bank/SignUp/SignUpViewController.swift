@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 class SignUpViewController: UIViewController {
 
@@ -23,10 +22,9 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
-    private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         printAllIndividual()
         printAllOrganization()
     }
@@ -36,7 +34,6 @@ class SignUpViewController: UIViewController {
     }
     
        
-    
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -64,12 +61,11 @@ class SignUpViewController: UIViewController {
        
         print("Sign Up", terminator: " ")
         if checkSignUpDatas(status, name, email, login, password, repeatPassword) {
-            //проверка логина
             print("SignUpVC: datas right")
             
             switch status {
             case 0:
-               addIndividal( name, email, login, password)
+                addIndividal( name, email, login, password)
             case 1:
                 addOrganization( name, email, login, password)
             default: break
@@ -77,7 +73,6 @@ class SignUpViewController: UIViewController {
             
         }  else{ print("SignUpVC: datas error") }
         
-        //add company or person to database
     }
     
        

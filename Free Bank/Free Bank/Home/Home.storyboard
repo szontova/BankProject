@@ -57,7 +57,7 @@
                             <constraint firstItem="xN1-qa-l9i" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" id="pgh-Tf-fwI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Платежи" image="arrow.left.arrow.right" catalog="system" id="9OZ-pC-nlJ"/>
+                    <tabBarItem key="tabBarItem" title="Платежи" image="arrow.left.arrow.right.square.fill" catalog="system" id="9OZ-pC-nlJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLV-Lw-AKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,7 +93,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="cyv-13-P47">
             <objects>
-                <tabBarController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="N03-CN-J2D" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="N03-CN-J2D" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3H-In-mUc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -114,7 +114,7 @@
     </scenes>
     <resources>
         <image name="archivebox.fill" catalog="system" width="128" height="106"/>
-        <image name="arrow.left.arrow.right" catalog="system" width="119" height="128"/>
+        <image name="arrow.left.arrow.right.square.fill" catalog="system" width="128" height="114"/>
         <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mainBackground" width="1080" height="1920"/>
         <systemColor name="systemBackgroundColor">

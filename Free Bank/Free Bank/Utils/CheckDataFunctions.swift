@@ -121,6 +121,7 @@ extension UIViewController{
     
     func checkPersonName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
+        let allowSymbols: Set<Character> = ["ё"]
         let words = name.components(separatedBy: [" "])
         if words.count != 3 {
             showAlertError(message: "ФИО должно состоять из трёх слов")
@@ -130,7 +131,7 @@ extension UIViewController{
         for word in words {
           
             for symb in word {
-                if  !allowLetters.contains(symb) {
+                if  !allowLetters.contains(symb) && (!allowSymbols.contains(symb)) {
                     showAlertError( message: "ФИО содержит посторонние символы")
                     return false
                 }
@@ -144,7 +145,7 @@ extension UIViewController{
     func checkOrgName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
         let allowNumbers: ClosedRange<Character> = "0"..."9"
-        let allowSymbols: Set<Character> = [" ", "-"]
+        let allowSymbols: Set<Character> = [" ", "-","ё"]
        
         if name.count > 50 {
             showAlertError( message: "Название компании превышает допустимую длину" )

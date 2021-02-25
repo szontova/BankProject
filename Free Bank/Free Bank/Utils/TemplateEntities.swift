@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import CryptoKit
 
 private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -22,12 +23,12 @@ extension UIViewController {
         newIndivid.fullName = name
         newIndivid.email = email
         newIndivid.login = login
-        newIndivid.password = password
+        newIndivid.password = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
         newIndivid.codeWord = codeWord
        
         newAccount.idNumber = generationIdAccount("S")
         newIndivid.addToAccounts(newAccount)
-     
+    
         do {
             context.insert(newIndivid)
             context.insert(newAccount)

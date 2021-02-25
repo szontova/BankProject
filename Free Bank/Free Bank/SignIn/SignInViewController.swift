@@ -116,11 +116,11 @@ class SignInViewController: UIViewController {
         if checkSignInDatas(status, login, password) {
             switch status {
             case 0:
-                if findIndivididual(by: login) {
+                if validIndividual(login, password) {
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
-                    showAlertError(message: "Пользователь не найден.")
+                    showAlertError(message: "Неверный логин и/или пароль.")
                 }
             case 1:
                 if findOrganization(by: login) {

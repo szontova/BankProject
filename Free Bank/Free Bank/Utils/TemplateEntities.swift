@@ -13,6 +13,7 @@ private let context: NSManagedObjectContext = (UIApplication.shared.delegate as!
 
 extension UIViewController {
     
+    //MARK:- Add entities
     func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
         
         let newIndivid = Individual(context: context)
@@ -84,7 +85,7 @@ extension UIViewController {
         
         return result
     }
-    
+    //MARK:- Print entities
     func printAllIndividual(){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         do {
@@ -114,14 +115,14 @@ extension UIViewController {
         do {
             let items = try context.fetch(request)
             for i in 0..<items.count {
-                print(items[i].name ?? "Nothing")
+                print(items[i].string())
             }
             
         }
         catch { print("printAllOrganization: error in print people") }
     }
     
-    
+    //MARK:- Create entities
     func createBank (){
         let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
         do {
@@ -164,67 +165,6 @@ extension UIViewController {
             }
         }
 
-                
-    }
-    
-    func deleteIndividual(by login: String){
-        let request = Individual.fetchRequest() as NSFetchRequest<Individual>
-        request.predicate = NSPredicate(format: "login == %@", login)
-        do {
-            let items = try context.fetch(request)
-            if items.count == 0 {
-                print("deleteIndividual: nobody deleted")
-                return
-            }
-            
-            for i in 0..<items.count {
-                context.delete(items[i])
-                try context.save()
-            }
-            print("deleteIndividual: \(login) deleted")
-        } catch {
-            print("deleteIndividual: Error in deleting")
-        }
-    }
-    
-    func deleteOrganization(by prn: String){
-        let request = Organization.fetchRequest() as NSFetchRequest<Organization>
-        request.predicate = NSPredicate(format: "prn == %@", prn)
-        do {
-            let items = try context.fetch(request)
-            if items.count == 0 {
-                print("deleteOrganization: nobody deleted")
-                return
-            }
-            
-            for i in 0..<items.count {
-                context.delete(items[i])
-                try context.save()
-            }
-            print("deleteOrganization: \(prn) deleted")
-        } catch {
-            print("deleteOrganization: Error in deleting")
-        }
-    }
-    
-    func deleteAccount(by idNumber: String){
-        let request = Account.fetchRequest() as NSFetchRequest<Account>
-        request.predicate = NSPredicate(format: "idNumber == %@", idNumber)
-        do {
-            let items = try context.fetch(request)
-            if items.count == 0 {
-                print("deleteAccount: nithing to delete")
-                return
-            }
-            
-            for i in 0..<items.count {
-                context.delete(items[i])
-                try context.save()
-            }
-            print("deleteAccount: \(idNumber) deleted")
-        } catch {
-            print("deleteAccount: Error in deleting")
-        }
     }
     
     func createTemplateOrganizations (){
@@ -248,7 +188,69 @@ extension UIViewController {
                 
     }
     
+    //MARK:- Delete entities
+    func deleteIndividual(by login: String){
+        let request = Individual.fetchRequest() as NSFetchRequest<Individual>
+        request.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(request)
+            if items.count == 0 {
+                print("deleteIndividual: nobody deleted")
+                return
+            }
+            
+            for i in 0..<items.count {
+                context.delete(items[i])
+                try context.save()
+            }
+            print("deleteIndividual: \(login) deleted")
+        } catch {
+            print("deleteIndividual: Error in deleting")
+        }
+    }
+
+    func deleteOrganization(by prn: String){
+        let request = Organization.fetchRequest() as NSFetchRequest<Organization>
+        request.predicate = NSPredicate(format: "prn == %@", prn)
+        do {
+            let items = try context.fetch(request)
+            if items.count == 0 {
+                print("deleteOrganization: nobody deleted")
+                return
+            }
+            
+            for i in 0..<items.count {
+                context.delete(items[i])
+                try context.save()
+            }
+            print("deleteOrganization: \(prn) deleted")
+        } catch {
+            print("deleteOrganization: Error in deleting")
+        }
+    }
+
+    func deleteAccount(by idNumber: String){
+        let request = Account.fetchRequest() as NSFetchRequest<Account>
+        request.predicate = NSPredicate(format: "idNumber == %@", idNumber)
+        do {
+            let items = try context.fetch(request)
+            if items.count == 0 {
+                print("deleteAccount: nithing to delete")
+                return
+            }
+            
+            for i in 0..<items.count {
+                context.delete(items[i])
+                try context.save()
+            }
+            print("deleteAccount: \(idNumber) deleted")
+        } catch {
+            print("deleteAccount: Error in deleting")
+        }
+    }
 }
+
+//MARK:- Entities extensions
 
 extension Bank {
     
@@ -272,6 +274,29 @@ extension Individual {
         let null = "Nothing"
         var result = "Login: "
         result += self.login ?? null
+        result += "\nPassword: " + (self.password ?? null)
+        result += "\nCodeWord: " + (self.codeWord ?? null)
+        result += "\nAccounts: \n\t"
+        if let accs = self.accounts?.allObjects {
+            for acc in accs {
+                if let h = acc as? Account {
+                   result += h.string()
+                }
+            }
+        }
+        return result
+        
+    }
+}
+
+extension Organization {
+    
+    func string() -> String{
+        
+        let null = "Nothing"
+        var result = "PRN: "
+        result += self.prn ?? null
+        result += "\nName: " + (self.name ?? null)
         result += "\nPassword: " + (self.password ?? null)
         result += "\nCodeWord: " + (self.codeWord ?? null)
         result += "\nAccounts: \n\t"

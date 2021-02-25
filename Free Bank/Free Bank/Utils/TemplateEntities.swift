@@ -47,7 +47,7 @@ extension UIViewController {
         newOrganization.name = name
         newOrganization.email = email
         newOrganization.prn = login
-        newOrganization.password = password
+        newOrganization.password = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
         newOrganization.codeWord = codeWord
         
         newAccount.idNumber = generationIdAccount("S")

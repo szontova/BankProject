@@ -24,6 +24,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         //print("ViewDidLoad")
         super.viewDidLoad()
+        printAllOrganization()
     }
     
     override func loadView() {
@@ -123,11 +124,11 @@ class SignInViewController: UIViewController {
                     showAlertError(message: "Неверный логин и/или пароль.")
                 }
             case 1:
-                if findOrganization(by: login) {
+                if validOrganization(login, password) {
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
-                    showAlertError(message: "Пользователь не найден.")
+                    showAlertError(message: "Неверный логин и/или пароль.")
                 }
             default: break
             }

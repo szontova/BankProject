@@ -65,6 +65,7 @@
                                                     <rect key="frame" x="0.0" y="10" width="91" height="55"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="91" id="PMS-A8-3EX"/>
+                                                        <constraint firstAttribute="height" constant="55" id="jKe-1H-u6j"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-nJ-pyM">
@@ -88,11 +89,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="75" id="IQ1-d6-CML"/>
-                                                <constraint firstAttribute="bottom" secondItem="Epj-tH-0Oj" secondAttribute="bottom" constant="10" id="t6H-kh-u1j"/>
-                                                <constraint firstItem="Epj-tH-0Oj" firstAttribute="top" secondItem="sYg-sl-Lhk" secondAttribute="top" constant="10" id="zUk-9B-que"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

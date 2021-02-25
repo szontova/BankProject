@@ -114,10 +114,10 @@
 		3148234B25D6CED1008288FC /* Static Pages */ = {
 			isa = PBXGroup;
 			children = (
-				59DFC2AD25E783E7000EDCF9 /* Contacts */,
-				59DFC2A225E77D17000EDCF9 /* BankInfo */,
 				596A697E25DE70F90068099E /* CollectionView */,
 				3148234C25D6CF79008288FC /* Exchange Rate */,
+				59DFC2AD25E783E7000EDCF9 /* Contacts */,
+				59DFC2A225E77D17000EDCF9 /* BankInfo */,
 			);
 			path = "Static Pages";
 			sourceTree = "<group>";

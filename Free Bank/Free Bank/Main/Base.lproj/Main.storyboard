@@ -145,6 +145,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="moweToBankInfoButton:" destination="r4C-qd-pcf" eventType="touchUpInside" id="yDm-Bq-ryD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -239,11 +242,12 @@
                         <outlet property="viewFofCollectionView" destination="dm5-dT-r3B" id="leo-RT-ggw"/>
                         <segue destination="OFC-bA-uQ2" kind="show" identifier="toSignInSegue" id="FF8-vW-pjj"/>
                         <segue destination="iC1-DX-2Y7" kind="show" identifier="toExchangeRateSegue" id="LV9-BT-0Ak"/>
+                        <segue destination="mfU-QW-KrP" kind="show" identifier="toBankInfoSegue" id="UI6-J4-Nc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Vx-5w-9Q8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-777" y="-21"/>
+            <point key="canvasLocation" x="-779" y="-22"/>
         </scene>
         <!--SignIn-->
         <scene sceneID="aRs-w4-Zm9">
@@ -263,7 +267,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Za6-xH-5PZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-779" y="382"/>
+            <point key="canvasLocation" x="-998" y="390"/>
+        </scene>
+        <!--BankInfo-->
+        <scene sceneID="ias-kb-lW8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BankInfo" id="mfU-QW-KrP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="INH-Qv-PDx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2HR-u4-Jfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="390"/>
         </scene>
     </scenes>
     <resources>

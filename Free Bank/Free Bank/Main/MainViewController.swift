@@ -45,14 +45,24 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "toExchangeRateSegue", sender: nil)
     }
     
-    @IBAction func unwindToMainVCFromExchangeRateTVC(segue: UIStoryboardSegue){
-        guard segue.identifier == "unwindToMainFromExRateSegue" else {return}
-        guard let _ = segue.destination as? ExchangeRateTableViewController else {return}
+    @IBAction func moweToBankInfoButton(_ sender: UIButton) {
+        print("")
+        performSegue(withIdentifier: "toBankInfoSegue", sender: nil)
     }
     
     @IBAction func unwindToMainVCFromSignInVC (segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToMainVCSegue" else {return}
         guard let _ = segue.destination as? SignInViewController else {return}
+    }
+    
+    @IBAction func unwindToMainVCFromExchangeRateTVC(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToMainFromExRateSegue" else {return}
+        guard let _ = segue.destination as? ExchangeRateTableViewController else {return}
+    }
+
+    @IBAction func unwindToMainVCFromBankInfoVC(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToMainFromBankInfoSegue" else {return}
+        guard let _ = segue.destination as? BankInfoViewController else {return}
     }
     
     @IBAction func scrollCollectionViewAutomatically(){

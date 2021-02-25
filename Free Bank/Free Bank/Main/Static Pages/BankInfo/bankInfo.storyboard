@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Bank Info View Controller-->
         <scene sceneID="2vH-5H-BDc">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Cc4-QV-6Rn" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Cc4-QV-6Rn" customClass="BankInfoViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QnS-f3-I8a">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +39,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="MPj-LT-rkm" kind="unwind" identifier="unwindToMainFromBankInfoSegue" unwindAction="unwindToMainVCFromBankInfoVCWithSegue:" id="Dfc-Wr-0lQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CPy-98-Bh1"/>
@@ -54,6 +57,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmJ-Kd-cFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MPj-LT-rkm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="133" y="123"/>
         </scene>

@@ -32,6 +32,7 @@ class MainViewController: UIViewController {
         createTemplateIndividuals()
         createTemplateOrganizations()
         
+        printAllIndividual()
     }
     
     func startCollectionViewTimer() {

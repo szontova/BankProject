@@ -13,7 +13,7 @@ private let context: NSManagedObjectContext = (UIApplication.shared.delegate as!
 
 extension UIViewController {
     
-    func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String) {
+    func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
         
         let newIndivid = Individual(context: context)
         let newAccount = Account(context: context)
@@ -22,6 +22,7 @@ extension UIViewController {
         newIndivid.email = email
         newIndivid.login = login
         newIndivid.password = password
+        newIndivid.codeWord = codeWord
        
         newAccount.idNumber = generationIdAccount("S")
         newIndivid.addToAccounts(newAccount)
@@ -36,7 +37,7 @@ extension UIViewController {
         
     }
     
-    func addOrganization ( _ name: String, _ email: String, _ login: String, _ password: String) {
+    func addOrganization ( _ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
         
         let newOrganization = Organization(context: context)
         let newAccount = Account(context: context)
@@ -45,6 +46,7 @@ extension UIViewController {
         newOrganization.email = email
         newOrganization.prn = login
         newOrganization.password = password
+        newOrganization.codeWord = codeWord
         
         newAccount.idNumber = generationIdAccount("S")
         newOrganization.addToAccounts(newAccount)
@@ -149,6 +151,7 @@ extension UIViewController {
         let tempLogins = ["lerachubakova","shzontova","ilchekun"]
         let tempEmails = ["valeri_1605@mail.ru", "shzontova@gmail.com", "ilchekun@bsuir.by"]
         let tempPassword = "Qwerty1234"
+        let tempCodeWord = "CODEWORD"
 
         if findIndivididual(by: tempLogins[0]) {
 //            print("createTemplateIndividuals: template people are here")
@@ -157,7 +160,7 @@ extension UIViewController {
 //            }
         } else {
             for i in 0..<tempLogins.count {
-            addIndividal(tempNames[i], tempEmails[i], tempLogins[i], tempPassword)
+            addIndividal(tempNames[i], tempEmails[i], tempLogins[i], tempPassword, tempCodeWord)
             }
         }
 
@@ -181,6 +184,26 @@ extension UIViewController {
             print("deleteIndividual: \(login) deleted")
         } catch {
             print("deleteIndividual: Error in deleting")
+        }
+    }
+    
+    func deleteOrganization(by prn: String){
+        let request = Organization.fetchRequest() as NSFetchRequest<Organization>
+        request.predicate = NSPredicate(format: "prn == %@", prn)
+        do {
+            let items = try context.fetch(request)
+            if items.count == 0 {
+                print("deleteOrganization: nobody deleted")
+                return
+            }
+            
+            for i in 0..<items.count {
+                context.delete(items[i])
+                try context.save()
+            }
+            print("deleteOrganization: \(prn) deleted")
+        } catch {
+            print("deleteOrganization: Error in deleting")
         }
     }
     
@@ -210,15 +233,16 @@ extension UIViewController {
         let tempPRNs = ["139567099","333287012"]
         let tempEmails = ["prof@mail.ru", "gazprom@gmail.com"]
         let tempPassword = "Qwerty1234"
+        let tempCodeWord = "CODEWORD"
 
         if findOrganization(by: tempPRNs[0]) {
 //            print("createTemplateOrganizations: template organization are here")
 //            for i in 0..<tempPRNs.count {
-//                deleteIndividual(by: tempLogins[i])
+//                deleteOrganization(by: tempPRNs[i])
 //            }
         } else {
             for i in 0..<tempPRNs.count {
-            addOrganization(tempNames[i], tempEmails[i], tempPRNs[i], tempPassword)
+            addOrganization(tempNames[i], tempEmails[i], tempPRNs[i], tempPassword, tempCodeWord)
             }
         }
                 
@@ -248,6 +272,8 @@ extension Individual {
         let null = "Nothing"
         var result = "Login: "
         result += self.login ?? null
+        result += "\nPassword: " + (self.password ?? null)
+        result += "\nCodeWord: " + (self.codeWord ?? null)
         result += "\nAccounts: \n\t"
         if let accs = self.accounts?.allObjects {
             for acc in accs {

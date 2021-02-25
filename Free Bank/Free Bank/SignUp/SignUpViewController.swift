@@ -56,16 +56,17 @@ class SignUpViewController: UIViewController {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         let repeatPassword = repeatPasswordTextField.text ?? ""
-       
+        let codeWord = "TEMP"
+        
         print("Sign Up", terminator: " ")
         if checkSignUpDatas(status, name, email, login, password, repeatPassword) {
             print("SignUpVC: datas right")
             
             switch status {
             case 0:
-                addIndividal( name, email, login, password)
+                addIndividal( name, email, login, password, codeWord)
             case 1:
-                addOrganization( name, email, login, password)
+                addOrganization( name, email, login, password, codeWord)
             default: break
             }
             

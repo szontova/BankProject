@@ -43,6 +43,7 @@
 		599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599E61DC25CAF51500DF5A38 /* MainViewController.swift */; };
 		59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */; };
 		59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */; };
+		59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
@@ -87,6 +88,7 @@
 		599E61DC25CAF51500DF5A38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Free Bank.xcdatamodel"; sourceTree = "<group>"; };
 		59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataFunctions.swift; sourceTree = "<group>"; };
+		59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bankInfo.storyboard; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEntities.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		3148234B25D6CED1008288FC /* Static Pages */ = {
 			isa = PBXGroup;
 			children = (
+				59DFC2A225E77D17000EDCF9 /* BankInfo */,
 				596A697E25DE70F90068099E /* CollectionView */,
 				3148234C25D6CF79008288FC /* Exchange Rate */,
 			);
@@ -210,6 +213,14 @@
 			path = "Free Bank";
 			sourceTree = "<group>";
 		};
+		59DFC2A225E77D17000EDCF9 /* BankInfo */ = {
+			isa = PBXGroup;
+			children = (
+				59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */,
+			);
+			path = BankInfo;
+			sourceTree = "<group>";
+		};
 		59E5DAB325CD901700354F4B /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */,
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
 				596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */,
 				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,

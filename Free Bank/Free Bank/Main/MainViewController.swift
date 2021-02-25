@@ -45,7 +45,11 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "toExchangeRateSegue", sender: nil)
     }
     
-    @IBAction func moweToBankInfoButton(_ sender: UIButton) {
+    @IBAction func moveToContactsButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toContactsSegue", sender: nil)
+    }
+    
+    @IBAction func moveToBankInfoButton(_ sender: UIButton) {
         print("")
         performSegue(withIdentifier: "toBankInfoSegue", sender: nil)
     }
@@ -60,6 +64,11 @@ class MainViewController: UIViewController {
         guard let _ = segue.destination as? ExchangeRateTableViewController else {return}
     }
 
+    @IBAction func unwindToMainVCFromContactsVC(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToMainFromContactsSegue" else {return}
+        guard let _ = segue.destination as? ContactsViewController else {return}
+    }
+    
     @IBAction func unwindToMainVCFromBankInfoVC(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToMainFromBankInfoSegue" else {return}
         guard let _ = segue.destination as? BankInfoViewController else {return}

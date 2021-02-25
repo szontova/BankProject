@@ -49,8 +49,8 @@
                         <constraints>
                             <constraint firstItem="pxt-Q4-P8D" firstAttribute="top" secondItem="CPy-98-Bh1" secondAttribute="top" constant="15" id="0mQ-vc-hMF"/>
                             <constraint firstItem="dFK-vN-JSK" firstAttribute="top" secondItem="QnS-f3-I8a" secondAttribute="top" id="C4S-78-vaA"/>
-                            <constraint firstAttribute="bottom" secondItem="dFK-vN-JSK" secondAttribute="bottom" id="Obl-jF-M7o"/>
-                            <constraint firstAttribute="trailing" secondItem="dFK-vN-JSK" secondAttribute="trailing" id="QWa-Hr-eiN"/>
+                            <constraint firstItem="dFK-vN-JSK" firstAttribute="bottom" secondItem="QnS-f3-I8a" secondAttribute="bottom" id="Obl-jF-M7o"/>
+                            <constraint firstItem="dFK-vN-JSK" firstAttribute="trailing" secondItem="QnS-f3-I8a" secondAttribute="trailing" id="QWa-Hr-eiN"/>
                             <constraint firstItem="dFK-vN-JSK" firstAttribute="leading" secondItem="QnS-f3-I8a" secondAttribute="leading" id="UJI-C3-LZM"/>
                             <constraint firstItem="pxt-Q4-P8D" firstAttribute="leading" secondItem="CPy-98-Bh1" secondAttribute="leading" constant="15" id="vLT-mw-v8V"/>
                         </constraints>

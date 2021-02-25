@@ -45,6 +45,8 @@
 		59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */; };
 		59DFC2A425E77E42000EDCF9 /* BankInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2A325E77E42000EDCF9 /* BankInfo.storyboard */; };
 		59DFC2A925E7819C000EDCF9 /* BankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */; };
+		59DFC2AF25E78421000EDCF9 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2AE25E78421000EDCF9 /* ContactsViewController.swift */; };
+		59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2B625E784EC000EDCF9 /* Contacts.storyboard */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
@@ -91,6 +93,8 @@
 		59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataFunctions.swift; sourceTree = "<group>"; };
 		59DFC2A325E77E42000EDCF9 /* BankInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BankInfo.storyboard; sourceTree = "<group>"; };
 		59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoViewController.swift; sourceTree = "<group>"; };
+		59DFC2AE25E78421000EDCF9 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		59DFC2B625E784EC000EDCF9 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEntities.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		3148234B25D6CED1008288FC /* Static Pages */ = {
 			isa = PBXGroup;
 			children = (
+				59DFC2AD25E783E7000EDCF9 /* Contacts */,
 				59DFC2A225E77D17000EDCF9 /* BankInfo */,
 				596A697E25DE70F90068099E /* CollectionView */,
 				3148234C25D6CF79008288FC /* Exchange Rate */,
@@ -174,8 +179,8 @@
 		596A697E25DE70F90068099E /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				596A698025DE7FEE0068099E /* CollectionViewCell.swift */,
 				596A698125DE7FEE0068099E /* CollectionViewCell.xib */,
+				596A698025DE7FEE0068099E /* CollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -222,6 +227,15 @@
 				59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */,
 			);
 			path = BankInfo;
+			sourceTree = "<group>";
+		};
+		59DFC2AD25E783E7000EDCF9 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				59DFC2B625E784EC000EDCF9 /* Contacts.storyboard */,
+				59DFC2AE25E78421000EDCF9 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
 			sourceTree = "<group>";
 		};
 		59E5DAB325CD901700354F4B /* SignIn */ = {
@@ -316,6 +330,7 @@
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
 				597D66AE25C80FA40051E84A /* Main.storyboard in Resources */,
+				59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */,
 				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
 				593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */,
 			);
@@ -351,6 +366,7 @@
 				593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */,
 				5996B4AC25E54C3A00FB0BDB /* Bank+CoreDataProperties.swift in Sources */,
 				5996B4A125E54C3A00FB0BDB /* Transaction+CoreDataClass.swift in Sources */,
+				59DFC2AF25E78421000EDCF9 /* ContactsViewController.swift in Sources */,
 				59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */,
 				5996B4A925E54C3A00FB0BDB /* Account+CoreDataClass.swift in Sources */,
 				59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */,

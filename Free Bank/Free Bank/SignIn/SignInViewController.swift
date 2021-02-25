@@ -113,14 +113,10 @@ class SignInViewController: UIViewController {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
       
-        
-        print("Sign In:", terminator: " ")
         if checkSignInDatas(status, login, password) {
-            print("datas right")
             switch status {
             case 0:
                 if findIndivididual(by: login) {
-                    //print("we find individ")
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
@@ -128,14 +124,15 @@ class SignInViewController: UIViewController {
                 }
             case 1:
                 if findOrganization(by: login) {
-                    print("we find organization")}
+                    performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                }
                 else {
                     showAlertError(message: "Пользователь не найден.")
                 }
             default: break
             }
         } else {
-            print("datas error")
+         //   print("datas error")
         }
         
        
@@ -156,6 +153,11 @@ class SignInViewController: UIViewController {
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
         guard let _ = segue.destination as? SignUpViewController else {return}
+    }
+    
+    @IBAction func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindFomEndToSignInVCSegue" else {return}
+        guard let _ = segue.destination as? EndOfSignUpViewController else {return}
     }
     
 }

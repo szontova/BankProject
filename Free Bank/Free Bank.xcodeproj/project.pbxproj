@@ -47,6 +47,7 @@
 		59DFC2C025E78CDF000EDCF9 /* Individual+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2BC25E78CDF000EDCF9 /* Individual+CoreDataProperties.swift */; };
 		59DFC2C125E78CDF000EDCF9 /* Organization+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2BD25E78CDF000EDCF9 /* Organization+CoreDataClass.swift */; };
 		59DFC2C225E78CDF000EDCF9 /* Organization+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2BE25E78CDF000EDCF9 /* Organization+CoreDataProperties.swift */; };
+		59DFC2D025E7DE62000EDCF9 /* EndOfSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2CF25E7DE62000EDCF9 /* EndOfSignUpViewController.swift */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
@@ -95,6 +96,7 @@
 		59DFC2BC25E78CDF000EDCF9 /* Individual+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Individual+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		59DFC2BD25E78CDF000EDCF9 /* Organization+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+CoreDataClass.swift"; sourceTree = "<group>"; };
 		59DFC2BE25E78CDF000EDCF9 /* Organization+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59DFC2CF25E7DE62000EDCF9 /* EndOfSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfSignUpViewController.swift; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEntities.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */,
 				59385FEF25CC50A9003600D2 /* SignUpViewController.swift */,
+				59DFC2CF25E7DE62000EDCF9 /* EndOfSignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */,
 				59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
+				59DFC2D025E7DE62000EDCF9 /* EndOfSignUpViewController.swift in Sources */,
 				59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */,
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,

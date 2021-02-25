@@ -2,7 +2,7 @@
 //  Individual+CoreDataClass.swift
 //  Free Bank
 //
-//  Created by Пользователь on 23.02.21.
+//  Created by Пользователь on 25.02.21.
 //
 //
 

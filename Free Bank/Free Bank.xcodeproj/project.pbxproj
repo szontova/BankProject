@@ -24,12 +24,8 @@
 		597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597D66B125C80FA50051E84A /* LaunchScreen.storyboard */; };
 		5996B4A125E54C3A00FB0BDB /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B48F25E54C3A00FB0BDB /* Transaction+CoreDataClass.swift */; };
 		5996B4A225E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49025E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift */; };
-		5996B4A325E54C3A00FB0BDB /* Organization+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49125E54C3A00FB0BDB /* Organization+CoreDataClass.swift */; };
-		5996B4A425E54C3A00FB0BDB /* Organization+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49225E54C3A00FB0BDB /* Organization+CoreDataProperties.swift */; };
 		5996B4A525E54C3A00FB0BDB /* Branch+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49325E54C3A00FB0BDB /* Branch+CoreDataClass.swift */; };
 		5996B4A625E54C3A00FB0BDB /* Branch+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49425E54C3A00FB0BDB /* Branch+CoreDataProperties.swift */; };
-		5996B4A725E54C3A00FB0BDB /* Individual+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49525E54C3A00FB0BDB /* Individual+CoreDataClass.swift */; };
-		5996B4A825E54C3A00FB0BDB /* Individual+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49625E54C3A00FB0BDB /* Individual+CoreDataProperties.swift */; };
 		5996B4A925E54C3A00FB0BDB /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49725E54C3A00FB0BDB /* Account+CoreDataClass.swift */; };
 		5996B4AA25E54C3A00FB0BDB /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49825E54C3A00FB0BDB /* Account+CoreDataProperties.swift */; };
 		5996B4AB25E54C3A00FB0BDB /* Bank+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49925E54C3A00FB0BDB /* Bank+CoreDataClass.swift */; };
@@ -47,6 +43,10 @@
 		59DFC2A925E7819C000EDCF9 /* BankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */; };
 		59DFC2AF25E78421000EDCF9 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2AE25E78421000EDCF9 /* ContactsViewController.swift */; };
 		59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2B625E784EC000EDCF9 /* Contacts.storyboard */; };
+		59DFC2BF25E78CDF000EDCF9 /* Individual+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2BB25E78CDF000EDCF9 /* Individual+CoreDataClass.swift */; };
+		59DFC2C025E78CDF000EDCF9 /* Individual+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2BC25E78CDF000EDCF9 /* Individual+CoreDataProperties.swift */; };
+		59DFC2C125E78CDF000EDCF9 /* Organization+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2BD25E78CDF000EDCF9 /* Organization+CoreDataClass.swift */; };
+		59DFC2C225E78CDF000EDCF9 /* Organization+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2BE25E78CDF000EDCF9 /* Organization+CoreDataProperties.swift */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
@@ -72,12 +72,8 @@
 		597D66B425C80FA50051E84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5996B48F25E54C3A00FB0BDB /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5996B49025E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5996B49125E54C3A00FB0BDB /* Organization+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5996B49225E54C3A00FB0BDB /* Organization+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5996B49325E54C3A00FB0BDB /* Branch+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Branch+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5996B49425E54C3A00FB0BDB /* Branch+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Branch+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5996B49525E54C3A00FB0BDB /* Individual+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Individual+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5996B49625E54C3A00FB0BDB /* Individual+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Individual+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5996B49725E54C3A00FB0BDB /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5996B49825E54C3A00FB0BDB /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5996B49925E54C3A00FB0BDB /* Bank+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bank+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -95,6 +91,10 @@
 		59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoViewController.swift; sourceTree = "<group>"; };
 		59DFC2AE25E78421000EDCF9 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		59DFC2B625E784EC000EDCF9 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
+		59DFC2BB25E78CDF000EDCF9 /* Individual+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Individual+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59DFC2BC25E78CDF000EDCF9 /* Individual+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Individual+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59DFC2BD25E78CDF000EDCF9 /* Organization+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59DFC2BE25E78CDF000EDCF9 /* Organization+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEntities.swift; sourceTree = "<group>"; };
@@ -134,14 +134,14 @@
 		318CA72A25E524360066957D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				59DFC2BB25E78CDF000EDCF9 /* Individual+CoreDataClass.swift */,
+				59DFC2BC25E78CDF000EDCF9 /* Individual+CoreDataProperties.swift */,
+				59DFC2BD25E78CDF000EDCF9 /* Organization+CoreDataClass.swift */,
+				59DFC2BE25E78CDF000EDCF9 /* Organization+CoreDataProperties.swift */,
 				5996B48F25E54C3A00FB0BDB /* Transaction+CoreDataClass.swift */,
 				5996B49025E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift */,
-				5996B49125E54C3A00FB0BDB /* Organization+CoreDataClass.swift */,
-				5996B49225E54C3A00FB0BDB /* Organization+CoreDataProperties.swift */,
 				5996B49325E54C3A00FB0BDB /* Branch+CoreDataClass.swift */,
 				5996B49425E54C3A00FB0BDB /* Branch+CoreDataProperties.swift */,
-				5996B49525E54C3A00FB0BDB /* Individual+CoreDataClass.swift */,
-				5996B49625E54C3A00FB0BDB /* Individual+CoreDataProperties.swift */,
 				5996B49725E54C3A00FB0BDB /* Account+CoreDataClass.swift */,
 				5996B49825E54C3A00FB0BDB /* Account+CoreDataProperties.swift */,
 				5996B49925E54C3A00FB0BDB /* Bank+CoreDataClass.swift */,
@@ -344,25 +344,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				5996B4B225E54C3A00FB0BDB /* Credit+CoreDataProperties.swift in Sources */,
-				5996B4A725E54C3A00FB0BDB /* Individual+CoreDataClass.swift in Sources */,
 				5996B4B125E54C3A00FB0BDB /* Credit+CoreDataClass.swift in Sources */,
 				5996B4B025E54C3A00FB0BDB /* Card+CoreDataProperties.swift in Sources */,
-				5996B4A425E54C3A00FB0BDB /* Organization+CoreDataProperties.swift in Sources */,
+				59DFC2C125E78CDF000EDCF9 /* Organization+CoreDataClass.swift in Sources */,
 				596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */,
 				59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
 				59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */,
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,
-				5996B4A825E54C3A00FB0BDB /* Individual+CoreDataProperties.swift in Sources */,
-				5996B4A325E54C3A00FB0BDB /* Organization+CoreDataClass.swift in Sources */,
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,
 				5996B4AF25E54C3A00FB0BDB /* Card+CoreDataClass.swift in Sources */,
 				599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */,
 				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
+				59DFC2C225E78CDF000EDCF9 /* Organization+CoreDataProperties.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
 				5996B4AE25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift in Sources */,
 				5996B4AA25E54C3A00FB0BDB /* Account+CoreDataProperties.swift in Sources */,
 				5996B4A225E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift in Sources */,
+				59DFC2BF25E78CDF000EDCF9 /* Individual+CoreDataClass.swift in Sources */,
 				593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */,
 				5996B4AC25E54C3A00FB0BDB /* Bank+CoreDataProperties.swift in Sources */,
 				5996B4A125E54C3A00FB0BDB /* Transaction+CoreDataClass.swift in Sources */,
@@ -373,6 +372,7 @@
 				59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */,
 				5996B4A525E54C3A00FB0BDB /* Branch+CoreDataClass.swift in Sources */,
 				5996B4A625E54C3A00FB0BDB /* Branch+CoreDataProperties.swift in Sources */,
+				59DFC2C025E78CDF000EDCF9 /* Individual+CoreDataProperties.swift in Sources */,
 				5996B4AD25E54C3A00FB0BDB /* ATM+CoreDataClass.swift in Sources */,
 				59DFC2A925E7819C000EDCF9 /* BankInfoViewController.swift in Sources */,
 				5996B4AB25E54C3A00FB0BDB /* Bank+CoreDataClass.swift in Sources */,

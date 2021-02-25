@@ -13,7 +13,7 @@
         <!--Bank Info View Controller-->
         <scene sceneID="2vH-5H-BDc">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Cc4-QV-6Rn" customClass="BankInfoViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Cc4-QV-6Rn" customClass="BankInfoViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QnS-f3-I8a">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

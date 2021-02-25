@@ -136,7 +136,7 @@ extension UIViewController {
                 context.insert(bankAccount)
                 try context.save()
             } else {
-                print("createBank: bank is here")
+               // print("createBank: bank is here")
             }
         } catch {
             print("createBank: error in creating bank")
@@ -151,7 +151,7 @@ extension UIViewController {
         let tempPassword = "Qwerty1234"
 
         if findIndivididual(by: tempLogins[0]) {
-            print("createTemplateIndividuals: template people are here")
+//            print("createTemplateIndividuals: template people are here")
 //            for i in 0..<tempLogins.count {
 //                deleteIndividual(by: tempLogins[i])
 //            }
@@ -212,7 +212,7 @@ extension UIViewController {
         let tempPassword = "Qwerty1234"
 
         if findOrganization(by: tempPRNs[0]) {
-            print("createTemplateOrganizations: template organization are here")
+//            print("createTemplateOrganizations: template organization are here")
 //            for i in 0..<tempPRNs.count {
 //                deleteIndividual(by: tempLogins[i])
 //            }

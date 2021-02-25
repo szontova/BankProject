@@ -2,7 +2,7 @@
 //  Individual+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Пользователь on 23.02.21.
+//  Created by Пользователь on 25.02.21.
 //
 //
 
@@ -20,6 +20,7 @@ extension Individual {
     @NSManaged public var fullName: String?
     @NSManaged public var login: String?
     @NSManaged public var password: String?
+    @NSManaged public var codeWord: String?
     @NSManaged public var accounts: NSSet?
     @NSManaged public var credits: NSSet?
     @NSManaged public var employer: Organization?

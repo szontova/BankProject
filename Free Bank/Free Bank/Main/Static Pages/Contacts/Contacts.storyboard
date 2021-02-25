@@ -13,7 +13,7 @@
         <!--Contacts View Controller-->
         <scene sceneID="5vc-qm-zik">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Pru-U2-tiu" customClass="ContactsViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Pru-U2-tiu" customClass="ContactsViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNO-2l-lRC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

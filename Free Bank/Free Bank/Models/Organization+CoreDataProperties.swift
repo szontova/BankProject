@@ -2,7 +2,7 @@
 //  Organization+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Пользователь on 23.02.21.
+//  Created by Пользователь on 25.02.21.
 //
 //
 
@@ -20,6 +20,7 @@ extension Organization {
     @NSManaged public var name: String?
     @NSManaged public var password: String?
     @NSManaged public var prn: String?
+    @NSManaged public var codeWord: String?
     @NSManaged public var accounts: NSSet?
     @NSManaged public var credits: NSSet?
     @NSManaged public var staff: NSSet?

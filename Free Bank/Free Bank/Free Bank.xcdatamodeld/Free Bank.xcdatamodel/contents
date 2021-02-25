@@ -48,6 +48,7 @@
         <relationship name="orgBorrower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="credits" inverseEntity="Organization"/>
     </entity>
     <entity name="Individual" representedClassName=".Individual" syncable="YES">
+        <attribute name="codeWord" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="fullName" optional="YES" attributeType="String"/>
         <attribute name="login" optional="YES" attributeType="String"/>
@@ -57,6 +58,7 @@
         <relationship name="employer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="staff" inverseEntity="Organization"/>
     </entity>
     <entity name="Organization" representedClassName=".Organization" syncable="YES">
+        <attribute name="codeWord" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
@@ -80,8 +82,8 @@
         <element name="Branch" positionX="-111.3046875" positionY="-414.84765625" width="128" height="74"/>
         <element name="Card" positionX="-44.88671875" positionY="-245.29296875" width="128" height="89"/>
         <element name="Credit" positionX="-250.7265625" positionY="136.76953125" width="128" height="149"/>
-        <element name="Individual" positionX="-412.75" positionY="22.99609375" width="128" height="134"/>
-        <element name="Organization" positionX="-802.4921875" positionY="-203.65234375" width="128" height="134"/>
+        <element name="Individual" positionX="-412.75" positionY="22.99609375" width="128" height="149"/>
+        <element name="Organization" positionX="-802.4921875" positionY="-203.65234375" width="128" height="149"/>
         <element name="Transaction" positionX="-50.6640625" positionY="-92.1640625" width="128" height="119"/>
     </elements>
 </model>

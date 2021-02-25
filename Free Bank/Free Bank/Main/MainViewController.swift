@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
         createBank()
         createTemplateIndividuals()
         createTemplateOrganizations()
+        
     }
     
     func startCollectionViewTimer() {

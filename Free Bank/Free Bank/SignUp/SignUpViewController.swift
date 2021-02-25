@@ -25,8 +25,6 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        printAllIndividual()
-        printAllOrganization()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

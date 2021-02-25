@@ -283,10 +283,10 @@
             </objects>
             <point key="canvasLocation" x="-709" y="389"/>
         </scene>
-        <!--BankInfo-->
+        <!--bankInfo-->
         <scene sceneID="ias-kb-lW8">
             <objects>
-                <viewControllerPlaceholder storyboardName="BankInfo" id="mfU-QW-KrP" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="bankInfo" id="mfU-QW-KrP" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="INH-Qv-PDx"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HR-u4-Jfc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

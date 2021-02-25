@@ -39,7 +39,7 @@
 		599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599E61DC25CAF51500DF5A38 /* MainViewController.swift */; };
 		59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */; };
 		59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */; };
-		59DFC2A425E77E42000EDCF9 /* BankInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2A325E77E42000EDCF9 /* BankInfo.storyboard */; };
+		59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */; };
 		59DFC2A925E7819C000EDCF9 /* BankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */; };
 		59DFC2AF25E78421000EDCF9 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2AE25E78421000EDCF9 /* ContactsViewController.swift */; };
 		59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2B625E784EC000EDCF9 /* Contacts.storyboard */; };
@@ -88,7 +88,7 @@
 		599E61DC25CAF51500DF5A38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Free Bank.xcdatamodel"; sourceTree = "<group>"; };
 		59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataFunctions.swift; sourceTree = "<group>"; };
-		59DFC2A325E77E42000EDCF9 /* BankInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BankInfo.storyboard; sourceTree = "<group>"; };
+		59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bankInfo.storyboard; sourceTree = "<group>"; };
 		59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoViewController.swift; sourceTree = "<group>"; };
 		59DFC2AE25E78421000EDCF9 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		59DFC2B625E784EC000EDCF9 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		59DFC2A225E77D17000EDCF9 /* BankInfo */ = {
 			isa = PBXGroup;
 			children = (
-				59DFC2A325E77E42000EDCF9 /* BankInfo.storyboard */,
+				59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */,
 				59DFC2A825E7819C000EDCF9 /* BankInfoViewController.swift */,
 			);
 			path = BankInfo;
@@ -326,7 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59DFC2A425E77E42000EDCF9 /* BankInfo.storyboard in Resources */,
+				59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */,
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
 				596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */,
 				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,

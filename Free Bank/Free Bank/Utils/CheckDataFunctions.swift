@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+import CoreData
+import CryptoKit
+
+private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 extension UIViewController{
     
@@ -79,14 +83,80 @@ extension UIViewController{
             return false
         }
         
-        if let _ = Int(unp) { return true }
-        
-        showAlertError( message: "УНП содержит посторонние символы. Проверьте данные.")
+        if let _ = Int(unp) {
+           //
+        } else {
+            showAlertError( message: "УНП содержит посторонние символы. Проверьте данные.")
+            return false
+        }
+        return true
+    }
+    
+    func findIndivididual(by login: String) -> Bool{
+        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
+        individRequest.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                return true
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return false
+    }
+    
+    func validIndividual(_ login: String, _ password: String) -> Bool{
+        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
+        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
+        individRequest.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                if(items[0].password == hashPassword){
+                    return true
+                }
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return false
+    }
+    
+    func findOrganization(by prn: String) -> Bool{
+        let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
+        orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
+        do {
+            let items = try context.fetch(orgRequest)
+            if items.count != 0 {
+            return true
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return false
+    }
+    
+    func validOrganization(_ prn: String, _ password: String) -> Bool{
+        let individRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
+        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
+        individRequest.predicate = NSPredicate(format: "prn == %@", prn)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                if(items[0].password == hashPassword){
+                    return true
+                }
+            }
+        } catch {
+            print("Error in check login")
+        }
         return false
     }
     
     func checkPersonName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
+        let allowSymbols: Set<Character> = ["ё"]
         let words = name.components(separatedBy: [" "])
         if words.count != 3 {
             showAlertError(message: "ФИО должно состоять из трёх слов")
@@ -96,7 +166,7 @@ extension UIViewController{
         for word in words {
           
             for symb in word {
-                if  !allowLetters.contains(symb) {
+                if  !allowLetters.contains(symb) && (!allowSymbols.contains(symb)) {
                     showAlertError( message: "ФИО содержит посторонние символы")
                     return false
                 }
@@ -110,7 +180,7 @@ extension UIViewController{
     func checkOrgName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
         let allowNumbers: ClosedRange<Character> = "0"..."9"
-        let allowSymbols: Set<Character> = [" ", "-"]
+        let allowSymbols: Set<Character> = [" ", "-","ё"]
        
         if name.count > 50 {
             showAlertError( message: "Название компании превышает допустимую длину" )
@@ -172,13 +242,21 @@ extension UIViewController{
             
             if !checkLogin(login: login) { return false }
             
-
+            if findIndivididual(by: login) {
+                showAlertError( message: "Данный логин занят другим пользователем")
+                return false
+            }
+            
         case 1:
             
             if !checkOrgName(name: name) { return false }
             
             if !checkUNP(unp: login) { return false }
             
+            if findOrganization(by: login) {
+                showAlertError( message: "Вы ввели уже существующий УНП")
+                return false
+            }
         default: break
         }
         if !checkEmail(email: email) { return false }

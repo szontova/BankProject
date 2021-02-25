@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -31,7 +32,6 @@ class SignUpViewController: UIViewController {
     }
     
        
-    
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -56,12 +56,16 @@ class SignUpViewController: UIViewController {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         let repeatPassword = repeatPasswordTextField.text ?? ""
-       
-        print("Sign Up", terminator: " ")
-        checkSignUpDatas(status, name, email, login, password, repeatPassword) ? print("datas right") : print("datas error")
-        //add company or person to database
+
+        if checkSignUpDatas(status, name, email, login, password, repeatPassword) {
+            performSegue(withIdentifier: "endRegSegue", sender: nil)
+        }
     }
     
+    @IBAction func unwindToSignUpFromEndSignUp(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindFromEndToSignUpVCSegue" else {return}
+        guard let _ = segue.destination as? EndOfSignUpViewController else {return}
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate{

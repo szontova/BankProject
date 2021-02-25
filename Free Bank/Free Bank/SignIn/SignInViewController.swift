@@ -24,6 +24,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         //print("ViewDidLoad")
         super.viewDidLoad()
+        printAllOrganization()
     }
     
     override func loadView() {
@@ -83,6 +84,13 @@ class SignInViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toHomeSegue" else { return }
+        guard let destinationTBC = segue.destination as? HomeTabBarController else { return }
+        destinationTBC.setLogin(loginTextField.text!)
+        destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
+    }
+    
 //MARK: - Our methods
     
     
@@ -105,9 +113,30 @@ class SignInViewController: UIViewController {
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
+      
+        if checkSignInDatas(status, login, password) {
+            switch status {
+            case 0:
+                if validIndividual(login, password) {
+                    performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                }
+                else {
+                    showAlertError(message: "Неверный логин и/или пароль.")
+                }
+            case 1:
+                if validOrganization(login, password) {
+                    performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                }
+                else {
+                    showAlertError(message: "Неверный логин и/или пароль.")
+                }
+            default: break
+            }
+        } else {
+         //   print("datas error")
+        }
         
-        print("Sign In", terminator: " ")
-        checkSignInDatas(status, login, password) ? print("datas right") : print("datas error")
+       
         //find login or UNP in database and compare passwords
         
     }
@@ -125,6 +154,11 @@ class SignInViewController: UIViewController {
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
         guard let _ = segue.destination as? SignUpViewController else {return}
+    }
+    
+    @IBAction func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindFomEndToSignInVCSegue" else {return}
+        guard let _ = segue.destination as? EndOfSignUpViewController else {return}
     }
     
 }

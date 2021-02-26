@@ -72,7 +72,7 @@
                                                                     <constraint firstAttribute="height" constant="60" id="5HV-XN-iEn"/>
                                                                     <constraint firstAttribute="width" constant="60" id="6qV-5N-k3O"/>
                                                                 </constraints>
-                                                                <state key="normal" image="viber">
+                                                                <state key="normal" image="phone">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -230,7 +230,7 @@
                                                                     <constraint firstAttribute="height" constant="60" id="2lc-1T-bhB"/>
                                                                     <constraint firstAttribute="width" constant="60" id="7J7-Ol-1h0"/>
                                                                 </constraints>
-                                                                <state key="normal" image="viber">
+                                                                <state key="normal" image="phone">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -398,9 +398,9 @@
         <image name="instagram" width="96" height="96"/>
         <image name="linkedin" width="96" height="96"/>
         <image name="mainBackground" width="1080" height="1920"/>
+        <image name="phone" width="87" height="87"/>
         <image name="skype" width="96" height="96"/>
         <image name="telegram" width="96" height="96"/>
-        <image name="viber" width="96" height="96"/>
         <image name="vk" width="96" height="96"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

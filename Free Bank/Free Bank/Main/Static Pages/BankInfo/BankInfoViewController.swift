@@ -12,11 +12,12 @@ import CoreData
 class BankInfoViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var prnLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var shortNumberButton: UIButton!
     @IBOutlet weak var fullNumberButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
-    //prn //account
+
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -51,6 +52,7 @@ class BankInfoViewController: UIViewController {
     func configureLabelsAndButtons(_ freeBank: Bank?){
         if let fb = freeBank {
             nameLabel.text = fb.name
+            prnLabel.text = fb.prn
             addressLabel.text = fb.address
             customStyleButton(shortNumberButton, fb.shortNumber)
             customStyleButton(fullNumberButton, fb.fullNumber)

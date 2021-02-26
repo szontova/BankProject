@@ -55,7 +55,7 @@ extension UIViewController {
         
         alert.addTextField(configurationHandler: {
             (textField) in
-            textField.placeholder = "Введите email"
+            textField.placeholder = "Введите кодовое слово"
             textField.borderStyle = UITextField.BorderStyle.roundedRect
         })
         
@@ -69,17 +69,23 @@ extension UIViewController {
         }
                 
         let okAction = UIAlertAction(title: "Восстановить", style: .default){ _ in
-            let _ = alert.textFields![0].text ?? ""
+            let login = alert.textFields![0].text ?? ""
             let email = alert.textFields![1].text ?? ""
           
-            if self.checkEmail(email: email) {
                 if status == 0 {
-                    //check login in base
-                } else {
-                    //check UNP in base
-                }
-                // compare emails
-                // send message to email
+                    if !self.checkLogin(login: login) { return }
+                    if !self.findIndivididual(by: login) {
+                        self.showAlertError(message: "Пользователь не найден")
+                    }
+                    else{
+                        
+                    }
+                } else if status == 1 {
+                    if !self.findOrganization(by: login) {
+                        self.showAlertError(message: "Организация не найдена")
+                    } else {
+                        
+                    }
             }
             
         }

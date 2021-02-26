@@ -353,7 +353,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="delegate" destination="vx4-RO-IRZ" id="cd3-iL-ccw"/>
+                                            <outlet property="delegate" destination="ZUP-Cv-SzS" id="4ID-Gu-HYw"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -415,7 +415,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Byp-YY-ODN"/>
                     <connections>
-                        <outlet property="codeWordLabel" destination="b5z-IY-SSt" id="hd1-tg-gw4"/>
+                        <outlet property="codeWordTextField" destination="b5z-IY-SSt" id="hd1-tg-gw4"/>
                         <segue destination="eyk-uJ-tV0" kind="unwind" identifier="unwindFomEndToSignInVCSegue" unwindAction="unwindToSignInFromEndRegistationWithSegue:" id="COx-R4-elR"/>
                     </connections>
                 </viewController>

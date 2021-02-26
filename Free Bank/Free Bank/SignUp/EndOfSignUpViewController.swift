@@ -9,7 +9,7 @@ import UIKit
 
 class EndOfSignUpViewController: UIViewController {
 
-    @IBOutlet weak var codeWordLabel: UITextField!
+    @IBOutlet weak var codeWordTextField: UITextField!
     private var status: Int?
     private var name: String?
     private var email: String?
@@ -44,33 +44,47 @@ class EndOfSignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func shownotificationAlert(){
+    let alertError = UIAlertController(title: "", message: "\nРегистрация успешно завершена", preferredStyle: .alert)
+            
+    let attributedString = NSAttributedString(string: "Уведомление", attributes: [
+        NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+        NSAttributedString.Key.foregroundColor : UIColor.black
+    ])
+    alertError.setValue(attributedString, forKey: "attributedTitle")
+        
+    alertError.view.tintColor = UIColor.black
+            
+    let okAction = UIAlertAction(title: "OK", style: .default){_ in
+        self.performSegue(withIdentifier: "unwindFomEndToSignInVCSegue", sender: nil)
+    }
+        
+    alertError.addAction(okAction)
+            
+    present(alertError, animated: true, completion: nil)
+}
+    
 
     @IBAction func EndOgSignUpButton(_ sender: Any) {
-        let codeWord = codeWordLabel.text ?? ""
+        let codeWord = codeWordTextField.text ?? ""
         if codeWord.isEmpty {
             showAlertError(message: "Введите кодовое слово")
-            print("codeword empty")
             return
         } else {
             if let _ = name, let _ = email, let _ = login, let _ = password {
-               // print("\(status) \(name) \(email) \(login) \(password) \(codeWord)")
                 switch status {
                 case 0:
-                    print("add person")
-                    
-                 //   addIndividal(name!, email!, login!, password!, codeWord)
-                performSegue(withIdentifier: "unwindFomEndToSignInVCSegue", sender: nil)
+                    addIndividal(name!, email!, login!, password!, codeWord)
+                    shownotificationAlert()
                 case 1:
-                    print("add org")
-                 //   addOrganization(name!, email!, login!, password!, codeWord)
-                    performSegue(withIdentifier: "unwindFomEndToSignInVCSegue", sender: nil)
+                    addOrganization(name!, email!, login!, password!, codeWord)
+                    shownotificationAlert()
                 default: break
                 }
             }
-           
         }
-        
     }
+    
 }
 
 extension EndOfSignUpViewController: UITextFieldDelegate{

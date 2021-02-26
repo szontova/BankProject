@@ -41,7 +41,7 @@ class BankInfoViewController: UIViewController {
     
     
     func customStyleButton(_ button: UIButton, _ title: String?){
-        
+        button.setTitle(title, for: .normal)
         let attrs : [NSAttributedString.Key: Any] = [ .underlineStyle : 1]
         let attributedString = NSAttributedString(string: title ?? "", attributes: attrs)
         button.setAttributedTitle( attributedString, for: .normal)

@@ -31,6 +31,16 @@ class SignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "endRegSegue" else { return }
+        guard let destinationVC = segue.destination as? EndOfSignUpViewController else { return }
+        destinationVC.setName(nameTextField.text)
+        destinationVC.setEmail(emailTextField.text)
+        destinationVC.setLogin(loginTextField.text)
+        destinationVC.setPassword(passwordTextField.text)
+        destinationVC.setStatus(statusSegmentedControl.selectedSegmentIndex)
+    }
+    
        
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {

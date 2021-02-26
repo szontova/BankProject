@@ -9,21 +9,36 @@ import UIKit
 
 class EndOfSignUpViewController: UIViewController {
 
+    private var status: Int?
+    private var name: String?
+    private var email: String?
+    private var login: String?
+    private var password: String?
+  
+    func setStatus(_ status: Int?){
+        self.status = status
+    }
+    
+    func setName(_ name: String?){
+        self.name = name
+    }
+    
+    func setEmail(_ email: String?){
+        self.email = email
+    }
+    
+    func setLogin(_ login: String?){
+        self.login = login
+    }
+    
+    func setPassword(_ password: String?){
+        self.password = password
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("\(status) \(name) \(email) \(login) \(password)")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

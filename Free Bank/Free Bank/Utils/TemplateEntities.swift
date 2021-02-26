@@ -155,7 +155,7 @@ extension UIViewController {
         let tempPassword = "Qwerty1234"
         let tempCodeWord = "CODEWORD"
 
-        if findIndivididual(by: tempLogins[0]) {
+        if let _ = findIndivididual(by: tempLogins[0]) {
 //            print("createTemplateIndividuals: template people are here")
 //            for i in 0..<tempLogins.count {
 //                deleteIndividual(by: tempLogins[i])
@@ -176,7 +176,7 @@ extension UIViewController {
         let tempPassword = "Qwerty1234"
         let tempCodeWord = "CODEWORD"
 
-        if findOrganization(by: tempPRNs[0]) {
+        if let _ = findOrganization(by: tempPRNs[0]) {
 //            print("createTemplateOrganizations: template organization are here")
 //            for i in 0..<tempPRNs.count {
 //                deleteOrganization(by: tempPRNs[i])

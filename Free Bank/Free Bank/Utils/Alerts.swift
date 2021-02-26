@@ -70,21 +70,21 @@ extension UIViewController {
                 
         let okAction = UIAlertAction(title: "Восстановить", style: .default){ _ in
             let login = alert.textFields![0].text ?? ""
-            let email = alert.textFields![1].text ?? ""
+         //   let email = alert.textFields![1].text ?? ""
           
                 if status == 0 {
                     if !self.checkLogin(login: login) { return }
-                    if !self.findIndivididual(by: login) {
-                        self.showAlertError(message: "Пользователь не найден")
+                    if let _ = self.findIndivididual(by: login) {
+                       
                     }
                     else{
-                        
+                        self.showAlertError(message: "Пользователь не найден")
                     }
                 } else if status == 1 {
-                    if !self.findOrganization(by: login) {
-                        self.showAlertError(message: "Организация не найдена")
+                    if let _ = self.findOrganization(by: login) {
+                       
                     } else {
-                        
+                        self.showAlertError(message: "Организация не найдена")
                     }
             }
             

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pru-U2-tiu">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,11 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Pru-U2-tiu" customClass="ContactsViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNO-2l-lRC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="kd4-de-rjh">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVo-7O-Vbw">
                                 <rect key="frame" x="15" y="59" width="40" height="40"/>
@@ -43,14 +44,342 @@
                                     <segue destination="PGk-6V-8De" kind="unwind" identifier="unwindToMainFromContactsSegue" unwindAction="unwindToMainVCFromContactsVCWithSegue:" id="3Qq-FP-YZQ"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6fI-BI-BFw">
+                                <rect key="frame" x="10" y="224.66666666666663" width="370" height="395"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUJ-EF-Oem">
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="195"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Валерия Чубакова" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-AP-SGW">
+                                                <rect key="frame" x="5" y="5" width="182.66666666666666" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="RJS-Js-vaT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-PC-z51">
+                                                <rect key="frame" x="15" y="30" width="340" height="150"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hfi-md-n4U">
+                                                        <rect key="frame" x="30" y="0.0" width="280" height="75"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecf-nl-43F">
+                                                                <rect key="frame" x="0.0" y="7.3333333333333428" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="5HV-XN-iEn"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="6qV-5N-k3O"/>
+                                                                </constraints>
+                                                                <state key="normal" image="phone">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6I-Kk-n4w">
+                                                                <rect key="frame" x="73.333333333333343" y="7.3333333333333428" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="5h6-IL-Pdt"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="qmr-wI-Hpb"/>
+                                                                </constraints>
+                                                                <state key="normal" image="facebook">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6q-ts-4Ud">
+                                                                <rect key="frame" x="146.66666666666666" y="7.3333333333333428" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="bUL-x1-XYx"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="rVC-fw-A2B"/>
+                                                                </constraints>
+                                                                <state key="normal" image="vk">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3F-b2-4xb">
+                                                                <rect key="frame" x="220" y="7.3333333333333428" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="B0l-sZ-bt4"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="wgo-8c-qME"/>
+                                                                </constraints>
+                                                                <state key="normal" image="instagram">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yGt-Rg-l9N">
+                                                        <rect key="frame" x="60" y="83.000000000000028" width="220" height="67"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw6-YT-vld">
+                                                                <rect key="frame" x="0.0" y="3.3333333333333144" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="VFF-ba-hb7"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="o6i-Oc-emi"/>
+                                                                </constraints>
+                                                                <state key="normal" image="linkedin">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgq-os-yPb">
+                                                                <rect key="frame" x="80" y="3.3333333333333144" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="mPT-g2-vHs"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="pj5-17-w6A"/>
+                                                                </constraints>
+                                                                <state key="normal" image="telegram">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oja-6K-LwB">
+                                                                <rect key="frame" x="160" y="3.3333333333333144" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="1zF-qS-Dku"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="Fhw-nk-fw0"/>
+                                                                </constraints>
+                                                                <state key="normal" image="skype">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Hfi-md-n4U" firstAttribute="leading" relation="lessThanOrEqual" secondItem="RmT-PC-z51" secondAttribute="leading" constant="30" id="EvO-rc-Bra"/>
+                                                    <constraint firstAttribute="height" constant="150" id="m1G-9L-cqZ"/>
+                                                    <constraint firstItem="yGt-Rg-l9N" firstAttribute="leading" relation="lessThanOrEqual" secondItem="RmT-PC-z51" secondAttribute="leading" constant="60" id="xzi-AS-Rit"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="ZCd-AP-SGW" firstAttribute="leading" secondItem="hUJ-EF-Oem" secondAttribute="leading" constant="5" id="Nzv-Vg-lQB"/>
+                                            <constraint firstItem="RmT-PC-z51" firstAttribute="top" secondItem="ZCd-AP-SGW" secondAttribute="bottom" constant="5" id="g67-g0-WxN"/>
+                                            <constraint firstAttribute="height" constant="195" id="lA8-EM-YKm"/>
+                                            <constraint firstItem="RmT-PC-z51" firstAttribute="leading" secondItem="hUJ-EF-Oem" secondAttribute="leading" constant="15" id="lud-2x-mDN"/>
+                                            <constraint firstItem="RmT-PC-z51" firstAttribute="centerX" secondItem="hUJ-EF-Oem" secondAttribute="centerX" id="tbF-Cd-Pke"/>
+                                            <constraint firstItem="ZCd-AP-SGW" firstAttribute="top" secondItem="hUJ-EF-Oem" secondAttribute="top" constant="5" id="u2G-oX-Gzs"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eph-h0-XD4">
+                                        <rect key="frame" x="0.0" y="200" width="370" height="195"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Александра Зонтова" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI4-Y5-GYg">
+                                                <rect key="frame" x="5" y="5" width="205.33333333333334" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="gyM-Qc-sQT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sEb-2p-VRq">
+                                                <rect key="frame" x="15" y="30" width="340" height="150"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5N0-HC-ws0">
+                                                        <rect key="frame" x="30" y="0.0" width="280" height="75"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkg-Sc-wQe">
+                                                                <rect key="frame" x="0.0" y="7.3333333333333144" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="2lc-1T-bhB"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="7J7-Ol-1h0"/>
+                                                                </constraints>
+                                                                <state key="normal" image="phone">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yR-W0-osx">
+                                                                <rect key="frame" x="73.333333333333343" y="7.3333333333333144" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="b3v-PG-PWa"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="lOx-YJ-naI"/>
+                                                                </constraints>
+                                                                <state key="normal" image="facebook">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wF-4y-7jX">
+                                                                <rect key="frame" x="146.66666666666666" y="7.3333333333333144" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="KSP-W2-vHo"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="ikX-OL-Yfa"/>
+                                                                </constraints>
+                                                                <state key="normal" image="vk">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gm-lu-fpH">
+                                                                <rect key="frame" x="220" y="7.3333333333333144" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="JNV-tp-1Bs"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="tNI-vN-0gf"/>
+                                                                </constraints>
+                                                                <state key="normal" image="instagram">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PpH-cr-qU1">
+                                                        <rect key="frame" x="60" y="82.999999999999943" width="220" height="67"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vN-er-Fsx">
+                                                                <rect key="frame" x="0.0" y="3.3333333333333712" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="FNR-Zt-cyh"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="qSN-ae-Jsh"/>
+                                                                </constraints>
+                                                                <state key="normal" image="viber">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgG-rg-pLx">
+                                                                <rect key="frame" x="80" y="3.3333333333333712" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="C8L-cI-mcT"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="QYi-8x-RA6"/>
+                                                                </constraints>
+                                                                <state key="normal" image="telegram">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yf-vU-mzj">
+                                                                <rect key="frame" x="160" y="3.3333333333333712" width="60" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="lNm-X8-CO5"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="pRI-lp-0zk"/>
+                                                                </constraints>
+                                                                <state key="normal" image="skype">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="PpH-cr-qU1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="sEb-2p-VRq" secondAttribute="leading" constant="60" id="0oK-mV-0ng"/>
+                                                    <constraint firstItem="5N0-HC-ws0" firstAttribute="leading" relation="lessThanOrEqual" secondItem="sEb-2p-VRq" secondAttribute="leading" constant="30" id="WHU-AU-a6q"/>
+                                                    <constraint firstAttribute="height" constant="150" id="kbI-2S-EXY"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sEb-2p-VRq" firstAttribute="top" secondItem="aI4-Y5-GYg" secondAttribute="bottom" constant="5" id="9Di-8U-ePE"/>
+                                            <constraint firstItem="aI4-Y5-GYg" firstAttribute="leading" secondItem="eph-h0-XD4" secondAttribute="leading" constant="5" id="HGv-rd-nNi"/>
+                                            <constraint firstItem="sEb-2p-VRq" firstAttribute="centerX" secondItem="eph-h0-XD4" secondAttribute="centerX" id="UTK-o7-Xaq"/>
+                                            <constraint firstItem="aI4-Y5-GYg" firstAttribute="top" secondItem="eph-h0-XD4" secondAttribute="top" constant="5" id="WaP-ik-7Lb"/>
+                                            <constraint firstAttribute="height" constant="195" id="eNc-3b-206"/>
+                                            <constraint firstItem="sEb-2p-VRq" firstAttribute="leading" secondItem="eph-h0-XD4" secondAttribute="leading" constant="15" id="ro3-jD-LA9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WP8-hg-OVI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WP8-hg-OVI" firstAttribute="trailing" secondItem="6fI-BI-BFw" secondAttribute="trailing" constant="10" id="0EM-mH-G4h"/>
                             <constraint firstItem="kd4-de-rjh" firstAttribute="top" secondItem="iNO-2l-lRC" secondAttribute="top" id="4cB-Oj-pVB"/>
                             <constraint firstItem="kd4-de-rjh" firstAttribute="trailing" secondItem="iNO-2l-lRC" secondAttribute="trailing" id="IjA-hZ-T4p"/>
+                            <constraint firstItem="6fI-BI-BFw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VVo-7O-Vbw" secondAttribute="bottom" constant="15" id="LAA-4B-JxY"/>
+                            <constraint firstItem="WP8-hg-OVI" firstAttribute="trailing" secondItem="6fI-BI-BFw" secondAttribute="trailing" constant="10" id="LLm-I9-Zgt"/>
                             <constraint firstItem="kd4-de-rjh" firstAttribute="bottom" secondItem="iNO-2l-lRC" secondAttribute="bottom" id="T15-v6-mKp"/>
                             <constraint firstItem="VVo-7O-Vbw" firstAttribute="top" secondItem="WP8-hg-OVI" secondAttribute="top" constant="15" id="Vly-WX-I1o"/>
+                            <constraint firstItem="6fI-BI-BFw" firstAttribute="leading" secondItem="WP8-hg-OVI" secondAttribute="leading" constant="10" id="b2V-A1-Xwz"/>
+                            <constraint firstItem="6fI-BI-BFw" firstAttribute="centerY" secondItem="iNO-2l-lRC" secondAttribute="centerY" id="dwo-b0-A1m"/>
+                            <constraint firstItem="WP8-hg-OVI" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6fI-BI-BFw" secondAttribute="bottom" constant="15" id="hnF-er-cj3"/>
                             <constraint firstItem="VVo-7O-Vbw" firstAttribute="leading" secondItem="WP8-hg-OVI" secondAttribute="leading" constant="15" id="pNz-Of-Wmu"/>
                             <constraint firstItem="kd4-de-rjh" firstAttribute="leading" secondItem="iNO-2l-lRC" secondAttribute="leading" id="rOZ-yY-E9N"/>
                         </constraints>
@@ -59,13 +388,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqR-yG-lWI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="PGk-6V-8De" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-591.304347826087" y="163.39285714285714"/>
+            <point key="canvasLocation" x="-594.375" y="161.25"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="facebook" width="96" height="96"/>
+        <image name="instagram" width="96" height="96"/>
+        <image name="linkedin" width="96" height="96"/>
         <image name="mainBackground" width="1080" height="1920"/>
+        <image name="phone" width="100" height="100"/>
+        <image name="skype" width="96" height="96"/>
+        <image name="telegram" width="100" height="100"/>
+        <image name="viber" width="100" height="100"/>
+        <image name="vk" width="96" height="96"/>
         <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>

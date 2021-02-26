@@ -38,6 +38,7 @@ class SignInViewController: UIViewController {
         // rf;lsq hfp rjulf gjgflftim yf 'rhfy
         super.viewWillAppear(animated)
         //print("viewWillAppear")
+        printAllIndividual()
     }
 
     override func viewWillLayoutSubviews() {

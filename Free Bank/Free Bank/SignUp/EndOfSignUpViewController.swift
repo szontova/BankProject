@@ -9,6 +9,7 @@ import UIKit
 
 class EndOfSignUpViewController: UIViewController {
 
+    @IBOutlet weak var codeWordLabel: UITextField!
     private var status: Int?
     private var name: String?
     private var email: String?
@@ -37,8 +38,44 @@ class EndOfSignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("\(status) \(name) \(email) \(login) \(password)")
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 
+    @IBAction func EndOgSignUpButton(_ sender: Any) {
+        let codeWord = codeWordLabel.text ?? ""
+        if codeWord.isEmpty {
+            showAlertError(message: "Введите кодовое слово")
+            print("codeword empty")
+            return
+        } else {
+            if let _ = name, let _ = email, let _ = login, let _ = password {
+               // print("\(status) \(name) \(email) \(login) \(password) \(codeWord)")
+                switch status {
+                case 0:
+                    print("add person")
+                    
+                 //   addIndividal(name!, email!, login!, password!, codeWord)
+                performSegue(withIdentifier: "unwindFomEndToSignInVCSegue", sender: nil)
+                case 1:
+                    print("add org")
+                 //   addOrganization(name!, email!, login!, password!, codeWord)
+                    performSegue(withIdentifier: "unwindFomEndToSignInVCSegue", sender: nil)
+                default: break
+                }
+            }
+           
+        }
+        
+    }
+}
+
+extension EndOfSignUpViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

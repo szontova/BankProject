@@ -391,8 +391,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="EndOgSignUpButton:" destination="ZUP-Cv-SzS" eventType="touchUpInside" id="Rxg-v1-8pY"/>
                                     <action selector="signUpButton:" destination="vx4-RO-IRZ" eventType="touchUpInside" id="WNc-hH-0kO"/>
-                                    <segue destination="eyk-uJ-tV0" kind="unwind" identifier="unwindFomEndToSignInVCSegue" animates="NO" unwindAction="unwindToSignInFromEndRegistationWithSegue:" id="o8w-Dc-Eod"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -414,6 +414,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Byp-YY-ODN"/>
+                    <connections>
+                        <outlet property="codeWordLabel" destination="b5z-IY-SSt" id="hd1-tg-gw4"/>
+                        <segue destination="eyk-uJ-tV0" kind="unwind" identifier="unwindFomEndToSignInVCSegue" unwindAction="unwindToSignInFromEndRegistationWithSegue:" id="COx-R4-elR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4j-DU-BV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="eyk-uJ-tV0" userLabel="Exit" sceneMemberID="exit"/>

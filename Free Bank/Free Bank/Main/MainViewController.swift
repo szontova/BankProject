@@ -12,10 +12,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewFofCollectionView: UIView!
     
-    private let images = ["cards", "bank", "successfulPeople"]
-    
+    let imageLinks: Dictionary<String, String> = ["cards" : "https://myfin.by/cards", "bank" : "https://www.nbrb.by", "successfulPeople" : "https://myfin.by/stati"]
+
     func getImages() -> [String] {
-        return images
+        return Array(imageLinks.keys)
     }
     
     override func viewDidLoad() {

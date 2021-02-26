@@ -80,6 +80,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="callLeraButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="t0z-QS-EUF"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6I-Kk-n4w">
                                                                 <rect key="frame" x="73.333333333333343" y="7.3333333333333428" width="60" height="60"/>
@@ -96,6 +99,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="facebookLeraButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="o2c-g6-Ssz"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6q-ts-4Ud">
                                                                 <rect key="frame" x="146.66666666666666" y="7.3333333333333428" width="60" height="60"/>
@@ -112,6 +118,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="vkLeraButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="z2w-5e-zQd"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3F-b2-4xb">
                                                                 <rect key="frame" x="220" y="7.3333333333333428" width="60" height="60"/>
@@ -128,6 +137,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="instagramLeraButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="YUe-Jd-2oF"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,6 +162,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="linkedLeraButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="YwD-u3-ans"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgq-os-yPb">
                                                                 <rect key="frame" x="80" y="3.3333333333333144" width="60" height="60"/>
@@ -166,6 +181,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="telegramLeraButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="sbg-TD-V6B"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oja-6K-LwB">
                                                                 <rect key="frame" x="160" y="3.3333333333333144" width="60" height="60"/>
@@ -182,6 +200,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="skypeLeraButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="Xqb-NB-wIe"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -238,6 +259,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="callSashaButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="1dh-oY-naG"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yR-W0-osx">
                                                                 <rect key="frame" x="73.333333333333343" y="7.3333333333333144" width="60" height="60"/>
@@ -254,6 +278,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="facebookSashaButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="f5G-94-gN0"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wF-4y-7jX">
                                                                 <rect key="frame" x="146.66666666666666" y="7.3333333333333144" width="60" height="60"/>
@@ -270,6 +297,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="vkSashaButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="jXH-vD-OhZ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gm-lu-fpH">
                                                                 <rect key="frame" x="220" y="7.3333333333333144" width="60" height="60"/>
@@ -286,6 +316,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="instagramSashaButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="fgn-rP-PSn"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -308,6 +341,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="githubSashaButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="luK-M0-c64"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgG-rg-pLx">
                                                                 <rect key="frame" x="80" y="3.3333333333333712" width="60" height="60"/>
@@ -324,6 +360,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="telegramSashaButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="Cbp-bg-y67"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yf-vU-mzj">
                                                                 <rect key="frame" x="160" y="3.3333333333333712" width="60" height="60"/>
@@ -340,6 +379,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="skypeSashaButton:" destination="Pru-U2-tiu" eventType="touchUpInside" id="8Ox-Zv-DTe"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

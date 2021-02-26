@@ -59,8 +59,8 @@
                                                 <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-PC-z51">
-                                                <rect key="frame" x="15" y="33" width="340" height="150"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RmT-PC-z51">
+                                                <rect key="frame" x="15" y="30" width="340" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hfi-md-n4U">
                                                         <rect key="frame" x="30" y="0.0" width="280" height="75"/>

@@ -26,70 +26,7 @@ extension UIViewController {
         present(alertError, animated: true, completion: nil)
     }
     
-    func showAlertForgotPassword( _ status: Int, _  login: String){
-        var statusString = ""
-        
-        switch status {
-        case 0: statusString  = "логин"
-        case 1: statusString = "УНП"
-        default: break
-        }
-       
-        let alert = UIAlertController(title: "", message: "Введите \(statusString) и email.", preferredStyle: .alert)
-            
-        let attributedString = NSAttributedString(string: "Восстановление пароля", attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-            NSAttributedString.Key.foregroundColor : UIColor.black
-        ])
-        
-        alert.setValue(attributedString, forKey: "attributedTitle")
-                
-        alert.view.tintColor = UIColor.black
-        
-        alert.addTextField(configurationHandler: {
-            (textField) in
-            textField.placeholder = "Введите \(statusString)"
-            textField.text = login
-            textField.borderStyle = UITextField.BorderStyle.roundedRect
-        })
-        
-        alert.addTextField(configurationHandler: {
-            (textField) in
-            textField.placeholder = "Введите email"
-            textField.borderStyle = UITextField.BorderStyle.roundedRect
-        })
-        
-        for textField in alert.textFields! {
-            let container = textField.superview
-            let effectView = container?.superview?.subviews[0]
-            if (effectView != nil) {
-                container?.backgroundColor = UIColor.clear
-                effectView?.removeFromSuperview()
-            }
-        }
-                
-        let okAction = UIAlertAction(title: "Восстановить", style: .default){ _ in
-            let _ = alert.textFields![0].text ?? ""
-            let email = alert.textFields![1].text ?? ""
-          
-            if self.checkEmail(email: email) {
-                if status == 0 {
-                    //check login in base
-                } else {
-                    //check UNP in base
-                }
-                // compare emails
-                // send message to email
-            }
-            
-        }
-        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
-        
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-                
-        present(alert, animated: true, completion: nil)
-    }
+
     
 }
 

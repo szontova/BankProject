@@ -24,7 +24,7 @@ extension UIViewController {
         newIndivid.email = email
         newIndivid.login = login
         newIndivid.password = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
-        newIndivid.codeWord = codeWord
+        newIndivid.codeWord = codeWord.lowercased()
        
         newAccount.idNumber = generationIdAccount("S")
         newIndivid.addToAccounts(newAccount)
@@ -48,7 +48,7 @@ extension UIViewController {
         newOrganization.email = email
         newOrganization.prn = login
         newOrganization.password = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
-        newOrganization.codeWord = codeWord
+        newOrganization.codeWord = codeWord.lowercased()
         
         newAccount.idNumber = generationIdAccount("S")
         newOrganization.addToAccounts(newAccount)
@@ -155,7 +155,7 @@ extension UIViewController {
         let tempPassword = "Qwerty1234"
         let tempCodeWord = "CODEWORD"
 
-        if findIndivididual(by: tempLogins[0]) {
+        if let _ = findIndivididual(by: tempLogins[0]) {
 //            print("createTemplateIndividuals: template people are here")
 //            for i in 0..<tempLogins.count {
 //                deleteIndividual(by: tempLogins[i])
@@ -176,7 +176,7 @@ extension UIViewController {
         let tempPassword = "Qwerty1234"
         let tempCodeWord = "CODEWORD"
 
-        if findOrganization(by: tempPRNs[0]) {
+        if let _ = findOrganization(by: tempPRNs[0]) {
 //            print("createTemplateOrganizations: template organization are here")
 //            for i in 0..<tempPRNs.count {
 //                deleteOrganization(by: tempPRNs[i])

@@ -92,18 +92,18 @@ extension UIViewController{
         return true
     }
     
-    func findIndivididual(by login: String) -> Bool{
+    func findIndivididual(by login: String) -> Individual?{
         let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
         individRequest.predicate = NSPredicate(format: "login == %@", login)
         do {
             let items = try context.fetch(individRequest)
             if items.count != 0 {
-                return true
+                return items[0]
             }
         } catch {
             print("Error in check login")
         }
-        return false
+        return nil
     }
     
     func validIndividual(_ login: String, _ password: String) -> Bool{
@@ -123,18 +123,18 @@ extension UIViewController{
         return false
     }
     
-    func findOrganization(by prn: String) -> Bool{
+    func findOrganization(by prn: String) -> Organization?{
         let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
         orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
         do {
             let items = try context.fetch(orgRequest)
             if items.count != 0 {
-            return true
+            return items[0]
             }
         } catch {
             print("Error in check login")
         }
-        return false
+        return nil
     }
     
     func validOrganization(_ prn: String, _ password: String) -> Bool{
@@ -242,7 +242,7 @@ extension UIViewController{
             
             if !checkLogin(login: login) { return false }
             
-            if findIndivididual(by: login) {
+            if let _ = findIndivididual(by: login) {
                 showAlertError( message: "Данный логин занят другим пользователем")
                 return false
             }
@@ -253,7 +253,7 @@ extension UIViewController{
             
             if !checkUNP(unp: login) { return false }
             
-            if findOrganization(by: login) {
+            if let _ = findOrganization(by: login) {
                 showAlertError( message: "Вы ввели уже существующий УНП")
                 return false
             }

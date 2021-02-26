@@ -218,6 +218,13 @@
                             <constraint firstItem="pxt-Q4-P8D" firstAttribute="leading" secondItem="CPy-98-Bh1" secondAttribute="leading" constant="15" id="vLT-mw-v8V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="TvK-Vk-bsA" id="npp-Wq-jw3"/>
+                        <outlet property="emailButton" destination="9of-qj-Hld" id="hPA-vq-ZUA"/>
+                        <outlet property="fullNumberButton" destination="X79-6O-amX" id="fBG-VU-oPB"/>
+                        <outlet property="nameLabel" destination="fvD-qQ-rph" id="aEk-hw-cBQ"/>
+                        <outlet property="shortNumberButton" destination="XU5-pw-uzh" id="D4p-Zr-9Zf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PmJ-Kd-cFi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="MPj-LT-rkm" userLabel="Exit" sceneMemberID="exit"/>

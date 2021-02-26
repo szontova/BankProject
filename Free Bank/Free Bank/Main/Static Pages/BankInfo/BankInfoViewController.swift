@@ -7,35 +7,67 @@
 
 import UIKit
 import MessageUI
+import CoreData
 
 class BankInfoViewController: UIViewController {
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var shortNumberButton: UIButton!
+    @IBOutlet weak var fullNumberButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    //prn //account
+    
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureLabelsAndButtons(getBank())
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getBank () -> Bank? {
+        let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
+        do {
+           let bank = try context.fetch(bankRequest)
+            if  !bank.isEmpty {
+                return bank[0]
+            }
+        }
+        catch{ print("getBank: error with data")}
+        return nil
     }
-    */
+    
+    
+    func customStyleButton(_ button: UIButton, _ title: String?){
+        
+        let attrs : [NSAttributedString.Key: Any] = [ .underlineStyle : 1]
+        let attributedString = NSAttributedString(string: title ?? "", attributes: attrs)
+        button.setAttributedTitle( attributedString, for: .normal)
+        
+    }
+    
+    
+    func configureLabelsAndButtons(_ freeBank: Bank?){
+        if let fb = freeBank {
+            nameLabel.text = fb.name
+            addressLabel.text = fb.address
+            customStyleButton(shortNumberButton, fb.shortNumber)
+            customStyleButton(fullNumberButton, fb.fullNumber)
+            customStyleButton(emailButton, fb.email)
+        }
+    }
     
     func callNumber(phone: String){
         if let url: NSURL = URL(string: "TEL://" + phone) as NSURL?  { UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)}
     }
         
     @IBAction func shortCallButton(_ sender: UIButton) {
-        callNumber(phone: "123")
+        callNumber(phone: shortNumberButton.currentTitle!)
     }
+    
     @IBAction func fullCallButton(_ sender: UIButton) {
-        callNumber(phone: "+375295721707")
+        callNumber(phone: fullNumberButton.currentTitle!)
     }
     
     @IBAction func sendMailButton(_ sender: UIButton) {
@@ -43,7 +75,7 @@ class BankInfoViewController: UIViewController {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setSubject("Поддержка приложения FreeBank")
-            mail.setToRecipients(["freebank.by@gmail.com"])
+            mail.setToRecipients([emailButton.currentTitle!])
             mail.setMessageBody("Здравствуйте! Дайте денег, пожалуйста.", isHTML: false)
             present(mail, animated: true)
 

@@ -20,7 +20,7 @@ extension MainViewController: UICollectionViewDelegate {
         case 1:
             openPage(url: imageLinks[images[1]] ?? "")
         case 2:
-            openPage(url: imageLinks[images[2]] ?? "Lol")
+            openPage(url: imageLinks[images[2]] ?? "")
         default:
             print("The resource can not be found.")
         }

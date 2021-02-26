@@ -103,6 +103,9 @@
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shortCallButton:" destination="Cc4-QV-6Rn" eventType="touchUpInside" id="UN1-Je-Q2e"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X79-6O-amX">
                                         <rect key="frame" x="15" y="159" width="368" height="20"/>
@@ -115,6 +118,9 @@
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
+                                        <connections>
+                                            <action selector="fullCallButton:" destination="Cc4-QV-6Rn" eventType="touchUpInside" id="MtK-kH-dKf"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Понедельник — четверг: 9:00 - 18:00" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEP-z2-gk7">
                                         <rect key="frame" x="15" y="278" width="368" height="19.333333333333314"/>
@@ -151,6 +157,9 @@
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendMailButton:" destination="Cc4-QV-6Rn" eventType="touchUpInside" id="YMG-TH-Frk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

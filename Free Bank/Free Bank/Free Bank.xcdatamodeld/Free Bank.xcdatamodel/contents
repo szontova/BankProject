@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName=".Account" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="idNumber" optional="YES" attributeType="String"/>
@@ -17,7 +17,7 @@
     </entity>
     <entity name="Bank" representedClassName=".Bank" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" defaultValueString="г.Минск, ул.Кульман 1/3, 4 этаж"/>
-        <attribute name="email" optional="YES" attributeType="String" defaultValueString="free.bank@gmail.com"/>
+        <attribute name="email" optional="YES" attributeType="String" defaultValueString="freebank.by@gmail.com"/>
         <attribute name="fullNumber" optional="YES" attributeType="String" defaultValueString="+375(17)000-00-00"/>
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="ООО &quot;ФриБанк&quot;"/>
         <attribute name="prn" optional="YES" attributeType="String" defaultValueString="000000000"/>
@@ -78,7 +78,7 @@
     <elements>
         <element name="Account" positionX="-261.6015625" positionY="-194.4375" width="128" height="149"/>
         <element name="ATM" positionX="-593.61328125" positionY="-423.73046875" width="128" height="74"/>
-        <element name="Bank" positionX="-333.1484375" positionY="-464.26953125" width="128" height="164"/>
+        <element name="Bank" positionX="-333.1484375" positionY="-464.26953125" width="128" height="178"/>
         <element name="Branch" positionX="-111.3046875" positionY="-414.84765625" width="128" height="74"/>
         <element name="Card" positionX="-44.88671875" positionY="-245.29296875" width="128" height="89"/>
         <element name="Credit" positionX="-250.7265625" positionY="136.76953125" width="128" height="149"/>

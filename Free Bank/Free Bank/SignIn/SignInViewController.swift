@@ -94,7 +94,87 @@ class SignInViewController: UIViewController {
     
 //MARK: - Our methods
     
-    
+    func showAlertForgotPassword( _ status: Int, _  login: String){
+        var statusString = ""
+        
+        switch status {
+        case 0: statusString  = "логин"
+        case 1: statusString = "УНП"
+        default: break
+        }
+       
+        let alert = UIAlertController(title: "", message: "Введите \(statusString) и кодовое слово.", preferredStyle: .alert)
+            
+        let attributedString = NSAttributedString(string: "Восстановление пароля", attributes: [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+            NSAttributedString.Key.foregroundColor : UIColor.black
+        ])
+        
+        alert.setValue(attributedString, forKey: "attributedTitle")
+                
+        alert.view.tintColor = UIColor.black
+        
+        alert.addTextField(configurationHandler: {
+            (textField) in
+            textField.placeholder = "Введите \(statusString)"
+            textField.text = login
+            textField.borderStyle = UITextField.BorderStyle.roundedRect
+        })
+        
+        alert.addTextField(configurationHandler: {
+            (textField) in
+            textField.placeholder = "Введите кодовое слово"
+            textField.borderStyle = UITextField.BorderStyle.roundedRect
+        })
+        
+        for textField in alert.textFields! {
+            let container = textField.superview
+            let effectView = container?.superview?.subviews[0]
+            if (effectView != nil) {
+                container?.backgroundColor = UIColor.clear
+                effectView?.removeFromSuperview()
+            }
+        }
+                
+        let okAction = UIAlertAction(title: "Восстановить", style: .default){ _ in
+            let login = alert.textFields![0].text ?? ""
+            let codeWord = alert.textFields![1].text ?? ""
+          
+            switch status {
+            case 0:
+                if !self.checkLogin(login: login) { return }
+                    
+                if let person = self.findIndivididual(by: login) {
+                        
+                    if person.codeWord == codeWord.lowercased(){
+                        self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                    } else {
+                        self.showAlertError(message: "Кодовое слово введено неверно")
+                    }
+                } else {
+                    self.showAlertError(message: "Пользователь не найден")
+                }
+            case 1:
+                if let org = self.findOrganization(by: login) {
+                    if org.codeWord == codeWord.lowercased(){
+                        self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                    } else {
+                        self.showAlertError(message: "Кодовое слово введено неверно")
+                    }
+                } else {
+                    self.showAlertError(message: "Организация не найдена")
+                }
+            default: break
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+                
+        present(alert, animated: true, completion: nil)
+    }
     
     //MARK:- @IBAction
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {

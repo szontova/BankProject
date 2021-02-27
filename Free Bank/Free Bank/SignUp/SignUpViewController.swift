@@ -9,6 +9,7 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    //MARK: - @IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -22,11 +23,12 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
+    //MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -41,7 +43,7 @@ class SignUpViewController: UIViewController {
         destinationVC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
     
-       
+    //MARK: - @IBActions
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -77,7 +79,7 @@ class SignUpViewController: UIViewController {
         guard let _ = segue.destination as? EndOfSignUpViewController else {return}
     }
 }
-
+    //MARK: - Extensions
 extension SignUpViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

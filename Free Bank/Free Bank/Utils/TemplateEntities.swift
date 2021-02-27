@@ -14,7 +14,71 @@ private let context: NSManagedObjectContext = (UIApplication.shared.delegate as!
 
 extension UIViewController {
     
-    //MARK:- Add entities
+    //MARK:- FindEntities
+    func findIndivididual(by login: String) -> Individual?{
+        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
+        individRequest.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                return items[0]
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return nil
+    }
+    
+    func findOrganization(by prn: String) -> Organization?{
+        let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
+        orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
+        do {
+            let items = try context.fetch(orgRequest)
+            if items.count != 0 {
+            return items[0]
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return nil
+    }
+    
+    //MARK:- ValidEntities
+    func validIndividual(_ login: String, _ password: String) -> Bool{
+        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
+        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
+        individRequest.predicate = NSPredicate(format: "login == %@", login)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                if(items[0].password == hashPassword){
+                    return true
+                }
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return false
+    }
+    
+    func validOrganization(_ prn: String, _ password: String) -> Bool{
+        let individRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
+        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
+        individRequest.predicate = NSPredicate(format: "prn == %@", prn)
+        do {
+            let items = try context.fetch(individRequest)
+            if items.count != 0 {
+                if(items[0].password == hashPassword){
+                    return true
+                }
+            }
+        } catch {
+            print("Error in check login")
+        }
+        return false
+    }
+    
+    //MARK:- AddEntities
     func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
         
         let newIndivid = Individual(context: context)
@@ -61,6 +125,7 @@ extension UIViewController {
         catch { print("addOrganization: error in add organization") }
     }
     
+    //MARK: -HelperFunctions
     func generationIdAccount (_ category: String) -> String {
         var result: String = ""
         
@@ -86,7 +151,7 @@ extension UIViewController {
         
         return result
     }
-    //MARK:- Print entities
+    //MARK:- PrintEntities
     func printAllIndividual(){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         do {
@@ -123,7 +188,7 @@ extension UIViewController {
         catch { print("printAllOrganization: error in print people") }
     }
     
-    //MARK:- Create entities
+    //MARK:- CrTemplateEntities
     func createBank (){
         let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
         do {
@@ -189,7 +254,7 @@ extension UIViewController {
                 
     }
     
-    //MARK:- Delete entities
+    //MARK:- DeleteEntities
     func deleteIndividual(by login: String){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         request.predicate = NSPredicate(format: "login == %@", login)

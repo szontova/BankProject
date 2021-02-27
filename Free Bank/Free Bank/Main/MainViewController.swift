@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewFofCollectionView: UIView!
     
@@ -18,6 +19,7 @@ class MainViewController: UIViewController {
         return Array(imageLinks.keys)
     }
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,10 +36,12 @@ class MainViewController: UIViewController {
         
     }
     
+    //MARK: - OurMethods
     func startCollectionViewTimer() {
         _ = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollCollectionViewAutomatically), userInfo: nil, repeats: true)
     }
 
+    //MARK: - @IBActions
     @IBAction func moveToSignInButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignInSegue", sender: nil)
     }
@@ -58,6 +62,21 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: "toAddressesSegue", sender: nil)
     }
     
+    @IBAction func scrollCollectionViewAutomatically(){
+        let pageInt = Int(round(collectionView.contentOffset.x / collectionView.frame.size.width))
+  
+        if pageInt == getImages().count {
+            collectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
+            if getImages().count > 1 {
+                collectionView.scrollToItem(at: [0, 1], at: .left, animated: true)
+            }
+        }
+        else {
+            collectionView.scrollToItem(at: [0, pageInt + 1], at: .left, animated: true)
+        }
+    }
+    
+    //MARK: - unwind @IBActions
     @IBAction func unwindToMainVCFromSignInVC (segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToMainVCSegue" else {return}
         guard let _ = segue.destination as? SignInViewController else {return}
@@ -83,17 +102,4 @@ class MainViewController: UIViewController {
         guard let _ = segue.destination as? AddressesTableViewController else {return}
     }
     
-    @IBAction func scrollCollectionViewAutomatically(){
-        let pageInt = Int(round(collectionView.contentOffset.x / collectionView.frame.size.width))
-  
-        if pageInt == getImages().count {
-            collectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
-            if getImages().count > 1 {
-                collectionView.scrollToItem(at: [0, 1], at: .left, animated: true)
-            }
-        }
-        else {
-            collectionView.scrollToItem(at: [0, pageInt + 1], at: .left, animated: true)
-        }
-    }
 }

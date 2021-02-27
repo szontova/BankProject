@@ -9,7 +9,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
-    //MARK: - @IBOutlet
+    //MARK: - @IBOutlets
     
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
@@ -79,7 +79,7 @@ class SignInViewController: UIViewController {
         //print("deinit")
     }
     
-//MARK: - Override methods
+    //MARK: - OverrideMethods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -92,7 +92,7 @@ class SignInViewController: UIViewController {
         destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
     
-//MARK: - Our methods
+    //MARK: - OurMethods
     
     func showAlertForgotPassword( _ status: Int, _  login: String){
         var statusString = ""
@@ -176,7 +176,7 @@ class SignInViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    //MARK:- @IBAction
+    //MARK:- @IBActions
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -232,6 +232,7 @@ class SignInViewController: UIViewController {
         showAlertForgotPassword(status, login)
     }
     
+    //MARK: - unwind @IBActions
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
         guard let _ = segue.destination as? SignUpViewController else {return}

@@ -179,7 +179,6 @@
 			children = (
 				592AE50A25D3D45D000C99E5 /* Alerts.swift */,
 				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
-				59298A5D25E3EDD3007F0622 /* CollectionView.swift */,
 				59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */,
 				31E793A525E9565100667F99 /* LinkFunctions.swift */,
 			);
@@ -198,6 +197,7 @@
 		596A697E25DE70F90068099E /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				59298A5D25E3EDD3007F0622 /* CollectionView.swift */,
 				596A698125DE7FEE0068099E /* CollectionViewCell.xib */,
 				596A698025DE7FEE0068099E /* CollectionViewCell.swift */,
 			);

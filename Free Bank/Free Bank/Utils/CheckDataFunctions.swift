@@ -7,13 +7,9 @@
 
 import Foundation
 import UIKit
-import CoreData
-import CryptoKit
-
-private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 extension UIViewController{
-    
+    //MARK:- CheckOnePropery
     func checkLogin(login: String) -> Bool{
         let allowLetters: ClosedRange<Character> = "A"..."z"
         let allowSymbols: Set<Character> = [".","_"]
@@ -92,67 +88,6 @@ extension UIViewController{
         return true
     }
     
-    func findIndivididual(by login: String) -> Individual?{
-        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
-        individRequest.predicate = NSPredicate(format: "login == %@", login)
-        do {
-            let items = try context.fetch(individRequest)
-            if items.count != 0 {
-                return items[0]
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return nil
-    }
-    
-    func validIndividual(_ login: String, _ password: String) -> Bool{
-        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
-        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
-        individRequest.predicate = NSPredicate(format: "login == %@", login)
-        do {
-            let items = try context.fetch(individRequest)
-            if items.count != 0 {
-                if(items[0].password == hashPassword){
-                    return true
-                }
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return false
-    }
-    
-    func findOrganization(by prn: String) -> Organization?{
-        let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
-        orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
-        do {
-            let items = try context.fetch(orgRequest)
-            if items.count != 0 {
-            return items[0]
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return nil
-    }
-    
-    func validOrganization(_ prn: String, _ password: String) -> Bool{
-        let individRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
-        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
-        individRequest.predicate = NSPredicate(format: "prn == %@", prn)
-        do {
-            let items = try context.fetch(individRequest)
-            if items.count != 0 {
-                if(items[0].password == hashPassword){
-                    return true
-                }
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return false
-    }
     
     func checkPersonName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
@@ -206,6 +141,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK:- CheckDatasInPages
     func checkSignInDatas(_ status: Int,  _ login: String, _ password: String) -> Bool{
              
         if login.isEmpty || password.isEmpty {

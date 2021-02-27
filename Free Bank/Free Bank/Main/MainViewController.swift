@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
     }
     
     func startCollectionViewTimer() {
-        _ = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(self.scrollCollectionViewAutomatically), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollCollectionViewAutomatically), userInfo: nil, repeats: true)
     }
 
     @IBAction func moveToSignInButton(_ sender: UIButton) {
@@ -51,8 +51,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func moveToBankInfoButton(_ sender: UIButton) {
-        print("")
         performSegue(withIdentifier: "toBankInfoSegue", sender: nil)
+    }
+    
+    @IBAction func moveToAddressesButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toAddressesSegue", sender: nil)
     }
     
     @IBAction func unwindToMainVCFromSignInVC (segue: UIStoryboardSegue){
@@ -73,6 +76,11 @@ class MainViewController: UIViewController {
     @IBAction func unwindToMainVCFromBankInfoVC(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToMainFromBankInfoSegue" else {return}
         guard let _ = segue.destination as? BankInfoViewController else {return}
+    }
+    
+    @IBAction func unwindToMainVCFromAddressesTVC(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToMainFromAddressesSegue" else {return}
+        guard let _ = segue.destination as? AddressesTableViewController else {return}
     }
     
     @IBAction func scrollCollectionViewAutomatically(){

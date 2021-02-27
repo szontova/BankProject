@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewFofCollectionView: UIView!
     
-    let imageLinks: Dictionary<String, String> = ["cards" : "https://myfin.by/cards", "bank" : "https://www.nbrb.by", "successfulPeople" : "https://myfin.by/stati"]
+    let imageLinks: Dictionary<String, String> = ["cards" : "https://myfin.by/cards", "bank" : "https://www.nbrb.by", "worldNews" : "https://myfin.by/stati"]
 
     func getImages() -> [String] {
         return Array(imageLinks.keys)

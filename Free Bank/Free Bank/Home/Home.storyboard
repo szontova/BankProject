@@ -39,7 +39,7 @@
         <!--Ещё-->
         <scene sceneID="YnN-nw-5Mc">
             <objects>
-                <viewController id="s56-83-l9K" sceneMemberID="viewController">
+                <viewController id="s56-83-l9K" customClass="OtherPageHomeViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oZQ-tb-UYJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Rao-7D-P3Q" kind="unwind" identifier="unwindFromHomeToSignInVCSegue" unwindAction="unwindToSignInFromHomeWithSegue:" id="8Zy-zW-Hp3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hl2-c9-PSV"/>
@@ -79,6 +82,7 @@
                     <tabBarItem key="tabBarItem" title="Ещё" image="other" id="giu-kF-a4D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T12-0Q-HQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Rao-7D-P3Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1004" y="763"/>
         </scene>

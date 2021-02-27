@@ -12,6 +12,7 @@
 		31E793A625E9565100667F99 /* LinkFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E793A525E9565100667F99 /* LinkFunctions.swift */; };
 		5916FA6A25EA376C0022A4B0 /* Adresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5916FA6925EA376C0022A4B0 /* Adresses.storyboard */; };
 		5916FA6D25EA38890022A4B0 /* AddressesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916FA6C25EA38890022A4B0 /* AddressesTableViewController.swift */; };
+		5916FA7225EA679D0022A4B0 /* OtherPageHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */; };
 		59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59298A5D25E3EDD3007F0622 /* CollectionView.swift */; };
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
@@ -62,6 +63,7 @@
 		31E793A525E9565100667F99 /* LinkFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFunctions.swift; sourceTree = "<group>"; };
 		5916FA6925EA376C0022A4B0 /* Adresses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Adresses.storyboard; sourceTree = "<group>"; };
 		5916FA6C25EA38890022A4B0 /* AddressesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesTableViewController.swift; sourceTree = "<group>"; };
+		5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPageHomeViewController.swift; sourceTree = "<group>"; };
 		59298A5D25E3EDD3007F0622 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				593AE04E25E692FF00DEB157 /* Home.storyboard */,
 				593AE05525E6A00200DEB157 /* HomeTabBarController.swift */,
+				5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				59DFC2C225E78CDF000EDCF9 /* Organization+CoreDataProperties.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
 				5996B4AE25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift in Sources */,
+				5916FA7225EA679D0022A4B0 /* OtherPageHomeViewController.swift in Sources */,
 				5916FA6D25EA38890022A4B0 /* AddressesTableViewController.swift in Sources */,
 				5996B4AA25E54C3A00FB0BDB /* Account+CoreDataProperties.swift in Sources */,
 				5996B4A225E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift in Sources */,

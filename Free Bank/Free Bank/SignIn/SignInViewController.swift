@@ -199,6 +199,7 @@ class SignInViewController: UIViewController {
             switch status {
             case 0:
                 if validIndividual(login, password) {
+                    passwordTextField.text = ""
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
@@ -206,6 +207,7 @@ class SignInViewController: UIViewController {
                 }
             case 1:
                 if validOrganization(login, password) {
+                    passwordTextField.text = ""
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
@@ -241,6 +243,11 @@ class SignInViewController: UIViewController {
     @IBAction func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindFomEndToSignInVCSegue" else {return}
         guard let _ = segue.destination as? EndOfSignUpViewController else {return}
+    }
+    
+    @IBAction func unwindToSignInFromHome(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindFromHomeToSignInVCSegue" else {return}
+        guard let _ = segue.destination as? OtherPageHomeViewController else {return}
     }
     
 }

@@ -47,6 +47,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="esh-IV-b2E">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi7-TX-Y6m">
+                                <rect key="frame" x="329" y="59" width="70" height="30"/>
+                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="64s-rz-7Sz"/>
+                                    <constraint firstAttribute="width" constant="70" id="TQH-Sh-lcT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Выход">
+                                    <color key="titleColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hl2-c9-PSV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,6 +72,8 @@
                             <constraint firstItem="esh-IV-b2E" firstAttribute="trailing" secondItem="oZQ-tb-UYJ" secondAttribute="trailing" id="9LO-zw-8kB"/>
                             <constraint firstItem="esh-IV-b2E" firstAttribute="bottom" secondItem="oZQ-tb-UYJ" secondAttribute="bottom" id="Gue-Yz-1xf"/>
                             <constraint firstItem="esh-IV-b2E" firstAttribute="leading" secondItem="oZQ-tb-UYJ" secondAttribute="leading" id="MCL-mA-8FT"/>
+                            <constraint firstItem="Hi7-TX-Y6m" firstAttribute="top" secondItem="Hl2-c9-PSV" secondAttribute="top" constant="15" id="c0s-Z8-KkZ"/>
+                            <constraint firstItem="Hl2-c9-PSV" firstAttribute="trailing" secondItem="Hi7-TX-Y6m" secondAttribute="trailing" constant="15" id="obn-Xk-azv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ещё" image="other" id="giu-kF-a4D"/>

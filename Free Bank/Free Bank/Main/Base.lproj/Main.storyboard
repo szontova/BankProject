@@ -84,11 +84,11 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4h-De-zOG">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="THe-xk-Ut4"/>
                                                 </constraints>
-                                                <state key="normal" image="courseIcon">
+                                                <state key="normal" image="currencyButton">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -102,11 +102,11 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erl-wR-F2a">
                                                 <rect key="frame" x="102.66666666666666" y="0.0" width="60" height="60"/>
-                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Xyk-oX-ruS"/>
                                                 </constraints>
-                                                <state key="normal" image="mapIcon">
+                                                <state key="normal" image="addressButton">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -117,11 +117,11 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0U-f4-919">
                                                 <rect key="frame" x="205.33333333333334" y="0.0" width="60.000000000000028" height="60"/>
-                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="QwY-Am-cM6"/>
                                                 </constraints>
-                                                <state key="normal" image="bankIcon">
+                                                <state key="normal" image="bankButton">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -135,11 +135,11 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkw-2N-r2u">
                                                 <rect key="frame" x="308" y="0.0" width="60" height="60"/>
-                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="VWo-dg-yAt"/>
                                                 </constraints>
-                                                <state key="normal" image="linkIcon">
+                                                <state key="normal" image="communicationButton">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </state>
@@ -295,11 +295,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bankIcon" width="50" height="50"/>
-        <image name="courseIcon" width="50" height="50"/>
-        <image name="linkIcon" width="50" height="50"/>
+        <image name="addressButton" width="100" height="100"/>
+        <image name="bankButton" width="100" height="100"/>
+        <image name="communicationButton" width="100" height="100"/>
+        <image name="currencyButton" width="100" height="100"/>
         <image name="mainBackground" width="1080" height="1920"/>
-        <image name="mapIcon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

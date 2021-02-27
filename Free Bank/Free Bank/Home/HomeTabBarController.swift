@@ -32,9 +32,6 @@ class HomeTabBarController: UITabBarController {
         super.viewDidLoad()
         print (self.login ?? "Nothing")
         print (self.status ?? 0)
-        if status == 0{
-            //self.viewControllers?.remove(at: 0)
-        }
         // Do any additional setup after loading the view.
     }
     

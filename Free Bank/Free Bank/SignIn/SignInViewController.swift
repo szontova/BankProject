@@ -24,7 +24,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         //print("ViewDidLoad")
         super.viewDidLoad()
-        printAllOrganization()
+        //printAllOrganization()
     }
     
     override func loadView() {
@@ -35,10 +35,10 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         // только появится
-        // rf;lsq hfp rjulf gjgflftim yf 'rhfy
+        // every time you hit the screen
         super.viewWillAppear(animated)
         //print("viewWillAppear")
-        printAllIndividual()
+        //printAllIndividual()
     }
 
     override func viewWillLayoutSubviews() {

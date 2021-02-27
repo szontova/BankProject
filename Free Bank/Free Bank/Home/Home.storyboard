@@ -9,6 +9,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Кредиты-->
+        <scene sceneID="zeD-I2-tkR">
+            <objects>
+                <viewController id="1ef-RP-9rF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UuP-yE-0kQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pkc-wO-8k6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xSn-JT-2pL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pkc-wO-8k6" firstAttribute="leading" secondItem="UuP-yE-0kQ" secondAttribute="leading" id="Oeo-Z7-bX9"/>
+                            <constraint firstItem="pkc-wO-8k6" firstAttribute="bottom" secondItem="UuP-yE-0kQ" secondAttribute="bottom" id="Tbe-zA-6jM"/>
+                            <constraint firstItem="pkc-wO-8k6" firstAttribute="top" secondItem="UuP-yE-0kQ" secondAttribute="top" id="cjV-P7-igR"/>
+                            <constraint firstItem="pkc-wO-8k6" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" id="wUt-CE-aAo"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Кредиты" image="credits" id="mRh-bI-4L7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnH-qo-p8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="763"/>
+        </scene>
         <!--Ещё-->
         <scene sceneID="YnN-nw-5Mc">
             <objects>
@@ -30,13 +57,13 @@
                             <constraint firstItem="esh-IV-b2E" firstAttribute="leading" secondItem="oZQ-tb-UYJ" secondAttribute="leading" id="MCL-mA-8FT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ещё" image="ellipsis.circle.fill" catalog="system" id="giu-kF-a4D"/>
+                    <tabBarItem key="tabBarItem" title="Ещё" image="other" id="giu-kF-a4D"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T12-0Q-HQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="763"/>
+            <point key="canvasLocation" x="1004" y="763"/>
         </scene>
-        <!--Платежи-->
+        <!--Переводы-->
         <scene sceneID="bOc-Wk-phr">
             <objects>
                 <viewController id="VfR-HQ-Ymy" sceneMemberID="viewController">
@@ -57,11 +84,11 @@
                             <constraint firstItem="xN1-qa-l9i" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" id="pgh-Tf-fwI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Платежи" image="arrow.left.arrow.right.square.fill" catalog="system" id="9OZ-pC-nlJ"/>
+                    <tabBarItem key="tabBarItem" title="Переводы" image="moneyTransferIcon" id="9OZ-pC-nlJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLV-Lw-AKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="763"/>
+            <point key="canvasLocation" x="-416" y="763"/>
         </scene>
         <!--Счета-->
         <scene sceneID="2ho-vq-iDD">
@@ -84,17 +111,20 @@
                             <constraint firstItem="P5n-vO-zFy" firstAttribute="leading" secondItem="xHm-O8-MfY" secondAttribute="leading" id="tA7-OD-Smf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Счета" image="archivebox.fill" catalog="system" id="L3S-Ec-ua0"/>
+                    <tabBarItem key="tabBarItem" title="Счета" image="accountsIcon" id="L3S-Ec-ua0">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwL-VG-R2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Item" id="Ku6-US-fb0"/>
             </objects>
-            <point key="canvasLocation" x="-645" y="763"/>
+            <point key="canvasLocation" x="-1078" y="763"/>
         </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="cyv-13-P47">
             <objects>
                 <tabBarController modalPresentationStyle="fullScreen" id="N03-CN-J2D" customClass="HomeTabBarController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T3H-In-mUc">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="T3H-In-mUc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,6 +134,7 @@
                     <connections>
                         <segue destination="DNe-dc-Hnh" kind="relationship" relationship="viewControllers" id="ZHM-aF-qcL"/>
                         <segue destination="VfR-HQ-Ymy" kind="relationship" relationship="viewControllers" id="tbY-Av-3F2"/>
+                        <segue destination="1ef-RP-9rF" kind="relationship" relationship="viewControllers" id="Ya2-oZ-LAK"/>
                         <segue destination="s56-83-l9K" kind="relationship" relationship="viewControllers" id="UFf-f7-Bpf"/>
                     </connections>
                 </tabBarController>
@@ -113,10 +144,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="archivebox.fill" catalog="system" width="128" height="106"/>
-        <image name="arrow.left.arrow.right.square.fill" catalog="system" width="128" height="114"/>
-        <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="accountsIcon" width="30" height="30"/>
+        <image name="credits" width="24" height="24"/>
         <image name="mainBackground" width="1080" height="1920"/>
+        <image name="moneyTransferIcon" width="30" height="30"/>
+        <image name="other" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

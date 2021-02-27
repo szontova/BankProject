@@ -19,10 +19,6 @@ class ContactsViewController: UIViewController {
         if let url = URL(string: url) { UIApplication.shared.open(url, options: [:], completionHandler: nil)}
     }
     
-    func callNumber(number: String){
-        if let url: NSURL = URL(string:"TEL://"+number) as NSURL?  { UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)}
-    }
-    
     @IBAction func callLeraButton(_ sender: UIButton) {
          callNumber(number: "+375291951959")
     }

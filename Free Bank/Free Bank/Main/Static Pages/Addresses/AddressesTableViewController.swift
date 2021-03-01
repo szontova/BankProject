@@ -41,9 +41,11 @@ class AddressesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.backgroundColor = UIColor.black
+        label.backgroundColor = UIColor.init(red: 60/255, green: 22/255, blue: 22/255, alpha: 1.0)
         label.textColor = UIColor.white
-        label.text =  section == 0 ? "Отделы" : "Банкоматы"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+        label.text = section == 0 ? "Отделы" : "Банкоматы"
         return label
     }
 

@@ -19,9 +19,7 @@ class OtherPageHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-
+        transparentNavBar(navigationBar)
     }
     
     override func viewWillAppear(_ animated: Bool) {

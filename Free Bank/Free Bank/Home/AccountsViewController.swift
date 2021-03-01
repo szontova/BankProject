@@ -9,12 +9,15 @@ import UIKit
 
 class AccountsViewController: UIViewController {
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    
     private var individual: Individual?
     private var organization: Organization?
       
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        transparentNavBar(navigationBar)
     }
 
 }

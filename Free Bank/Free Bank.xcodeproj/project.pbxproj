@@ -44,6 +44,7 @@
 		59A42D0C25ECE3AC002C8EF9 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D0B25ECE3AC002C8EF9 /* AccountsViewController.swift */; };
 		59A42D0F25ECE3D9002C8EF9 /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D0E25ECE3D9002C8EF9 /* TransfersViewController.swift */; };
 		59A42D1225ECE407002C8EF9 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */; };
+		59A42D1925ED2D0B002C8EF9 /* DesignFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D1825ED2D0B002C8EF9 /* DesignFunctions.swift */; };
 		59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */; };
 		59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */; };
 		59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */; };
@@ -100,6 +101,7 @@
 		59A42D0B25ECE3AC002C8EF9 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		59A42D0E25ECE3D9002C8EF9 /* TransfersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
 		59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		59A42D1825ED2D0B002C8EF9 /* DesignFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFunctions.swift; sourceTree = "<group>"; };
 		59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Free Bank.xcdatamodel"; sourceTree = "<group>"; };
 		59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataFunctions.swift; sourceTree = "<group>"; };
 		59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bankInfo.storyboard; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
 				59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */,
 				31E793A525E9565100667F99 /* LinkFunctions.swift */,
+				59A42D1825ED2D0B002C8EF9 /* DesignFunctions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				59DFC2C225E78CDF000EDCF9 /* Organization+CoreDataProperties.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
 				5996B4AE25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift in Sources */,
+				59A42D1925ED2D0B002C8EF9 /* DesignFunctions.swift in Sources */,
 				59A42D1225ECE407002C8EF9 /* CreditsViewController.swift in Sources */,
 				5916FA7225EA679D0022A4B0 /* OtherPageHomeViewController.swift in Sources */,
 				5916FA6D25EA38890022A4B0 /* AddressesTableViewController.swift in Sources */,

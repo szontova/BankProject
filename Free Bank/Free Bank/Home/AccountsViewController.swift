@@ -20,6 +20,8 @@ class AccountsViewController: UIViewController {
         transparentNavBar(navigationBar)
     }
 
+    @IBAction func addAccountButton(_ sender: UIButton) {
+    }
 }
 
 extension AccountsViewController: OrgIndivid {

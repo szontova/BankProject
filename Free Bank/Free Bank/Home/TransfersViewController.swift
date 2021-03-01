@@ -10,6 +10,8 @@ import UIKit
 class TransfersViewController: UIViewController {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var senderSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var receiverSegmentedControl: UISegmentedControl!
     
     private var individual: Individual?
     private var organization: Organization?
@@ -20,6 +22,8 @@ class TransfersViewController: UIViewController {
         transparentNavBar(navigationBar)
     }
     
+    @IBAction func addTransaction(_ sender: UIButton) {
+    }
 }
 
 extension TransfersViewController: OrgIndivid {

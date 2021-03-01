@@ -14,9 +14,7 @@ class OtherPageHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print (self.individual?.string() ?? "Nothing")
-        print (self.organization?.string() ?? "Nothing")
+        
     }
     
 }

@@ -15,13 +15,12 @@ class AccountsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print (self.individual?.string() ?? "Nothing")
-        print (self.organization?.string() ?? "Nothing")
     }
 
 }
 
 extension AccountsViewController: OrgIndivid {
+    
     func setIndividual(_ individ: Individual?){
         self.individual = individ
     }
@@ -29,4 +28,5 @@ extension AccountsViewController: OrgIndivid {
     func setOrganization (_ org: Organization?) {
         self.organization = org
     }
+    
 }

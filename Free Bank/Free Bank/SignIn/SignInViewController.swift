@@ -37,6 +37,9 @@ class SignInViewController: UIViewController {
         // только появится
         // every time you hit the screen
         super.viewWillAppear(animated)
+        
+        loginTextField.text = "lerachubakova"
+        passwordTextField.text = "Qwerty1234"
         //print("viewWillAppear")
         //printAllIndividual()
     }

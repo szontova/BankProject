@@ -7,32 +7,53 @@
 
 import UIKit
 
+protocol OrgIndivid: class {
+    
+    func setIndividual(_ individ: Individual?)
+      
+    func setOrganization(_ org: Organization?)
+    
+}
+
 class HomeTabBarController: UITabBarController {
 
     private var status: Int?
     private var login: String?
     
-    func getLogin() -> String? {
-        return self.login
-    }
+    private var individual: Individual?
+    private var organization: Organization?
     
     func setLogin(_ login: String){
         self.login = login
     }
     
-    func getStatus() -> Int? {
-        return self.status
-    }
-    
     func setStatus(_ status: Int?){
         self.status = status
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print (self.login ?? "Nothing")
         print (self.status ?? 0)
-        // Do any additional setup after loading the view.
+        
+        if let log = login {
+        switch status {
+            case 0:
+                self.individual = findIndivididual(by: log)
+            case 1:
+                self.organization = findOrganization(by: log)
+            default: break
+            }
+            
+        }
+        
+        for VC in self.viewControllers!  {
+         let vc = VC as? OrgIndivid
+            vc?.setIndividual(self.individual)
+            vc?.setOrganization(self.organization)
+        }
+ 
     }
     
 

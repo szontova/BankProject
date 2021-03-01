@@ -8,22 +8,25 @@
 import UIKit
 
 class AccountsViewController: UIViewController {
-
+    
+    private var individual: Individual?
+    private var organization: Organization?
+      
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print (self.individual?.string() ?? "Nothing")
+        print (self.organization?.string() ?? "Nothing")
+    }
 
-        // Do any additional setup after loading the view.
+}
+
+extension AccountsViewController: OrgIndivid {
+    func setIndividual(_ individ: Individual?){
+        self.individual = individ
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setOrganization (_ org: Organization?) {
+        self.organization = org
     }
-    */
-
 }

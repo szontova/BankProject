@@ -198,10 +198,10 @@
 			children = (
 				593AE04E25E692FF00DEB157 /* Home.storyboard */,
 				593AE05525E6A00200DEB157 /* HomeTabBarController.swift */,
-				5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */,
 				59A42D0B25ECE3AC002C8EF9 /* AccountsViewController.swift */,
 				59A42D0E25ECE3D9002C8EF9 /* TransfersViewController.swift */,
 				59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */,
+				5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";

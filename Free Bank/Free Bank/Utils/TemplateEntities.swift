@@ -125,6 +125,33 @@ extension UIViewController {
         catch { print("addOrganization: error in add organization") }
     }
     
+    func addBranch(address: String){
+        let newBranch = Branch(context: context)
+        newBranch.idNumber = generationIdBranch()
+        newBranch.address = address
+        
+        do {
+            context.insert(newBranch)
+            try context.save()
+        } catch {
+            print("addBranch: error in add address")
+        }
+    }
+    
+    func addATM(address: String){
+        let newATM = ATM(context: context)
+        newATM.idNumber = generationIdATM()
+        newATM.address = address
+        
+        do {
+            context.insert(newATM)
+            try context.save()
+        } catch {
+            print("addATM: error in add address")
+        }
+    }
+
+    
     //MARK: -HelperFunctions
     func generationIdAccount (_ category: String) -> String {
         var result: String = ""
@@ -151,6 +178,45 @@ extension UIViewController {
         
         return result
     }
+    
+    func generationIdBranch () -> Int64{
+        var id: Int64 = 0
+        let request = Branch.fetchRequest() as NSFetchRequest<Branch>
+        do{
+            var items = try context.fetch(request)
+            items.sort(by: {str1,str2 in return str1.idNumber < str2.idNumber})
+            if (items.count == 0){
+                id = 1
+            }
+            else{
+                let newIdNumber = Int64(items.last!.idNumber) + 1
+                id = newIdNumber
+            }
+        } catch{
+            print("generation: error in add new branch")
+        }
+        return id
+    }
+    
+    func generationIdATM () -> Int64{
+        var id: Int64 = 0
+        let request = ATM.fetchRequest() as NSFetchRequest<ATM>
+        do{
+            var items = try context.fetch(request)
+            items.sort(by: {str1,str2 in return str1.idNumber < str2.idNumber})
+            if (items.count == 0){
+                id = 1
+            }
+            else{
+                let newIdNumber = Int64(items.last!.idNumber) + 1
+                id = newIdNumber
+            }
+        } catch{
+            print("generation: error in add new atm")
+        }
+        return id
+    }
+    
     //MARK:- PrintEntities
     func printAllIndividual(){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
@@ -231,6 +297,20 @@ extension UIViewController {
             }
         }
 
+    }
+    
+    func createBranches(){
+        let tempAdresses = ["г. Минск, ул. Матусевича 20", "г. Минск, ул. Центральная 8", "г. Минск, ул. Подлесная 56", "г. Минск, ул. Ольшевского 18", "г. Минск, ул. Парковая 1", "г. Брест, ул. Рыжского 28"]
+        for i in 0..<tempAdresses.count{
+            addBranch(address: tempAdresses[i])
+        }
+    }
+    
+    func createATMs(){
+        let tempAdresses = ["г. Минск, ул. Матусевича 20", "г. Минск, ул. Минина 33", "г. Минск, ул. Академическая 2/1", "г. Минск, ул. Рижская 9", "г. Минск, ул. Ушакова 33", "г. Минск, ул. Ольшевского 18", "г. Минск, ул. Притыцкого 8", "г. Брест, ул. Бунина 44", "г. Брест, ул. Центральная 1", "г. Брест, ул. Рыжского 28"]
+        for i in 0..<tempAdresses.count{
+            addATM(address: tempAdresses[i])
+        }
     }
     
     func createTemplateOrganizations (){

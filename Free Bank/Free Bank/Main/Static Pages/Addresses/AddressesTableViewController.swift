@@ -15,27 +15,33 @@ class AddressesTableViewController: UITableViewController {
     var branches = [Branch]()
     var atms = [ATM]()
     
+    let branchesRequest = Branch.fetchRequest() as NSFetchRequest<Branch>
+    let atmsRequest = ATM.fetchRequest() as NSFetchRequest<ATM>
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "mainBackground"))
-        
-        let branchesRequest = Branch.fetchRequest() as NSFetchRequest<Branch>
-        let atmsRequest = ATM.fetchRequest() as NSFetchRequest<ATM>
-        
-        //addBranch(address: "г.Брест, ул.Центральная 9")
-        //addATM(address: "г.Брест, ул.Ленина 19")
-        
         do {
             branches = try context.fetch(branchesRequest)
             atms = try context.fetch(atmsRequest)
+            
+            if branches.isEmpty{
+                createBranches()
+                branches = try context.fetch(branchesRequest)
+            }
+            if atms.isEmpty{
+                createATMs()
+                atms = try context.fetch(atmsRequest)
+            }
             
             print(branches.count)
             print(atms.count)
         } catch {
             print("AddressesTableViewController: Error in get addresses.")
         }
+        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "mainBackground"))
     }
+    
    
     // MARK: - Table view data source
     
@@ -63,63 +69,8 @@ class AddressesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "address", for: indexPath)
         cell.textLabel?.text = indexPath.section == 0 ? branches[indexPath.row].address : atms[indexPath.row].address
+        
         return cell
-    }
-    
-    func addBranch(address: String){
-        let newBranch = Branch(context: context)
-        
-        let request = Branch.fetchRequest() as NSFetchRequest<Branch>
-        do{
-            
-            var items = try context.fetch(request)
-            items.sort(by: {str1,str2 in return str1.idNumber < str2.idNumber})
-            if (items.count == 0){
-                newBranch.idNumber = 1
-            }
-            else{
-                let newIdNumber = Int64(items.last!.idNumber) + 1
-                newBranch.idNumber = newIdNumber
-            }
-        } catch{
-            print("generation: error in add new branch")
-        }
-        newBranch.address = address
-        
-        do {
-            context.insert(newBranch)
-            try context.save()
-        } catch {
-            print("addBranch: error in add address")
-        }
-    }
-    
-    func addATM(address: String){
-        let newATM = ATM(context: context)
-        
-        let request = ATM.fetchRequest() as NSFetchRequest<ATM>
-        do{
-            
-            var items = try context.fetch(request)
-            items.sort(by: {str1,str2 in return str1.idNumber < str2.idNumber})
-            if (items.count == 0){
-                newATM.idNumber = 1
-            }
-            else{
-                let newIdNumber = Int64(items.last!.idNumber) + 1
-                newATM.idNumber = newIdNumber
-            }
-        } catch{
-            print("generation: error in add new ATM")
-        }
-        newATM.address = address
-        
-        do {
-            context.insert(newATM)
-            try context.save()
-        } catch {
-            print("addATM: error in add address")
-        }
     }
 
 }

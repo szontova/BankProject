@@ -12,7 +12,7 @@
         <!--Кредиты-->
         <scene sceneID="zeD-I2-tkR">
             <objects>
-                <viewController id="1ef-RP-9rF" sceneMemberID="viewController">
+                <viewController id="1ef-RP-9rF" customClass="CreditsViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UuP-yE-0kQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
         <!--Переводы-->
         <scene sceneID="bOc-Wk-phr">
             <objects>
-                <viewController id="VfR-HQ-Ymy" sceneMemberID="viewController">
+                <viewController id="VfR-HQ-Ymy" customClass="TransfersViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lH4-DE-J8P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
         <!--Счета-->
         <scene sceneID="2ho-vq-iDD">
             <objects>
-                <viewController id="DNe-dc-Hnh" sceneMemberID="viewController">
+                <viewController id="DNe-dc-Hnh" customClass="AccountsViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xHm-O8-MfY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

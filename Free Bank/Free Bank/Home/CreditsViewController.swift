@@ -19,6 +19,12 @@ class CreditsViewController: UIViewController {
         
         transparentNavBar(navigationBar)
     }
+    
+    @IBAction func unwindToCreditsVCFromNewCreditVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToCreditsFromNewCreditSegue" else {return}
+        guard let _ = segue.destination as? NewCreditViewController else {return}
+    }
+    
     @IBAction func addCredit(_ sender: UIButton) {
         performSegue(withIdentifier: "toNewCreditSegue", sender: nil)
     }

@@ -40,6 +40,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="A5o-Vj-aYO" kind="unwind" unwindAction="unwindToCreditsVCFromNewCreditVCWithSegue:" id="hdF-co-HUn"/>
+                                </connections>
                             </button>
                             <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo0-xf-92F">
                                 <rect key="frame" x="15" y="288" width="384" height="290"/>
@@ -152,7 +155,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addCreditButton:" destination="Jbc-6D-AIf" eventType="touchUpInside" id="efu-YE-3o0"/>
-                                    <action selector="signUpButton:" destination="Jbc-6D-AIf" eventType="touchUpInside" id="spc-TK-NwL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -184,6 +186,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1u-Ps-LkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="A5o-Vj-aYO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="500.00000000000006" y="137.94642857142856"/>
         </scene>

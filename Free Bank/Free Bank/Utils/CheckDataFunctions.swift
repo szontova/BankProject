@@ -215,12 +215,30 @@ extension UIViewController{
         return true
     }
     
+    func checkCreditTerm(_ term: Int) -> Bool{
+        if term < 6 || term > 84{
+            showAlertError(message: "Неверно введен срок кредита.")
+            return false
+        }
+        return true
+    }
+    
+    func checkCreditSalary(_ amount: Int) -> Bool{
+        if amount < 782 || amount > 2500{
+            showAlertError(message: "Неверно введен минимальный доход.")
+            return false
+        }
+        return true
+    }
+    
     func checkCreditDatas(_ amount: Int, _ term: Int, _ salary: Int) -> Bool{
         if amount == 0 || term == 0 || salary == 0 {
             showAlertError(message: "Не все поля заполнены.")
             return false
         }
         if !checkCreditAmount(amount) {return false}
+        if !checkCreditTerm(term) {return false}
+        if !checkCreditSalary(salary) {return false}
         
         return true
     }

@@ -11,6 +11,7 @@ class NewCreditViewController: UIViewController {
 
     @IBOutlet weak var amountSlider: UISlider!
     @IBOutlet weak var termSlider: UISlider!
+    
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var salaryTextField: UITextField!
     @IBOutlet weak var termTextField: UITextField!

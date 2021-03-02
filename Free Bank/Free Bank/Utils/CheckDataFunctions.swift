@@ -207,4 +207,22 @@ extension UIViewController{
         return true
     }
     
+    func checkCreditAmount(_ amount: Int) -> Bool{
+        if amount < 100 || amount > 10000{
+            showAlertError(message: "Неверно введена сумма кредита.")
+            return false
+        }
+        return true
+    }
+    
+    func checkCreditDatas(_ amount: Int, _ term: Int, _ salary: Int) -> Bool{
+        if amount == 0 || term == 0 || salary == 0 {
+            showAlertError(message: "Не все поля заполнены.")
+            return false
+        }
+        if !checkCreditAmount(amount) {return false}
+        
+        return true
+    }
+    
 }

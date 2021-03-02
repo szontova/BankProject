@@ -101,12 +101,6 @@ extension UIViewController {
         }
     }
     
-    func getValidityDate(_ years: Int) -> String{
-        let validDate = NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: NSDate() as Date)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/yy"
-        return dateFormatter.string(for: validDate) ?? "00/00"
-    }
     
     func addAccount (_ idNumber: String, _ individ: Individual?, _ org: Organization?){
         let newAccount = Account(context:context)
@@ -203,6 +197,14 @@ extension UIViewController {
 
     
     //MARK: -HelperFunctions
+    
+    func getValidityDate(_ years: Int) -> String{
+        let validDate = NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: NSDate() as Date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yy"
+        return dateFormatter.string(for: validDate) ?? "00/00"
+    }
+    
     func generationIdAccount (_ category: String) -> String {
         var result: String = ""
         

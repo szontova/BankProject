@@ -79,6 +79,27 @@ extension UIViewController {
     }
     
     //MARK:- AddEntities
+    func addAccount (_ idNumber: String, _ individ: Individual?, _ org: Organization?){
+        let newAccount = Account(context:context)
+        newAccount.idNumber = idNumber
+        
+        if let _ = individ {
+            individ?.addToAccounts(newAccount)
+        }
+        
+        if let _ = org {
+            org?.addToAccounts(newAccount)
+        }
+        
+        do {
+            context.insert(newAccount)
+            try context.save()
+        } catch {
+            print("addAccount: error in saving context")
+        }
+        
+    }
+    
     func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
         
         let newIndivid = Individual(context: context)

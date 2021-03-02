@@ -91,26 +91,35 @@
                                     <action selector="addCardButton:" destination="W5e-BJ-FJZ" eventType="touchUpInside" id="Mxj-Cw-w5O"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К данному счёту нет привязанных карт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kD-Ok-9pY">
-                                <rect key="frame" x="32" y="269" width="364" height="23"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К данному счёту нет привязанных карт" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kD-Ok-9pY">
+                                <rect key="frame" x="15" y="269" width="398" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N1u-za-vtn">
+                                <rect key="frame" x="15" y="254" width="398" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hYT-Vz-QKW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wix-QM-QUz" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="8ee-aH-5fl"/>
+                            <constraint firstItem="N1u-za-vtn" firstAttribute="top" secondItem="YzT-rA-j8I" secondAttribute="bottom" constant="5" id="97P-zt-pt8"/>
+                            <constraint firstItem="hYT-Vz-QKW" firstAttribute="trailing" secondItem="N1u-za-vtn" secondAttribute="trailing" constant="15" id="Cgg-s1-PkS"/>
                             <constraint firstItem="YzT-rA-j8I" firstAttribute="top" secondItem="zeq-lV-v2D" secondAttribute="bottom" constant="5" id="Drm-IL-d6o"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="bottom" secondItem="zH5-Cz-Nfq" secondAttribute="bottom" id="E9x-lV-G3s"/>
+                            <constraint firstItem="hYT-Vz-QKW" firstAttribute="bottom" secondItem="N1u-za-vtn" secondAttribute="bottom" constant="15" id="FkY-Bc-W19"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="leading" secondItem="zH5-Cz-Nfq" secondAttribute="leading" id="GgD-NA-v9s"/>
+                            <constraint firstItem="6kD-Ok-9pY" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="HSr-mX-VpT"/>
                             <constraint firstItem="6kD-Ok-9pY" firstAttribute="centerX" secondItem="zH5-Cz-Nfq" secondAttribute="centerX" id="IEH-13-S8P"/>
                             <constraint firstItem="wix-QM-QUz" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Iid-dc-Zgc"/>
                             <constraint firstItem="YzT-rA-j8I" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Plr-y7-Fcd"/>
                             <constraint firstItem="zeq-lV-v2D" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="RM2-md-LcQ"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" id="SNm-fo-KPI"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="top" secondItem="hYT-Vz-QKW" secondAttribute="top" constant="10" id="WZx-np-NL8"/>
+                            <constraint firstItem="N1u-za-vtn" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Z7p-Qk-eyJ"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" id="cAV-Xh-ez0"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="top" secondItem="zH5-Cz-Nfq" secondAttribute="top" id="h5t-Na-SnK"/>
                             <constraint firstItem="wix-QM-QUz" firstAttribute="top" secondItem="r3x-WC-uA9" secondAttribute="bottom" id="hfU-ru-aQW"/>
@@ -126,6 +135,7 @@
                     <connections>
                         <outlet property="accountBalanceLabel" destination="zeq-lV-v2D" id="NQT-By-wJ1"/>
                         <outlet property="accountNumberLabel" destination="vkM-XA-RP7" id="Mp8-5B-cnR"/>
+                        <outlet property="cardsTableView" destination="N1u-za-vtn" id="ZXV-mT-dfw"/>
                         <outlet property="missingCardsLabel" destination="6kD-Ok-9pY" id="iUF-Gb-U7B"/>
                         <outlet property="navigationBar" destination="r3x-WC-uA9" id="DTv-MQ-kq7"/>
                     </connections>

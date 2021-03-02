@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jbc-6D-AIf">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -15,15 +15,15 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Jbc-6D-AIf" customClass="NewCreditViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ak-vN-8Ie">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GJq-4g-YqB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2o4-nz-1NU">
-                                <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                <rect key="frame" x="15" y="59" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="ZVO-IO-h3M"/>
@@ -42,60 +42,60 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo0-xf-92F">
-                                <rect key="frame" x="15" y="80" width="290" height="290"/>
+                                <rect key="frame" x="15" y="288" width="384" height="290"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujp-GM-XtQ">
-                                        <rect key="frame" x="15" y="236" width="260" height="35"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="782" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujp-GM-XtQ">
+                                        <rect key="frame" x="15" y="236" width="354" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="0yd-DQ-XU9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sI6-Qc-92Q">
-                                        <rect key="frame" x="15" y="36" width="260" height="35"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sI6-Qc-92Q">
+                                        <rect key="frame" x="15" y="36" width="354" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="RMr-By-xyR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="100" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="xMh-ZS-JbV">
-                                        <rect key="frame" x="13" y="65" width="264" height="31"/>
+                                        <rect key="frame" x="13" y="65" width="358" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="amountSliderAction:" destination="Jbc-6D-AIf" eventType="valueChanged" id="Ko9-PJ-BAO"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Минимальный доход" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO7-xA-uXN">
-                                        <rect key="frame" x="15" y="210" width="260" height="21"/>
+                                        <rect key="frame" x="15" y="210" width="354" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма кредита" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJi-Ta-SrZ">
-                                        <rect key="frame" x="15" y="10" width="260" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сумма кредита (бел.руб.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJi-Ta-SrZ">
+                                        <rect key="frame" x="15" y="10" width="354" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-5a-f0z">
-                                        <rect key="frame" x="15" y="136" width="260" height="35"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-5a-f0z">
+                                        <rect key="frame" x="15" y="136" width="354" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="pQc-CJ-dJJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="iO0-JC-LVa">
-                                        <rect key="frame" x="13" y="165" width="264" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="6" maxValue="84" translatesAutoresizingMaskIntoConstraints="NO" id="iO0-JC-LVa">
+                                        <rect key="frame" x="13" y="165" width="358" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="termSliderAction:" destination="Jbc-6D-AIf" eventType="valueChanged" id="uFu-0B-lYn"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срок кредита" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-Pr-5n4">
-                                        <rect key="frame" x="15" y="110" width="260" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Срок кредита (мес.)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-Pr-5n4">
+                                        <rect key="frame" x="15" y="110" width="354" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -137,7 +137,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I73-2B-GPj">
-                                <rect key="frame" x="30" y="395" width="260" height="60"/>
+                                <rect key="frame" x="30" y="603" width="354" height="60"/>
                                 <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="UFd-nh-zoo"/>
@@ -178,8 +178,8 @@
                     <connections>
                         <outlet property="amountSlider" destination="xMh-ZS-JbV" id="joz-4X-utE"/>
                         <outlet property="amountTextField" destination="sI6-Qc-92Q" id="bM6-Yo-Our"/>
-                        <outlet property="salarySlider" destination="iO0-JC-LVa" id="kGT-YS-fA4"/>
                         <outlet property="salaryTextField" destination="ujp-GM-XtQ" id="yI4-tm-8Cr"/>
+                        <outlet property="termSlider" destination="iO0-JC-LVa" id="kGT-YS-fA4"/>
                         <outlet property="termTextField" destination="RHx-5a-f0z" id="pbZ-hb-kZx"/>
                     </connections>
                 </viewController>

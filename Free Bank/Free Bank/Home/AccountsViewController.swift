@@ -17,22 +17,75 @@ class AccountsViewController: UIViewController {
     
     private var accounts: [Account] = []
     
+    private var accountForTransfer = Account()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         transparentNavBar(navigationBar)
+    
+        accountsTableViewConfigurations()
+        
+        updateAccounts()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toCardsSegue" else { return }
+        guard let destinationVC = segue.destination as? AccountCardsViewController else { return }
+        destinationVC.setAccount(accountForTransfer)
+    }
+
+    
+    func accountsTableViewConfigurations(){
         
         accountsTableView.backgroundColor = .clear
+        
+        accountsTableView.register(AccountTableViewCell.nib(), forCellReuseIdentifier: AccountTableViewCell.identifier)
         
         accountsTableView.delegate = self
         accountsTableView.dataSource = self
         
+    }
+    
+    func updateAccounts() {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array ( accs as! Set<Account> )
-        
     }
 
+    @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToAccFromAccCardsSegue" else {return}
+        guard let _ = segue.destination as? AccountCardsViewController else {return}
+    }
+    
     @IBAction func addAccountButton(_ sender: UIButton) {
+     
+        let accountNumber = generationIdAccount("S")
+        let alert = UIAlertController(title: "", message: "\nНомер вашего нового счёта: \n" + accountNumber, preferredStyle: .alert)
+                
+        let attributedString = NSAttributedString(string: "Подтверждения создания счёта", attributes: [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+            NSAttributedString.Key.foregroundColor : UIColor.black
+        ])
+        alert.setValue(attributedString, forKey: "attributedTitle")
+            
+        alert.view.tintColor = UIColor.black
+                
+        let okAction = UIAlertAction(title: "Подтвердить", style: .default){ _ in
+            self.addAccount(accountNumber, self.individual, self.organization)
+            
+            self.updateAccounts()
+            
+            DispatchQueue.main.async {
+                self.accountsTableView.reloadData()
+            }
+            
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -58,13 +111,15 @@ extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = self.accountsTableView.dequeueReusableCell(withIdentifier: "accountCell")! as UITableViewCell
-        cell.textLabel?.text = accounts[indexPath.row].idNumber
-        return cell
+        if let cell = self.accountsTableView.dequeueReusableCell(withIdentifier: "accountCell") as? AccountTableViewCell {
+            cell.configure(with: accounts[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = .clear
-        cell.contentView.backgroundColor = .clear
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        accountForTransfer = accounts[indexPath.row]
+        performSegue(withIdentifier: "toCardsSegue", sender: nil)
     }
 }

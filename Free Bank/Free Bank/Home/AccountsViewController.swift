@@ -22,8 +22,13 @@ class AccountsViewController: UIViewController {
         
         transparentNavBar(navigationBar)
         
+        accountsTableView.backgroundColor = .clear
+        
         accountsTableView.delegate = self
         accountsTableView.dataSource = self
+        
+        let accs = individual?.accounts ?? organization?.accounts
+        accounts = Array ( accs as! Set<Account> )
         
     }
 
@@ -48,15 +53,18 @@ extension AccountsViewController: UITableViewDelegate {}
 extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = individual?.accounts?.count ?? 0
-        return count
+        return accounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell:UITableViewCell = self.accountsTableView.dequeueReusableCell(withIdentifier: "accountCell")! as UITableViewCell
-       // let acc =  individual?.accounts
-       
-        cell.textLabel?.text = "la"
+        cell.textLabel?.text = accounts[indexPath.row].idNumber
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
     }
 }

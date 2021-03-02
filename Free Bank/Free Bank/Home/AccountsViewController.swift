@@ -24,6 +24,8 @@ class AccountsViewController: UIViewController {
         
         accountsTableView.backgroundColor = .clear
         
+        accountsTableView.register(AccountTableViewCell.nib(), forCellReuseIdentifier: "accountCell")
+        
         accountsTableView.delegate = self
         accountsTableView.dataSource = self
         
@@ -58,13 +60,10 @@ extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:UITableViewCell = self.accountsTableView.dequeueReusableCell(withIdentifier: "accountCell")! as UITableViewCell
-        cell.textLabel?.text = accounts[indexPath.row].idNumber
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = .clear
-        cell.contentView.backgroundColor = .clear
+        if let cell = self.accountsTableView.dequeueReusableCell(withIdentifier: "accountCell") as? AccountTableViewCell {
+            cell.configure(with: accounts[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
     }
 }

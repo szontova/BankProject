@@ -21,6 +21,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="MLw-kF-aDa">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Баланс: 20.00 BYR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-lV-v2D">
+                                <rect key="frame" x="15" y="167" width="127" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счёт: BY00FREE000000FBS00000000007" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkM-XA-RP7">
                                 <rect key="frame" x="15" y="145" width="398" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -85,9 +91,9 @@
                                     <action selector="addCardButton:" destination="W5e-BJ-FJZ" eventType="touchUpInside" id="Mxj-Cw-w5O"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Баланс: 20.00 BYR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-lV-v2D">
-                                <rect key="frame" x="15" y="167" width="127" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К данному счёту нет привязанных карт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kD-Ok-9pY">
+                                <rect key="frame" x="32" y="269" width="364" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -99,6 +105,7 @@
                             <constraint firstItem="YzT-rA-j8I" firstAttribute="top" secondItem="zeq-lV-v2D" secondAttribute="bottom" constant="5" id="Drm-IL-d6o"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="bottom" secondItem="zH5-Cz-Nfq" secondAttribute="bottom" id="E9x-lV-G3s"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="leading" secondItem="zH5-Cz-Nfq" secondAttribute="leading" id="GgD-NA-v9s"/>
+                            <constraint firstItem="6kD-Ok-9pY" firstAttribute="centerX" secondItem="zH5-Cz-Nfq" secondAttribute="centerX" id="IEH-13-S8P"/>
                             <constraint firstItem="wix-QM-QUz" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Iid-dc-Zgc"/>
                             <constraint firstItem="YzT-rA-j8I" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Plr-y7-Fcd"/>
                             <constraint firstItem="zeq-lV-v2D" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="RM2-md-LcQ"/>
@@ -107,6 +114,7 @@
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" id="cAV-Xh-ez0"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="top" secondItem="zH5-Cz-Nfq" secondAttribute="top" id="h5t-Na-SnK"/>
                             <constraint firstItem="wix-QM-QUz" firstAttribute="top" secondItem="r3x-WC-uA9" secondAttribute="bottom" id="hfU-ru-aQW"/>
+                            <constraint firstItem="6kD-Ok-9pY" firstAttribute="top" secondItem="YzT-rA-j8I" secondAttribute="bottom" constant="20" id="jVB-L7-5mx"/>
                             <constraint firstItem="vkM-XA-RP7" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="meB-Kv-74f"/>
                             <constraint firstItem="vkM-XA-RP7" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="osa-if-Xid"/>
                             <constraint firstItem="zeq-lV-v2D" firstAttribute="top" secondItem="vkM-XA-RP7" secondAttribute="bottom" constant="5" id="pGL-rx-Ayi"/>
@@ -118,6 +126,7 @@
                     <connections>
                         <outlet property="accountBalanceLabel" destination="zeq-lV-v2D" id="NQT-By-wJ1"/>
                         <outlet property="accountNumberLabel" destination="vkM-XA-RP7" id="Mp8-5B-cnR"/>
+                        <outlet property="missingCardsLabel" destination="6kD-Ok-9pY" id="iUF-Gb-U7B"/>
                         <outlet property="navigationBar" destination="r3x-WC-uA9" id="DTv-MQ-kq7"/>
                     </connections>
                 </viewController>

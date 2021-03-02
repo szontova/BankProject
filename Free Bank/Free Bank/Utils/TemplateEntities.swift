@@ -512,3 +512,15 @@ extension Account{
     
 }
 
+extension Card{
+    
+    func string() -> String{
+        let null = "Nothing"
+        var result = "idNumber: \(self.idNumber),\n cvv: \(self.cvv),\n validity: \(self.validity ?? null)\n"
+        if let account = self.account {
+            result += " account: " + account.string()
+        }
+        return result
+    }
+    
+}

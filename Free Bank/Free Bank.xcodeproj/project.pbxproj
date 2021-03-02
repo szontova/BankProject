@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311E330E25EE2A8C0048C231 /* NewCredit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311E330D25EE2A8C0048C231 /* NewCredit.storyboard */; };
+		311E331125EE2AA70048C231 /* NewCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E331025EE2AA70048C231 /* NewCreditViewController.swift */; };
 		3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3148234D25D6D23E008288FC /* ExchangeRate.storyboard */; };
 		3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */; };
 		31E793A625E9565100667F99 /* LinkFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E793A525E9565100667F99 /* LinkFunctions.swift */; };
@@ -62,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		311E330D25EE2A8C0048C231 /* NewCredit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCredit.storyboard; sourceTree = "<group>"; };
+		311E331025EE2AA70048C231 /* NewCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreditViewController.swift; sourceTree = "<group>"; };
 		3148234D25D6D23E008288FC /* ExchangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeRate.storyboard; sourceTree = "<group>"; };
 		3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewController.swift; sourceTree = "<group>"; };
 		31E793A525E9565100667F99 /* LinkFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFunctions.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		311E330C25EE2A510048C231 /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+				311E330D25EE2A8C0048C231 /* NewCredit.storyboard */,
+				311E331025EE2AA70048C231 /* NewCreditViewController.swift */,
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
 		3148234B25D6CED1008288FC /* Static Pages */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,11 +212,12 @@
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				311E330C25EE2A510048C231 /* Credits */,
 				593AE04E25E692FF00DEB157 /* Home.storyboard */,
+				59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */,
 				593AE05525E6A00200DEB157 /* HomeTabBarController.swift */,
 				59A42D0B25ECE3AC002C8EF9 /* AccountsViewController.swift */,
 				59A42D0E25ECE3D9002C8EF9 /* TransfersViewController.swift */,
-				59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */,
 				5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */,
 			);
 			path = Home;
@@ -366,6 +380,7 @@
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
 				597D66AE25C80FA40051E84A /* Main.storyboard in Resources */,
+				311E330E25EE2A8C0048C231 /* NewCredit.storyboard in Resources */,
 				59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */,
 				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
 				593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */,
@@ -389,6 +404,7 @@
 				59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
 				59DFC2D025E7DE62000EDCF9 /* EndOfSignUpViewController.swift in Sources */,
+				311E331125EE2AA70048C231 /* NewCreditViewController.swift in Sources */,
 				59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */,
 				597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */,
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,

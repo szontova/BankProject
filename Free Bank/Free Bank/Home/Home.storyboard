@@ -77,11 +77,22 @@
                     <tabBarItem key="tabBarItem" title="Кредиты" image="credits" id="mRh-bI-4L7"/>
                     <connections>
                         <outlet property="navigationBar" destination="o2Q-kR-6xB" id="c1b-GR-2kN"/>
+                        <segue destination="VfT-Fm-EGF" kind="show" identifier="toNewCreditSegue" id="x0E-sO-tgc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnH-qo-p8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="291" y="763"/>
+        </scene>
+        <!--NewCredit-->
+        <scene sceneID="ucc-CC-nge">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="newCredit" storyboardName="NewCredit" id="VfT-Fm-EGF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mf2-Fb-efQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQn-a7-9Lh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="1187"/>
         </scene>
         <!--Ещё-->
         <scene sceneID="YnN-nw-5Mc">

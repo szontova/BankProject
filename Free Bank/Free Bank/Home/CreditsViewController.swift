@@ -20,6 +20,7 @@ class CreditsViewController: UIViewController {
         transparentNavBar(navigationBar)
     }
     @IBAction func addCredit(_ sender: UIButton) {
+        performSegue(withIdentifier: "toNewCreditSegue", sender: nil)
     }
     
 }

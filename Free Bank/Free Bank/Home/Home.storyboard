@@ -428,12 +428,23 @@
                     <connections>
                         <outlet property="accountsTableView" destination="3q7-nz-xy8" id="A3s-XM-Aly"/>
                         <outlet property="navigationBar" destination="vTS-D6-EiT" id="bhe-e7-a8F"/>
+                        <segue destination="T1y-Lm-bQ9" kind="show" identifier="toCardsSegue" id="JOu-ub-1sm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwL-VG-R2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Item" id="Ku6-US-fb0"/>
             </objects>
             <point key="canvasLocation" x="-1078" y="763"/>
+        </scene>
+        <!--AccountCards-->
+        <scene sceneID="i7D-wQ-7sW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AccountCards" id="T1y-Lm-bQ9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ayY-SQ-x5c"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pT-UB-wYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1078" y="1168"/>
         </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="cyv-13-P47">

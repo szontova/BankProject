@@ -44,6 +44,10 @@ class AccountsViewController: UIViewController {
         accounts = Array ( accs as! Set<Account> )
     }
 
+    @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToAccFromAccCardsSegue" else {return}
+        guard let _ = segue.destination as? AccountCardsViewController else {return}
+    }
     @IBAction func addAccountButton(_ sender: UIButton) {
      
         let accountNumber = generationIdAccount("S")
@@ -103,5 +107,9 @@ extension AccountsViewController: UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toCardsSegue", sender: nil)
     }
 }

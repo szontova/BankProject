@@ -157,6 +157,16 @@
                                     <action selector="addCreditButton:" destination="Jbc-6D-AIf" eventType="touchUpInside" id="efu-YE-3o0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Онлайн оформление кредита" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-iA-GG3">
+                                <rect key="frame" x="38" y="228" width="338" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vrg-FW-LvF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vkV-ZX-ZsD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -169,11 +179,14 @@
                             <constraint firstItem="I73-2B-GPj" firstAttribute="top" secondItem="Wo0-xf-92F" secondAttribute="bottom" constant="25" id="P4J-SR-keo"/>
                             <constraint firstItem="Wo0-xf-92F" firstAttribute="centerY" secondItem="8Ak-vN-8Ie" secondAttribute="centerY" constant="-15" id="QXE-XV-57c"/>
                             <constraint firstItem="GJq-4g-YqB" firstAttribute="trailing" secondItem="vkV-ZX-ZsD" secondAttribute="trailing" id="XPt-WQ-UOM"/>
+                            <constraint firstItem="CPj-iA-GG3" firstAttribute="leading" secondItem="vkV-ZX-ZsD" secondAttribute="leading" constant="38" id="chb-zY-XzP"/>
+                            <constraint firstItem="Wo0-xf-92F" firstAttribute="top" secondItem="CPj-iA-GG3" secondAttribute="bottom" constant="30" id="ePC-IX-eXv"/>
                             <constraint firstItem="GJq-4g-YqB" firstAttribute="bottom" secondItem="8Ak-vN-8Ie" secondAttribute="bottom" id="hIG-pb-JOH"/>
                             <constraint firstItem="2o4-nz-1NU" firstAttribute="top" secondItem="vkV-ZX-ZsD" secondAttribute="top" constant="15" id="hum-Ay-xOz"/>
                             <constraint firstItem="Wo0-xf-92F" firstAttribute="leading" secondItem="vkV-ZX-ZsD" secondAttribute="leading" constant="15" id="q66-qP-In6"/>
                             <constraint firstItem="GJq-4g-YqB" firstAttribute="top" secondItem="8Ak-vN-8Ie" secondAttribute="top" id="r8I-3a-XcO"/>
                             <constraint firstItem="I73-2B-GPj" firstAttribute="centerX" secondItem="8Ak-vN-8Ie" secondAttribute="centerX" id="rcy-vQ-Px3"/>
+                            <constraint firstItem="vkV-ZX-ZsD" firstAttribute="trailing" secondItem="CPj-iA-GG3" secondAttribute="trailing" constant="38" id="tEI-Kc-NWU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zCR-yh-a35"/>

@@ -209,7 +209,7 @@ extension UIViewController{
     
     func checkCreditAmount(_ amount: Int) -> Bool{
         if amount < 100 || amount > 10000{
-            showAlertError(message: "Неверно введена сумма кредита.")
+            showAlertError(message: "Неверно введена сумма кредита.\nМинимальная сумма - 100 BYR\nМаксимальная - 10000 BYR")
             return false
         }
         return true
@@ -217,7 +217,7 @@ extension UIViewController{
     
     func checkCreditTerm(_ term: Int) -> Bool{
         if term < 6 || term > 84{
-            showAlertError(message: "Неверно введен срок кредита.")
+            showAlertError(message: "Неверно введен срок кредита.\nМинимальный срок - 6 месяцев\nМаксимальный - 84 месяца")
             return false
         }
         return true
@@ -225,7 +225,7 @@ extension UIViewController{
     
     func checkCreditSalary(_ amount: Int) -> Bool{
         if amount < 782 || amount > 2500{
-            showAlertError(message: "Неверно введен минимальный доход.")
+            showAlertError(message: "Неверно введен минимальный доход.\nМинимальный доход - 782 BYR\nМаксимальный - 2500 BYR")
             return false
         }
         return true

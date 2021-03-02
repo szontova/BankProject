@@ -16,6 +16,10 @@ class NewCreditViewController: UIViewController {
     @IBOutlet weak var salaryTextField: UITextField!
     @IBOutlet weak var termTextField: UITextField!
     
+    private var amount = 0
+    private var term = 0
+    private var salary = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(Int.parse("6 months") ?? 0)
@@ -33,7 +37,12 @@ class NewCreditViewController: UIViewController {
     }
     
     @IBAction func addCreditButton(_ sender: UIButton) {
-        
+        amount = Int.parse(amountTextField.text ?? "") ?? 0
+        term = Int.parse(termTextField.text ?? "") ?? 0
+        salary = Int.parse(salaryTextField.text ?? "") ?? 0
+        if checkCreditDatas(amount, term, salary) {
+            print("Its okay")
+        }
     }
     
     @IBAction func amountSliderAction(_ sender: UISlider) {

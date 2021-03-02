@@ -111,7 +111,7 @@ extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = self.accountsTableView.dequeueReusableCell(withIdentifier: "accountCell") as? AccountTableViewCell {
+        if let cell = self.accountsTableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as? AccountTableViewCell {
             cell.configure(with: accounts[indexPath.row])
             return cell
         }

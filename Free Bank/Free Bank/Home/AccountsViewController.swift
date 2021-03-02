@@ -21,20 +21,58 @@ class AccountsViewController: UIViewController {
         super.viewDidLoad()
         
         transparentNavBar(navigationBar)
+    
+        accountsTableViewConfigurations()
+        
+        updateAccounts()
+    }
+
+    
+    func accountsTableViewConfigurations(){
         
         accountsTableView.backgroundColor = .clear
         
-        accountsTableView.register(AccountTableViewCell.nib(), forCellReuseIdentifier: "accountCell")
+        accountsTableView.register(AccountTableViewCell.nib(), forCellReuseIdentifier: AccountTableViewCell.identifier)
         
         accountsTableView.delegate = self
         accountsTableView.dataSource = self
         
+    }
+    
+    func updateAccounts() {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array ( accs as! Set<Account> )
-        
     }
 
     @IBAction func addAccountButton(_ sender: UIButton) {
+     
+        let accountNumber = generationIdAccount("S")
+        let alert = UIAlertController(title: "", message: "\nНомер вашего нового счёта: \n" + accountNumber, preferredStyle: .alert)
+                
+        let attributedString = NSAttributedString(string: "Подтверждения создания счёта", attributes: [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+            NSAttributedString.Key.foregroundColor : UIColor.black
+        ])
+        alert.setValue(attributedString, forKey: "attributedTitle")
+            
+        alert.view.tintColor = UIColor.black
+                
+        let okAction = UIAlertAction(title: "Подтвердить", style: .default){ _ in
+            self.addAccount(accountNumber, self.individual, self.organization)
+            
+            self.updateAccounts()
+            
+            DispatchQueue.main.async {
+                self.accountsTableView.reloadData()
+            }
+            
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 

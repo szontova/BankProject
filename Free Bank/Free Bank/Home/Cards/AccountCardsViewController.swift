@@ -63,7 +63,7 @@ class AccountCardsViewController: UIViewController {
     }
     
     @IBAction func addCardButton(_ sender: UIButton) {
-        if let acc = account { addCard(acc) }
+        if let acc = account { addCard( "S", acc) }
         
         updateCards()
         

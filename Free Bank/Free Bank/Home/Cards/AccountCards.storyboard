@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzT-rA-j8I">
-                                <rect key="frame" x="15" y="172" width="398" height="60"/>
+                                <rect key="frame" x="15" y="189" width="398" height="60"/>
                                 <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mK5-FR-rVS"/>
@@ -85,16 +85,23 @@
                                     <action selector="addCardButton:" destination="W5e-BJ-FJZ" eventType="touchUpInside" id="Mxj-Cw-w5O"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Баланс: 20.00 BYR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-lV-v2D">
+                                <rect key="frame" x="15" y="167" width="127" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hYT-Vz-QKW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YzT-rA-j8I" firstAttribute="top" secondItem="vkM-XA-RP7" secondAttribute="bottom" constant="10" id="1cV-0p-NdB"/>
                             <constraint firstItem="wix-QM-QUz" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="8ee-aH-5fl"/>
+                            <constraint firstItem="YzT-rA-j8I" firstAttribute="top" secondItem="zeq-lV-v2D" secondAttribute="bottom" constant="5" id="Drm-IL-d6o"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="bottom" secondItem="zH5-Cz-Nfq" secondAttribute="bottom" id="E9x-lV-G3s"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="leading" secondItem="zH5-Cz-Nfq" secondAttribute="leading" id="GgD-NA-v9s"/>
                             <constraint firstItem="wix-QM-QUz" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Iid-dc-Zgc"/>
                             <constraint firstItem="YzT-rA-j8I" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Plr-y7-Fcd"/>
+                            <constraint firstItem="zeq-lV-v2D" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="RM2-md-LcQ"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" id="SNm-fo-KPI"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="top" secondItem="hYT-Vz-QKW" secondAttribute="top" constant="10" id="WZx-np-NL8"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" id="cAV-Xh-ez0"/>
@@ -102,12 +109,14 @@
                             <constraint firstItem="wix-QM-QUz" firstAttribute="top" secondItem="r3x-WC-uA9" secondAttribute="bottom" id="hfU-ru-aQW"/>
                             <constraint firstItem="vkM-XA-RP7" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="meB-Kv-74f"/>
                             <constraint firstItem="vkM-XA-RP7" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="osa-if-Xid"/>
+                            <constraint firstItem="zeq-lV-v2D" firstAttribute="top" secondItem="vkM-XA-RP7" secondAttribute="bottom" constant="5" id="pGL-rx-Ayi"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" id="wmT-Hx-Uvh"/>
                             <constraint firstItem="YzT-rA-j8I" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="ysf-uZ-Qbl"/>
                             <constraint firstItem="vkM-XA-RP7" firstAttribute="top" secondItem="wix-QM-QUz" secondAttribute="bottom" constant="5" id="zK7-W2-7J7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accountBalanceLabel" destination="zeq-lV-v2D" id="NQT-By-wJ1"/>
                         <outlet property="accountNumberLabel" destination="vkM-XA-RP7" id="Mp8-5B-cnR"/>
                         <outlet property="navigationBar" destination="r3x-WC-uA9" id="DTv-MQ-kq7"/>
                     </connections>

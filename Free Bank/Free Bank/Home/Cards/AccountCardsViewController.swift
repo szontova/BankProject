@@ -10,9 +10,11 @@ import UIKit
 class AccountCardsViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var accountNumberLabel: UILabel!
+    @IBOutlet weak var accountBalanceLabel: UILabel!
     
     private var account = Account()
-    @IBOutlet weak var accountNumberLabel: UILabel!
+
     
     func setAccount(_ acc: Account) {
         self.account = acc
@@ -30,6 +32,7 @@ class AccountCardsViewController: UIViewController {
         super.viewDidAppear(animated)
         
         accountNumberLabel.text = "Cчёт: \(account.idNumber ?? "")"
+        accountBalanceLabel.text = NSString(format: "Баланс: %.2f BYR", account.balance) as String
     }
 
     @IBAction func addCardButton(_ sender: UIButton) {

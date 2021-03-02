@@ -17,7 +17,7 @@ class AccountsViewController: UIViewController {
     
     private var accounts: [Account] = []
     
-    private var accountForTransfer = Account()
+    private var accountForTransfer: Account?
     
     override func viewDidLoad() {
         super.viewDidLoad()

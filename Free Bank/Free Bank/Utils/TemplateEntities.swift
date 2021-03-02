@@ -160,7 +160,6 @@ extension UIViewController {
         let predicate = NSPredicate(format: "idNumber LIKE %@",  "????????????????" + category + "???????????")
         request.predicate = predicate
         do{
-            
             var items = try context.fetch(request)
             items.sort(by: {str1,str2 in return str1.idNumber! < str2.idNumber!})
             if (items.count == 0){

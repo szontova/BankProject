@@ -27,11 +27,16 @@ class AddressesTableViewController: UITableViewController {
             if branches.isEmpty{
                 createBranches()
                 branches = try context.fetch(branchesRequest)
+                branches.sort(by: {str1,str2 in return str1.address! < str2.address!})
             }
+            else {branches.sort(by: {str1,str2 in return str1.address! < str2.address!})}
+            
             if atms.isEmpty{
                 createATMs()
                 atms = try context.fetch(atmsRequest)
+                atms.sort(by: {str1,str2 in return str1.address! < str2.address!})
             }
+            else {atms.sort(by: {str1,str2 in return str1.address! < str2.address!})}
             
             print(branches.count)
             print(atms.count)

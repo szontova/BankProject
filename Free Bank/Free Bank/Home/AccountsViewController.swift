@@ -17,6 +17,8 @@ class AccountsViewController: UIViewController {
     
     private var accounts: [Account] = []
     
+    private var accountForTransfer = Account()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +27,12 @@ class AccountsViewController: UIViewController {
         accountsTableViewConfigurations()
         
         updateAccounts()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toCardsSegue" else { return }
+        guard let destinationVC = segue.destination as? AccountCardsViewController else { return }
+        destinationVC.setAccount(accountForTransfer)
     }
 
     
@@ -48,6 +56,7 @@ class AccountsViewController: UIViewController {
         guard segue.identifier == "unwindToAccFromAccCardsSegue" else {return}
         guard let _ = segue.destination as? AccountCardsViewController else {return}
     }
+    
     @IBAction func addAccountButton(_ sender: UIButton) {
      
         let accountNumber = generationIdAccount("S")
@@ -110,6 +119,7 @@ extension AccountsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        accountForTransfer = accounts[indexPath.row]
         performSegue(withIdentifier: "toCardsSegue", sender: nil)
     }
 }

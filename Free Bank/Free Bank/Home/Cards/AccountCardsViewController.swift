@@ -10,6 +10,13 @@ import UIKit
 class AccountCardsViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
+    
+    private var account = Account()
+    
+    func setAccount(_ acc: Account) {
+        self.account = acc
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,5 +25,10 @@ class AccountCardsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        print(account.string())
+    }
 
 }

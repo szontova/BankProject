@@ -54,16 +54,25 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wix-QM-QUz">
+                                <rect key="frame" x="15" y="98" width="384" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hYT-Vz-QKW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hYT-Vz-QKW" firstAttribute="trailing" secondItem="wix-QM-QUz" secondAttribute="trailing" constant="15" id="8ee-aH-5fl"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="bottom" secondItem="zH5-Cz-Nfq" secondAttribute="bottom" id="E9x-lV-G3s"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="leading" secondItem="zH5-Cz-Nfq" secondAttribute="leading" id="GgD-NA-v9s"/>
+                            <constraint firstItem="wix-QM-QUz" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Iid-dc-Zgc"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" id="SNm-fo-KPI"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="top" secondItem="hYT-Vz-QKW" secondAttribute="top" constant="10" id="WZx-np-NL8"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" id="cAV-Xh-ez0"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="top" secondItem="zH5-Cz-Nfq" secondAttribute="top" id="h5t-Na-SnK"/>
+                            <constraint firstItem="wix-QM-QUz" firstAttribute="top" secondItem="r3x-WC-uA9" secondAttribute="bottom" id="hfU-ru-aQW"/>
                             <constraint firstItem="r3x-WC-uA9" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" id="wmT-Hx-Uvh"/>
                         </constraints>
                     </view>

@@ -41,7 +41,7 @@ class NewCreditViewController: UIViewController {
         term = Int.parse(termTextField.text ?? "") ?? 0
         salary = Int.parse(salaryTextField.text ?? "") ?? 0
         if checkCreditDatas(amount, term, salary) {
-            print("Its okay")
+            //segue
         }
     }
     

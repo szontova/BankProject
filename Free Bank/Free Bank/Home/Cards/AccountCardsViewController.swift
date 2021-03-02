@@ -27,7 +27,6 @@ class AccountCardsViewController: UIViewController {
         
         transparentNavBar(navigationBar)
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +34,7 @@ class AccountCardsViewController: UIViewController {
         
         accountNumberLabel.text = "Cчёт: \(account?.idNumber ?? "")"
         accountBalanceLabel.text = NSString(format: "Баланс: %.2f BYR", account?.balance ?? 0.0) as String
+        missingCardsLabel.isHidden = true
         
         updateCards()
         
@@ -47,5 +47,10 @@ class AccountCardsViewController: UIViewController {
     }
     
     @IBAction func addCardButton(_ sender: UIButton) {
+        if let acc = account { addCard(acc) }
+        updateCards()
+        
+        if cards.isEmpty { missingCardsLabel.isHidden = false }
+        else { missingCardsLabel.isHidden = true }
     }
 }

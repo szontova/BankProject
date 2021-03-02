@@ -79,6 +79,20 @@ extension UIViewController {
     }
     
     //MARK:- AddEntities
+    func addCard( _ account: Account){
+        let newCard = Card(context: context)
+        newCard.idNumber = 4725_6900_0000_0000
+        newCard.cvv = 000
+        newCard.validity = "00/00"
+        account.addToCards(newCard)
+        do {
+            context.insert(newCard)
+            try context.save()
+        } catch {
+            print("addCard: error in saving context")
+        }
+    }
+    
     func addAccount (_ idNumber: String, _ individ: Individual?, _ org: Organization?){
         let newAccount = Account(context:context)
         newAccount.idNumber = idNumber

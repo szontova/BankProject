@@ -12,6 +12,7 @@ class AccountCardsViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     
     private var account = Account()
+    @IBOutlet weak var accountNumberLabel: UILabel!
     
     func setAccount(_ acc: Account) {
         self.account = acc
@@ -28,7 +29,9 @@ class AccountCardsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        print(account.string())
+        accountNumberLabel.text = "Cчёт: \(account.idNumber ?? "")"
     }
 
+    @IBAction func addCardButton(_ sender: UIButton) {
+    }
 }

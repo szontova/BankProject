@@ -31,7 +31,7 @@ class AccountsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toCardsSegue" else { return }
-        guard let destinationVC = segue.destination as? AccountCardsViewController else { return }
+        guard let destinationVC = segue.destination as? CardsViewController else { return }
         destinationVC.setAccount(accountForTransfer)
     }
 
@@ -57,7 +57,7 @@ class AccountsViewController: UIViewController {
 
     @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToAccFromAccCardsSegue" else {return}
-        guard let _ = segue.destination as? AccountCardsViewController else {return}
+        guard let _ = segue.destination as? CardsViewController else {return}
     }
     
     @IBAction func addAccountButton(_ sender: UIButton) {

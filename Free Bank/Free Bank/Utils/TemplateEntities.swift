@@ -197,13 +197,19 @@ extension UIViewController {
     }
     
     func addCredit(amount: Int64, term: Int64, procent: Int16, _ individ: Individual?, _ org: Organization?){
+     
         let newCredit = Credit(context: context)
+        let newAccount = Account(context: context)
         
         newCredit.amount = amount
         newCredit.term = term
         newCredit.procent = procent
         newCredit.date = Date()
         newCredit.idNumber = generationIdCredit(individ, org, term, amount)
+        
+        newAccount.idNumber = generationIdAccount("C")
+        newAccount.balance = amount
+        newCredit.account = newAccount
         
         if let _ = individ {
             individ?.addToCredits(newCredit)
@@ -212,8 +218,11 @@ extension UIViewController {
         if let _ = org {
             org?.addToCredits(newCredit)
         }
+        
+        print(newCredit.string())
         do {
             context.insert(newCredit)
+            context.insert(newAccount)
             try context.save()
         }
         catch { print("addCredit: error in add credit") }
@@ -317,7 +326,7 @@ extension UIViewController {
         
         id += term * 100000
         
-        id += amount
+        id += amount / 100
         
         return id
     }
@@ -526,13 +535,13 @@ extension Individual {
         let null = "Nothing"
         var result = "Login: "
         result += self.login ?? null
-        result += "\nPassword: " + (self.password ?? null)
+        //result += "\nPassword: " + (self.password ?? null)
         result += "\nCodeWord: " + (self.codeWord ?? null)
-        result += "\nAccounts: \n\t"
+        result += "\nAccounts: \n"
         if let accs = self.accounts?.allObjects {
             for acc in accs {
                 if let h = acc as? Account {
-                   result += h.string()
+                    result += "\t" + h.string() + "\n"
                 }
             }
         }
@@ -549,13 +558,13 @@ extension Organization {
         var result = "PRN: "
         result += self.prn ?? null
         result += "\nName: " + (self.name ?? null)
-        result += "\nPassword: " + (self.password ?? null)
+        //result += "\nPassword: " + (self.password ?? null)
         result += "\nCodeWord: " + (self.codeWord ?? null)
-        result += "\nAccounts: \n\t"
+        result += "\nAccounts: \n"
         if let accs = self.accounts?.allObjects {
             for acc in accs {
                 if let h = acc as? Account {
-                   result += h.string()
+                   result += "\t" + h.string() + "\n"
                 }
             }
         }
@@ -578,6 +587,9 @@ extension Account{
         if let company = self.company {
             result += " company: \(company.name ?? null)"
         }
+        if let credit = self.credit {
+            result += " credit: \(credit.idNumber)"
+        }
         return result
     }
     
@@ -599,11 +611,24 @@ extension Card{
 extension Credit{
     
     func string() -> String{
-       // let null = "Nothing"
-        var result = "idNumber: \(self.idNumber)"
+        var result = "Credit:\n idNumber: \(self.idNumber)"
+        result += "\n amount: \(self.amount)"
+        result += "\n procent: \(self.procent)"
+        result += "\n term: \(self.term)"
+        result += "\n \(String(describing: self.date))"
+        
         if let account = self.account {
-            result += " account: " + account.string()
+            result += "\n Account: " + account.string()
         }
+        
+        if let ind = self.indBorrower {
+            result += "\n indBorrower: " + ind.string()
+        }
+        if let org = self.orgBorrower {
+            result += "\n orgBorrower: " + org.string()
+        }
+        
+   
         return result
     }
     

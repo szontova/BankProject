@@ -48,6 +48,9 @@ class AccountCardsViewController: UIViewController {
     func updateCards() {
         let cardsSet = account?.cards
         cards = Array ( cardsSet as! Set<Card> )
+        cards.sort(){
+            return $0.idNumber < $1.idNumber
+        }
     }
     
     
@@ -63,7 +66,8 @@ class AccountCardsViewController: UIViewController {
     }
     
     @IBAction func addCardButton(_ sender: UIButton) {
-        if let acc = account { addCardForSimpleAccount( acc) }
+        
+        if let acc = account { addCardForSimpleAccount(acc) }
         
         updateCards()
         

@@ -196,9 +196,27 @@ extension UIViewController {
         }
     }
     
-    func addCredit(amount: Int, term: Int, salary: Int){
+    func addCredit(amount: Int64, term: Int64, procent: Int16, _ individ: Individual?, _ org: Organization?){
         let newCredit = Credit(context: context)
         
+        newCredit.amount = amount
+        newCredit.term = term
+        newCredit.procent = procent
+        newCredit.date = Date()
+        newCredit.idNumber = generationIdCredit()
+        
+        if let _ = individ {
+            individ?.addToCredits(newCredit)
+        }
+        
+        if let _ = org {
+            org?.addToCredits(newCredit)
+        }
+        do {
+            context.insert(newCredit)
+            try context.save()
+        }
+        catch { print("addCredit: error in add credit") }
     }
 
     
@@ -270,6 +288,25 @@ extension UIViewController {
             }
         } catch{
             print("generation: error in add new atm")
+        }
+        return id
+    }
+    
+    func generationIdCredit () -> Int64{
+        var id: Int64 = 0
+        let request = Credit.fetchRequest() as NSFetchRequest<Credit>
+        do{
+            var items = try context.fetch(request)
+            items.sort(by: {str1,str2 in return str1.idNumber < str2.idNumber})
+            if (items.count == 0){
+                id = 1
+            }
+            else{
+                let newIdNumber = Int64(items.last!.idNumber) + 1
+                id = newIdNumber
+            }
+        } catch{
+            print("generation: error in add new credit")
         }
         return id
     }

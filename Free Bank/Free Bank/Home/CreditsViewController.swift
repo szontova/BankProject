@@ -23,6 +23,15 @@ class CreditsViewController: UIViewController {
         creditsTableViewConfigurations()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toNewCreditSegue" else { return }
+        guard let destinationVC = segue.destination as? NewCreditViewController else { return }
+        if let vc = destinationVC as? OrgIndivid {
+            vc.setIndividual(individual)
+            vc.setOrganization(organization)
+        }
+    }
+    
     
     func creditsTableViewConfigurations(){
         

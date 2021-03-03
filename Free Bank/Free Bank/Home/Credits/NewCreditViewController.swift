@@ -16,11 +16,15 @@ class NewCreditViewController: UIViewController {
     @IBOutlet weak var salaryTextField: UITextField!
     @IBOutlet weak var termTextField: UITextField!
     
+    private var individual: Individual?
+    private var organization: Organization?
+    
     private var amount = 0
     private var term = 0
     private var salary = 0
-    private let procent = 13.5
+    private let procent = 13
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -30,12 +34,10 @@ class NewCreditViewController: UIViewController {
         return value
     }
     
-    func checkclientSolvency(amount: Double, term: Double, salary: Double) -> Bool{
+    func checkclientSolvency(amount: Int, term: Int, salary: Int) -> Bool{
         let monthlyPay = (amount + amount*(procent/100))/term
-        print(monthlyPay)
-        let costs = salary * 0.4
-        print(costs)
-        if monthlyPay > costs {
+        let costs = Double(salary) * 0.4
+        if monthlyPay > Int(costs) {
             return false
         }
         return true
@@ -46,13 +48,25 @@ class NewCreditViewController: UIViewController {
         amountSlider.value = Float(amountTextField.text ?? "") ?? 0
         termSlider.value = Float(termTextField.text ?? "") ?? 0
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toConfirmationCreditSegue" else { return }
+        guard let destinationVC = segue.destination as? ConfirmationCreditViewController else { return }
+        destinationVC.setAmount(Int64(amount))
+        destinationVC.setTerm(Int64(term))
+        destinationVC.setProcent(Int16(procent))
+        if let vc = destinationVC as? OrgIndivid {
+            vc.setIndividual(individual)
+            vc.setOrganization(organization)
+        }
+    }
    
     @IBAction func addCreditButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         term = Int.parse(termTextField.text ?? "") ?? 0
         salary = Int.parse(salaryTextField.text ?? "") ?? 0
         if checkCreditDatas(amount, term, salary) {
-            if checkclientSolvency(amount: Double(amount), term: Double(term), salary: Double(salary)){
+            if checkclientSolvency(amount: amount, term: term, salary: salary){
                 performSegue(withIdentifier: "toConfirmationCreditSegue", sender: nil)
             }
             else{
@@ -73,6 +87,11 @@ class NewCreditViewController: UIViewController {
         termTextField.text = String(format: "%g", setValueOfSlider(slider: termSlider, step: 6))
     }
     
+    @IBAction func unwindToNewCreditFromConfirmationCredit(segue: UIStoryboardSegue){
+        guard segue.identifier == "" else {return}
+        guard let _ = segue.destination as? ConfirmationCreditViewController else {return}
+    }
+    
 }
 
 extension Int {
@@ -81,3 +100,14 @@ extension Int {
     }
 }
 
+extension NewCreditViewController: OrgIndivid {
+    
+    func setIndividual(_ individ: Individual?){
+        self.individual = individ
+    }
+    
+    func setOrganization (_ org: Organization?) {
+        self.organization = org
+    }
+    
+}

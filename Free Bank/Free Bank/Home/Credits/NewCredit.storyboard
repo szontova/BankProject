@@ -271,6 +271,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmCreditButton:" destination="LG3-Uv-00X" eventType="touchUpInside" id="8aV-AO-GVa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYt-N3-hzV">
                                         <rect key="frame" x="192" y="0.0" width="162" height="60"/>
@@ -286,6 +289,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="jtz-X1-r7k" kind="unwind" unwindAction="unwindToNewCreditFromConfirmationCreditWithSegue:" id="3a2-C3-kZ4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -322,6 +328,7 @@
                     <navigationItem key="navigationItem" id="cfR-0H-79j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wa8-YD-qWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jtz-X1-r7k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1373.913043478261" y="137.94642857142856"/>
         </scene>

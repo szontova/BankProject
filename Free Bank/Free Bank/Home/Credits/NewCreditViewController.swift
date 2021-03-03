@@ -41,16 +41,20 @@ class NewCreditViewController: UIViewController {
         term = Int.parse(termTextField.text ?? "") ?? 0
         salary = Int.parse(salaryTextField.text ?? "") ?? 0
         if checkCreditDatas(amount, term, salary) {
-            //segue
+            showAlertMessageWithSegue(message: "Ваш кредит оформлен", segue: "unwindFromNewCreditToCreditsSegue")
         }
     }
     
+    @IBAction func backToCreditsButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "unwindFromNewCreditToCreditsSegue", sender: nil)
+    }
+    
     @IBAction func amountSliderAction(_ sender: UISlider) {
-        amountTextField.text = String(format: "%g", setValueOfSlider(slider: amountSlider, step: 1))
+        amountTextField.text = String(format: "%g", setValueOfSlider(slider: amountSlider, step: 100))
     }
     
     @IBAction func termSliderAction(_ sender: UISlider) {
-        termTextField.text = String(format: "%g", setValueOfSlider(slider: termSlider, step: 1))
+        termTextField.text = String(format: "%g", setValueOfSlider(slider: termSlider, step: 6))
     }
     
 }

@@ -41,7 +41,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="A5o-Vj-aYO" kind="unwind" unwindAction="unwindToCreditsVCFromNewCreditVCWithSegue:" id="hdF-co-HUn"/>
+                                    <action selector="backToCreditsButton:" destination="Jbc-6D-AIf" eventType="touchUpInside" id="Kbw-fR-LuP"/>
                                 </connections>
                             </button>
                             <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo0-xf-92F">
@@ -196,6 +196,7 @@
                         <outlet property="salaryTextField" destination="ujp-GM-XtQ" id="yI4-tm-8Cr"/>
                         <outlet property="termSlider" destination="iO0-JC-LVa" id="kGT-YS-fA4"/>
                         <outlet property="termTextField" destination="RHx-5a-f0z" id="pbZ-hb-kZx"/>
+                        <segue destination="A5o-Vj-aYO" kind="unwind" identifier="unwindFromNewCreditToCreditsSegue" unwindAction="unwindToCreditsVCFromNewCreditVCWithSegue:" id="2bq-Gx-N0t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1u-Ps-LkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

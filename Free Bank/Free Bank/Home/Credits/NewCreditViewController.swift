@@ -22,7 +22,6 @@ class NewCreditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(Int.parse("6 months") ?? 0)
     }
     
     func setValueOfSlider(slider: UISlider, step: Float) -> Float{
@@ -30,10 +29,14 @@ class NewCreditViewController: UIViewController {
         return value
     }
     
+    func clientSolvency() -> Bool{
+        return false
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        amountSlider.value = Float(amountTextField.text ?? "") ?? 0
-        termSlider.value = Float(termTextField.text ?? "") ?? 0
+        amountSlider.value = Float(amountTextField.text?.dropLast(4) ?? "") ?? 0
+        termSlider.value = Float(termTextField.text?.dropLast(4) ?? "") ?? 0
     }
     
     @IBAction func addCreditButton(_ sender: UIButton) {
@@ -41,7 +44,12 @@ class NewCreditViewController: UIViewController {
         term = Int.parse(termTextField.text ?? "") ?? 0
         salary = Int.parse(salaryTextField.text ?? "") ?? 0
         if checkCreditDatas(amount, term, salary) {
-            showAlertMessageWithSegue(message: "Ваш кредит оформлен", segue: "unwindFromNewCreditToCreditsSegue")
+            if clientSolvency(){
+                showAlertMessageWithSegue(message: "Ваш кредит оформлен", segue: "unwindFromNewCreditToCreditsSegue")
+            }
+            else{
+                showAlertMessage(message: "К сожалению, Наш Банк не может предоставить Вам кредит на таких условиях.\nПри данном минимальном доходе Вы можете уменьшить сумму кредита либо увелить срок.")
+            }
         }
     }
     
@@ -50,11 +58,11 @@ class NewCreditViewController: UIViewController {
     }
     
     @IBAction func amountSliderAction(_ sender: UISlider) {
-        amountTextField.text = String(format: "%g", setValueOfSlider(slider: amountSlider, step: 100))
+        amountTextField.text = String(format: "%g BYR", setValueOfSlider(slider: amountSlider, step: 100))
     }
     
     @IBAction func termSliderAction(_ sender: UISlider) {
-        termTextField.text = String(format: "%g", setValueOfSlider(slider: termSlider, step: 6))
+        termTextField.text = String(format: "%g месяцев", setValueOfSlider(slider: termSlider, step: 6))
     }
     
 }

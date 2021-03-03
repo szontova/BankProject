@@ -194,6 +194,11 @@ extension UIViewController {
             print("addATM: error in add address")
         }
     }
+    
+    func addCredit(amount: Int, term: Int, salary: Int){
+        let newCredit = Credit(context: context)
+        
+    }
 
     
     //MARK: -HelperFunctions

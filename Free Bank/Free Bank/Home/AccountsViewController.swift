@@ -50,6 +50,9 @@ class AccountsViewController: UIViewController {
     func updateAccounts() {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array ( accs as! Set<Account> )
+        accounts.sort(){
+            return $0.idNumber! < $1.idNumber!
+        }
     }
 
     @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){

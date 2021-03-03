@@ -35,8 +35,8 @@ class NewCreditViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        amountSlider.value = Float(amountTextField.text?.dropLast(4) ?? "") ?? 0
-        termSlider.value = Float(termTextField.text?.dropLast(4) ?? "") ?? 0
+        amountSlider.value = Float(amountTextField.text ?? "") ?? 0
+        termSlider.value = Float(termTextField.text ?? "") ?? 0
     }
     
     @IBAction func addCreditButton(_ sender: UIButton) {
@@ -58,11 +58,11 @@ class NewCreditViewController: UIViewController {
     }
     
     @IBAction func amountSliderAction(_ sender: UISlider) {
-        amountTextField.text = String(format: "%g BYR", setValueOfSlider(slider: amountSlider, step: 100))
+        amountTextField.text = String(format: "%g", setValueOfSlider(slider: amountSlider, step: 100))
     }
     
     @IBAction func termSliderAction(_ sender: UISlider) {
-        termTextField.text = String(format: "%g месяцев", setValueOfSlider(slider: termSlider, step: 6))
+        termTextField.text = String(format: "%g", setValueOfSlider(slider: termSlider, step: 6))
     }
     
 }

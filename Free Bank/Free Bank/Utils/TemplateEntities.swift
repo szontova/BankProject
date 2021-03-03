@@ -79,20 +79,21 @@ extension UIViewController {
     }
     
     //MARK:- AddEntities
-    func addCard(_ category: String, _ account: Account){
+    func addCardForSimpleAccount( _ account: Account){
         let newCard = Card(context: context)
-        switch category {
-        case "S":
-            newCard.idNumber = 4725_6900_0000_0000
-            newCard.validity = getValidityDate(4)
-        case "C":
-            newCard.idNumber = 4725_6900_0000_0000
-            newCard.validity = "00/00"
-        default: print("addCard: undefinded category")
-        }
+        
+        let firsTemplateNumbers = 4725_6919_0000_0000
+        let numbersOfAccount = (Int(account.idNumber!.suffix(7)) ?? 0) * 10
+        let lastNumber = (account.cards?.count ?? 0)
+        
+        let cardNumber = firsTemplateNumbers + numbersOfAccount + lastNumber
+        newCard.idNumber = Int64(cardNumber)
+        
+        newCard.validity = getValidityDate(4)
         newCard.cvv = Int16.random(in: 100..<1000)
+        
         account.addToCards(newCard)
-        print(newCard.string())
+        
         do {
             context.insert(newCard)
             try context.save()

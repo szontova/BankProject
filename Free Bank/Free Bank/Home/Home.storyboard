@@ -446,10 +446,10 @@
             </objects>
             <point key="canvasLocation" x="-1078" y="763"/>
         </scene>
-        <!--AccountCards-->
+        <!--Cards-->
         <scene sceneID="i7D-wQ-7sW">
             <objects>
-                <viewControllerPlaceholder storyboardName="AccountCards" id="T1y-Lm-bQ9" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Cards" id="T1y-Lm-bQ9" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ayY-SQ-x5c"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pT-UB-wYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

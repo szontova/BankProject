@@ -16,7 +16,7 @@
 		59031DB725EF90E400B4DE9D /* CreditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59031DB525EF90E400B4DE9D /* CreditTableViewCell.xib */; };
 		5904330325EE2D8C00BF5412 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904330125EE2D8C00BF5412 /* AccountTableViewCell.swift */; };
 		5904330425EE2D8C00BF5412 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5904330225EE2D8C00BF5412 /* AccountTableViewCell.xib */; };
-		5904330C25EE4C6700BF5412 /* AccountCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5904330B25EE4C6700BF5412 /* AccountCards.storyboard */; };
+		5904330C25EE4C6700BF5412 /* Cards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5904330B25EE4C6700BF5412 /* Cards.storyboard */; };
 		5904330F25EE4D9000BF5412 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904330E25EE4D9000BF5412 /* CardsViewController.swift */; };
 		5904335025EE751500BF5412 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904334E25EE751500BF5412 /* CardTableViewCell.swift */; };
 		5904335125EE751500BF5412 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5904334F25EE751500BF5412 /* CardTableViewCell.xib */; };
@@ -81,7 +81,7 @@
 		59031DB525EF90E400B4DE9D /* CreditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditTableViewCell.xib; sourceTree = "<group>"; };
 		5904330125EE2D8C00BF5412 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		5904330225EE2D8C00BF5412 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
-		5904330B25EE4C6700BF5412 /* AccountCards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountCards.storyboard; sourceTree = "<group>"; };
+		5904330B25EE4C6700BF5412 /* Cards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cards.storyboard; sourceTree = "<group>"; };
 		5904330E25EE4D9000BF5412 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		5904334E25EE751500BF5412 /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		5904334F25EE751500BF5412 /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				59031DBA25EF941E00B4DE9D /* CardTableViewCell */,
-				5904330B25EE4C6700BF5412 /* AccountCards.storyboard */,
+				5904330B25EE4C6700BF5412 /* Cards.storyboard */,
 				5904330E25EE4D9000BF5412 /* CardsViewController.swift */,
 			);
 			path = Cards;
@@ -442,7 +442,7 @@
 				5904330425EE2D8C00BF5412 /* AccountTableViewCell.xib in Resources */,
 				59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */,
 				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
-				5904330C25EE4C6700BF5412 /* AccountCards.storyboard in Resources */,
+				5904330C25EE4C6700BF5412 /* Cards.storyboard in Resources */,
 				593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

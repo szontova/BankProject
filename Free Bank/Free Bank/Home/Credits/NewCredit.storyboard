@@ -290,7 +290,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="jtz-X1-r7k" kind="unwind" unwindAction="unwindToNewCreditFromConfirmationCreditWithSegue:" id="3a2-C3-kZ4"/>
+                                            <segue destination="jtz-X1-r7k" kind="unwind" identifier="" unwindAction="unwindToNewCreditFromConfirmationCreditWithSegue:" id="3a2-C3-kZ4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -326,6 +326,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cfR-0H-79j"/>
+                    <connections>
+                        <segue destination="jtz-X1-r7k" kind="unwind" identifier="unwindToCreditsFromConfirmCreditSegue" unwindAction="unwindToCreditsVCFromConfirmCreditVCWithSegue:" id="ihP-8U-23F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wa8-YD-qWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="jtz-X1-r7k" userLabel="Exit" sceneMemberID="exit"/>

@@ -15,23 +15,44 @@ class CreditsViewController: UIViewController {
     private var individual: Individual?
     private var organization: Organization?
     
+    private var credits: [Credit] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         transparentNavBar(navigationBar)
         
         creditsTableViewConfigurations()
+        
+        updateCredits()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateCredits()
+        DispatchQueue.main.async {
+            self.creditsTableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toNewCreditSegue" else { return }
         guard let destinationVC = segue.destination as? NewCreditViewController else { return }
-        if let vc = destinationVC as? OrgIndivid {
-            vc.setIndividual(individual)
-            vc.setOrganization(organization)
-        }
+        destinationVC.setIndividual(individual)
+        destinationVC.setOrganization(organization)
+//        if let vc = destinationVC as? OrgIndivid {
+//            vc.setIndividual(individual)
+//            vc.setOrganization(organization)
+//        }
     }
     
+    func updateCredits() {
+        let accs = individual?.credits ?? organization?.credits
+        credits = Array ( accs as! Set<Credit> )
+        credits.sort(){
+            return $0.idNumber < $1.idNumber
+        }
+    }
     
     func creditsTableViewConfigurations(){
         
@@ -47,6 +68,12 @@ class CreditsViewController: UIViewController {
     @IBAction func unwindToCreditsVCFromNewCreditVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToCreditsFromNewCreditSegue" else {return}
         guard let _ = segue.destination as? NewCreditViewController else {return}
+    }
+    
+    @IBAction func unwindToCreditsVCFromConfirmCreditVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToCreditsFromConfirmCreditSegue" else {return}
+        guard let _ = segue.destination as? ConfirmationCreditViewController else {return}
+      
     }
     
     @IBAction func addCredit(_ sender: UIButton) {
@@ -71,15 +98,14 @@ extension CreditsViewController: UITableViewDelegate {}
 extension CreditsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return credits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = self.creditsTableView.dequeueReusableCell(withIdentifier: CreditTableViewCell.identifier) as? CreditTableViewCell {
             cell.selectionStyle = .none
-            //cell.configure(with: credits[indexPath.row])
-            cell.configure()
+            cell.configure(credits[indexPath.row])
             return cell
         }
         return UITableViewCell()

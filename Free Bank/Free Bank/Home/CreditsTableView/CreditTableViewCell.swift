@@ -36,4 +36,15 @@ class CreditTableViewCell: UITableViewCell {
         self.myBackgroundView.layer.cornerRadius = 5.0
     }
     
+    public func configure(_ credit: Credit) {
+        self.myBackgroundView.layer.cornerRadius = 5.0
+        creditNumberLabel.text = String(credit.idNumber)
+        
+        mounthlyPayLabel.text = NSString(format: "%.2f BYR", Float(credit.amount) / 100 / Float(credit.term)) as String
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateOfRegistrationLabel.text = dateFormatter.string(for: credit.date) ?? "00.00.0000"
+    }
+    
 }

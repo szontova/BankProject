@@ -37,9 +37,7 @@ class AddressesTableViewController: UITableViewController {
                 atms.sort(by: {str1,str2 in return str1.address! < str2.address!})
             }
             else {atms.sort(by: {str1,str2 in return str1.address! < str2.address!})}
-            
-            print(branches.count)
-            print(atms.count)
+
         } catch {
             print("AddressesTableViewController: Error in get addresses.")
         }

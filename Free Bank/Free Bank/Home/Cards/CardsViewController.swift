@@ -1,5 +1,5 @@
 //
-//  AccountCardsViewController.swift
+//  CardsViewController.swift
 //  Free Bank
 //
 //  Created by Пользователь on 2.03.21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountCardsViewController: UIViewController {
+class CardsViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var accountNumberLabel: UILabel!
@@ -92,9 +92,9 @@ class AccountCardsViewController: UIViewController {
     }
 }
 
-extension AccountCardsViewController: UITableViewDelegate {}
+extension CardsViewController: UITableViewDelegate {}
 
-extension AccountCardsViewController: UITableViewDataSource {
+extension CardsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
@@ -102,6 +102,7 @@ extension AccountCardsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.cardsTableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier) as? CardTableViewCell {
+            cell.selectionStyle = .none
             cell.configure(with: cards[indexPath.row])
             return cell
         }

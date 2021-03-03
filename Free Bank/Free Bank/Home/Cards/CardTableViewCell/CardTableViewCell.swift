@@ -33,8 +33,16 @@ class CardTableViewCell: UITableViewCell {
     
     func configure(with card: Card){
         self.myBackgroundView.layer.cornerRadius = 5.0
-        cardNumberLabel.text = String(card.idNumber)
+        cardNumberLabel.text = formatIntByBlocks(card.idNumber)
         validDateLabel.text = card.validity
-        //print(card.idNumber)
+    }
+    
+    func formatIntByBlocks(_ number: Int64) -> String{
+        var res = ""
+        let numString = String(number)
+        for i in 0...numString.count / 4 - 1 {
+            res.insert(contentsOf: numString.dropLast(i * 4).suffix(4) + " ", at: res.startIndex)
+        }
+        return res
     }
 }

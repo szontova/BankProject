@@ -48,6 +48,9 @@ class AccountCardsViewController: UIViewController {
     func updateCards() {
         let cardsSet = account?.cards
         cards = Array ( cardsSet as! Set<Card> )
+        cards.sort(){
+            return $0.idNumber > $1.idNumber
+        }
     }
     
     
@@ -63,7 +66,14 @@ class AccountCardsViewController: UIViewController {
     }
     
     @IBAction func addCardButton(_ sender: UIButton) {
-        if let acc = account { addCard( "S", acc) }
+        
+        if cards.count < 5 {
+            if let acc = account {
+                addCardForSimpleAccount(acc)
+            }
+        } else {
+            showAlertError(message: "На один счёт не может быть зарегистрировано более 5 карточек")
+        }
         
         updateCards()
         

@@ -50,6 +50,9 @@ class AccountsViewController: UIViewController {
     func updateAccounts() {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array ( accs as! Set<Account> )
+        accounts.sort(){
+            return $0.idNumber! < $1.idNumber!
+        }
     }
 
     @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){
@@ -59,34 +62,43 @@ class AccountsViewController: UIViewController {
     
     @IBAction func addAccountButton(_ sender: UIButton) {
      
-        let accountNumber = generationIdAccount("S")
-        let alert = UIAlertController(title: "", message: "\nНомер вашего нового счёта: \n" + accountNumber, preferredStyle: .alert)
+        if accounts.count > 4 {
+            showAlertError(message: "На одного пользователя не может быть зарегистрировано более 5 счетов")
+        }
+        else {
+            let accountNumber = generationIdAccount("S")
+            let alert = UIAlertController(title: "", message: "\nНомер вашего нового счёта: \n" + accountNumber, preferredStyle: .alert)
+                    
+            let attributedString = NSAttributedString(string: "Подтверждения создания счёта", attributes: [
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+                NSAttributedString.Key.foregroundColor : UIColor.black
+            ])
+            alert.setValue(attributedString, forKey: "attributedTitle")
                 
-        let attributedString = NSAttributedString(string: "Подтверждения создания счёта", attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-            NSAttributedString.Key.foregroundColor : UIColor.black
-        ])
-        alert.setValue(attributedString, forKey: "attributedTitle")
-            
-        alert.view.tintColor = UIColor.black
+            alert.view.tintColor = UIColor.black
+                    
+            let okAction = UIAlertAction(title: "Подтвердить", style: .default){ _ in
+                self.addAccount(accountNumber, self.individual, self.organization)
                 
-        let okAction = UIAlertAction(title: "Подтвердить", style: .default){ _ in
-            self.addAccount(accountNumber, self.individual, self.organization)
-            
-            self.updateAccounts()
-            
-            DispatchQueue.main.async {
-                self.accountsTableView.reloadData()
+                self.updateAccounts()
+                
+                DispatchQueue.main.async {
+                    self.accountsTableView.reloadData()
+                }
+                
             }
+            let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true, completion: nil)
             
         }
-        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
         
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
+    
     }
+    
 }
 
 extension AccountsViewController: OrgIndivid {

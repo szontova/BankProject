@@ -10,6 +10,7 @@ import UIKit
 class CreditsViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var creditsTableView: UITableView!
     
     private var individual: Individual?
     private var organization: Organization?
@@ -18,6 +19,20 @@ class CreditsViewController: UIViewController {
         super.viewDidLoad()
         
         transparentNavBar(navigationBar)
+        
+        creditsTableViewConfigurations()
+    }
+    
+    
+    func creditsTableViewConfigurations(){
+        
+        creditsTableView.backgroundColor = .clear
+        
+        creditsTableView.register(CreditTableViewCell.nib(), forCellReuseIdentifier: CreditTableViewCell.identifier)
+        
+        creditsTableView.delegate = self
+        creditsTableView.dataSource = self
+        
     }
     
     @IBAction func unwindToCreditsVCFromNewCreditVC(segue:UIStoryboardSegue){
@@ -39,5 +54,29 @@ extension CreditsViewController: OrgIndivid {
     
     func setOrganization (_ org: Organization?) {
         self.organization = org
+    }
+}
+
+extension CreditsViewController: UITableViewDelegate {}
+
+extension CreditsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = self.creditsTableView.dequeueReusableCell(withIdentifier: CreditTableViewCell.identifier) as? CreditTableViewCell {
+            //cell.configure(with: credits[indexPath.row])
+            cell.configure()
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // creditForTransfer = credits[indexPath.row]
+       // performSegue(withIdentifier: "toCardsSegue", sender: nil)
     }
 }

@@ -55,11 +55,17 @@
                                     <action selector="addCredit:" destination="1ef-RP-9rF" eventType="touchUpInside" id="VpE-ta-0WJ"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a92-I4-uOS">
+                                <rect key="frame" x="15" y="228" width="398" height="600"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xSn-JT-2pL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gvo-us-3o1" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" constant="-15" id="AEk-Wt-t7H"/>
+                            <constraint firstItem="xSn-JT-2pL" firstAttribute="trailing" secondItem="a92-I4-uOS" secondAttribute="trailing" constant="15" id="BS8-sO-XxT"/>
+                            <constraint firstItem="xSn-JT-2pL" firstAttribute="bottom" secondItem="a92-I4-uOS" secondAttribute="bottom" constant="15" id="Cb8-Ox-KAV"/>
                             <constraint firstItem="o2Q-kR-6xB" firstAttribute="top" secondItem="xSn-JT-2pL" secondAttribute="top" constant="10" id="CgJ-VZ-5dj"/>
                             <constraint firstItem="M3R-1c-Ppe" firstAttribute="top" secondItem="o2Q-kR-6xB" secondAttribute="bottom" id="GCx-3A-HnS"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="leading" secondItem="UuP-yE-0kQ" secondAttribute="leading" id="Oeo-Z7-bX9"/>
@@ -69,13 +75,16 @@
                             <constraint firstItem="o2Q-kR-6xB" firstAttribute="trailing" secondItem="UuP-yE-0kQ" secondAttribute="trailing" id="YO8-yD-u34"/>
                             <constraint firstItem="M3R-1c-Ppe" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" constant="-15" id="ZuF-a9-Ow1"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="top" secondItem="UuP-yE-0kQ" secondAttribute="top" id="cjV-P7-igR"/>
+                            <constraint firstItem="a92-I4-uOS" firstAttribute="top" secondItem="Gvo-us-3o1" secondAttribute="bottom" constant="15" id="cpp-ic-JpT"/>
                             <constraint firstItem="Gvo-us-3o1" firstAttribute="top" secondItem="M3R-1c-Ppe" secondAttribute="bottom" constant="5" id="h9S-dA-bIF"/>
                             <constraint firstItem="Gvo-us-3o1" firstAttribute="leading" secondItem="xSn-JT-2pL" secondAttribute="leading" constant="15" id="m94-0p-kec"/>
+                            <constraint firstItem="a92-I4-uOS" firstAttribute="leading" secondItem="xSn-JT-2pL" secondAttribute="leading" constant="15" id="qIS-g7-tGN"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" id="wUt-CE-aAo"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Кредиты" image="credits" id="mRh-bI-4L7"/>
                     <connections>
+                        <outlet property="creditsTableView" destination="a92-I4-uOS" id="qfG-v8-RwE"/>
                         <outlet property="navigationBar" destination="o2Q-kR-6xB" id="c1b-GR-2kN"/>
                         <segue destination="VfT-Fm-EGF" kind="show" identifier="toNewCreditSegue" id="x0E-sO-tgc"/>
                     </connections>

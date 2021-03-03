@@ -12,6 +12,8 @@
 		3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3148234D25D6D23E008288FC /* ExchangeRate.storyboard */; };
 		3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */; };
 		31E793A625E9565100667F99 /* LinkFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E793A525E9565100667F99 /* LinkFunctions.swift */; };
+		59031DB625EF90E400B4DE9D /* CreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59031DB425EF90E400B4DE9D /* CreditTableViewCell.swift */; };
+		59031DB725EF90E400B4DE9D /* CreditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59031DB525EF90E400B4DE9D /* CreditTableViewCell.xib */; };
 		5904330325EE2D8C00BF5412 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904330125EE2D8C00BF5412 /* AccountTableViewCell.swift */; };
 		5904330425EE2D8C00BF5412 /* AccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5904330225EE2D8C00BF5412 /* AccountTableViewCell.xib */; };
 		5904330C25EE4C6700BF5412 /* AccountCards.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5904330B25EE4C6700BF5412 /* AccountCards.storyboard */; };
@@ -75,6 +77,8 @@
 		3148234D25D6D23E008288FC /* ExchangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeRate.storyboard; sourceTree = "<group>"; };
 		3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewController.swift; sourceTree = "<group>"; };
 		31E793A525E9565100667F99 /* LinkFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFunctions.swift; sourceTree = "<group>"; };
+		59031DB425EF90E400B4DE9D /* CreditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableViewCell.swift; sourceTree = "<group>"; };
+		59031DB525EF90E400B4DE9D /* CreditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditTableViewCell.xib; sourceTree = "<group>"; };
 		5904330125EE2D8C00BF5412 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		5904330225EE2D8C00BF5412 /* AccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTableViewCell.xib; sourceTree = "<group>"; };
 		5904330B25EE4C6700BF5412 /* AccountCards.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountCards.storyboard; sourceTree = "<group>"; };
@@ -200,6 +204,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		59031DB325EF90C700B4DE9D /* CreditsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				59031DB425EF90E400B4DE9D /* CreditTableViewCell.swift */,
+				59031DB525EF90E400B4DE9D /* CreditTableViewCell.xib */,
+			);
+			path = CreditsTableView;
+			sourceTree = "<group>";
+		};
 		5904330025EE2D5300BF5412 /* AccountsTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +257,7 @@
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				59031DB325EF90C700B4DE9D /* CreditsTableView */,
 				5904330A25EE4C3F00BF5412 /* Cards */,
 				5904330025EE2D5300BF5412 /* AccountsTableView */,
 				311E330C25EE2A510048C231 /* Credits */,
@@ -412,6 +426,7 @@
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
 				596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */,
 				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,
+				59031DB725EF90E400B4DE9D /* CreditTableViewCell.xib in Resources */,
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
 				597D66AE25C80FA40051E84A /* Main.storyboard in Resources */,
@@ -461,6 +476,7 @@
 				5996B4AA25E54C3A00FB0BDB /* Account+CoreDataProperties.swift in Sources */,
 				5996B4A225E54C3A00FB0BDB /* Transaction+CoreDataProperties.swift in Sources */,
 				59DFC2BF25E78CDF000EDCF9 /* Individual+CoreDataClass.swift in Sources */,
+				59031DB625EF90E400B4DE9D /* CreditTableViewCell.swift in Sources */,
 				59A42D0F25ECE3D9002C8EF9 /* TransfersViewController.swift in Sources */,
 				593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */,
 				5996B4AC25E54C3A00FB0BDB /* Bank+CoreDataProperties.swift in Sources */,

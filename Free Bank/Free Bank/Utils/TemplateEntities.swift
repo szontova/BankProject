@@ -203,7 +203,7 @@ extension UIViewController {
         newCredit.term = term
         newCredit.procent = procent
         newCredit.date = Date()
-        newCredit.idNumber = generationIdCredit()
+        newCredit.idNumber = generationIdCredit(individ, org, term, amount)
         
         if let _ = individ {
             individ?.addToCredits(newCredit)
@@ -292,22 +292,33 @@ extension UIViewController {
         return id
     }
     
-    func generationIdCredit () -> Int64{
-        var id: Int64 = 0
-        let request = Credit.fetchRequest() as NSFetchRequest<Credit>
+    func generationIdCredit (_ ind: Individual?, _ org: Organization?, _ term: Int64, _ amount: Int64) -> Int64{
+        var id: Int64 = 1_0000_0000
+        let creditRequest = Credit.fetchRequest() as NSFetchRequest<Credit>
         do{
-            var items = try context.fetch(request)
-            items.sort(by: {str1,str2 in return str1.idNumber < str2.idNumber})
-            if (items.count == 0){
-                id = 1
-            }
+            var items = try context.fetch(creditRequest)
+            items.sort(by: {return $0.idNumber < $1.idNumber})
+            if (items.count == 0){ id *= 1 }
             else{
-                let newIdNumber = Int64(items.last!.idNumber) + 1
-                id = newIdNumber
+                let newIdNumber = Int64(items.last!.idNumber / id) + 1
+                id *= newIdNumber
             }
         } catch{
             print("generation: error in add new credit")
         }
+        
+        if let _ = ind {
+            id += (Int64)(ind?.credits?.count ?? 0) % 10 * 1000_0000
+        }
+        
+        if let _ = org {
+            id += (Int64)(org?.credits?.count ?? 0) % 10 * 1000_0000
+        }
+        
+        id += term * 100000
+        
+        id += amount
+        
         return id
     }
     
@@ -577,6 +588,19 @@ extension Card{
     func string() -> String{
         let null = "Nothing"
         var result = "idNumber: \(self.idNumber),\n cvv: \(self.cvv),\n validity: \(self.validity ?? null)\n"
+        if let account = self.account {
+            result += " account: " + account.string()
+        }
+        return result
+    }
+    
+}
+
+extension Credit{
+    
+    func string() -> String{
+       // let null = "Nothing"
+        var result = "idNumber: \(self.idNumber)"
         if let account = self.account {
             result += " account: " + account.string()
         }

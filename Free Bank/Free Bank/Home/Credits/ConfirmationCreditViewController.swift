@@ -35,7 +35,7 @@ class ConfirmationCreditViewController: UIViewController {
     
     @IBAction func confirmCreditButton(_ sender: UIButton) {
         addCredit(amount: amount!, term: term!, procent:  procent!, individual, organization)
-        print(individual?.credits)
+        //print(individual?.credits)
     }
     
 }

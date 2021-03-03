@@ -67,7 +67,13 @@ class AccountCardsViewController: UIViewController {
     
     @IBAction func addCardButton(_ sender: UIButton) {
         
-        if let acc = account { addCardForSimpleAccount(acc) }
+        if cards.count < 10 {
+            if let acc = account {
+                addCardForSimpleAccount(acc)
+            }
+        } else {
+            showAlertError(message: "На один счёт не может быть зарегистрировано более 10 карточек")
+        }
         
         updateCards()
         

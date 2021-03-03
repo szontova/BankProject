@@ -124,6 +124,7 @@ extension AccountsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = self.accountsTableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as? AccountTableViewCell {
+            cell.selectionStyle = .none
             cell.configure(with: accounts[indexPath.row])
             return cell
         }

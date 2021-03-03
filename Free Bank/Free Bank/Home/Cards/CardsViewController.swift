@@ -102,6 +102,7 @@ extension CardsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.cardsTableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier) as? CardTableViewCell {
+            cell.selectionStyle = .none
             cell.configure(with: cards[indexPath.row])
             return cell
         }

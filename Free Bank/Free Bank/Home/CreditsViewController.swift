@@ -68,6 +68,7 @@ extension CreditsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = self.creditsTableView.dequeueReusableCell(withIdentifier: CreditTableViewCell.identifier) as? CreditTableViewCell {
+            cell.selectionStyle = .none
             //cell.configure(with: credits[indexPath.row])
             cell.configure()
             return cell

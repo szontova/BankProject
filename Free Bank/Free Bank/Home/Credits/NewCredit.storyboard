@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jbc-6D-AIf">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -15,15 +15,15 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Jbc-6D-AIf" customClass="NewCreditViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ak-vN-8Ie">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="GJq-4g-YqB">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2o4-nz-1NU">
-                                <rect key="frame" x="15" y="15" width="40" height="40"/>
+                                <rect key="frame" x="15" y="59" width="40" height="40"/>
                                 <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="ZVO-IO-h3M"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wo0-xf-92F">
-                                <rect key="frame" x="15" y="208" width="384" height="290"/>
+                                <rect key="frame" x="15" y="288" width="384" height="290"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="782" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujp-GM-XtQ">
                                         <rect key="frame" x="15" y="236" width="354" height="35"/>
@@ -164,7 +164,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I73-2B-GPj">
-                                <rect key="frame" x="30" y="523" width="354" height="60"/>
+                                <rect key="frame" x="30" y="603" width="354" height="60"/>
                                 <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="UFd-nh-zoo"/>
@@ -182,7 +182,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Онлайн оформление кредита" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-iA-GG3">
-                                <rect key="frame" x="38" y="148" width="338" height="30"/>
+                                <rect key="frame" x="38" y="228" width="338" height="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Vrg-FW-LvF"/>
@@ -221,12 +221,109 @@
                         <outlet property="termSlider" destination="iO0-JC-LVa" id="kGT-YS-fA4"/>
                         <outlet property="termTextField" destination="RHx-5a-f0z" id="pbZ-hb-kZx"/>
                         <segue destination="A5o-Vj-aYO" kind="unwind" identifier="unwindFromNewCreditToCreditsSegue" unwindAction="unwindToCreditsVCFromNewCreditVCWithSegue:" id="2bq-Gx-N0t"/>
+                        <segue destination="LG3-Uv-00X" kind="show" identifier="toConfirmationCreditSegue" id="sL7-bh-7m3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1u-Ps-LkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="A5o-Vj-aYO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="500.00000000000006" y="137.94642857142856"/>
+        </scene>
+        <!--Confirmation Credit View Controller-->
+        <scene sceneID="h5u-vv-gI5">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="LG3-Uv-00X" customClass="ConfirmationCreditViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QPn-u4-dEd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="DtG-oD-Drq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqq-Wi-1yv">
+                                <rect key="frame" x="15" y="288" width="384" height="290"/>
+                                <color key="backgroundColor" red="0.67287141080000001" green="0.54466165450000004" blue="0.51873044359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="QjG-7f-gax"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rh4-Ly-EzI">
+                                <rect key="frame" x="30" y="603" width="354" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzZ-cl-dsT">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="60"/>
+                                        <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Fje-Ju-cTa"/>
+                                        </constraints>
+                                        <state key="normal" title="Потвердить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYt-N3-hzV">
+                                        <rect key="frame" x="192" y="0.0" width="162" height="60"/>
+                                        <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="JkC-mB-c2D"/>
+                                        </constraints>
+                                        <state key="normal" title="Отменить">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Потверждение кредита" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tam-Bb-yAI">
+                                <rect key="frame" x="38" y="228" width="338" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9fV-Sk-4kt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="m7i-hY-7jy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DtG-oD-Drq" firstAttribute="top" secondItem="QPn-u4-dEd" secondAttribute="top" id="0ZB-sJ-aon"/>
+                            <constraint firstItem="Bqq-Wi-1yv" firstAttribute="top" secondItem="tam-Bb-yAI" secondAttribute="bottom" constant="30" id="1Yu-NC-b1A"/>
+                            <constraint firstItem="rh4-Ly-EzI" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="m7i-hY-7jy" secondAttribute="bottom" constant="-5" id="6cw-OM-T4q"/>
+                            <constraint firstItem="m7i-hY-7jy" firstAttribute="trailing" secondItem="tam-Bb-yAI" secondAttribute="trailing" constant="38" id="8qH-qV-YHF"/>
+                            <constraint firstItem="m7i-hY-7jy" firstAttribute="trailing" secondItem="rh4-Ly-EzI" secondAttribute="trailing" constant="30" id="9IF-Wg-eDQ"/>
+                            <constraint firstItem="Bqq-Wi-1yv" firstAttribute="centerY" secondItem="QPn-u4-dEd" secondAttribute="centerY" constant="-15" id="Br1-RP-jAb"/>
+                            <constraint firstItem="Bqq-Wi-1yv" firstAttribute="leading" secondItem="m7i-hY-7jy" secondAttribute="leading" constant="15" id="IMx-jq-Tx9"/>
+                            <constraint firstItem="DtG-oD-Drq" firstAttribute="trailing" secondItem="m7i-hY-7jy" secondAttribute="trailing" id="K1O-Ym-iwe"/>
+                            <constraint firstItem="DtG-oD-Drq" firstAttribute="bottom" secondItem="QPn-u4-dEd" secondAttribute="bottom" id="MlX-qs-RcR"/>
+                            <constraint firstItem="rh4-Ly-EzI" firstAttribute="leading" secondItem="m7i-hY-7jy" secondAttribute="leading" constant="30" id="NaW-OU-sgu"/>
+                            <constraint firstItem="Bqq-Wi-1yv" firstAttribute="trailing" secondItem="m7i-hY-7jy" secondAttribute="trailing" constant="-15" id="SC6-kT-jcS"/>
+                            <constraint firstItem="DtG-oD-Drq" firstAttribute="leading" secondItem="m7i-hY-7jy" secondAttribute="leading" id="W4C-ql-KHv"/>
+                            <constraint firstItem="tam-Bb-yAI" firstAttribute="leading" secondItem="m7i-hY-7jy" secondAttribute="leading" constant="38" id="mw7-KS-kdp"/>
+                            <constraint firstItem="rh4-Ly-EzI" firstAttribute="top" secondItem="Bqq-Wi-1yv" secondAttribute="bottom" constant="25" id="oHd-o7-jDq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cfR-0H-79j"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wa8-YD-qWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1373.913043478261" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>

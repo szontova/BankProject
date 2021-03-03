@@ -19,6 +19,7 @@ class NewCreditViewController: UIViewController {
     private var amount = 0
     private var term = 0
     private var salary = 0
+    private let procent = 13.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,15 @@ class NewCreditViewController: UIViewController {
         return value
     }
     
-    func clientSolvency() -> Bool{
-        return false
+    func checkclientSolvency(amount: Double, term: Double, salary: Double) -> Bool{
+        let monthlyPay = (amount + amount*(procent/100))/term
+        print(monthlyPay)
+        let costs = salary * 0.4
+        print(costs)
+        if monthlyPay > costs {
+            return false
+        }
+        return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,17 +46,17 @@ class NewCreditViewController: UIViewController {
         amountSlider.value = Float(amountTextField.text ?? "") ?? 0
         termSlider.value = Float(termTextField.text ?? "") ?? 0
     }
-    
+   
     @IBAction func addCreditButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         term = Int.parse(termTextField.text ?? "") ?? 0
         salary = Int.parse(salaryTextField.text ?? "") ?? 0
         if checkCreditDatas(amount, term, salary) {
-            if clientSolvency(){
-                showAlertMessageWithSegue(message: "Ваш кредит оформлен", segue: "unwindFromNewCreditToCreditsSegue")
+            if checkclientSolvency(amount: Double(amount), term: Double(term), salary: Double(salary)){
+                performSegue(withIdentifier: "toConfirmationCreditSegue", sender: nil)
             }
             else{
-                showAlertMessage(message: "К сожалению, Наш Банк не может предоставить Вам кредит на таких условиях.\nПри данном минимальном доходе Вы можете уменьшить сумму кредита либо увелить срок.")
+                showAlertMessage(message: "К сожалению, наш Банк не может предоставить Вам кредит на таких условиях. При данном минимальном доходе Вы можете уменьшить сумму кредита либо увеличить срок.")
             }
         }
     }

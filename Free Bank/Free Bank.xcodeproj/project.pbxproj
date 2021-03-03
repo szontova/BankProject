@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311B425325EF9B0400F2C412 /* ConfirmationCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */; };
 		311E330E25EE2A8C0048C231 /* NewCredit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311E330D25EE2A8C0048C231 /* NewCredit.storyboard */; };
 		311E331125EE2AA70048C231 /* NewCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E331025EE2AA70048C231 /* NewCreditViewController.swift */; };
 		3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3148234D25D6D23E008288FC /* ExchangeRate.storyboard */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCreditViewController.swift; sourceTree = "<group>"; };
 		311E330D25EE2A8C0048C231 /* NewCredit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCredit.storyboard; sourceTree = "<group>"; };
 		311E331025EE2AA70048C231 /* NewCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreditViewController.swift; sourceTree = "<group>"; };
 		3148234D25D6D23E008288FC /* ExchangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeRate.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				311E330D25EE2A8C0048C231 /* NewCredit.storyboard */,
 				311E331025EE2AA70048C231 /* NewCreditViewController.swift */,
+				311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */,
 			);
 			path = Credits;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				597D66A925C80FA40051E84A /* SceneDelegate.swift in Sources */,
 				5996B4AF25E54C3A00FB0BDB /* Card+CoreDataClass.swift in Sources */,
 				599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */,
+				311B425325EF9B0400F2C412 /* ConfirmationCreditViewController.swift in Sources */,
 				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
 				59DFC2C225E78CDF000EDCF9 /* Organization+CoreDataProperties.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,

@@ -8,6 +8,12 @@
 import UIKit
 
 class CreditTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var creditNumberLabel: UILabel!
+    @IBOutlet weak var mounthlyPayLabel: UILabel!
+    @IBOutlet weak var dateOfRegistrationLabel: UILabel!
+    @IBOutlet weak var myBackgroundView: UIView!
+    
 
     static let identifier = "creditCell"
     
@@ -27,7 +33,7 @@ class CreditTableViewCell: UITableViewCell {
     }
     
     public func configure() {
-        self.layer.cornerRadius = 5.0
+        self.myBackgroundView.layer.cornerRadius = 5.0
     }
     
 }

@@ -67,8 +67,7 @@ class CardsViewController: UIViewController {
     
     @IBAction func addCardButton(_ sender: UIButton) {
         if let acc = account {
-            
-            switch acc.idNumber!.dropFirst(16).first!  {
+            switch getAccCategory(acc) {
             case "S":
                 if cards.count < 3 {
                         addCardForAccount(acc)

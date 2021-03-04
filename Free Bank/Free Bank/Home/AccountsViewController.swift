@@ -67,15 +67,15 @@ class AccountsViewController: UIViewController {
         }
         
         creditAccounts = accounts.filter({ acc in
-            return acc.idNumber!.dropFirst(16).first! == "C"
+            return getAccCategory(acc) == "C"
         })
         
         simpleAccounts = accounts.filter({ acc in
-            return acc.idNumber!.dropFirst(16).first! == "S"
+            return getAccCategory(acc) == "S"
         })
         
         depositAccounts = accounts.filter({ (acc) -> Bool in
-            return acc.idNumber!.dropFirst(16).first!  == "D"
+            return getAccCategory(acc) == "D"
         })
         
        // print(simpleAccounts)
@@ -161,7 +161,7 @@ extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         accountForTransfer = accounts[indexPath.row]
-        if accountForTransfer!.idNumber!.dropFirst(16).first! != "D" {
+        if getAccCategory(accountForTransfer!) != "D" {
             performSegue(withIdentifier: "toCardsSegue", sender: nil)
         }
     }

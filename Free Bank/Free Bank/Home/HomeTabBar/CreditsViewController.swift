@@ -17,6 +17,7 @@ class CreditsViewController: UIViewController {
     private var organization: Organization?
     
     private var credits: [Credit] = []
+    private var creditForTransfer: Credit?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +46,18 @@ class CreditsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toCreditSegue" {
+            if let destinationVC = segue.destination as? CreditViewController {
+                destinationVC.setCredit(creditForTransfer!)
+            }
+        }
+
         guard segue.identifier == "toNewCreditSegue" else { return }
         guard let destinationVC = segue.destination as? NewCreditViewController else { return }
         destinationVC.setIndividual(individual)
         destinationVC.setOrganization(organization)
-//        if let vc = destinationVC as? OrgIndivid {
-//            vc.setIndividual(individual)
-//            vc.setOrganization(organization)
-//        }
+
     }
     
     func updateCredits() {
@@ -82,6 +87,11 @@ class CreditsViewController: UIViewController {
     @IBAction func unwindToCreditsVCFromConfirmCreditVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToCreditsFromConfirmCreditSegue" else {return}
         guard let _ = segue.destination as? ConfirmationCreditViewController else {return}
+    }
+    
+    @IBAction func unwindToCreditsVCFromCreditVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToCreditsFromCreditSegue" else {return}
+        guard let _ = segue.destination as? CreditViewController else {return}
       
     }
     
@@ -92,7 +102,6 @@ class CreditsViewController: UIViewController {
         }
         else {
             performSegue(withIdentifier: "toNewCreditSegue", sender: nil)
-            
         }
     }
     
@@ -128,7 +137,7 @@ extension CreditsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // creditForTransfer = credits[indexPath.row]
-       // performSegue(withIdentifier: "toCardsSegue", sender: nil)
+        creditForTransfer = credits[indexPath.row]
+        performSegue(withIdentifier: "toCreditSegue", sender: nil)
     }
 }

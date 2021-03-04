@@ -36,6 +36,8 @@
 		5916FA6A25EA376C0022A4B0 /* Adresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5916FA6925EA376C0022A4B0 /* Adresses.storyboard */; };
 		5916FA6D25EA38890022A4B0 /* AddressesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916FA6C25EA38890022A4B0 /* AddressesTableViewController.swift */; };
 		5916FA7225EA679D0022A4B0 /* OtherPageHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */; };
+		5923D6DC25F115D000EBA865 /* Credit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5923D6DB25F115D000EBA865 /* Credit.storyboard */; };
+		5923D6DF25F115EF00EBA865 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923D6DE25F115EF00EBA865 /* CreditViewController.swift */; };
 		59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59298A5D25E3EDD3007F0622 /* CollectionView.swift */; };
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
@@ -104,6 +106,8 @@
 		5916FA6925EA376C0022A4B0 /* Adresses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Adresses.storyboard; sourceTree = "<group>"; };
 		5916FA6C25EA38890022A4B0 /* AddressesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesTableViewController.swift; sourceTree = "<group>"; };
 		5916FA7125EA679D0022A4B0 /* OtherPageHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPageHomeViewController.swift; sourceTree = "<group>"; };
+		5923D6DB25F115D000EBA865 /* Credit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Credit.storyboard; sourceTree = "<group>"; };
+		5923D6DE25F115EF00EBA865 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		59298A5D25E3EDD3007F0622 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		311E330C25EE2A510048C231 /* NewCredit */ = {
 			isa = PBXGroup;
 			children = (
+				5923D6D925F1151900EBA865 /* Credit */,
 				311E330D25EE2A8C0048C231 /* NewCredit.storyboard */,
 				311E331025EE2AA70048C231 /* NewCreditViewController.swift */,
 				311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */,
@@ -270,6 +275,15 @@
 				5916FA6C25EA38890022A4B0 /* AddressesTableViewController.swift */,
 			);
 			path = Addresses;
+			sourceTree = "<group>";
+		};
+		5923D6D925F1151900EBA865 /* Credit */ = {
+			isa = PBXGroup;
+			children = (
+				5923D6DB25F115D000EBA865 /* Credit.storyboard */,
+				5923D6DE25F115EF00EBA865 /* CreditViewController.swift */,
+			);
+			path = Credit;
 			sourceTree = "<group>";
 		};
 		592AE50925D3D3BA000C99E5 /* Utils */ = {
@@ -446,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */,
+				5923D6DC25F115D000EBA865 /* Credit.storyboard in Resources */,
 				5916FA6A25EA376C0022A4B0 /* Adresses.storyboard in Resources */,
 				5904335125EE751500BF5412 /* CardTableViewCell.xib in Resources */,
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
@@ -498,6 +513,7 @@
 				5916FA7225EA679D0022A4B0 /* OtherPageHomeViewController.swift in Sources */,
 				5904330F25EE4D9000BF5412 /* CardsViewController.swift in Sources */,
 				311D8E4C25F0C816005BFB51 /* Organization+CoreDataProperties.swift in Sources */,
+				5923D6DF25F115EF00EBA865 /* CreditViewController.swift in Sources */,
 				5904335025EE751500BF5412 /* CardTableViewCell.swift in Sources */,
 				5916FA6D25EA38890022A4B0 /* AddressesTableViewController.swift in Sources */,
 				59031DB625EF90E400B4DE9D /* CreditTableViewCell.swift in Sources */,

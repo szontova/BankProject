@@ -98,11 +98,22 @@
                         <outlet property="missingCreditsLabel" destination="ipg-Au-CJo" id="jQa-TY-3hg"/>
                         <outlet property="navigationBar" destination="o2Q-kR-6xB" id="c1b-GR-2kN"/>
                         <segue destination="VfT-Fm-EGF" kind="show" identifier="toNewCreditSegue" id="x0E-sO-tgc"/>
+                        <segue destination="xiz-6u-dfW" kind="show" identifier="toCreditSegue" id="aDh-n3-CYJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnH-qo-p8n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="291" y="763"/>
+        </scene>
+        <!--Credit-->
+        <scene sceneID="tZF-Ck-crB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Credit" id="xiz-6u-dfW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fBQ-NI-Tvh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qqz-bj-w7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="1168"/>
         </scene>
         <!--NewCredit-->
         <scene sceneID="ucc-CC-nge">

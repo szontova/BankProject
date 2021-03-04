@@ -56,8 +56,11 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a92-I4-uOS">
-                                <rect key="frame" x="15" y="228" width="398" height="600"/>
+                                <rect key="frame" x="15" y="228" width="398" height="234"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="qae-EW-lxQ"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xSn-JT-2pL"/>
@@ -65,7 +68,6 @@
                         <constraints>
                             <constraint firstItem="Gvo-us-3o1" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" constant="-15" id="AEk-Wt-t7H"/>
                             <constraint firstItem="xSn-JT-2pL" firstAttribute="trailing" secondItem="a92-I4-uOS" secondAttribute="trailing" constant="15" id="BS8-sO-XxT"/>
-                            <constraint firstItem="xSn-JT-2pL" firstAttribute="bottom" secondItem="a92-I4-uOS" secondAttribute="bottom" constant="15" id="Cb8-Ox-KAV"/>
                             <constraint firstItem="o2Q-kR-6xB" firstAttribute="top" secondItem="xSn-JT-2pL" secondAttribute="top" constant="10" id="CgJ-VZ-5dj"/>
                             <constraint firstItem="M3R-1c-Ppe" firstAttribute="top" secondItem="o2Q-kR-6xB" secondAttribute="bottom" id="GCx-3A-HnS"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="leading" secondItem="UuP-yE-0kQ" secondAttribute="leading" id="Oeo-Z7-bX9"/>

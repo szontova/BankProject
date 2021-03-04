@@ -73,7 +73,7 @@ class CardsViewController: UIViewController {
                 if cards.count < 3 {
                         addCardForAccount(acc)
                 } else {
-                    showAlertError(message: "На один счёт может быть зарегистрировано не более 3 карточек")
+                    showAlertError(message: "На один расчётный счёт может быть зарегистрировано не более 3 карточек")
                 }
             case "C":
                 if cards.isEmpty {

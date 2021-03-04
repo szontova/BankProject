@@ -36,6 +36,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас нет оформленных кредитов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipg-Au-CJo">
+                                <rect key="frame" x="57.666666666666657" y="223" width="312.66666666666674" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvo-us-3o1">
                                 <rect key="frame" x="15" y="153" width="398" height="60"/>
                                 <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,15 +73,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gvo-us-3o1" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" constant="-15" id="AEk-Wt-t7H"/>
-                            <constraint firstItem="xSn-JT-2pL" firstAttribute="trailing" secondItem="a92-I4-uOS" secondAttribute="trailing" constant="15" id="BS8-sO-XxT"/>
+                            <constraint firstItem="a92-I4-uOS" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" constant="-15" id="BS8-sO-XxT"/>
                             <constraint firstItem="o2Q-kR-6xB" firstAttribute="top" secondItem="xSn-JT-2pL" secondAttribute="top" constant="10" id="CgJ-VZ-5dj"/>
                             <constraint firstItem="M3R-1c-Ppe" firstAttribute="top" secondItem="o2Q-kR-6xB" secondAttribute="bottom" id="GCx-3A-HnS"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="leading" secondItem="UuP-yE-0kQ" secondAttribute="leading" id="Oeo-Z7-bX9"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="bottom" secondItem="UuP-yE-0kQ" secondAttribute="bottom" id="Tbe-zA-6jM"/>
                             <constraint firstItem="o2Q-kR-6xB" firstAttribute="leading" secondItem="xSn-JT-2pL" secondAttribute="leading" id="WKq-Iq-1kT"/>
                             <constraint firstItem="M3R-1c-Ppe" firstAttribute="leading" secondItem="xSn-JT-2pL" secondAttribute="leading" constant="15" id="Wjn-b5-SxQ"/>
+                            <constraint firstItem="ipg-Au-CJo" firstAttribute="top" secondItem="Gvo-us-3o1" secondAttribute="bottom" constant="10" id="XFl-J7-GJt"/>
                             <constraint firstItem="o2Q-kR-6xB" firstAttribute="trailing" secondItem="UuP-yE-0kQ" secondAttribute="trailing" id="YO8-yD-u34"/>
                             <constraint firstItem="M3R-1c-Ppe" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" constant="-15" id="ZuF-a9-Ow1"/>
+                            <constraint firstItem="ipg-Au-CJo" firstAttribute="centerX" secondItem="UuP-yE-0kQ" secondAttribute="centerX" id="bdw-Ft-BEP"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="top" secondItem="UuP-yE-0kQ" secondAttribute="top" id="cjV-P7-igR"/>
                             <constraint firstItem="a92-I4-uOS" firstAttribute="top" secondItem="Gvo-us-3o1" secondAttribute="bottom" constant="15" id="cpp-ic-JpT"/>
                             <constraint firstItem="Gvo-us-3o1" firstAttribute="top" secondItem="M3R-1c-Ppe" secondAttribute="bottom" constant="5" id="h9S-dA-bIF"/>
@@ -87,6 +95,7 @@
                     <tabBarItem key="tabBarItem" title="Кредиты" image="credits" id="mRh-bI-4L7"/>
                     <connections>
                         <outlet property="creditsTableView" destination="a92-I4-uOS" id="qfG-v8-RwE"/>
+                        <outlet property="missingCreditsLabel" destination="ipg-Au-CJo" id="jQa-TY-3hg"/>
                         <outlet property="navigationBar" destination="o2Q-kR-6xB" id="c1b-GR-2kN"/>
                         <segue destination="VfT-Fm-EGF" kind="show" identifier="toNewCreditSegue" id="x0E-sO-tgc"/>
                     </connections>

@@ -34,7 +34,7 @@ class CardsViewController: UIViewController {
         super.viewDidAppear(animated)
         
         accountNumberLabel.text = "Cчёт: \(account?.idNumber ?? "")"
-        accountBalanceLabel.text = NSString(format: "Баланс: %.2f BYR", account?.balance ?? 0.0) as String
+        accountBalanceLabel.text = NSString(format: "Баланс: %.2f BYR", Float(account?.balance ?? 0) / 100 ) as String
         missingCardsLabel.isHidden = true
         cardsTableView.isHidden = true
         

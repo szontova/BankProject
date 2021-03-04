@@ -127,6 +127,92 @@
             </objects>
             <point key="canvasLocation" x="290" y="1168"/>
         </scene>
+        <!--Депозиты-->
+        <scene sceneID="0Ic-87-IYS">
+            <objects>
+                <viewController id="K2F-ZX-4i3" customClass="DepositsViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VIY-Rn-QHS">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="umf-Om-19K">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkT-KA-hUg">
+                                <rect key="frame" x="0.0" y="54" width="428" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="2a9-YT-wAp"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Депозиты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS1-GI-3mD">
+                                <rect key="frame" x="15" y="98" width="398" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6vZ-qH-gMA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIf-ia-nMl">
+                                <rect key="frame" x="15" y="153" width="398" height="60"/>
+                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mk2-5h-wn9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Оформить депозит">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addCredit:" destination="1ef-RP-9rF" eventType="touchUpInside" id="M9h-K0-ohj"/>
+                                    <action selector="addDepositButton:" destination="K2F-ZX-4i3" eventType="touchUpInside" id="no4-sS-PJl"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwD-B3-K63">
+                                <rect key="frame" x="15" y="228" width="398" height="234"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="Zrl-ez-bSt"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H31-Ho-DvK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="umf-Om-19K" firstAttribute="leading" secondItem="VIY-Rn-QHS" secondAttribute="leading" id="6BJ-cb-BCa"/>
+                            <constraint firstItem="JS1-GI-3mD" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" constant="-15" id="Cd6-6R-wCL"/>
+                            <constraint firstItem="umf-Om-19K" firstAttribute="top" secondItem="VIY-Rn-QHS" secondAttribute="top" id="EuM-Q4-NBP"/>
+                            <constraint firstItem="umf-Om-19K" firstAttribute="bottom" secondItem="H31-Ho-DvK" secondAttribute="bottom" id="I67-Hi-3BJ"/>
+                            <constraint firstItem="TkT-KA-hUg" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" id="J6y-0K-z9f"/>
+                            <constraint firstItem="JS1-GI-3mD" firstAttribute="top" secondItem="TkT-KA-hUg" secondAttribute="bottom" id="LaE-Jh-Uid"/>
+                            <constraint firstItem="gwD-B3-K63" firstAttribute="top" secondItem="IIf-ia-nMl" secondAttribute="bottom" constant="15" id="XRA-SU-xRp"/>
+                            <constraint firstItem="H31-Ho-DvK" firstAttribute="trailing" secondItem="gwD-B3-K63" secondAttribute="trailing" constant="15" id="Xbt-9G-EKX"/>
+                            <constraint firstItem="TkT-KA-hUg" firstAttribute="top" secondItem="H31-Ho-DvK" secondAttribute="top" constant="10" id="c1o-2V-LdG"/>
+                            <constraint firstItem="umf-Om-19K" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" id="iMt-Sg-b9t"/>
+                            <constraint firstItem="IIf-ia-nMl" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" constant="15" id="jR6-HX-g9d"/>
+                            <constraint firstItem="TkT-KA-hUg" firstAttribute="trailing" secondItem="VIY-Rn-QHS" secondAttribute="trailing" id="lLw-gM-FsA"/>
+                            <constraint firstItem="IIf-ia-nMl" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" constant="-15" id="lsw-03-wKI"/>
+                            <constraint firstItem="gwD-B3-K63" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" constant="15" id="nyX-MY-LoW"/>
+                            <constraint firstItem="JS1-GI-3mD" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" constant="15" id="oOi-70-tzO"/>
+                            <constraint firstItem="IIf-ia-nMl" firstAttribute="top" secondItem="JS1-GI-3mD" secondAttribute="bottom" constant="5" id="tpB-cE-5Er"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Депозиты" id="i67-p7-ojb"/>
+                    <connections>
+                        <outlet property="depositsTableView" destination="gwD-B3-K63" id="BOf-aZ-ajI"/>
+                        <outlet property="navigationBar" destination="TkT-KA-hUg" id="NiP-MV-lfI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFg-iU-vPT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="762"/>
+        </scene>
         <!--Ещё-->
         <scene sceneID="YnN-nw-5Mc">
             <objects>
@@ -246,7 +332,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T12-0Q-HQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Rao-7D-P3Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1003.7383177570093" y="762.63498920086397"/>
+            <point key="canvasLocation" x="1661" y="762"/>
         </scene>
         <!--Переводы-->
         <scene sceneID="bOc-Wk-phr">
@@ -495,6 +581,7 @@
                         <segue destination="DNe-dc-Hnh" kind="relationship" relationship="viewControllers" id="ZHM-aF-qcL"/>
                         <segue destination="VfR-HQ-Ymy" kind="relationship" relationship="viewControllers" id="tbY-Av-3F2"/>
                         <segue destination="1ef-RP-9rF" kind="relationship" relationship="viewControllers" id="Ya2-oZ-LAK"/>
+                        <segue destination="K2F-ZX-4i3" kind="relationship" relationship="viewControllers" id="sE3-za-AK5"/>
                         <segue destination="s56-83-l9K" kind="relationship" relationship="viewControllers" id="UFf-f7-Bpf"/>
                     </connections>
                 </tabBarController>

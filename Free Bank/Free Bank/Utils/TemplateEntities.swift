@@ -209,7 +209,7 @@ extension UIViewController {
         newCredit.amount = amount
         newCredit.term = term
         newCredit.procent = procent
-        newCredit.date = Date()
+        newCredit.date = getDate()
         newCredit.idNumber = generationIdCredit(individ, org, term, amount)
         
         newAccount.idNumber = generationIdAccount("C")
@@ -239,6 +239,12 @@ extension UIViewController {
     //MARK: -HelperFunctions
     func getAccCategory(_ acc: Account) -> Character{
         return acc.idNumber!.dropFirst(16).first!
+    }
+    
+    func getDate() -> Date{
+        let seconds:TimeInterval = 180.0 * 60.0;
+        let date = Date(timeIntervalSinceNow: seconds)
+        return date
     }
     
     func getValidityDate(_ years: Int) -> String{

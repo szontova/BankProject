@@ -2,7 +2,7 @@
 //  Account+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Пользователь on 23.02.21.
+//  Created by Sasha Zontova on 3/4/21.
 //
 //
 
@@ -24,6 +24,7 @@ extension Account {
     @NSManaged public var credit: Credit?
     @NSManaged public var owner: Individual?
     @NSManaged public var transactions: NSSet?
+    @NSManaged public var deposit: Deposit?
 
 }
 

@@ -2,7 +2,7 @@
 //  Transaction+CoreDataClass.swift
 //  Free Bank
 //
-//  Created by Пользователь on 23.02.21.
+//  Created by Sasha Zontova on 3/4/21.
 //
 //
 

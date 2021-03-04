@@ -7,6 +7,7 @@
         <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Card" inverseName="account" inverseEntity="Card"/>
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="accounts" inverseEntity="Organization"/>
         <relationship name="credit" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Credit" inverseName="account" inverseEntity="Credit"/>
+        <relationship name="deposit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deposit" inverseName="account" inverseEntity="Deposit"/>
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Individual" inverseName="accounts" inverseEntity="Individual"/>
         <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="accounts" inverseEntity="Transaction"/>
     </entity>
@@ -47,6 +48,16 @@
         <relationship name="indBorrower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Individual" inverseName="credits" inverseEntity="Individual"/>
         <relationship name="orgBorrower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="credits" inverseEntity="Organization"/>
     </entity>
+    <entity name="Deposit" representedClassName="Deposit" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="idNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="procent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="term" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="deposit" inverseEntity="Account"/>
+        <relationship name="indOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Individual" inverseName="deposit" inverseEntity="Individual"/>
+        <relationship name="orgOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="deposit" inverseEntity="Organization"/>
+    </entity>
     <entity name="Individual" representedClassName=".Individual" syncable="YES">
         <attribute name="codeWord" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
@@ -55,6 +66,7 @@
         <attribute name="password" optional="YES" attributeType="String"/>
         <relationship name="accounts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Account" inverseName="owner" inverseEntity="Account"/>
         <relationship name="credits" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Credit" inverseName="indBorrower" inverseEntity="Credit"/>
+        <relationship name="deposit" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deposit" inverseName="indOwner" inverseEntity="Deposit"/>
         <relationship name="employer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="staff" inverseEntity="Organization"/>
     </entity>
     <entity name="Organization" representedClassName=".Organization" syncable="YES">
@@ -65,6 +77,7 @@
         <attribute name="prn" optional="YES" attributeType="String"/>
         <relationship name="accounts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Account" inverseName="company" inverseEntity="Account"/>
         <relationship name="credits" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Credit" inverseName="orgBorrower" inverseEntity="Credit"/>
+        <relationship name="deposit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deposit" inverseName="orgOwner" inverseEntity="Deposit"/>
         <relationship name="staff" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Individual" inverseName="employer" inverseEntity="Individual"/>
     </entity>
     <entity name="Transaction" representedClassName=".Transaction" syncable="YES">
@@ -76,14 +89,15 @@
         <relationship name="accounts" optional="YES" toMany="YES" maxCount="2" deletionRule="Nullify" destinationEntity="Account" inverseName="transactions" inverseEntity="Account"/>
     </entity>
     <elements>
-        <element name="Account" positionX="-261.6015625" positionY="-194.4375" width="128" height="149"/>
+        <element name="Account" positionX="-261.6015625" positionY="-194.4375" width="128" height="178"/>
         <element name="ATM" positionX="-593.61328125" positionY="-423.73046875" width="128" height="74"/>
         <element name="Bank" positionX="-333.1484375" positionY="-464.26953125" width="128" height="178"/>
         <element name="Branch" positionX="-111.3046875" positionY="-414.84765625" width="128" height="74"/>
         <element name="Card" positionX="-44.88671875" positionY="-245.29296875" width="128" height="89"/>
         <element name="Credit" positionX="-250.7265625" positionY="136.76953125" width="128" height="149"/>
-        <element name="Individual" positionX="-412.75" positionY="22.99609375" width="128" height="149"/>
-        <element name="Organization" positionX="-802.4921875" positionY="-203.65234375" width="128" height="149"/>
+        <element name="Deposit" positionX="-603" positionY="-315" width="128" height="163"/>
+        <element name="Individual" positionX="-412.75" positionY="22.99609375" width="128" height="178"/>
+        <element name="Organization" positionX="-802.4921875" positionY="-203.65234375" width="128" height="178"/>
         <element name="Transaction" positionX="-50.6640625" positionY="-92.1640625" width="128" height="119"/>
     </elements>
 </model>

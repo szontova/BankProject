@@ -2,7 +2,7 @@
 //  Organization+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Пользователь on 25.02.21.
+//  Created by Sasha Zontova on 3/4/21.
 //
 //
 
@@ -16,14 +16,15 @@ extension Organization {
         return NSFetchRequest<Organization>(entityName: "Organization")
     }
 
+    @NSManaged public var codeWord: String?
     @NSManaged public var email: String?
     @NSManaged public var name: String?
     @NSManaged public var password: String?
     @NSManaged public var prn: String?
-    @NSManaged public var codeWord: String?
     @NSManaged public var accounts: NSSet?
     @NSManaged public var credits: NSSet?
     @NSManaged public var staff: NSSet?
+    @NSManaged public var deposit: Deposit?
 
 }
 

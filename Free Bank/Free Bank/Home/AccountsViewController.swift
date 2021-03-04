@@ -161,6 +161,8 @@ extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         accountForTransfer = accounts[indexPath.row]
-        performSegue(withIdentifier: "toCardsSegue", sender: nil)
+        if accountForTransfer!.idNumber!.dropFirst(16).first! != "D" {
+            performSegue(withIdentifier: "toCardsSegue", sender: nil)
+        }
     }
 }

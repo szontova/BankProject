@@ -79,12 +79,17 @@ extension UIViewController {
     }
     
     //MARK:- AddEntities
-    func addCardForSimpleAccount( _ account: Account){
+    func addCardForAccount( _ account: Account){
         let newCard = Card(context: context)
-        
-        let firsTemplateNumbers = 4725_6919_0000_0000
+        var firsTemplateNumbers = 4725_6900_0000_0000
+        switch account.idNumber!.dropFirst(16).first! {
+        case "S": firsTemplateNumbers += 19_0000_0000
+        case "C": firsTemplateNumbers += 03_0000_0000
+        case "D": firsTemplateNumbers += 04_0000_0000
+        default: break
+        }
         let numbersOfAccount = (Int(account.idNumber!.suffix(7)) ?? 0) * 10
-        let lastNumber = (account.cards?.count ?? 0)
+        let lastNumber = (account.cards?.count ?? 0) + 1
         
         let cardNumber = firsTemplateNumbers + numbersOfAccount + lastNumber
         newCard.idNumber = Int64(cardNumber)

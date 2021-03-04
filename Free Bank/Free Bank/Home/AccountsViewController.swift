@@ -90,8 +90,8 @@ class AccountsViewController: UIViewController {
     
     @IBAction func addAccountButton(_ sender: UIButton) {
      
-        if accounts.count > 4 {
-            showAlertError(message: "На одного пользователя не может быть зарегистрировано более 5 счетов")
+        if simpleAccounts.count > 2 {
+            showAlertError(message: "На одного пользователя не может быть зарегистрировано более 3 счетов")
         }
         else {
             let accountNumber = generationIdAccount("S")

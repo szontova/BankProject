@@ -98,8 +98,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N1u-za-vtn">
-                                <rect key="frame" x="15" y="254" width="398" height="623"/>
+                                <rect key="frame" x="15" y="254" width="398" height="270"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="mxY-kV-5oX"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hYT-Vz-QKW"/>
@@ -110,7 +113,6 @@
                             <constraint firstItem="hYT-Vz-QKW" firstAttribute="trailing" secondItem="N1u-za-vtn" secondAttribute="trailing" constant="15" id="Cgg-s1-PkS"/>
                             <constraint firstItem="YzT-rA-j8I" firstAttribute="top" secondItem="zeq-lV-v2D" secondAttribute="bottom" constant="5" id="Drm-IL-d6o"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="bottom" secondItem="zH5-Cz-Nfq" secondAttribute="bottom" id="E9x-lV-G3s"/>
-                            <constraint firstItem="hYT-Vz-QKW" firstAttribute="bottom" secondItem="N1u-za-vtn" secondAttribute="bottom" constant="15" id="FkY-Bc-W19"/>
                             <constraint firstItem="MLw-kF-aDa" firstAttribute="leading" secondItem="zH5-Cz-Nfq" secondAttribute="leading" id="GgD-NA-v9s"/>
                             <constraint firstItem="6kD-Ok-9pY" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="HSr-mX-VpT"/>
                             <constraint firstItem="6kD-Ok-9pY" firstAttribute="centerX" secondItem="zH5-Cz-Nfq" secondAttribute="centerX" id="IEH-13-S8P"/>

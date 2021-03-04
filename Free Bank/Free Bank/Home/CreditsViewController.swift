@@ -10,6 +10,7 @@ import UIKit
 class CreditsViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var missingCreditsLabel: UILabel!
     @IBOutlet weak var creditsTableView: UITableView!
     
     private var individual: Individual?
@@ -30,6 +31,14 @@ class CreditsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateCredits()
+        if credits.isEmpty {
+            creditsTableView.isHidden = true
+            missingCreditsLabel.isHidden = false
+        } else {
+            creditsTableView.isHidden = false
+            missingCreditsLabel.isHidden = true
+        }
+        
         DispatchQueue.main.async {
             self.creditsTableView.reloadData()
         }

@@ -33,6 +33,12 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="подробнее..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmi-QA-vf3">
+                        <rect key="frame" x="218.5" y="52" width="91.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00 BYR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFY-is-M1g">
                         <rect key="frame" x="10" y="47" width="74.5" height="31"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -46,10 +52,12 @@
                     <constraint firstItem="dyh-Uf-JPP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="IcR-MF-wEL"/>
                     <constraint firstItem="vFY-is-M1g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Isv-bM-usE"/>
                     <constraint firstItem="dyh-Uf-JPP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dBH-ga-tq0"/>
+                    <constraint firstAttribute="trailing" secondItem="fmi-QA-vf3" secondAttribute="trailing" constant="10" id="jPo-LZ-47w"/>
                     <constraint firstAttribute="bottom" secondItem="vFY-is-M1g" secondAttribute="bottom" constant="15" id="q59-MW-h96"/>
                     <constraint firstItem="1BI-Y8-Y0o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rsR-ge-v8t"/>
                     <constraint firstItem="vFY-is-M1g" firstAttribute="top" secondItem="1BI-Y8-Y0o" secondAttribute="bottom" constant="10" id="uuu-qa-ZK3"/>
                     <constraint firstItem="1BI-Y8-Y0o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="voj-nu-2JO"/>
+                    <constraint firstItem="fmi-QA-vf3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="52" id="yqE-9H-mjG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -57,6 +65,7 @@
             <connections>
                 <outlet property="balanceLabel" destination="vFY-is-M1g" id="QxD-zs-2vF"/>
                 <outlet property="idNumberLabel" destination="1BI-Y8-Y0o" id="pS1-DS-Y4C"/>
+                <outlet property="moreLabel" destination="fmi-QA-vf3" id="ds9-Wr-Fgk"/>
                 <outlet property="myBackgroundView" destination="dyh-Uf-JPP" id="SG0-c0-B1g"/>
             </connections>
             <point key="canvasLocation" x="279.71014492753625" y="106.13839285714285"/>

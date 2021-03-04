@@ -13,6 +13,7 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var idNumberLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var myBackgroundView: UIView!
+    @IBOutlet weak var moreLabel: UILabel!
     
     static let identifier = "accountCell"
     
@@ -29,6 +30,11 @@ class AccountTableViewCell: UITableViewCell {
     }
     
     public func configure(with account: Account) {
+        
+        if Util.getAccCategory(account) == "D" {
+            moreLabel.isHidden = true
+        }
+        
         self.myBackgroundView.layer.cornerRadius = 5.0
         
         self.idNumberLabel.text = account.idNumber

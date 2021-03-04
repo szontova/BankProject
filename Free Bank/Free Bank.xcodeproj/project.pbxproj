@@ -65,6 +65,8 @@
 		59A42D1225ECE407002C8EF9 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */; };
 		59A42D1925ED2D0B002C8EF9 /* DesignFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D1825ED2D0B002C8EF9 /* DesignFunctions.swift */; };
 		59B3B2A325F15635008BC962 /* DepositsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3B2A225F15635008BC962 /* DepositsViewController.swift */; };
+		59B3B2A925F15A8A008BC962 /* DepositTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B3B2A725F15A8A008BC962 /* DepositTableViewCell.swift */; };
+		59B3B2AA25F15A8A008BC962 /* DepositTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B3B2A825F15A8A008BC962 /* DepositTableViewCell.xib */; };
 		59B86A9625D6C4D4007659ED /* Free Bank.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */; };
 		59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */; };
 		59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */; };
@@ -138,6 +140,8 @@
 		59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		59A42D1825ED2D0B002C8EF9 /* DesignFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFunctions.swift; sourceTree = "<group>"; };
 		59B3B2A225F15635008BC962 /* DepositsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositsViewController.swift; sourceTree = "<group>"; };
+		59B3B2A725F15A8A008BC962 /* DepositTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositTableViewCell.swift; sourceTree = "<group>"; };
+		59B3B2A825F15A8A008BC962 /* DepositTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepositTableViewCell.xib; sourceTree = "<group>"; };
 		59B86A9525D6C4D4007659ED /* Free Bank.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Free Bank.xcdatamodel"; sourceTree = "<group>"; };
 		59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDataFunctions.swift; sourceTree = "<group>"; };
 		59DFC2A325E77E42000EDCF9 /* bankInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = bankInfo.storyboard; sourceTree = "<group>"; };
@@ -303,6 +307,7 @@
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				59B3B2A625F15A6D008BC962 /* DepositTableViewCell */,
 				31C1A60F25F125D5001C6C14 /* HomeTabBar */,
 				5923D6D925F1151900EBA865 /* Credit */,
 				5904330A25EE4C3F00BF5412 /* Cards */,
@@ -356,6 +361,15 @@
 				59B86A9425D6C4D4007659ED /* Free Bank.xcdatamodeld */,
 			);
 			path = "Free Bank";
+			sourceTree = "<group>";
+		};
+		59B3B2A625F15A6D008BC962 /* DepositTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				59B3B2A725F15A8A008BC962 /* DepositTableViewCell.swift */,
+				59B3B2A825F15A8A008BC962 /* DepositTableViewCell.xib */,
+			);
+			path = DepositTableViewCell;
 			sourceTree = "<group>";
 		};
 		59DFC2A225E77D17000EDCF9 /* BankInfo */ = {
@@ -476,6 +490,7 @@
 				311E330E25EE2A8C0048C231 /* NewCredit.storyboard in Resources */,
 				5904330425EE2D8C00BF5412 /* AccountTableViewCell.xib in Resources */,
 				59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */,
+				59B3B2AA25F15A8A008BC962 /* DepositTableViewCell.xib in Resources */,
 				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
 				5904330C25EE4C6700BF5412 /* Cards.storyboard in Resources */,
 				593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */,
@@ -525,6 +540,7 @@
 				3153816125F0EDB500659252 /* Credit+CoreDataProperties.swift in Sources */,
 				593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */,
 				5996B4AC25E54C3A00FB0BDB /* Bank+CoreDataProperties.swift in Sources */,
+				59B3B2A925F15A8A008BC962 /* DepositTableViewCell.swift in Sources */,
 				59DFC2AF25E78421000EDCF9 /* ContactsViewController.swift in Sources */,
 				3153815725F0CFE600659252 /* Deposit+CoreDataClass.swift in Sources */,
 				59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */,

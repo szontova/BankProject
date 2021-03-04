@@ -40,7 +40,7 @@ class DepositsViewController: UIViewController {
         
         depositsTableView.backgroundColor = .clear
         
-       // depositsTableView.register(DepositTableViewCell.nib(), forCellReuseIdentifier: DepositTableViewCell.identifier)
+        depositsTableView.register(DepositTableViewCell.nib(), forCellReuseIdentifier: DepositTableViewCell.identifier)
         
         depositsTableView.delegate = self
         depositsTableView.dataSource = self
@@ -67,15 +67,16 @@ extension DepositsViewController: UITableViewDelegate {}
 
 extension DepositsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deposits.count
+        return 1//deposits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = self.depositsTableView.dequeueReusableCell(withIdentifier: DepositTableViewCell.identifier) as? DepositTableViewCell {
-//            cell.selectionStyle = .none
-//            cell.configure(deposits[indexPath.row])
-//            return cell
-//        }
+        if let cell = self.depositsTableView.dequeueReusableCell(withIdentifier: DepositTableViewCell.identifier) as? DepositTableViewCell {
+            cell.selectionStyle = .none
+            cell.configure()
+            //cell.configure(deposits[indexPath.row])
+            return cell
+        }
         return UITableViewCell()
     }
 }

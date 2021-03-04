@@ -51,8 +51,9 @@
     <entity name="Deposit" representedClassName="Deposit" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="idNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="idNumber" optional="YES" attributeType="String"/>
         <attribute name="procent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="revocable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="term" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="deposit" inverseEntity="Account"/>
         <relationship name="indOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Individual" inverseName="deposit" inverseEntity="Individual"/>
@@ -95,7 +96,7 @@
         <element name="Branch" positionX="-111.3046875" positionY="-414.84765625" width="128" height="74"/>
         <element name="Card" positionX="-44.88671875" positionY="-245.29296875" width="128" height="89"/>
         <element name="Credit" positionX="-250.7265625" positionY="136.76953125" width="128" height="149"/>
-        <element name="Deposit" positionX="-603" positionY="-315" width="128" height="163"/>
+        <element name="Deposit" positionX="-603" positionY="-315" width="128" height="178"/>
         <element name="Individual" positionX="-412.75" positionY="22.99609375" width="128" height="178"/>
         <element name="Organization" positionX="-802.4921875" positionY="-203.65234375" width="128" height="178"/>
         <element name="Transaction" positionX="-50.6640625" positionY="-92.1640625" width="128" height="119"/>

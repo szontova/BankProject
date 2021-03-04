@@ -25,7 +25,7 @@ extension MainViewController: UICollectionViewDelegate {
             print("The resource can not be found.")
         }
         
-        print("you tapped me \(indexPath.row % getImages().count)")
+        //print("you tapped me \(indexPath.row % getImages().count)")
     }
     
     func openPage(url: String){

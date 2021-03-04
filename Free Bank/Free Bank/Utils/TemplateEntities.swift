@@ -82,7 +82,7 @@ extension UIViewController {
     func addCardForAccount( _ account: Account){
         let newCard = Card(context: context)
         var firsTemplateNumbers = 4725_6900_0000_0000
-        switch getAccCategory(account) {
+        switch Util.getAccCategory(account) {
         case "S": firsTemplateNumbers += 19_0000_0000
         case "C": firsTemplateNumbers += 03_0000_0000
         case "D": firsTemplateNumbers += 04_0000_0000
@@ -94,7 +94,7 @@ extension UIViewController {
         let cardNumber = firsTemplateNumbers + numbersOfAccount + lastNumber
         newCard.idNumber = Int64(cardNumber)
         
-        newCard.validity = getValidityDate(4)
+        newCard.validity = Util.getValidityDate(4)
         newCard.cvv = Int16.random(in: 100..<1000)
         
         account.addToCards(newCard)
@@ -201,7 +201,7 @@ extension UIViewController {
         }
     }
     
-    func addCredit(amount: Int32, term: Int16, procent: Int16, _ individ: Individual?, _ org: Organization?){
+    func addCredit(_ amount: Int32, _ term: Int16, _ procent: Int16, _ date: Date, _ individ: Individual?, _ org: Organization?){
      
         let newCredit = Credit(context: context)
         let newAccount = Account(context: context)
@@ -209,7 +209,7 @@ extension UIViewController {
         newCredit.amount = amount
         newCredit.term = term
         newCredit.procent = procent
-        newCredit.date = getDate()
+        newCredit.date = date
         newCredit.idNumber = generationIdCredit(individ, org, term, amount)
         
         newAccount.idNumber = generationIdAccount("C")
@@ -237,22 +237,6 @@ extension UIViewController {
 
     
     //MARK: -HelperFunctions
-    func getAccCategory(_ acc: Account) -> Character{
-        return acc.idNumber!.dropFirst(16).first!
-    }
-    
-    func getDate() -> Date{
-        let seconds:TimeInterval = 180.0 * 60.0;
-        let date = Date(timeIntervalSinceNow: seconds)
-        return date
-    }
-    
-    func getValidityDate(_ years: Int) -> String{
-        let validDate = NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: NSDate() as Date)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/yy"
-        return dateFormatter.string(for: validDate) ?? "00/00"
-    }
     
     func generationIdAccount (_ category: String) -> String {
         var result: String = ""

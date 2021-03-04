@@ -24,4 +24,22 @@ public class Util {
         let monthlyPay = (Float(amount) + (Float(amount) * Float(procent)/100))/Float(term)
         return Int(monthlyPay)
     }
+    
+    static func getDate() -> Date{
+        let seconds:TimeInterval = 180.0 * 60.0;
+        let date = Date(timeIntervalSinceNow: seconds)
+        return date
+    }
+    
+    static func getAccCategory(_ acc: Account) -> Character{
+        return acc.idNumber!.dropFirst(16).first!
+    }
+    
+    static func getValidityDate(_ years: Int) -> String{
+        let validDate = NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: NSDate() as Date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yy"
+        return dateFormatter.string(for: validDate) ?? "00/00"
+    }
+    
 }

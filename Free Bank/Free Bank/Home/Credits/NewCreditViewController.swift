@@ -9,6 +9,8 @@ import UIKit
 
 class NewCreditViewController: UIViewController {
 
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    
     @IBOutlet weak var amountSlider: UISlider!
     @IBOutlet weak var termSlider: UISlider!
     
@@ -27,6 +29,7 @@ class NewCreditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        transparentNavBar(navigationBar)
     }
     
     func setValueOfSlider(slider: UISlider, step: Float) -> Float{
@@ -90,7 +93,7 @@ class NewCreditViewController: UIViewController {
     }
     
     @IBAction func unwindToNewCreditFromConfirmationCredit(segue: UIStoryboardSegue){
-        guard segue.identifier == "" else {return}
+        guard segue.identifier == "unwindToNewCreditFromConfirmSegue" else {return}
         guard let _ = segue.destination as? ConfirmationCreditViewController else {return}
     }
     

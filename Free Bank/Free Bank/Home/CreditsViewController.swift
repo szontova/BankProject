@@ -77,7 +77,14 @@ class CreditsViewController: UIViewController {
     }
     
     @IBAction func addCredit(_ sender: UIButton) {
-        performSegue(withIdentifier: "toNewCreditSegue", sender: nil)
+        
+        if credits.count > 1 {
+            showAlertError(message: "На одного пользователя не может быть оформлено не более 2 кредитов")
+        }
+        else {
+            performSegue(withIdentifier: "toNewCreditSegue", sender: nil)
+            
+        }
     }
     
 }

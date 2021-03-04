@@ -79,12 +79,17 @@ extension UIViewController {
     }
     
     //MARK:- AddEntities
-    func addCardForSimpleAccount( _ account: Account){
+    func addCardForAccount( _ account: Account){
         let newCard = Card(context: context)
-        
-        let firsTemplateNumbers = 4725_6919_0000_0000
+        var firsTemplateNumbers = 4725_6900_0000_0000
+        switch getAccCategory(account) {
+        case "S": firsTemplateNumbers += 19_0000_0000
+        case "C": firsTemplateNumbers += 03_0000_0000
+        case "D": firsTemplateNumbers += 04_0000_0000
+        default: break
+        }
         let numbersOfAccount = (Int(account.idNumber!.suffix(7)) ?? 0) * 10
-        let lastNumber = (account.cards?.count ?? 0)
+        let lastNumber = (account.cards?.count ?? 0) + 1
         
         let cardNumber = firsTemplateNumbers + numbersOfAccount + lastNumber
         newCard.idNumber = Int64(cardNumber)
@@ -232,6 +237,9 @@ extension UIViewController {
 
     
     //MARK: -HelperFunctions
+    func getAccCategory(_ acc: Account) -> Character{
+        return acc.idNumber!.dropFirst(16).first!
+    }
     
     func getValidityDate(_ years: Int) -> String{
         let validDate = NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: NSDate() as Date)

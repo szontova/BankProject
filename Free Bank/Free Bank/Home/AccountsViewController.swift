@@ -16,6 +16,9 @@ class AccountsViewController: UIViewController {
     private var organization: Organization?
     
     private var accounts: [Account] = []
+    private var simpleAccounts: [Account] = []
+    private var creditAccounts: [Account] = []
+    private var depositAccounts: [Account] = []
     
     private var accountForTransfer: Account?
     
@@ -26,7 +29,7 @@ class AccountsViewController: UIViewController {
     
         accountsTableViewConfigurations()
         
-        updateAccounts()
+       // updateAccounts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,9 +61,26 @@ class AccountsViewController: UIViewController {
     func updateAccounts() {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array ( accs as! Set<Account> )
+       
         accounts.sort(){
             return $0.idNumber! < $1.idNumber!
         }
+        
+        creditAccounts = accounts.filter({ acc in
+            return getAccCategory(acc) == "C"
+        })
+        
+        simpleAccounts = accounts.filter({ acc in
+            return getAccCategory(acc) == "S"
+        })
+        
+        depositAccounts = accounts.filter({ (acc) -> Bool in
+            return getAccCategory(acc) == "D"
+        })
+        
+       // print(simpleAccounts)
+       // print(depositAccounts)
+       // print(creditAccounts)
     }
 
     @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){
@@ -70,8 +90,8 @@ class AccountsViewController: UIViewController {
     
     @IBAction func addAccountButton(_ sender: UIButton) {
      
-        if accounts.count > 4 {
-            showAlertError(message: "На одного пользователя не может быть зарегистрировано более 5 счетов")
+        if simpleAccounts.count > 2 {
+            showAlertError(message: "На одного пользователя может быть зарегистрировано не более 3 расчётных счетов ")
         }
         else {
             let accountNumber = generationIdAccount("S")
@@ -141,6 +161,8 @@ extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         accountForTransfer = accounts[indexPath.row]
-        performSegue(withIdentifier: "toCardsSegue", sender: nil)
+        if getAccCategory(accountForTransfer!) != "D" {
+            performSegue(withIdentifier: "toCardsSegue", sender: nil)
+        }
     }
 }

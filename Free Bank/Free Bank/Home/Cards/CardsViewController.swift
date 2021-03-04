@@ -66,28 +66,37 @@ class CardsViewController: UIViewController {
     }
     
     @IBAction func addCardButton(_ sender: UIButton) {
-        
-        if cards.count < 5 {
-            if let acc = account {
-                addCardForSimpleAccount(acc)
+        if let acc = account {
+            switch getAccCategory(acc) {
+            case "S":
+                if cards.count < 3 {
+                        addCardForAccount(acc)
+                } else {
+                    showAlertError(message: "На один расчётный счёт может быть зарегистрировано не более 3 карточек")
+                }
+            case "C":
+                if cards.isEmpty {
+                        addCardForAccount(acc)
+                } else {
+                    showAlertError(message: "На один кредитный счёт может быть зарегистрировано не более 1 карточки")
+                }
+            default: break
             }
-        } else {
-            showAlertError(message: "На один счёт не может быть зарегистрировано более 5 карточек")
-        }
-        
-        updateCards()
-        
-        if cards.isEmpty {
-            missingCardsLabel.isHidden = false
-            cardsTableView.isHidden = true
-        }
-        else {
-            missingCardsLabel.isHidden = true
-            cardsTableView.isHidden = false
-        }
-        
-        DispatchQueue.main.async {
-            self.cardsTableView.reloadData()
+            
+            updateCards()
+            
+            if cards.isEmpty {
+                missingCardsLabel.isHidden = false
+                cardsTableView.isHidden = true
+            }
+            else {
+                missingCardsLabel.isHidden = true
+                cardsTableView.isHidden = false
+            }
+            
+            DispatchQueue.main.async {
+                self.cardsTableView.reloadData()
+            }
         }
     }
 }

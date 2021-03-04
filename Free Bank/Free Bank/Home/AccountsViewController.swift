@@ -16,6 +16,9 @@ class AccountsViewController: UIViewController {
     private var organization: Organization?
     
     private var accounts: [Account] = []
+    private var simpleAccounts: [Account] = []
+    private var creditAccounts: [Account] = []
+    private var depositAccounts: [Account] = []
     
     private var accountForTransfer: Account?
     
@@ -26,7 +29,7 @@ class AccountsViewController: UIViewController {
     
         accountsTableViewConfigurations()
         
-        updateAccounts()
+       // updateAccounts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,9 +61,26 @@ class AccountsViewController: UIViewController {
     func updateAccounts() {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array ( accs as! Set<Account> )
+       
         accounts.sort(){
             return $0.idNumber! < $1.idNumber!
         }
+        
+        creditAccounts = accounts.filter({ acc in
+            return acc.idNumber!.dropFirst(16).first! == "C"
+        })
+        
+        simpleAccounts = accounts.filter({ acc in
+            return acc.idNumber!.dropFirst(16).first! == "S"
+        })
+        
+        depositAccounts = accounts.filter({ (acc) -> Bool in
+            return acc.idNumber!.dropFirst(16).first!  == "D"
+        })
+        
+       // print(simpleAccounts)
+       // print(depositAccounts)
+       // print(creditAccounts)
     }
 
     @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){

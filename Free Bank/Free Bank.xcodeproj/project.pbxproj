@@ -162,7 +162,6 @@
 		311E330C25EE2A510048C231 /* NewCredit */ = {
 			isa = PBXGroup;
 			children = (
-				5923D6D925F1151900EBA865 /* Credit */,
 				311E330D25EE2A8C0048C231 /* NewCredit.storyboard */,
 				311E331025EE2AA70048C231 /* NewCreditViewController.swift */,
 				311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */,
@@ -301,10 +300,11 @@
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				31C1A60F25F125D5001C6C14 /* HomeTabBar */,
-				59031DB325EF90C700B4DE9D /* CreditTableViewCell */,
+				5923D6D925F1151900EBA865 /* Credit */,
 				5904330A25EE4C3F00BF5412 /* Cards */,
+				59031DB325EF90C700B4DE9D /* CreditTableViewCell */,
 				5904330025EE2D5300BF5412 /* AccountTableViewCell */,
+				31C1A60F25F125D5001C6C14 /* HomeTabBar */,
 				311E330C25EE2A510048C231 /* NewCredit */,
 			);
 			path = Home;

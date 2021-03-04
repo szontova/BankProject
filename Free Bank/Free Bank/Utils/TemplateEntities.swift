@@ -201,7 +201,7 @@ extension UIViewController {
         }
     }
     
-    func addCredit(amount: Int64, term: Int64, procent: Int16, _ individ: Individual?, _ org: Organization?){
+    func addCredit(amount: Int32, term: Int16, procent: Int16, _ individ: Individual?, _ org: Organization?){
      
         let newCredit = Credit(context: context)
         let newAccount = Account(context: context)
@@ -213,7 +213,7 @@ extension UIViewController {
         newCredit.idNumber = generationIdCredit(individ, org, term, amount)
         
         newAccount.idNumber = generationIdAccount("C")
-        newAccount.balance = amount
+        newAccount.balance = Int64(amount)
         newCredit.account = newAccount
         
         if let _ = individ {
@@ -317,7 +317,7 @@ extension UIViewController {
         return id
     }
     
-    func generationIdCredit (_ ind: Individual?, _ org: Organization?, _ term: Int64, _ amount: Int64) -> Int64{
+    func generationIdCredit (_ ind: Individual?, _ org: Organization?, _ term: Int16, _ amount: Int32) -> Int64{
         var id: Int64 = 1_0000_0000
         let creditRequest = Credit.fetchRequest() as NSFetchRequest<Credit>
         do{
@@ -340,9 +340,9 @@ extension UIViewController {
             id += (Int64)(org?.credits?.count ?? 0) % 10 * 1000_0000
         }
         
-        id += term * 100000
+        id += Int64(term) * 100000
         
-        id += amount / 100
+        id += Int64(amount) / 100
         
         return id
     }

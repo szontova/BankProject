@@ -52,8 +52,8 @@ class NewCreditViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toConfirmationCreditSegue" else { return }
         guard let destinationVC = segue.destination as? ConfirmationCreditViewController else { return }
-        destinationVC.setAmount(Int64(amount * 100))
-        destinationVC.setTerm(Int64(term))
+        destinationVC.setAmount(Int32(amount * 100))
+        destinationVC.setTerm(Int16(term))
         destinationVC.setProcent(Int16(procent))
         destinationVC.setIndividual(individual)
         destinationVC.setOrganization(organization)

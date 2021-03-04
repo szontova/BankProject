@@ -18,3 +18,10 @@ extension UIViewController{
         if let url = URL(string: url) { UIApplication.shared.open(url, options: [:], completionHandler: nil)}
     }
 }
+
+public class Util {
+   static func calculateMonthlyPay(amount: Int32, term: Int16, procent: Int16) -> Int{
+        let monthlyPay = (Float(amount) + (Float(amount) * Float(procent)/100))/Float(term)
+        return Int(monthlyPay)
+    }
+}

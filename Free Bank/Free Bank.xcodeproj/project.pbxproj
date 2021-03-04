@@ -22,7 +22,9 @@
 		3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */; };
 		3153815725F0CFE600659252 /* Deposit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153815525F0CFE600659252 /* Deposit+CoreDataClass.swift */; };
 		3153815825F0CFE600659252 /* Deposit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153815625F0CFE600659252 /* Deposit+CoreDataProperties.swift */; };
-		31E793A625E9565100667F99 /* LinkFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E793A525E9565100667F99 /* LinkFunctions.swift */; };
+		3153816025F0EDB500659252 /* Credit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153815E25F0EDB500659252 /* Credit+CoreDataClass.swift */; };
+		3153816125F0EDB500659252 /* Credit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153815F25F0EDB500659252 /* Credit+CoreDataProperties.swift */; };
+		31E793A625E9565100667F99 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E793A525E9565100667F99 /* UtilityFunctions.swift */; };
 		59031DB625EF90E400B4DE9D /* CreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59031DB425EF90E400B4DE9D /* CreditTableViewCell.swift */; };
 		59031DB725EF90E400B4DE9D /* CreditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59031DB525EF90E400B4DE9D /* CreditTableViewCell.xib */; };
 		5904330325EE2D8C00BF5412 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904330125EE2D8C00BF5412 /* AccountTableViewCell.swift */; };
@@ -55,8 +57,6 @@
 		5996B4AE25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49C25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift */; };
 		5996B4AF25E54C3A00FB0BDB /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49D25E54C3A00FB0BDB /* Card+CoreDataClass.swift */; };
 		5996B4B025E54C3A00FB0BDB /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49E25E54C3A00FB0BDB /* Card+CoreDataProperties.swift */; };
-		5996B4B125E54C3A00FB0BDB /* Credit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B49F25E54C3A00FB0BDB /* Credit+CoreDataClass.swift */; };
-		5996B4B225E54C3A00FB0BDB /* Credit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5996B4A025E54C3A00FB0BDB /* Credit+CoreDataProperties.swift */; };
 		599E61DD25CAF51500DF5A38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599E61DC25CAF51500DF5A38 /* MainViewController.swift */; };
 		59A42D0C25ECE3AC002C8EF9 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D0B25ECE3AC002C8EF9 /* AccountsViewController.swift */; };
 		59A42D0F25ECE3D9002C8EF9 /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A42D0E25ECE3D9002C8EF9 /* TransfersViewController.swift */; };
@@ -90,7 +90,9 @@
 		3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewController.swift; sourceTree = "<group>"; };
 		3153815525F0CFE600659252 /* Deposit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3153815625F0CFE600659252 /* Deposit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		31E793A525E9565100667F99 /* LinkFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFunctions.swift; sourceTree = "<group>"; };
+		3153815E25F0EDB500659252 /* Credit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Credit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3153815F25F0EDB500659252 /* Credit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Credit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		31E793A525E9565100667F99 /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		59031DB425EF90E400B4DE9D /* CreditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableViewCell.swift; sourceTree = "<group>"; };
 		59031DB525EF90E400B4DE9D /* CreditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditTableViewCell.xib; sourceTree = "<group>"; };
 		5904330125EE2D8C00BF5412 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
@@ -125,8 +127,6 @@
 		5996B49C25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ATM+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5996B49D25E54C3A00FB0BDB /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5996B49E25E54C3A00FB0BDB /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5996B49F25E54C3A00FB0BDB /* Credit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Credit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		5996B4A025E54C3A00FB0BDB /* Credit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Credit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		599E61DC25CAF51500DF5A38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		59A42D0B25ECE3AC002C8EF9 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		59A42D0E25ECE3D9002C8EF9 /* TransfersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +189,8 @@
 		318CA72A25E524360066957D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3153815E25F0EDB500659252 /* Credit+CoreDataClass.swift */,
+				3153815F25F0EDB500659252 /* Credit+CoreDataProperties.swift */,
 				3153815525F0CFE600659252 /* Deposit+CoreDataClass.swift */,
 				3153815625F0CFE600659252 /* Deposit+CoreDataProperties.swift */,
 				311D8E4625F0C816005BFB51 /* Account+CoreDataProperties.swift */,
@@ -207,8 +209,6 @@
 				5996B49C25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift */,
 				5996B49D25E54C3A00FB0BDB /* Card+CoreDataClass.swift */,
 				5996B49E25E54C3A00FB0BDB /* Card+CoreDataProperties.swift */,
-				5996B49F25E54C3A00FB0BDB /* Credit+CoreDataClass.swift */,
-				5996B4A025E54C3A00FB0BDB /* Credit+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 				592AE50A25D3D45D000C99E5 /* Alerts.swift */,
 				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
 				59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */,
-				31E793A525E9565100667F99 /* LinkFunctions.swift */,
+				31E793A525E9565100667F99 /* UtilityFunctions.swift */,
 				59A42D1825ED2D0B002C8EF9 /* DesignFunctions.swift */,
 			);
 			path = Utils;
@@ -463,13 +463,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5996B4B225E54C3A00FB0BDB /* Credit+CoreDataProperties.swift in Sources */,
-				5996B4B125E54C3A00FB0BDB /* Credit+CoreDataClass.swift in Sources */,
 				5996B4B025E54C3A00FB0BDB /* Card+CoreDataProperties.swift in Sources */,
 				311D8E4F25F0C816005BFB51 /* Transaction+CoreDataClass.swift in Sources */,
 				311D8E4B25F0C816005BFB51 /* Organization+CoreDataClass.swift in Sources */,
 				59A42D0C25ECE3AC002C8EF9 /* AccountsViewController.swift in Sources */,
-				31E793A625E9565100667F99 /* LinkFunctions.swift in Sources */,
+				31E793A625E9565100667F99 /* UtilityFunctions.swift in Sources */,
 				596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */,
 				59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
@@ -485,6 +483,7 @@
 				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
 				5904330325EE2D8C00BF5412 /* AccountTableViewCell.swift in Sources */,
+				3153816025F0EDB500659252 /* Credit+CoreDataClass.swift in Sources */,
 				5996B4AE25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift in Sources */,
 				59A42D1925ED2D0B002C8EF9 /* DesignFunctions.swift in Sources */,
 				59A42D1225ECE407002C8EF9 /* CreditsViewController.swift in Sources */,
@@ -496,6 +495,7 @@
 				59031DB625EF90E400B4DE9D /* CreditTableViewCell.swift in Sources */,
 				311D8E4D25F0C816005BFB51 /* Account+CoreDataClass.swift in Sources */,
 				59A42D0F25ECE3D9002C8EF9 /* TransfersViewController.swift in Sources */,
+				3153816125F0EDB500659252 /* Credit+CoreDataProperties.swift in Sources */,
 				593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */,
 				5996B4AC25E54C3A00FB0BDB /* Bank+CoreDataProperties.swift in Sources */,
 				59DFC2AF25E78421000EDCF9 /* ContactsViewController.swift in Sources */,

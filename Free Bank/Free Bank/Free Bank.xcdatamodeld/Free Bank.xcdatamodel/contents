@@ -39,11 +39,11 @@
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="cards" inverseEntity="Account"/>
     </entity>
     <entity name="Credit" representedClassName=".Credit" syncable="YES">
-        <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="idNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="procent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="term" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="term" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Account" inverseName="credit" inverseEntity="Account"/>
         <relationship name="indBorrower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Individual" inverseName="credits" inverseEntity="Individual"/>
         <relationship name="orgBorrower" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="credits" inverseEntity="Organization"/>
@@ -95,7 +95,7 @@
         <element name="Bank" positionX="-333.1484375" positionY="-464.26953125" width="128" height="178"/>
         <element name="Branch" positionX="-111.3046875" positionY="-414.84765625" width="128" height="74"/>
         <element name="Card" positionX="-44.88671875" positionY="-245.29296875" width="128" height="89"/>
-        <element name="Credit" positionX="-250.7265625" positionY="136.76953125" width="128" height="149"/>
+        <element name="Credit" positionX="-250.7265625" positionY="136.76953125" width="128" height="163"/>
         <element name="Deposit" positionX="-603" positionY="-315" width="128" height="178"/>
         <element name="Individual" positionX="-412.75" positionY="22.99609375" width="128" height="178"/>
         <element name="Organization" positionX="-802.4921875" positionY="-203.65234375" width="128" height="178"/>

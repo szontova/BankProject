@@ -213,10 +213,12 @@ extension UIViewController {
         
         if let _ = individ {
             individ?.addToCredits(newCredit)
+            individ?.addToAccounts(newAccount)
         }
         
         if let _ = org {
             org?.addToCredits(newCredit)
+            org?.addToAccounts(newAccount)
         }
         
         print(newCredit.string())

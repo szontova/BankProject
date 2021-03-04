@@ -29,6 +29,14 @@ class AccountsViewController: UIViewController {
         updateAccounts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateAccounts()
+        DispatchQueue.main.async {
+            self.accountsTableView.reloadData()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toCardsSegue" else { return }
         guard let destinationVC = segue.destination as? CardsViewController else { return }

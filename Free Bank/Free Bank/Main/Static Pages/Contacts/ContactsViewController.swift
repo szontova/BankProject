@@ -20,7 +20,7 @@ class ContactsViewController: UIViewController {
     }
     
     @IBAction func callLeraButton(_ sender: UIButton) {
-         callNumber(number: "+375291951959")
+        Util.callNumber(number: "+375291951959")
     }
     
     @IBAction func facebookLeraButton(_ sender: UIButton) {
@@ -48,7 +48,7 @@ class ContactsViewController: UIViewController {
     }
     
     @IBAction func callSashaButton(_ sender: UIButton) {
-        callNumber(number: "+375295721707")
+        Util.callNumber(number: "+375295721707")
     }
     
     @IBAction func facebookSashaButton(_ sender: UIButton) {

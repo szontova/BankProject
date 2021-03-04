@@ -59,17 +59,13 @@ class BankInfoViewController: UIViewController {
             customStyleButton(emailButton, fb.email)
         }
     }
-    
-    func callNumber(phone: String){
-        if let url: NSURL = URL(string: "TEL://" + phone) as NSURL?  { UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)}
-    }
         
     @IBAction func shortCallButton(_ sender: UIButton) {
-        callNumber(phone: shortNumberButton.currentTitle!)
+        Util.callNumber(number: shortNumberButton.currentTitle!)
     }
     
     @IBAction func fullCallButton(_ sender: UIButton) {
-        callNumber(phone: fullNumberButton.currentTitle!)
+        Util.callNumber(number: fullNumberButton.currentTitle!)
     }
     
     @IBAction func sendMailButton(_ sender: UIButton) {

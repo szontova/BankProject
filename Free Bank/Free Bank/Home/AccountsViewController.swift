@@ -156,7 +156,6 @@ extension AccountsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        //label.backgroundColor = UIColor.init(red: 60/255, green: 22/255, blue: 22/255, alpha: 0)
         label.backgroundColor = UIColor.init(red: 181/255, green: 150/255, blue: 142/255, alpha: 1.0)
         label.textColor = UIColor.white
         label.textAlignment = .center

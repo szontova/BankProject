@@ -34,9 +34,6 @@ class HomeTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print (self.login ?? "Nothing")
-        print (self.status ?? 0)
-        
         if let log = login {
         switch status {
             case 0:

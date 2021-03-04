@@ -234,7 +234,22 @@ extension AccountsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        accountForTransfer = accounts[indexPath.row]
+        if setCountOfSection() == 2 {
+            if depositAccounts.count != 0 {
+                if indexPath.section == 0 { accountForTransfer = depositAccounts[indexPath.row]}
+                else { accountForTransfer = simpleAccounts[indexPath.row] }
+            }
+            else {
+                if indexPath.section == 0 { accountForTransfer = creditAccounts[indexPath.row]}
+                else { accountForTransfer = simpleAccounts[indexPath.row] }
+            }
+        } else if setCountOfSection() == 3 {
+            if indexPath.section == 0 { accountForTransfer = creditAccounts[indexPath.row]}
+            if indexPath.section == 1 { accountForTransfer = depositAccounts[indexPath.row] }
+            else { accountForTransfer = simpleAccounts[indexPath.row] }
+        }
+        else { accountForTransfer = simpleAccounts[indexPath.row] }
+        //accountForTransfer = accounts[indexPath.row]
         if Util.getAccCategory(accountForTransfer!) != "D" {
             performSegue(withIdentifier: "toCardsSegue", sender: nil)
         }

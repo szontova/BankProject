@@ -46,5 +46,8 @@ class CreditViewController: UIViewController {
             monthlyPayLabel.text = NSString(format: "%.2f BYR", Float(Util.calculateMonthlyPay(amount: cred.amount, term: cred.term, procent: cred.procent))/100) as String
         }
     }
-    
+    @IBAction func payOffButton(_ sender: UIButton) {
+    }
+    @IBAction func TransferMoneyButton(_ sender: UIButton) {
+    }
 }

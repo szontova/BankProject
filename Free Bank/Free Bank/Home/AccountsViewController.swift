@@ -124,7 +124,6 @@ class AccountsViewController: UIViewController {
             
         }
         
-    
     }
     
 }
@@ -145,15 +144,91 @@ extension AccountsViewController: UITableViewDelegate {}
 
 extension AccountsViewController: UITableViewDataSource {
     
+    func setCountOfSection() -> Int {
+        if creditAccounts.count != 0 || depositAccounts.count != 0{
+            return 2
+        }
+        if creditAccounts.count != 0 && depositAccounts.count != 0{
+            return 3
+        }
+       return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        //label.backgroundColor = UIColor.init(red: 60/255, green: 22/255, blue: 22/255, alpha: 0)
+        label.backgroundColor = UIColor.init(red: 181/255, green: 150/255, blue: 142/255, alpha: 1.0)
+        label.textColor = UIColor.white
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 5
+        switch setCountOfSection() {
+        case 1:
+            if section == 0 {label.text = "Расчетные счета"}
+        case 2:
+            if depositAccounts.count != 0{
+                label.text = section == 0 ? "Депозитные счета" : "Расчетные счета"
+            }
+            else{
+                label.text = section == 0 ? "Кредитные счета" : "Расчетные счета"
+            }
+        case 3:
+            label.text = section == 0 ? "Кредитные счета" : "Депозитные счета"
+            if section == 2 {label.text = "Расчетные счета"}
+        default:
+            print("Error in show section in AccountsViewController")
+        }
+        return label
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return setCountOfSection()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accounts.count
+        if setCountOfSection() == 2 {
+            if depositAccounts.count == 0{
+                if section == 0 { return creditAccounts.count }
+                return simpleAccounts.count
+            }
+            else {
+                if section == 0 { return depositAccounts.count }
+                return simpleAccounts.count
+            }
+        }
+        
+        if setCountOfSection() == 3 {
+            if section == 0 { return creditAccounts.count }
+            if section == 1 { return depositAccounts.count }
+            return simpleAccounts.count
+        }
+        
+        return simpleAccounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = self.accountsTableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as? AccountTableViewCell {
             cell.selectionStyle = .none
-            cell.configure(with: accounts[indexPath.row])
+            
+            if setCountOfSection() == 2 {
+                if depositAccounts.count != 0 {
+                    if indexPath.section == 0 { cell.configure(with: depositAccounts[indexPath.row]) }
+                    else { cell.configure(with: simpleAccounts[indexPath.row]) }
+                }
+                else {
+                        if indexPath.section == 0 { cell.configure(with: creditAccounts[indexPath.row]) }
+                        else { cell.configure(with: simpleAccounts[indexPath.row]) }
+                }
+            } else if setCountOfSection() == 3 {
+                if indexPath.section == 0 { cell.configure(with: creditAccounts[indexPath.row]) }
+                if indexPath.section == 1 { cell.configure(with: depositAccounts[indexPath.row]) }
+                if indexPath.section == 2 { cell.configure(with: simpleAccounts[indexPath.row]) }
+            }
+            else {
+                cell.configure(with: accounts[indexPath.row])
+            }
             return cell
         }
         return UITableViewCell()

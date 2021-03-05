@@ -47,7 +47,19 @@ class DepositsViewController: UIViewController {
         
     }
     
+    @IBAction func unwindToDepositsVCFromNewDepositVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToDepositsFromNewDepositSegue" else {return}
+        guard let _ = segue.destination as? NewDepositViewController else {return}
+    }
+    
+    
+    @IBAction func unwindToDepositsVCFromConfirmDepositVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToDepositsFromConfirmDepositSegue" else {return}
+        guard let _ = segue.destination as? ConfirmationDepositViewController else {return}
+    }
+    
     @IBAction func addDepositButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toNewDepositSegue", sender: nil)
     }
     
 }

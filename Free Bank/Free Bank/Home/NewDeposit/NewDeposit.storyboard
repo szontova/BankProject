@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5ku-k7-wox">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--New Deposit View Controller-->
+        <scene sceneID="0Z4-b6-8Rv">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="5ku-k7-wox" customClass="NewDepositViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4BU-hS-y41">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="623-wJ-W7N">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRG-PC-kZf">
+                                <rect key="frame" x="15" y="323" width="398" height="290"/>
+                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="wV3-L0-CaT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvU-ar-7TT">
+                                <rect key="frame" x="0.0" y="54" width="428" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="iSz-Ca-ffK">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="uzq-Q9-DdG">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="i3k-cp-AB9">
+                                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="lw2-AX-oc3"/>
+                                                    <constraint firstAttribute="height" constant="40" id="xE3-Wi-On3"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="aig-AP-6hh" kind="unwind" identifier="unwindToDepositsFromNewDepositSegue" unwindAction="unwindToDepositsVCFromNewDepositVCWithSegue:" id="Q2P-H4-3BD"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оформление" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-mp-GlB">
+                                <rect key="frame" x="15" y="98" width="398" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pat-Rw-kSZ">
+                                <rect key="frame" x="30" y="638" width="368" height="60"/>
+                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="elU-Vt-DeZ"/>
+                                </constraints>
+                                <state key="normal" title="Оформить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addDepositButton:" destination="5ku-k7-wox" eventType="touchUpInside" id="I0o-9L-byp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="00C-Er-e5I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nRG-PC-kZf" firstAttribute="centerX" secondItem="4BU-hS-y41" secondAttribute="centerX" id="J3I-SJ-zjg"/>
+                            <constraint firstItem="623-wJ-W7N" firstAttribute="leading" secondItem="00C-Er-e5I" secondAttribute="leading" id="SEi-Bo-fZg"/>
+                            <constraint firstItem="623-wJ-W7N" firstAttribute="top" secondItem="4BU-hS-y41" secondAttribute="top" id="T2w-da-cNd"/>
+                            <constraint firstItem="nRG-PC-kZf" firstAttribute="leading" secondItem="00C-Er-e5I" secondAttribute="leading" constant="15" id="YLP-IQ-oK8"/>
+                            <constraint firstItem="nRG-PC-kZf" firstAttribute="centerY" secondItem="4BU-hS-y41" secondAttribute="centerY" constant="5" id="bTs-sW-Ooq"/>
+                            <constraint firstItem="nvU-ar-7TT" firstAttribute="trailing" secondItem="4BU-hS-y41" secondAttribute="trailing" id="i98-du-0tc"/>
+                            <constraint firstItem="fV1-mp-GlB" firstAttribute="trailing" secondItem="00C-Er-e5I" secondAttribute="trailing" constant="-15" id="jjB-9Y-LFE"/>
+                            <constraint firstItem="nvU-ar-7TT" firstAttribute="top" secondItem="00C-Er-e5I" secondAttribute="top" constant="10" id="k1E-iS-YE6"/>
+                            <constraint firstItem="623-wJ-W7N" firstAttribute="trailing" secondItem="00C-Er-e5I" secondAttribute="trailing" id="lkD-wb-QhQ"/>
+                            <constraint firstItem="623-wJ-W7N" firstAttribute="bottom" secondItem="4BU-hS-y41" secondAttribute="bottom" id="mrM-dq-Ksw"/>
+                            <constraint firstItem="nvU-ar-7TT" firstAttribute="leading" secondItem="00C-Er-e5I" secondAttribute="leading" id="n8U-hu-SfP"/>
+                            <constraint firstItem="Pat-Rw-kSZ" firstAttribute="leading" secondItem="00C-Er-e5I" secondAttribute="leading" constant="30" id="npg-7d-m2t"/>
+                            <constraint firstItem="Pat-Rw-kSZ" firstAttribute="centerX" secondItem="4BU-hS-y41" secondAttribute="centerX" id="r2d-wq-0EI"/>
+                            <constraint firstItem="fV1-mp-GlB" firstAttribute="leading" secondItem="00C-Er-e5I" secondAttribute="leading" constant="15" id="rpk-Bk-OXA"/>
+                            <constraint firstItem="Pat-Rw-kSZ" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="00C-Er-e5I" secondAttribute="bottom" constant="-5" id="srQ-FC-ygH"/>
+                            <constraint firstItem="fV1-mp-GlB" firstAttribute="top" secondItem="nvU-ar-7TT" secondAttribute="bottom" id="w5s-eo-hp8"/>
+                            <constraint firstItem="Pat-Rw-kSZ" firstAttribute="top" secondItem="nRG-PC-kZf" secondAttribute="bottom" constant="25" id="xMu-9j-BI1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="nvU-ar-7TT" id="rkU-OK-HZV"/>
+                        <segue destination="GMo-cu-JCt" kind="show" identifier="toConfirmationDepositSegue" id="L2R-Xm-fei"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w0A-78-U0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="aig-AP-6hh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-445" y="126"/>
+        </scene>
+        <!--Confirmation Deposit View Controller-->
+        <scene sceneID="evx-Bj-Qu2">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="GMo-cu-JCt" customClass="ConfirmationDepositViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hGw-Yc-kBo">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-AG-4rZ">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ov-71-l6I">
+                                <rect key="frame" x="15" y="323" width="398" height="290"/>
+                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="LvA-Z4-X5d"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подтверждение" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgy-Bm-7YZ">
+                                <rect key="frame" x="15" y="98" width="398" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByT-08-KOG">
+                                <rect key="frame" x="0.0" y="54" width="428" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="6Fe-aW-EgS">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="IDx-Ch-xDJ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="U3p-X7-aez">
+                                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="MTQ-zq-DB6"/>
+                                                    <constraint firstAttribute="width" constant="40" id="Vcd-Yz-ujH"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="5in-VL-d74" kind="unwind" identifier="unwindToNewDepositFromConfirmSegue" unwindAction="unwindToNewDepositFromConfirmationDepositWithSegue:" id="36o-RV-gZI"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tho-0z-XoO">
+                                <rect key="frame" x="30" y="638" width="368" height="60"/>
+                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GYb-q7-tuh"/>
+                                </constraints>
+                                <state key="normal" title="Подтвердить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addDepositButton:" destination="5ku-k7-wox" eventType="touchUpInside" id="2QJ-3d-1Lj"/>
+                                    <action selector="confirmDepositButton:" destination="GMo-cu-JCt" eventType="touchUpInside" id="Noy-cg-ZUv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tu8-K3-dnk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vgy-Bm-7YZ" firstAttribute="leading" secondItem="tu8-K3-dnk" secondAttribute="leading" constant="15" id="41k-9F-lTI"/>
+                            <constraint firstItem="ByT-08-KOG" firstAttribute="trailing" secondItem="hGw-Yc-kBo" secondAttribute="trailing" id="A1S-39-aPx"/>
+                            <constraint firstItem="rDv-AG-4rZ" firstAttribute="top" secondItem="hGw-Yc-kBo" secondAttribute="top" id="JGp-2Y-GKE"/>
+                            <constraint firstItem="tho-0z-XoO" firstAttribute="top" secondItem="8ov-71-l6I" secondAttribute="bottom" constant="25" id="QUr-tw-8yd"/>
+                            <constraint firstItem="8ov-71-l6I" firstAttribute="centerX" secondItem="hGw-Yc-kBo" secondAttribute="centerX" id="S7n-aL-VB6"/>
+                            <constraint firstItem="rDv-AG-4rZ" firstAttribute="trailing" secondItem="tu8-K3-dnk" secondAttribute="trailing" id="Sge-Wi-MmB"/>
+                            <constraint firstItem="8ov-71-l6I" firstAttribute="leading" secondItem="tu8-K3-dnk" secondAttribute="leading" constant="15" id="U1p-L5-pfj"/>
+                            <constraint firstItem="tho-0z-XoO" firstAttribute="leading" secondItem="tu8-K3-dnk" secondAttribute="leading" constant="30" id="WZ3-7h-RTx"/>
+                            <constraint firstItem="vgy-Bm-7YZ" firstAttribute="top" secondItem="ByT-08-KOG" secondAttribute="bottom" id="YLp-om-QGn"/>
+                            <constraint firstItem="tu8-K3-dnk" firstAttribute="trailing" secondItem="vgy-Bm-7YZ" secondAttribute="trailing" constant="15" id="ZHt-Bi-Rnd"/>
+                            <constraint firstItem="ByT-08-KOG" firstAttribute="top" secondItem="tu8-K3-dnk" secondAttribute="top" constant="10" id="Zi0-Yt-Dl5"/>
+                            <constraint firstItem="8ov-71-l6I" firstAttribute="centerY" secondItem="hGw-Yc-kBo" secondAttribute="centerY" constant="5" id="Zom-cD-Q3R"/>
+                            <constraint firstItem="rDv-AG-4rZ" firstAttribute="bottom" secondItem="hGw-Yc-kBo" secondAttribute="bottom" id="fvb-03-i3g"/>
+                            <constraint firstItem="tho-0z-XoO" firstAttribute="centerX" secondItem="hGw-Yc-kBo" secondAttribute="centerX" id="gum-1C-fYY"/>
+                            <constraint firstItem="ByT-08-KOG" firstAttribute="leading" secondItem="tu8-K3-dnk" secondAttribute="leading" id="rNz-D6-PZO"/>
+                            <constraint firstItem="rDv-AG-4rZ" firstAttribute="leading" secondItem="hGw-Yc-kBo" secondAttribute="leading" id="zkf-rZ-puc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="266-eM-LsN"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="ByT-08-KOG" id="GgH-6E-2sR"/>
+                        <segue destination="5in-VL-d74" kind="unwind" identifier="unwindToDepositsFromConfirmDepositSegue" animates="NO" unwindAction="unwindToDepositsVCFromConfirmDepositVCWithSegue:" id="RjG-DJ-VPF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCk-xW-DgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="5in-VL-d74" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="411" y="126"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="mainBackground" width="1080" height="1920"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

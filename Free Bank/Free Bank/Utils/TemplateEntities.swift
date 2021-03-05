@@ -226,7 +226,7 @@ extension UIViewController {
             org?.addToAccounts(newAccount)
         }
         
-        print(newCredit.string())
+        //print(newCredit.string())
         do {
             context.insert(newCredit)
             context.insert(newAccount)
@@ -261,7 +261,7 @@ extension UIViewController {
             org?.addToAccounts(newAccount)
         }
         
-        print(newDeposit.string())
+        //print(newDeposit.string())
         do {
             context.insert(newDeposit)
             context.insert(newAccount)

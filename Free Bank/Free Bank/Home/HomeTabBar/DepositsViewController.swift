@@ -29,10 +29,10 @@ class DepositsViewController: UIViewController {
     }
     
     func updateDeposits() {
-        let accs = individual?.deposit ?? organization?.deposit
+        let accs = individual?.deposits ?? organization?.deposits
         deposits = Array ( accs as! Set<Deposit> )
         deposits.sort(){
-            return $0.idNumber! < $1.idNumber!
+            return $0.idNumber < $1.idNumber
         }
     }
     

@@ -234,6 +234,41 @@ extension UIViewController {
         }
         catch { print("addCredit: error in add credit") }
     }
+    
+    func addDeposit(_ amount: Int64, _ term: Int16, _ procent: Int16, _ date: Date, revocable: Bool, _ individ: Individual?, _ org: Organization?){
+        
+        let newDeposit = Deposit(context: context)
+        let newAccount = Account(context: context)
+        
+        newDeposit.amount = amount
+        newDeposit.term = term
+        newDeposit.procent = procent
+        newDeposit.date = date
+        newDeposit.idNumber = generationIdDeposit(individ, org, term, amount)
+        
+        newAccount.idNumber = generationIdAccount("D")
+        newAccount.balance = amount
+        newDeposit.account = newAccount
+        
+        if let _ = individ {
+            individ?.addToDeposits(newDeposit)
+            individ?.addToAccounts(newAccount)
+        }
+        
+        if let _ = org {
+            org?.addToDeposits(newDeposit)
+            org?.addToAccounts(newAccount)
+        }
+        
+        print(newDeposit.string())
+        do {
+            context.insert(newDeposit)
+            context.insert(newAccount)
+            try context.save()
+        }
+        catch { print("addDeposit: error in add deposit") }
+        
+    }
 
     
     //MARK: -HelperFunctions
@@ -322,6 +357,36 @@ extension UIViewController {
         
         if let _ = org {
             id += (Int64)(org?.credits?.count ?? 0) % 10 * 1000_0000
+        }
+        
+        id += Int64(term) * 100000
+        
+        id += Int64(amount) / 100
+        
+        return id
+    }
+    
+    func generationIdDeposit (_ ind: Individual?, _ org: Organization?, _ term: Int16, _ amount: Int64) -> Int64{
+        var id: Int64 = 1_0000_0000
+        let depositRequest = Deposit.fetchRequest() as NSFetchRequest<Deposit>
+        do{
+            var items = try context.fetch(depositRequest)
+            items.sort(by: {return $0.idNumber < $1.idNumber})
+            if (items.count == 0){ id *= 1 }
+            else{
+                let newIdNumber = Int64(items.last!.idNumber / id) + 1
+                id *= newIdNumber
+            }
+        } catch{
+            print("generation: error in add new deposit")
+        }
+        
+        if let _ = ind {
+            id += (Int64)(ind?.deposits?.count ?? 0) % 10 * 1000_0000
+        }
+        
+        if let _ = org {
+            id += (Int64)(org?.deposits?.count ?? 0) % 10 * 1000_0000
         }
         
         id += Int64(term) * 100000
@@ -632,4 +697,27 @@ extension Credit{
         return result
     }
     
+}
+
+extension Deposit{
+    func string() -> String{
+        var result = "Deposit:\n idNumber: \(self.idNumber)"
+        result += "\n amount: \(self.amount)"
+        result += "\n procent: \(self.procent)"
+        result += "\n term: \(self.term)"
+        result += "\n \(String(describing: self.date))"
+        
+        if let account = self.account {
+            result += "\n Account: " + account.string()
+        }
+        
+        if let ind = self.indOwner {
+            result += "\n indOwner: " + ind.string()
+        }
+        if let org = self.orgOwner {
+            result += "\n indOwner: " + org.string()
+        }
+        
+        return result
+    }
 }

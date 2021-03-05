@@ -32,11 +32,6 @@ class NewCreditViewController: UIViewController {
         transparentNavBar(navigationBar)
     }
     
-    func setValueOfSlider(slider: UISlider, step: Float) -> Float{
-        let value = round(slider.value/step) * step
-        return value
-    }
-    
     func checkclientSolvency(amount: Int, term: Int, salary: Int) -> Bool{
         let monthlyPay = (amount + amount*(procent/100))/term
         let costs = Double(salary) * 0.4
@@ -85,11 +80,11 @@ class NewCreditViewController: UIViewController {
     }
     
     @IBAction func amountSliderAction(_ sender: UISlider) {
-        amountTextField.text = String(format: "%g", setValueOfSlider(slider: amountSlider, step: 100))
+        amountTextField.text = String(format: "%g", Util.setValueOfSlider(slider: amountSlider, step: 100))
     }
     
     @IBAction func termSliderAction(_ sender: UISlider) {
-        termTextField.text = String(format: "%g", setValueOfSlider(slider: termSlider, step: 6))
+        termTextField.text = String(format: "%g", Util.setValueOfSlider(slider: termSlider, step: 6))
     }
     
     @IBAction func unwindToNewCreditFromConfirmationCredit(segue: UIStoryboardSegue){

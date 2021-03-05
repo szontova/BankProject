@@ -49,4 +49,9 @@ public class Util {
     static func openLink(url: String){
         if let url = URL(string: url) { UIApplication.shared.open(url, options: [:], completionHandler: nil)}
     }
+    
+    static func setValueOfSlider(slider: UISlider, step: Float) -> Float{
+        let value = round(slider.value/step) * step
+        return value
+    }
 }

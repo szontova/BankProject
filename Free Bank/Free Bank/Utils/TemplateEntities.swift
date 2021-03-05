@@ -235,7 +235,7 @@ extension UIViewController {
         catch { print("addCredit: error in add credit") }
     }
     
-    func addDeposit(_ amount: Int64, _ term: Int16, _ procent: Int16, _ date: Date, revocable: Bool, _ individ: Individual?, _ org: Organization?){
+    func addDeposit(_ amount: Int64, _ term: Int16, _ procent: Int16, _ date: Date,_ revocable: Bool, _ individ: Individual?, _ org: Organization?){
         
         let newDeposit = Deposit(context: context)
         let newAccount = Account(context: context)

@@ -13,33 +13,66 @@ class NewDepositViewController: UIViewController {
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var termLabel: UILabel!
     
+    //switch
+    
+    private var individual: Individual?
+    private var organization: Organization?
+    
+    private var amount = 0
+    private var term = 0
+    private var revocable = false
+    private let procent = 17
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         transparentNavBar(navigationBar)
         // Do any additional setup after loading the view.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toConfirmationDepositSegue" else { return }
+        guard let destinationVC = segue.destination as? ConfirmationDepositViewController else { return }
+        destinationVC.setAmount(Int64(amount * 100))
+        destinationVC.setTerm(Int16(term))
+        destinationVC.setProcent(Int16(procent))
+        destinationVC.setRevocable(revocable)
+        destinationVC.setIndividual(individual)
+        destinationVC.setOrganization(organization)
+    }
+    
     @IBAction func unwindToNewDepositFromConfirmationDeposit(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToNewDepositFromConfirmSegue" else {return}
         guard let _ = segue.destination as? ConfirmationDepositViewController else {return}
     }
     
     @IBAction func termSlider(_ sender: UISlider) {
+       // amountTextField.text = String(format: "%g", Util.setValueOfSlider(slider: amountSlider, step: 1))
     }
+    
     @IBAction func addDepositButton(_ sender: UIButton) {
+        amount = Int.parse(amountTextField.text ?? "") ?? 0
+        term = (Int.parse(termLabel.text ?? "") ?? 0) * 12
+        print(term)
         performSegue(withIdentifier: "toConfirmationDepositSegue", sender: nil)
     }
+    
     @IBAction func revocableSwitch(_ sender: UISwitch) {
+        // if switch.isOn{
+        //}
+        //else {}
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension NewDepositViewController: OrgIndivid {
+    
+    func setIndividual(_ individ: Individual?){
+        self.individual = individ
     }
-    */
-
+    
+    func setOrganization (_ org: Organization?) {
+        self.organization = org
+    }
+    
 }

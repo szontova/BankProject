@@ -43,10 +43,22 @@ class ConfirmationDepositViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         amountLabel.text = Util.getIntBYRbyString(amount!)
         procentLabel.text = "\(procent ?? 0) %"
-        
+        let yearsTerm =  Int(term ?? 0) / 12
+        termLabel.text = "\(yearsTerm) \(Util.defineWordForDepositTerm(term: yearsTerm))"
+        var revocableString = ""
+        if let rev = revocable {
+            if rev { revocableString = "отзывной" }
+            else { revocableString = "отзывной" }
+        }
+        revocableLabel.text = revocableString
+        dateLabel.text = Util.getddMMyyyyDateString(date)
     }
     
     @IBAction func confirmDepositButton(_ sender: UIButton) {

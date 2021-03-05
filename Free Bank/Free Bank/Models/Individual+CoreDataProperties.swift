@@ -2,7 +2,7 @@
 //  Individual+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/4/21.
+//  Created by Sasha Zontova on 3/5/21.
 //
 //
 
@@ -23,8 +23,8 @@ extension Individual {
     @NSManaged public var password: String?
     @NSManaged public var accounts: NSSet?
     @NSManaged public var credits: NSSet?
+    @NSManaged public var deposits: NSSet?
     @NSManaged public var employer: Organization?
-    @NSManaged public var deposit: NSSet?
 
 }
 
@@ -62,20 +62,20 @@ extension Individual {
 
 }
 
-// MARK: Generated accessors for deposit
+// MARK: Generated accessors for deposits
 extension Individual {
 
-    @objc(addDepositObject:)
-    @NSManaged public func addToDeposit(_ value: Deposit)
+    @objc(addDepositsObject:)
+    @NSManaged public func addToDeposits(_ value: Deposit)
 
-    @objc(removeDepositObject:)
-    @NSManaged public func removeFromDeposit(_ value: Deposit)
+    @objc(removeDepositsObject:)
+    @NSManaged public func removeFromDeposits(_ value: Deposit)
 
-    @objc(addDeposit:)
-    @NSManaged public func addToDeposit(_ values: NSSet)
+    @objc(addDeposits:)
+    @NSManaged public func addToDeposits(_ values: NSSet)
 
-    @objc(removeDeposit:)
-    @NSManaged public func removeFromDeposit(_ values: NSSet)
+    @objc(removeDeposits:)
+    @NSManaged public func removeFromDeposits(_ values: NSSet)
 
 }
 

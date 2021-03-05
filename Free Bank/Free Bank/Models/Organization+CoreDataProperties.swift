@@ -2,7 +2,7 @@
 //  Organization+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/4/21.
+//  Created by Sasha Zontova on 3/5/21.
 //
 //
 
@@ -23,8 +23,8 @@ extension Organization {
     @NSManaged public var prn: String?
     @NSManaged public var accounts: NSSet?
     @NSManaged public var credits: NSSet?
+    @NSManaged public var deposits: NSSet?
     @NSManaged public var staff: NSSet?
-    @NSManaged public var deposit: Deposit?
 
 }
 
@@ -59,6 +59,23 @@ extension Organization {
 
     @objc(removeCredits:)
     @NSManaged public func removeFromCredits(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for deposits
+extension Organization {
+
+    @objc(addDepositsObject:)
+    @NSManaged public func addToDeposits(_ value: Deposit)
+
+    @objc(removeDepositsObject:)
+    @NSManaged public func removeFromDeposits(_ value: Deposit)
+
+    @objc(addDeposits:)
+    @NSManaged public func addToDeposits(_ values: NSSet)
+
+    @objc(removeDeposits:)
+    @NSManaged public func removeFromDeposits(_ values: NSSet)
 
 }
 

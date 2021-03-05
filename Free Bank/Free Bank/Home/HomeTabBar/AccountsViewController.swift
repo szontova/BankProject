@@ -128,6 +128,8 @@ class AccountsViewController: UIViewController {
     
 }
 
+//MARK: extension
+
 extension AccountsViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){
@@ -153,6 +155,8 @@ extension AccountsViewController: UITableViewDataSource {
         }
        return 1
     }
+    
+    //MARK: tableView return count of sections
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
@@ -185,6 +189,8 @@ extension AccountsViewController: UITableViewDataSource {
         return setCountOfSection()
     }
     
+    //MARK: tableView return count of cells
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if setCountOfSection() == 2 {
             if depositAccounts.count == 0{
@@ -205,6 +211,8 @@ extension AccountsViewController: UITableViewDataSource {
         
         return simpleAccounts.count
     }
+    
+    //MARK: tableView Cell
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

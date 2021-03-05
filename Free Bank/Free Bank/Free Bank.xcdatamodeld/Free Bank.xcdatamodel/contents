@@ -51,13 +51,13 @@
     <entity name="Deposit" representedClassName="Deposit" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="idNumber" optional="YES" attributeType="String"/>
+        <attribute name="idNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="procent" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="revocable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="term" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="deposit" inverseEntity="Account"/>
-        <relationship name="indOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Individual" inverseName="deposit" inverseEntity="Individual"/>
-        <relationship name="orgOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="deposit" inverseEntity="Organization"/>
+        <relationship name="indOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Individual" inverseName="deposits" inverseEntity="Individual"/>
+        <relationship name="orgOwner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="deposits" inverseEntity="Organization"/>
     </entity>
     <entity name="Individual" representedClassName=".Individual" syncable="YES">
         <attribute name="codeWord" optional="YES" attributeType="String"/>
@@ -67,7 +67,7 @@
         <attribute name="password" optional="YES" attributeType="String"/>
         <relationship name="accounts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Account" inverseName="owner" inverseEntity="Account"/>
         <relationship name="credits" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Credit" inverseName="indBorrower" inverseEntity="Credit"/>
-        <relationship name="deposit" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deposit" inverseName="indOwner" inverseEntity="Deposit"/>
+        <relationship name="deposits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deposit" inverseName="indOwner" inverseEntity="Deposit"/>
         <relationship name="employer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="staff" inverseEntity="Organization"/>
     </entity>
     <entity name="Organization" representedClassName=".Organization" syncable="YES">
@@ -78,7 +78,7 @@
         <attribute name="prn" optional="YES" attributeType="String"/>
         <relationship name="accounts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Account" inverseName="company" inverseEntity="Account"/>
         <relationship name="credits" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Credit" inverseName="orgBorrower" inverseEntity="Credit"/>
-        <relationship name="deposit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deposit" inverseName="orgOwner" inverseEntity="Deposit"/>
+        <relationship name="deposits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Deposit" inverseName="orgOwner" inverseEntity="Deposit"/>
         <relationship name="staff" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Individual" inverseName="employer" inverseEntity="Individual"/>
     </entity>
     <entity name="Transaction" representedClassName=".Transaction" syncable="YES">

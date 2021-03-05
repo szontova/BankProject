@@ -62,14 +62,11 @@ class NewDepositViewController: UIViewController {
     @IBAction func addDepositButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         term = (Int.parse(termLabel.text ?? "") ?? 0) * 12
-        print(term)
+        if revocableSwitch.isOn { revocable = true }
+        else { revocable = false }
         performSegue(withIdentifier: "toConfirmationDepositSegue", sender: nil)
     }
     
-    @IBAction func revocableSwitch(_ sender: UISwitch) {
-         if revocableSwitch.isOn { revocable = true }
-    }
-
 }
 
 extension NewDepositViewController: OrgIndivid {

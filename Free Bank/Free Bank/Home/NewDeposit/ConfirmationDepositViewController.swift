@@ -55,7 +55,7 @@ class ConfirmationDepositViewController: UIViewController {
         var revocableString = ""
         if let rev = revocable {
             if rev { revocableString = "отзывной" }
-            else { revocableString = "отзывной" }
+            else { revocableString = "безотзывной" }
         }
         revocableLabel.text = revocableString
         dateLabel.text = Util.getddMMyyyyDateString(date)

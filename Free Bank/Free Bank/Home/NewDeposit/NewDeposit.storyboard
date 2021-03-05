@@ -131,9 +131,6 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Nb-Oe-4hO">
                                         <rect key="frame" x="154" y="205.99999999999994" width="51" height="31"/>
                                         <color key="onTintColor" red="0.30381503807106602" green="0.0058082134361805557" blue="0.0029638337263461663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="revocableSwitch:" destination="5ku-k7-wox" eventType="valueChanged" id="Fhf-qb-1Ue"/>
-                                        </connections>
                                     </switch>
                                 </subviews>
                                 <constraints>

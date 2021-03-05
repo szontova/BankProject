@@ -79,14 +79,14 @@ extension DepositsViewController: UITableViewDelegate {}
 
 extension DepositsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1//deposits.count
+        return deposits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.depositsTableView.dequeueReusableCell(withIdentifier: DepositTableViewCell.identifier) as? DepositTableViewCell {
             cell.selectionStyle = .none
-            cell.configure()
-            //cell.configure(deposits[indexPath.row])
+            //cell.configure()
+            cell.configure(deposits[indexPath.row])
             return cell
         }
         return UITableViewCell()

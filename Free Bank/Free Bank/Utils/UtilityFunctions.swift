@@ -38,6 +38,20 @@ public class Util {
         return dateFormatter.string(for: date) ?? "00.00.0000"
     }
     
+    static func defineWordForDepositTerm(term: Int) -> String{
+        switch term {
+        case 1:
+            return "год"
+        case 2...4:
+            return "года"
+        case 5...7:
+            return "лет"
+        default:
+            print("error in defineWordForDepositTerm")
+        }
+        return "лет"
+    }
+    
     static func getIntBYRbyString(_ amount: Int64) -> String {
         return NSString(format: "%.2f BYR", Float(amount)/100) as String
     }

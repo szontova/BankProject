@@ -33,19 +33,6 @@ class NewDepositViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func defineWordForDepositTerm(term: Int) -> String{
-        switch term {
-        case 1:
-            return "год"
-        case 2...4:
-            return "года"
-        case 5...7:
-            return "лет"
-        default:
-            print("error in defineWordForDepositTerm")
-        }
-        return "лет"
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -69,7 +56,7 @@ class NewDepositViewController: UIViewController {
     
     @IBAction func termSlider(_ sender: UISlider) {
         term = Int(Util.setValueOfSlider(slider: termSlider, step: 1))
-       termLabel.text = String(format: "%g", Util.setValueOfSlider(slider: termSlider, step: 1)) + " \(defineWordForDepositTerm(term: term))"
+        termLabel.text = String(format: "%g", Util.setValueOfSlider(slider: termSlider, step: 1)) + " \(Util.defineWordForDepositTerm(term: term))"
     }
     
     @IBAction func addDepositButton(_ sender: UIButton) {

@@ -53,8 +53,7 @@ class ConfirmationCreditViewController: UIViewController {
     
     @IBAction func confirmCreditButton(_ sender: UIButton) {
         addCredit( amount!, term!, procent!, date, individual, organization)
-        //print(individual?.credits)
-        performSegue(withIdentifier: "unwindToCreditsFromConfirmCreditSegue", sender: nil)
+        showAlertMessageWithSegue(message: "Кредит успешно оформлен", segue: "unwindToCreditsFromConfirmCreditSegue")
     }
     
 }

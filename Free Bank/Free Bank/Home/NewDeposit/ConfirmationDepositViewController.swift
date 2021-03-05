@@ -63,7 +63,7 @@ class ConfirmationDepositViewController: UIViewController {
     
     @IBAction func confirmDepositButton(_ sender: UIButton) {
         addDeposit(amount!, term!, procent!, date, revocable!, individual, organization)
-        performSegue(withIdentifier: "unwindToDepositsFromConfirmDepositSegue", sender: nil)
+        showAlertMessageWithSegue(message: "Депозит успешно оформлен", segue: "unwindToDepositsFromConfirmDepositSegue")
     }
     
 }

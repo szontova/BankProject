@@ -115,7 +115,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-od-Q7G">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-od-Q7G">
                                         <rect key="frame" x="13" y="146" width="372" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -206,7 +206,9 @@
                     <connections>
                         <outlet property="amountTextField" destination="tX1-GR-ybu" id="qpu-8c-fox"/>
                         <outlet property="navigationBar" destination="nvU-ar-7TT" id="rkU-OK-HZV"/>
+                        <outlet property="revocableSwitch" destination="7Nb-Oe-4hO" id="FLf-tO-hZJ"/>
                         <outlet property="termLabel" destination="gKQ-Q0-fxG" id="tVA-mi-qK9"/>
+                        <outlet property="termSlider" destination="lg5-od-Q7G" id="wTf-zt-yTU"/>
                         <segue destination="GMo-cu-JCt" kind="show" identifier="toConfirmationDepositSegue" id="L2R-Xm-fei"/>
                     </connections>
                 </viewController>

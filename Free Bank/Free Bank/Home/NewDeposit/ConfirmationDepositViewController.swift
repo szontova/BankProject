@@ -37,7 +37,7 @@ class ConfirmationDepositViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(individual)
         transparentNavBar(navigationBar)
     }
     

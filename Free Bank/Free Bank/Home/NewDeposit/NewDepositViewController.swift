@@ -10,10 +10,13 @@ import UIKit
 class NewDepositViewController: UIViewController {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
+    
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var termLabel: UILabel!
+
+    @IBOutlet weak var termSlider: UISlider!
+    @IBOutlet weak var revocableSwitch: UISwitch!
     
-    //switch
     
     private var individual: Individual?
     private var organization: Organization?
@@ -28,6 +31,20 @@ class NewDepositViewController: UIViewController {
 
         transparentNavBar(navigationBar)
         // Do any additional setup after loading the view.
+    }
+    
+    func defineWordForDepositTerm(term: Int) -> String{
+        switch term {
+        case 1:
+            return "год"
+        case 2...4:
+            return "года"
+        case 5...7:
+            return "лет"
+        default:
+            print("error in defineWordForDepositTerm")
+        }
+        return "лет"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,7 +64,8 @@ class NewDepositViewController: UIViewController {
     }
     
     @IBAction func termSlider(_ sender: UISlider) {
-       // termLabel.text = "\(Util.setValueOfSlider(slider: termSlider, step: 1)) \()"
+        term = Int(Util.setValueOfSlider(slider: termSlider, step: 1))
+       termLabel.text = String(format: "%g", Util.setValueOfSlider(slider: termSlider, step: 1)) + " \(defineWordForDepositTerm(term: term))"
     }
     
     @IBAction func addDepositButton(_ sender: UIButton) {
@@ -58,9 +76,7 @@ class NewDepositViewController: UIViewController {
     }
     
     @IBAction func revocableSwitch(_ sender: UISwitch) {
-        // if switch.isOn{
-        //}
-        //else {}
+         if revocableSwitch.isOn { revocable = true }
     }
 
 }

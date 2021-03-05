@@ -28,6 +28,13 @@ class DepositsViewController: UIViewController {
         depositsTableViewConfigurations()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toNewDepositSegue" else { return }
+        guard let destinationVC = segue.destination as? NewDepositViewController else { return }
+        destinationVC.setIndividual(individual)
+        destinationVC.setOrganization(organization)
+    }
+    
     func updateDeposits() {
         let accs = individual?.deposits ?? organization?.deposits
         deposits = Array ( accs as! Set<Deposit> )
@@ -35,6 +42,7 @@ class DepositsViewController: UIViewController {
             return $0.idNumber < $1.idNumber
         }
     }
+    
     
     func depositsTableViewConfigurations(){
         

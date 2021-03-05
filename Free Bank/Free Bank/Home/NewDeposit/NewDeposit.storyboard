@@ -413,7 +413,11 @@
                     <navigationItem key="navigationItem" id="266-eM-LsN"/>
                     <connections>
                         <outlet property="amountLabel" destination="7Ah-14-G2i" id="kdF-va-q67"/>
+                        <outlet property="dateLabel" destination="qKM-l4-xay" id="MdZ-1p-eav"/>
                         <outlet property="navigationBar" destination="ByT-08-KOG" id="GgH-6E-2sR"/>
+                        <outlet property="procentLabel" destination="puc-Ro-BZ6" id="46M-mO-cT8"/>
+                        <outlet property="revocableLabel" destination="Kzj-ch-xIQ" id="m0Q-wo-mCi"/>
+                        <outlet property="termLabel" destination="lrg-P1-n5r" id="BLL-qD-tSK"/>
                         <segue destination="5in-VL-d74" kind="unwind" identifier="unwindToDepositsFromConfirmDepositSegue" animates="NO" unwindAction="unwindToDepositsVCFromConfirmDepositVCWithSegue:" id="RjG-DJ-VPF"/>
                     </connections>
                 </viewController>

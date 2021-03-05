@@ -10,6 +10,10 @@ import UIKit
 class ConfirmationDepositViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var procentLabel: UILabel!
+    @IBOutlet weak var termLabel: UILabel!
+    @IBOutlet weak var revocableLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     private var amount: Int64?
     private var term: Int16?
@@ -41,6 +45,7 @@ class ConfirmationDepositViewController: UIViewController {
         transparentNavBar(navigationBar)
         
         amountLabel.text = Util.getIntBYRbyString(amount!)
+        procentLabel.text = "\(procent ?? 0) %"
         
     }
     

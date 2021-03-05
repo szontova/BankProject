@@ -47,7 +47,7 @@ class NewDepositViewController: UIViewController {
     }
     
     @IBAction func termSlider(_ sender: UISlider) {
-       // amountTextField.text = String(format: "%g", Util.setValueOfSlider(slider: amountSlider, step: 1))
+       // termLabel.text = "\(Util.setValueOfSlider(slider: termSlider, step: 1)) \()"
     }
     
     @IBAction func addDepositButton(_ sender: UIButton) {

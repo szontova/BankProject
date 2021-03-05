@@ -9,6 +9,7 @@ import UIKit
 
 class ConfirmationDepositViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var amountLabel: UILabel!
     
     private var amount: Int64?
     private var term: Int16?
@@ -38,6 +39,9 @@ class ConfirmationDepositViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
+        
+        amountLabel.text = Util.getIntBYRbyString(amount!)
+        
     }
     
     @IBAction func confirmDepositButton(_ sender: UIButton) {

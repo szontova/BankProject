@@ -34,16 +34,16 @@ class CreditViewController: UIViewController {
             creditNumberLabel.text = String(cred.idNumber)
             if let acc = cred.account{
                 accountNumberLabel.text = "Счёт: \(acc.idNumber!)"
-                balanceAccountLabel.text =  NSString(format: "%.2f BYR", Float(acc.balance)/100) as String
+                balanceAccountLabel.text = Util.getIntBYRbyString(acc.balance)
             }
-            amountLabel.text = NSString(format: "%.2f BYR", Float(cred.amount)/100) as String
+            amountLabel.text = Util.getIntBYRbyString(cred.amount)
             procentLabel.text = "\(cred.procent) %"
          
             beginDateLabel.text = Util.getddMMyyyyDateString(cred.date!)
             let endDate = Util.getIntervalDate(cred.date!, Float(cred.term)/12)
             endDateLabel.text = Util.getddMMyyyyDateString(endDate)
             
-            monthlyPayLabel.text = NSString(format: "%.2f BYR", Float(Util.calculateMonthlyPay(amount: cred.amount, term: cred.term, procent: cred.procent))/100) as String
+            monthlyPayLabel.text = Util.getIntBYRbyString(Util.calculateMonthlyPay(amount: cred.amount, term: cred.term, procent: cred.procent))
         }
     }
     @IBAction func payOffButton(_ sender: UIButton) {

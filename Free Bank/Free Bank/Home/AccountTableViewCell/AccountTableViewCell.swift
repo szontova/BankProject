@@ -38,8 +38,7 @@ class AccountTableViewCell: UITableViewCell {
         self.myBackgroundView.layer.cornerRadius = 5.0
         
         self.idNumberLabel.text = account.idNumber
-        
-        let balance = (Float(account.balance) / 100.00)
-        self.balanceLabel.text = NSString(format: "%.2f BYR", balance) as String
+   
+        self.balanceLabel.text = Util.getIntBYRbyString(account.balance)
     }
 }

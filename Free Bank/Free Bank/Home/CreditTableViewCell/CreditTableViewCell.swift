@@ -39,9 +39,9 @@ class CreditTableViewCell: UITableViewCell {
     public func configure(_ credit: Credit) {
         self.myBackgroundView.layer.cornerRadius = 5.0
         creditNumberLabel.text = String(credit.idNumber)
-        let monthlyPay = Util.calculateMonthlyPay(amount: credit.amount, term: credit.term, procent: 13)
         
-        mounthlyPayLabel.text = NSString(format: "%.2f BYR", Float(monthlyPay)/100) as String
+        let monthlyPay = Util.calculateMonthlyPay(amount: credit.amount, term: credit.term, procent: 13)
+        mounthlyPayLabel.text = Util.getIntBYRbyString(monthlyPay)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"

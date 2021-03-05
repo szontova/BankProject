@@ -38,6 +38,16 @@ public class Util {
         return dateFormatter.string(for: date) ?? "00.00.0000"
     }
     
+    static func getIntBYRbyString(_ amount: Int64) -> String {
+        return NSString(format: "%.2f BYR", Float(amount)/100) as String
+    }
+    static func getIntBYRbyString(_ amount: Int32) -> String {
+        return NSString(format: "%.2f BYR", Float(amount)/100) as String
+    }
+    static func getIntBYRbyString(_ amount: Int) -> String {
+        return NSString(format: "%.2f BYR", Float(amount)/100) as String
+    }
+    
     static func getIntervalDate(_ date: Date, _ years: Float) -> Date {
        return NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: date) as Date
     }

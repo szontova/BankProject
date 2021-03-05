@@ -36,7 +36,7 @@ class DepositTableViewCell: UITableViewCell {
     public func configure(_ deposit: Deposit) {
         idNumberLabel.text = String(deposit.idNumber)
         depositDateLabel.text = Util.getddMMyyyyDateString( deposit.date!)
-        amountLabel.text = NSString(format: "%.2f BYR", Float(deposit.amount)/100) as String
+        amountLabel.text = Util.getIntBYRbyString(deposit.amount)
         var revocableString = ""
         if deposit.revocable {
             revocableString = "отзывной" }

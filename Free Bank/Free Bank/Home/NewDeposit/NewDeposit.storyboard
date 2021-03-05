@@ -412,6 +412,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="266-eM-LsN"/>
                     <connections>
+                        <outlet property="amountLabel" destination="7Ah-14-G2i" id="kdF-va-q67"/>
                         <outlet property="navigationBar" destination="ByT-08-KOG" id="GgH-6E-2sR"/>
                         <segue destination="5in-VL-d74" kind="unwind" identifier="unwindToDepositsFromConfirmDepositSegue" animates="NO" unwindAction="unwindToDepositsVCFromConfirmDepositVCWithSegue:" id="RjG-DJ-VPF"/>
                     </connections>

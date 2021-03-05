@@ -44,7 +44,7 @@ class ConfirmationCreditViewController: UIViewController {
         termLabel.text = "\(term ?? 0) месяцев"
         let monthlyPay = Util.calculateMonthlyPay(amount: amount!, term: term!, procent: 13)
         
-        monthlyPayLabel.text = NSString(format: "%.2f BYR", Float(monthlyPay)/100) as String
+        monthlyPayLabel.text = Util.getIntBYRbyString(monthlyPay)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"

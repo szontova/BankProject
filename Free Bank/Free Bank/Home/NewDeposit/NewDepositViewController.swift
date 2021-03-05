@@ -10,6 +10,8 @@ import UIKit
 class NewDepositViewController: UIViewController {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var termLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,12 @@ class NewDepositViewController: UIViewController {
         guard let _ = segue.destination as? ConfirmationDepositViewController else {return}
     }
     
+    @IBAction func termSlider(_ sender: UISlider) {
+    }
     @IBAction func addDepositButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toConfirmationDepositSegue", sender: nil)
+    }
+    @IBAction func revocableSwitch(_ sender: UISwitch) {
     }
     /*
     // MARK: - Navigation

@@ -57,10 +57,16 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-od-Q7G">
                                         <rect key="frame" x="18" y="159" width="374" height="31"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="termSlider:" destination="5ku-k7-wox" eventType="valueChanged" id="GxK-9L-t6l"/>
+                                        </connections>
                                     </slider>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Nb-Oe-4hO">
                                         <rect key="frame" x="147" y="237" width="51" height="31"/>
                                         <color key="onTintColor" red="0.30381503807106602" green="0.0058082134361805557" blue="0.0029638337263461663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="revocableSwitch:" destination="5ku-k7-wox" eventType="valueChanged" id="Fhf-qb-1Ue"/>
+                                        </connections>
                                     </switch>
                                     <textField opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tX1-GR-ybu">
                                         <rect key="frame" x="20" y="53" width="359" height="35"/>
@@ -198,7 +204,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountTextField" destination="tX1-GR-ybu" id="qpu-8c-fox"/>
                         <outlet property="navigationBar" destination="nvU-ar-7TT" id="rkU-OK-HZV"/>
+                        <outlet property="termLabel" destination="gKQ-Q0-fxG" id="tVA-mi-qK9"/>
                         <segue destination="GMo-cu-JCt" kind="show" identifier="toConfirmationDepositSegue" id="L2R-Xm-fei"/>
                     </connections>
                 </viewController>

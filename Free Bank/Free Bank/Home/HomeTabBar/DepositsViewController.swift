@@ -78,6 +78,11 @@ class DepositsViewController: UIViewController {
         guard let _ = segue.destination as? NewDepositViewController else {return}
     }
     
+    @IBAction func unwindToDepositsVCFromDepositVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToDepositsFromDepositSegue" else {return}
+        guard let _ = segue.destination as? DepositViewController else {return}
+      
+    }
     
     @IBAction func unwindToDepositsVCFromConfirmDepositVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToDepositsFromConfirmDepositSegue" else {return}
@@ -121,5 +126,8 @@ extension DepositsViewController: UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toDepositSegue", sender: nil)
     }
 }

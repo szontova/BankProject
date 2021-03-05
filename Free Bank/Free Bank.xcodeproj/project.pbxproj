@@ -44,6 +44,8 @@
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
 		593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593AE04E25E692FF00DEB157 /* Home.storyboard */; };
 		593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE05525E6A00200DEB157 /* HomeTabBarController.swift */; };
+		5968708725F29B39001BDE11 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5968708625F29B39001BDE11 /* DepositViewController.swift */; };
+		5968708B25F29B48001BDE11 /* Deposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5968708A25F29B48001BDE11 /* Deposit.storyboard */; };
 		596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A698025DE7FEE0068099E /* CollectionViewCell.swift */; };
 		596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596A698125DE7FEE0068099E /* CollectionViewCell.xib */; };
 		597D66A725C80FA40051E84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597D66A625C80FA40051E84A /* AppDelegate.swift */; };
@@ -119,6 +121,8 @@
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		593AE04E25E692FF00DEB157 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		593AE05525E6A00200DEB157 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		5968708625F29B39001BDE11 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
+		5968708A25F29B48001BDE11 /* Deposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deposit.storyboard; sourceTree = "<group>"; };
 		596A698025DE7FEE0068099E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		596A698125DE7FEE0068099E /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		597D66A325C80FA40051E84A /* Free Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Bank.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +317,7 @@
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5968708525F29B26001BDE11 /* Deposit */,
 				31C1A60F25F125D5001C6C14 /* HomeTabBar */,
 				311E330C25EE2A510048C231 /* NewCredit */,
 				59FC3A3825F247080019EE72 /* NewDeposit */,
@@ -323,6 +328,15 @@
 				5904330A25EE4C3F00BF5412 /* Cards */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		5968708525F29B26001BDE11 /* Deposit */ = {
+			isa = PBXGroup;
+			children = (
+				5968708A25F29B48001BDE11 /* Deposit.storyboard */,
+				5968708625F29B39001BDE11 /* DepositViewController.swift */,
+			);
+			path = Deposit;
 			sourceTree = "<group>";
 		};
 		596A697E25DE70F90068099E /* CollectionView */ = {
@@ -494,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DFC2A425E77E42000EDCF9 /* bankInfo.storyboard in Resources */,
+				5968708B25F29B48001BDE11 /* Deposit.storyboard in Resources */,
 				5923D6DC25F115D000EBA865 /* Credit.storyboard in Resources */,
 				5916FA6A25EA376C0022A4B0 /* Adresses.storyboard in Resources */,
 				59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */,
@@ -566,6 +581,7 @@
 				311D8E4E25F0C816005BFB51 /* Account+CoreDataProperties.swift in Sources */,
 				59FC3A4525F24DB20019EE72 /* ConfirmationDepositViewController.swift in Sources */,
 				59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */,
+				5968708725F29B39001BDE11 /* DepositViewController.swift in Sources */,
 				59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */,
 				31FA59D825F24E9300EA5D3D /* Deposit+CoreDataProperties.swift in Sources */,
 				312CE37025F24DF200E477FB /* Organization+CoreDataClass.swift in Sources */,

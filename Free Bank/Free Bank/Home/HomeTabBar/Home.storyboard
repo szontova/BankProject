@@ -117,6 +117,16 @@
             </objects>
             <point key="canvasLocation" x="470" y="1168"/>
         </scene>
+        <!--Deposit-->
+        <scene sceneID="H1g-lL-35V">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Deposit" id="DGr-UC-U15" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="oPe-rR-IRh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QG8-Kw-UHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="1168"/>
+        </scene>
         <!--NewDeposit-->
         <scene sceneID="3n9-fy-xuR">
             <objects>
@@ -125,7 +135,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUX-Ud-gy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976" y="1158"/>
+            <point key="canvasLocation" x="973" y="1168"/>
         </scene>
         <!--NewCredit-->
         <scene sceneID="ucc-CC-nge">
@@ -229,6 +239,7 @@
                         <outlet property="missingDepositsLabel" destination="dMR-QR-D4Z" id="8oW-2J-Idl"/>
                         <outlet property="navigationBar" destination="TkT-KA-hUg" id="NiP-MV-lfI"/>
                         <segue destination="yyf-Ed-V12" kind="show" identifier="toNewDepositSegue" id="clz-8a-0CQ"/>
+                        <segue destination="DGr-UC-U15" kind="show" identifier="toDepositSegue" id="aQM-6o-pwD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFg-iU-vPT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

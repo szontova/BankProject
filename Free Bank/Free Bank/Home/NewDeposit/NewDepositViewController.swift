@@ -47,6 +47,10 @@ class NewDepositViewController: UIViewController {
         return "лет"
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toConfirmationDepositSegue" else { return }
         guard let destinationVC = segue.destination as? ConfirmationDepositViewController else { return }

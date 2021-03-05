@@ -430,8 +430,8 @@
 			isa = PBXGroup;
 			children = (
 				59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */,
-				59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */,
 				59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */,
+				59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */,
 			);
 			path = NewDeposit;
 			sourceTree = "<group>";

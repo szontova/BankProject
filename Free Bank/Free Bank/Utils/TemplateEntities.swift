@@ -706,6 +706,7 @@ extension Deposit{
         result += "\n amount: \(self.amount)"
         result += "\n procent: \(self.procent)"
         result += "\n term: \(self.term)"
+        result += "\n revocable: \(self.revocable)"
         result += "\n \(String(describing: self.date))"
         
         if let account = self.account {

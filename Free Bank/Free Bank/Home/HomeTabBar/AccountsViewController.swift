@@ -147,13 +147,15 @@ extension AccountsViewController: UITableViewDelegate {}
 extension AccountsViewController: UITableViewDataSource {
     
     func setCountOfSection() -> Int {
-        if creditAccounts.count != 0 || depositAccounts.count != 0{
+        if creditAccounts.count == 0 && depositAccounts.count == 0{
+            return 1
+        }
+         else if creditAccounts.count == 0 || depositAccounts.count == 0{
             return 2
         }
-        if creditAccounts.count != 0 && depositAccounts.count != 0{
+        else {
             return 3
         }
-       return 1
     }
     
     //MARK: tableView return count of sections
@@ -177,7 +179,8 @@ extension AccountsViewController: UITableViewDataSource {
                 label.text = section == 0 ? "Кредитные счета" : "Расчетные счета"
             }
         case 3:
-            label.text = section == 0 ? "Кредитные счета" : "Депозитные счета"
+            if section == 0 {label.text = "Кредитные счета"}
+            if section == 1 {label.text = "Депозитные счета"}
             if section == 2 {label.text = "Расчетные счета"}
         default:
             print("Error in show section in AccountsViewController")
@@ -202,7 +205,6 @@ extension AccountsViewController: UITableViewDataSource {
                 return simpleAccounts.count
             }
         }
-        
         if setCountOfSection() == 3 {
             if section == 0 { return creditAccounts.count }
             if section == 1 { return depositAccounts.count }
@@ -252,9 +254,9 @@ extension AccountsViewController: UITableViewDataSource {
                 else { accountForTransfer = simpleAccounts[indexPath.row] }
             }
         } else if setCountOfSection() == 3 {
-            if indexPath.section == 0 { accountForTransfer = creditAccounts[indexPath.row]}
+            if indexPath.section == 0 { accountForTransfer = creditAccounts[indexPath.row] }
             if indexPath.section == 1 { accountForTransfer = depositAccounts[indexPath.row] }
-            else { accountForTransfer = simpleAccounts[indexPath.row] }
+            if indexPath.section == 2 { accountForTransfer = simpleAccounts[indexPath.row] }
         }
         else { accountForTransfer = simpleAccounts[indexPath.row] }
         //accountForTransfer = accounts[indexPath.row]

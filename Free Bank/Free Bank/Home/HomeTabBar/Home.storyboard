@@ -79,7 +79,7 @@
                             <constraint firstItem="ipg-Au-CJo" firstAttribute="leading" secondItem="xSn-JT-2pL" secondAttribute="leading" constant="15" id="JVA-0Y-tOC"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="leading" secondItem="UuP-yE-0kQ" secondAttribute="leading" id="Oeo-Z7-bX9"/>
                             <constraint firstItem="pkc-wO-8k6" firstAttribute="bottom" secondItem="UuP-yE-0kQ" secondAttribute="bottom" id="Tbe-zA-6jM"/>
-                            <constraint firstItem="xSn-JT-2pL" firstAttribute="trailing" secondItem="ipg-Au-CJo" secondAttribute="trailing" constant="15" id="Vlw-S5-gsH"/>
+                            <constraint firstItem="ipg-Au-CJo" firstAttribute="trailing" secondItem="xSn-JT-2pL" secondAttribute="trailing" constant="-15" id="Vlw-S5-gsH"/>
                             <constraint firstItem="o2Q-kR-6xB" firstAttribute="leading" secondItem="xSn-JT-2pL" secondAttribute="leading" id="WKq-Iq-1kT"/>
                             <constraint firstItem="M3R-1c-Ppe" firstAttribute="leading" secondItem="xSn-JT-2pL" secondAttribute="leading" constant="15" id="Wjn-b5-SxQ"/>
                             <constraint firstItem="ipg-Au-CJo" firstAttribute="top" secondItem="Gvo-us-3o1" secondAttribute="bottom" constant="10" id="XFl-J7-GJt"/>
@@ -185,37 +185,48 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gwD-B3-K63">
-                                <rect key="frame" x="15" y="228" width="398" height="234"/>
+                                <rect key="frame" x="15" y="228" width="398" height="306"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="234" id="Zrl-ez-bSt"/>
+                                    <constraint firstAttribute="height" constant="306" id="Zrl-ez-bSt"/>
                                 </constraints>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас нет оформленных депозитов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMR-QR-D4Z">
+                                <rect key="frame" x="15" y="223" width="398" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="H31-Ho-DvK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="umf-Om-19K" firstAttribute="leading" secondItem="VIY-Rn-QHS" secondAttribute="leading" id="6BJ-cb-BCa"/>
+                            <constraint firstItem="dMR-QR-D4Z" firstAttribute="top" secondItem="IIf-ia-nMl" secondAttribute="bottom" constant="10" id="Agy-5d-KZU"/>
                             <constraint firstItem="JS1-GI-3mD" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" constant="-15" id="Cd6-6R-wCL"/>
                             <constraint firstItem="umf-Om-19K" firstAttribute="top" secondItem="VIY-Rn-QHS" secondAttribute="top" id="EuM-Q4-NBP"/>
                             <constraint firstItem="umf-Om-19K" firstAttribute="bottom" secondItem="VIY-Rn-QHS" secondAttribute="bottom" id="I67-Hi-3BJ"/>
                             <constraint firstItem="TkT-KA-hUg" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" id="J6y-0K-z9f"/>
                             <constraint firstItem="JS1-GI-3mD" firstAttribute="top" secondItem="TkT-KA-hUg" secondAttribute="bottom" id="LaE-Jh-Uid"/>
+                            <constraint firstItem="dMR-QR-D4Z" firstAttribute="centerX" secondItem="VIY-Rn-QHS" secondAttribute="centerX" id="V5p-35-PeD"/>
                             <constraint firstItem="gwD-B3-K63" firstAttribute="top" secondItem="IIf-ia-nMl" secondAttribute="bottom" constant="15" id="XRA-SU-xRp"/>
                             <constraint firstItem="gwD-B3-K63" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" constant="-15" id="Xbt-9G-EKX"/>
                             <constraint firstItem="TkT-KA-hUg" firstAttribute="top" secondItem="H31-Ho-DvK" secondAttribute="top" constant="10" id="c1o-2V-LdG"/>
                             <constraint firstItem="umf-Om-19K" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" id="iMt-Sg-b9t"/>
                             <constraint firstItem="IIf-ia-nMl" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" constant="15" id="jR6-HX-g9d"/>
+                            <constraint firstItem="dMR-QR-D4Z" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" constant="-15" id="kKF-Iw-zX4"/>
                             <constraint firstItem="TkT-KA-hUg" firstAttribute="trailing" secondItem="VIY-Rn-QHS" secondAttribute="trailing" id="lLw-gM-FsA"/>
                             <constraint firstItem="IIf-ia-nMl" firstAttribute="trailing" secondItem="H31-Ho-DvK" secondAttribute="trailing" constant="-15" id="lsw-03-wKI"/>
                             <constraint firstItem="gwD-B3-K63" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" constant="15" id="nyX-MY-LoW"/>
                             <constraint firstItem="JS1-GI-3mD" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" constant="15" id="oOi-70-tzO"/>
                             <constraint firstItem="IIf-ia-nMl" firstAttribute="top" secondItem="JS1-GI-3mD" secondAttribute="bottom" constant="5" id="tpB-cE-5Er"/>
+                            <constraint firstItem="dMR-QR-D4Z" firstAttribute="leading" secondItem="H31-Ho-DvK" secondAttribute="leading" constant="15" id="zHH-U2-QmT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Депозиты" image="credits" id="i67-p7-ojb"/>
                     <connections>
                         <outlet property="depositsTableView" destination="gwD-B3-K63" id="BOf-aZ-ajI"/>
+                        <outlet property="missingDepositsLabel" destination="dMR-QR-D4Z" id="8oW-2J-Idl"/>
                         <outlet property="navigationBar" destination="TkT-KA-hUg" id="NiP-MV-lfI"/>
                         <segue destination="yyf-Ed-V12" kind="show" identifier="toNewDepositSegue" id="clz-8a-0CQ"/>
                     </connections>

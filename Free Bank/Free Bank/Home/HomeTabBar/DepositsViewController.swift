@@ -11,6 +11,7 @@ class DepositsViewController: UIViewController {
 
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var depositsTableView: UITableView!
+    @IBOutlet weak var missingDepositsLabel: UILabel!
     
     private var individual: Individual?
     private var organization: Organization?
@@ -30,6 +31,15 @@ class DepositsViewController: UIViewController {
         
         super.viewWillAppear(animated)
         updateDeposits()
+        
+        if deposits.isEmpty {
+            depositsTableView.isHidden = true
+            missingDepositsLabel.isHidden = false
+        } else {
+            depositsTableView.isHidden = false
+            missingDepositsLabel.isHidden = true
+        }
+        
         DispatchQueue.main.async {
             self.depositsTableView.reloadData()
         }

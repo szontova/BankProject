@@ -61,6 +61,10 @@ class NewDepositViewController: UIViewController {
     
     @IBAction func addDepositButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
+        if !Range(100...10000).contains(amount) {
+            showAlertError(message: "Введите значение суммы от 100 до 10000 BYR.")
+            return
+        }
         term = (Int.parse(termLabel.text ?? "") ?? 0) * 12
         if revocableSwitch.isOn { revocable = true }
         else { revocable = false }

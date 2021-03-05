@@ -117,6 +117,16 @@
             </objects>
             <point key="canvasLocation" x="470" y="1168"/>
         </scene>
+        <!--NewDeposit-->
+        <scene sceneID="3n9-fy-xuR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewDeposit" id="yyf-Ed-V12" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YYt-p0-Qfu"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUX-Ud-gy0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976" y="1158"/>
+        </scene>
         <!--NewCredit-->
         <scene sceneID="ucc-CC-nge">
             <objects>
@@ -203,10 +213,11 @@
                             <constraint firstItem="IIf-ia-nMl" firstAttribute="top" secondItem="JS1-GI-3mD" secondAttribute="bottom" constant="5" id="tpB-cE-5Er"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Депозиты" id="i67-p7-ojb"/>
+                    <tabBarItem key="tabBarItem" title="Депозиты" image="credits" id="i67-p7-ojb"/>
                     <connections>
                         <outlet property="depositsTableView" destination="gwD-B3-K63" id="BOf-aZ-ajI"/>
                         <outlet property="navigationBar" destination="TkT-KA-hUg" id="NiP-MV-lfI"/>
+                        <segue destination="yyf-Ed-V12" kind="show" identifier="toNewDepositSegue" id="clz-8a-0CQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AFg-iU-vPT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

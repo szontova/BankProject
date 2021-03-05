@@ -89,7 +89,7 @@
                                     </textField>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="100" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="xMh-ZS-JbV">
                                         <rect key="frame" x="13" y="64" width="358" height="31"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="amountSliderAction:" destination="Jbc-6D-AIf" eventType="valueChanged" id="Ko9-PJ-BAO"/>
                                         </connections>
@@ -110,7 +110,7 @@
                                     </textField>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="6" maxValue="84" translatesAutoresizingMaskIntoConstraints="NO" id="iO0-JC-LVa">
                                         <rect key="frame" x="13" y="164" width="358" height="31"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="termSliderAction:" destination="Jbc-6D-AIf" eventType="valueChanged" id="uFu-0B-lYn"/>
                                         </connections>

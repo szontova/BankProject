@@ -504,7 +504,7 @@
                         <outlet property="monthlyPayLabel" destination="TyZ-4l-zyT" id="qVd-hd-wvd"/>
                         <outlet property="navigationBar" destination="PbB-rZ-94d" id="254-qe-DJf"/>
                         <outlet property="termLabel" destination="qNg-lp-fm1" id="Ilm-2i-9P3"/>
-                        <segue destination="jtz-X1-r7k" kind="unwind" identifier="unwindToCreditsFromConfirmCreditSegue" unwindAction="unwindToCreditsVCFromConfirmCreditVCWithSegue:" id="ihP-8U-23F"/>
+                        <segue destination="jtz-X1-r7k" kind="unwind" identifier="unwindToCreditsFromConfirmCreditSegue" animates="NO" unwindAction="unwindToCreditsVCFromConfirmCreditVCWithSegue:" id="ihP-8U-23F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wa8-YD-qWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

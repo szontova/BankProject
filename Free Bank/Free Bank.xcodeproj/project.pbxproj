@@ -23,6 +23,7 @@
 		3153816025F0EDB500659252 /* Credit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153815E25F0EDB500659252 /* Credit+CoreDataClass.swift */; };
 		3153816125F0EDB500659252 /* Credit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153815F25F0EDB500659252 /* Credit+CoreDataProperties.swift */; };
 		31E793A625E9565100667F99 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E793A525E9565100667F99 /* UtilityFunctions.swift */; };
+		31EB9D6825F252F600C53408 /* NewDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */; };
 		31FA59D725F24E9300EA5D3D /* Deposit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA59D525F24E9300EA5D3D /* Deposit+CoreDataClass.swift */; };
 		31FA59D825F24E9300EA5D3D /* Deposit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA59D625F24E9300EA5D3D /* Deposit+CoreDataProperties.swift */; };
 		59031DB625EF90E400B4DE9D /* CreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59031DB425EF90E400B4DE9D /* CreditTableViewCell.swift */; };
@@ -78,7 +79,6 @@
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
 		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
 		59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */; };
-		59FC3A4225F2484A0019EE72 /* NewDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */; };
 		59FC3A4525F24DB20019EE72 /* ConfirmationDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -430,8 +430,8 @@
 			isa = PBXGroup;
 			children = (
 				59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */,
-				59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */,
 				59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */,
+				59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */,
 			);
 			path = NewDeposit;
 			sourceTree = "<group>";
@@ -564,9 +564,7 @@
 				59CF7AB925DBDB3700DEF5DC /* CheckDataFunctions.swift in Sources */,
 				59B3B2A325F15635008BC962 /* DepositsViewController.swift in Sources */,
 				311D8E4E25F0C816005BFB51 /* Account+CoreDataProperties.swift in Sources */,
-				3153815825F0CFE600659252 /* Deposit+CoreDataProperties.swift in Sources */,
 				59FC3A4525F24DB20019EE72 /* ConfirmationDepositViewController.swift in Sources */,
-				311D8E4925F0C816005BFB51 /* Individual+CoreDataClass.swift in Sources */,
 				59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */,
 				59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */,
 				31FA59D825F24E9300EA5D3D /* Deposit+CoreDataProperties.swift in Sources */,
@@ -574,6 +572,7 @@
 				5996B4A525E54C3A00FB0BDB /* Branch+CoreDataClass.swift in Sources */,
 				5996B4A625E54C3A00FB0BDB /* Branch+CoreDataProperties.swift in Sources */,
 				311D8E5025F0C816005BFB51 /* Transaction+CoreDataProperties.swift in Sources */,
+				31EB9D6825F252F600C53408 /* NewDepositViewController.swift in Sources */,
 				5996B4AD25E54C3A00FB0BDB /* ATM+CoreDataClass.swift in Sources */,
 				59DFC2A925E7819C000EDCF9 /* BankInfoViewController.swift in Sources */,
 				5996B4AB25E54C3A00FB0BDB /* Bank+CoreDataClass.swift in Sources */,

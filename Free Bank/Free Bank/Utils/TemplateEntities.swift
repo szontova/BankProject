@@ -244,6 +244,7 @@ extension UIViewController {
         newDeposit.term = term
         newDeposit.procent = procent
         newDeposit.date = date
+        newDeposit.revocable = revocable
         newDeposit.idNumber = generationIdDeposit(individ, org, term, amount)
         
         newAccount.idNumber = generationIdAccount("D")

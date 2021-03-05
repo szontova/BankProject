@@ -9,6 +9,10 @@ import UIKit
 
 class DepositTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var idNumberLabel: UILabel!
+    @IBOutlet weak var depositDateLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var revocableLabel: UILabel!
     static let identifier = "depositCell"
     
     override func awakeFromNib() {
@@ -30,6 +34,14 @@ class DepositTableViewCell: UITableViewCell {
     }
     
     public func configure(_ deposit: Deposit) {
-    
+        idNumberLabel.text = String(deposit.idNumber)
+        depositDateLabel.text = Util.getddMMyyyyDateString( deposit.date!)
+        amountLabel.text = NSString(format: "%.2f BYR", Float(deposit.amount)/100) as String
+        var revocableString = ""
+        if deposit.revocable {
+            revocableString = "отзывной" }
+        else {
+            revocableString = "безотзывной" }
+        revocableLabel.text = revocableString
     }
 }

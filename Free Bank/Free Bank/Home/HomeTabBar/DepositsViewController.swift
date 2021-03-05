@@ -22,10 +22,18 @@ class DepositsViewController: UIViewController {
         super.viewDidLoad()
         
         transparentNavBar(navigationBar)
-      
-        updateDeposits()
         
         depositsTableViewConfigurations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        updateDeposits()
+        DispatchQueue.main.async {
+            self.depositsTableView.reloadData()
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

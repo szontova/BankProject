@@ -32,13 +32,13 @@ class TransfersViewController: UIViewController {
         do{
             let items = try context.fetch(cardRequest)
             let item = try context.fetch(accRequest)
-            card = items.last
+            card = items.first
             acc = item.last
         } catch{
             print("generation: error in add new branch")
         }
         
-        addTransaction(250000, (nil, acc), (card, nil))
+        addTransaction(40000, (card, nil), (nil, acc))
     }
 }
 

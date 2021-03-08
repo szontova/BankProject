@@ -243,4 +243,11 @@ extension UIViewController{
         return true
     }
     
+    func checkAccountBalance(_ amount: Int64, _ balance: Int64) -> Bool {
+        if balance - amount < 0 {
+            return false
+        }
+        return true
+    }
+    
 }

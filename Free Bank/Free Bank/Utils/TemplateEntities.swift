@@ -43,6 +43,20 @@ extension UIViewController {
         return nil
     }
     
+    func findAccount(by idNumber: String) -> Account?{
+        let accountRequest = Account.fetchRequest() as NSFetchRequest<Account>
+        accountRequest.predicate = NSPredicate(format: "idNumber == %@", idNumber)
+        do {
+            let items = try context.fetch(accountRequest)
+            if items.count != 0 {
+                return items[0]
+            }
+        } catch {
+            print("Error in check accounts")
+        }
+        return nil
+    }
+    
     //MARK:- ValidEntities
     func validIndividual(_ login: String, _ password: String) -> Bool{
         let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
@@ -274,32 +288,50 @@ extension UIViewController {
     func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)){
         let newTransaction = Transaction(context: context)
         let something = "Счёт вне банка"
+        var allow = false
         
         newTransaction.idNumber = generationIdTransaction(amount, sender, receiver)
         newTransaction.amount = amount
         newTransaction.date = Util.getDate()
-        
-        //find sender
-        //find reciever
 
         if let cardSender = sender.0 {
-            cardSender.account?.addToTransactions(newTransaction)
-            newTransaction.sender = String(cardSender.idNumber)
+            if checkAccountBalance(amount, (sender.0?.account!.balance)!) {
+                cardSender.account?.balance = cardSender.account!.balance - amount
+                cardSender.account?.addToTransactions(newTransaction)
+                newTransaction.sender = String(cardSender.idNumber)
+                allow = true
+            } else { showAlertMessage(message: "Недостаточно средств.") }
         } else if let accountSender = sender.1 {
-            accountSender.addToTransactions(newTransaction)
-            newTransaction.sender = accountSender.idNumber
+            if checkAccountBalance(amount, (sender.1?.balance)!) {
+                accountSender.balance = accountSender.balance - amount
+                accountSender.addToTransactions(newTransaction)
+                newTransaction.sender = accountSender.idNumber
+                allow = true
+            } else { showAlertMessage(message: "Недостаточно средств.") }
         } else {
             newTransaction.sender = something
         }
         
         if let cardReceiver = receiver.0 {
-            cardReceiver.account?.addToTransactions(newTransaction)
-            newTransaction.receiver = String(cardReceiver.idNumber)
+            if let accountReciever = findAccount(by: cardReceiver.account?.idNumber ?? "")  {
+                if allow {
+                    accountReciever.balance = accountReciever.balance + amount
+                }
+                accountReciever.addToTransactions(newTransaction)
+                newTransaction.receiver = String(cardReceiver.idNumber)
+            } else {
+                newTransaction.receiver = something
+            }
         } else if let accountReceiver = receiver.1 {
-            accountReceiver.addToTransactions(newTransaction)
-            newTransaction.receiver = accountReceiver.idNumber
-        } else {
-            newTransaction.receiver = something
+            if let ourReciever = findAccount(by: accountReceiver.idNumber ?? "") {
+                if allow {
+                    ourReciever.balance = ourReciever.balance + amount
+                }
+                ourReciever.addToTransactions(newTransaction)
+                newTransaction.receiver = accountReceiver.idNumber
+            } else {
+                newTransaction.receiver = something
+            }
         }
         
         print(newTransaction.string())

@@ -57,6 +57,20 @@ extension UIViewController {
         return nil
     }
     
+    func findCard(by idNumber: Int64) -> Card?{
+        let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
+        cardRequest.predicate = NSPredicate(format: "idNumber == %@", idNumber)
+        do {
+            let items = try context.fetch(cardRequest)
+            if items.count != 0 {
+                return items[0]
+            }
+        } catch {
+            print("Error in check accounts")
+        }
+        return nil
+    }
+    
     //MARK:- ValidEntities
     func validIndividual(_ login: String, _ password: String) -> Bool{
         let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>

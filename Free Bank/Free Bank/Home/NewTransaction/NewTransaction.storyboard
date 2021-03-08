@@ -211,7 +211,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="IWZ-S2-dcJ"/>
                                 </constraints>
-                                <state key="normal" title="Оформить">
+                                <state key="normal" title="Продолжить">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -219,6 +219,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueTransactionButton:" destination="EWw-6t-fl0" eventType="touchUpInside" id="x4X-yU-tx5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y50-Dy-cBZ"/>
@@ -249,12 +252,29 @@
                         <outlet property="senderCardCVV" destination="SGh-Ip-o4J" id="GMV-lP-ISE"/>
                         <outlet property="senderCardNumberTextField" destination="TOf-tV-mfm" id="p33-fg-Eqx"/>
                         <outlet property="senderCardValidity" destination="omM-7F-dwd" id="jQ3-A6-80g"/>
+                        <segue destination="2cm-nA-RGT" kind="show" identifier="toConfirmationTransactionSegue" id="cPa-Fd-WRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71h-b3-zV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="yR4-DT-nWN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="234.11214953271028" y="149.67602591792658"/>
+        </scene>
+        <!--Confirmation Transaction View Controller-->
+        <scene sceneID="V6D-U1-dxx">
+            <objects>
+                <viewController id="2cm-nA-RGT" customClass="ConfirmationTransactionViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qi6-MY-6cG">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="071-gT-nqv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QQu-Qt-WcS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iTP-cW-V8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035" y="150"/>
         </scene>
     </scenes>
     <resources>

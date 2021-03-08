@@ -33,6 +33,8 @@ class TransfersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         updateAccounts()
+        updateTransfers(accounts[0])
+        updateTransfersTableView(accounts[0])
     }
     
     func accountsPickerViewConfigurations(){
@@ -69,7 +71,7 @@ class TransfersViewController: UIViewController {
         }
     }
     
-    func  updateTransfersTableView(){
+    func  updateTransfersTableView( _ account: Account){
         if transfers.isEmpty {
             missingTransfersLabel.isHidden = false
             transfersTableView.isHidden = true
@@ -77,6 +79,10 @@ class TransfersViewController: UIViewController {
         else {
             missingTransfersLabel.isHidden = true
             transfersTableView.isHidden = false
+        }
+        
+        DispatchQueue.main.async {
+            self.transfersTableView.reloadData()
         }
     }
     
@@ -142,7 +148,7 @@ extension TransfersViewController: UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateTransfers(accounts[row])
-        updateTransfersTableView()
+        updateTransfersTableView(accounts[row])
     }
 }
 

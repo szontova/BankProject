@@ -317,11 +317,19 @@
 		592AE6FF25F604A8003543B7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				592AE70425F6447D003543B7 /* TransactionTableViewCell */,
 				59031DB325EF90C700B4DE9D /* CreditTableViewCell */,
 				5904330025EE2D5300BF5412 /* AccountTableViewCell */,
 				59B3B2A625F15A6D008BC962 /* DepositTableViewCell */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		592AE70425F6447D003543B7 /* TransactionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TransactionTableViewCell;
 			sourceTree = "<group>";
 		};
 		593AE04D25E6909700DEB157 /* Home */ = {

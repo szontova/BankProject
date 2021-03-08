@@ -15,6 +15,7 @@ class TransfersViewController: UIViewController {
     @IBOutlet weak var receiverSegmentedControl: UISegmentedControl!
     @IBOutlet weak var accountsPickerView: UIPickerView!
     @IBOutlet weak var missingTransfersLabel: UILabel!
+    @IBOutlet weak var transfersTableView: UITableView!
     
     private var individual: Individual?
     private var organization: Organization?
@@ -27,6 +28,11 @@ class TransfersViewController: UIViewController {
     
         transparentNavBar(navigationBar)
         accountsPickerViewConfigurations()
+        transfersTableViewConfigurations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateAccounts()
     }
     
     func accountsPickerViewConfigurations(){
@@ -35,8 +41,15 @@ class TransfersViewController: UIViewController {
         accountsPickerView.dataSource = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        updateAccounts()
+    func transfersTableViewConfigurations(){
+        
+        transfersTableView.backgroundColor = .clear
+        
+       // transfersTableView.register(TransferTableViewCell.nib(), forCellReuseIdentifier: TransferTableViewCell.identifier)
+        
+        transfersTableView.delegate = self
+        transfersTableView.dataSource = self
+        
     }
     
     func updateAccounts(){
@@ -59,9 +72,11 @@ class TransfersViewController: UIViewController {
     func  updateTransfersTableView(){
         if transfers.isEmpty {
             missingTransfersLabel.isHidden = false
+            transfersTableView.isHidden = true
         }
         else {
             missingTransfersLabel.isHidden = true
+            transfersTableView.isHidden = false
         }
     }
     
@@ -128,5 +143,21 @@ extension TransfersViewController: UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateTransfers(accounts[row])
         updateTransfersTableView()
+    }
+}
+
+extension TransfersViewController: UITableViewDelegate {}
+extension TransfersViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transfers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        if let cell = self.transfersTableView.dequeueReusableCell(withIdentifier: TransferTableViewCell.identifier) as? TransferTableViewCell {
+//            cell.selectionStyle = .none
+//            cell.configure()
+//            return cell
+//        }
+        return UITableViewCell()
     }
 }

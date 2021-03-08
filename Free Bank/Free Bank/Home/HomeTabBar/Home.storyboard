@@ -451,7 +451,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vc0-Mk-4Rq">
-                                <rect key="frame" x="15" y="253" width="398" height="113"/>
+                                <rect key="frame" x="15" y="253" width="506" height="113"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="Fcg-QX-oLF"/>
@@ -482,14 +482,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7d7-xa-85F">
+                                <rect key="frame" x="15" y="366" width="398" height="462"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9S2-JN-o0N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gwj-cu-LGS" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="052-VR-5gW"/>
+                            <constraint firstItem="7d7-xa-85F" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="2kI-Ba-C77"/>
                             <constraint firstItem="Y3B-yS-qyG" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="2sB-qs-u0Y"/>
                             <constraint firstItem="Vc0-Mk-4Rq" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="6cB-X6-kLV"/>
                             <constraint firstItem="SOK-Kv-NHP" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" id="7mh-be-ulO"/>
+                            <constraint firstItem="7d7-xa-85F" firstAttribute="bottom" secondItem="9S2-JN-o0N" secondAttribute="bottom" constant="-15" id="BY2-no-8Yj"/>
                             <constraint firstItem="SOK-Kv-NHP" firstAttribute="trailing" secondItem="lH4-DE-J8P" secondAttribute="trailing" id="GW8-jc-wYc"/>
                             <constraint firstItem="ov2-QU-Olw" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="Gu8-St-8GB"/>
                             <constraint firstItem="LtG-jr-d4f" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="Lat-Nh-OOZ"/>
@@ -497,7 +503,9 @@
                             <constraint firstItem="Gwj-cu-LGS" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="Nse-Fk-VLt"/>
                             <constraint firstItem="xN1-qa-l9i" firstAttribute="leading" secondItem="lH4-DE-J8P" secondAttribute="leading" id="ORk-OI-iwK"/>
                             <constraint firstItem="SOK-Kv-NHP" firstAttribute="top" secondItem="9S2-JN-o0N" secondAttribute="top" constant="10" id="Scu-Wn-1IG"/>
+                            <constraint firstItem="7d7-xa-85F" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="UqX-TR-a22"/>
                             <constraint firstItem="Vc0-Mk-4Rq" firstAttribute="top" secondItem="Gwj-cu-LGS" secondAttribute="bottom" constant="-40" id="X2h-F8-jfF"/>
+                            <constraint firstItem="7d7-xa-85F" firstAttribute="top" secondItem="Vc0-Mk-4Rq" secondAttribute="bottom" id="Zdd-C6-1ub"/>
                             <constraint firstItem="Y3B-yS-qyG" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="dk3-bO-4fh"/>
                             <constraint firstItem="ov2-QU-Olw" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="e9N-aK-e3S"/>
                             <constraint firstItem="Gwj-cu-LGS" firstAttribute="top" secondItem="Y3B-yS-qyG" secondAttribute="bottom" constant="10" id="eGd-u6-L0H"/>
@@ -517,6 +525,7 @@
                         <outlet property="navigationBar" destination="SOK-Kv-NHP" id="Z0b-9t-6DW"/>
                         <outlet property="receiverSegmentedControl" destination="FAh-GX-HRx" id="OIg-9u-pVc"/>
                         <outlet property="senderSegmentedControl" destination="Bq4-M6-3Ng" id="tYA-PO-pfU"/>
+                        <outlet property="transfersTableView" destination="7d7-xa-85F" id="kw9-pq-v1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLV-Lw-AKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

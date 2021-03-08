@@ -450,6 +450,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vc0-Mk-4Rq">
+                                <rect key="frame" x="15" y="253" width="398" height="113"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="Fcg-QX-oLF"/>
+                                </constraints>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwj-cu-LGS">
                                 <rect key="frame" x="15" y="233" width="398" height="60"/>
                                 <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -469,30 +476,44 @@
                                     <action selector="addTransaction:" destination="VfR-HQ-Ymy" eventType="touchUpInside" id="sS7-sL-EAv"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="История транзакций пуста" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtG-jr-d4f">
+                                <rect key="frame" x="15" y="371" width="398" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9S2-JN-o0N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gwj-cu-LGS" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="052-VR-5gW"/>
                             <constraint firstItem="Y3B-yS-qyG" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="2sB-qs-u0Y"/>
+                            <constraint firstItem="Vc0-Mk-4Rq" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="6cB-X6-kLV"/>
                             <constraint firstItem="SOK-Kv-NHP" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" id="7mh-be-ulO"/>
                             <constraint firstItem="SOK-Kv-NHP" firstAttribute="trailing" secondItem="lH4-DE-J8P" secondAttribute="trailing" id="GW8-jc-wYc"/>
                             <constraint firstItem="ov2-QU-Olw" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="Gu8-St-8GB"/>
+                            <constraint firstItem="LtG-jr-d4f" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="Lat-Nh-OOZ"/>
+                            <constraint firstItem="LtG-jr-d4f" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="NMI-Gy-IT4"/>
                             <constraint firstItem="Gwj-cu-LGS" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="Nse-Fk-VLt"/>
                             <constraint firstItem="xN1-qa-l9i" firstAttribute="leading" secondItem="lH4-DE-J8P" secondAttribute="leading" id="ORk-OI-iwK"/>
                             <constraint firstItem="SOK-Kv-NHP" firstAttribute="top" secondItem="9S2-JN-o0N" secondAttribute="top" constant="10" id="Scu-Wn-1IG"/>
+                            <constraint firstItem="Vc0-Mk-4Rq" firstAttribute="top" secondItem="Gwj-cu-LGS" secondAttribute="bottom" constant="-40" id="X2h-F8-jfF"/>
                             <constraint firstItem="Y3B-yS-qyG" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="dk3-bO-4fh"/>
                             <constraint firstItem="ov2-QU-Olw" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" constant="-15" id="e9N-aK-e3S"/>
                             <constraint firstItem="Gwj-cu-LGS" firstAttribute="top" secondItem="Y3B-yS-qyG" secondAttribute="bottom" constant="10" id="eGd-u6-L0H"/>
                             <constraint firstItem="xN1-qa-l9i" firstAttribute="bottom" secondItem="lH4-DE-J8P" secondAttribute="bottom" id="iLH-Hu-rSN"/>
                             <constraint firstItem="ov2-QU-Olw" firstAttribute="top" secondItem="SOK-Kv-NHP" secondAttribute="bottom" id="irR-NC-UBW"/>
                             <constraint firstItem="xN1-qa-l9i" firstAttribute="top" secondItem="lH4-DE-J8P" secondAttribute="top" id="m59-aN-2cE"/>
+                            <constraint firstItem="LtG-jr-d4f" firstAttribute="top" secondItem="Vc0-Mk-4Rq" secondAttribute="bottom" constant="5" id="p7B-qB-LQD"/>
                             <constraint firstItem="xN1-qa-l9i" firstAttribute="trailing" secondItem="9S2-JN-o0N" secondAttribute="trailing" id="pgh-Tf-fwI"/>
                             <constraint firstItem="Y3B-yS-qyG" firstAttribute="top" secondItem="ov2-QU-Olw" secondAttribute="bottom" constant="5" id="qH9-Is-7rZ"/>
+                            <constraint firstItem="Vc0-Mk-4Rq" firstAttribute="leading" secondItem="9S2-JN-o0N" secondAttribute="leading" constant="15" id="wCS-JZ-wia"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Переводы" image="moneyTransferIcon" id="9OZ-pC-nlJ"/>
                     <connections>
+                        <outlet property="accountsPickerView" destination="Vc0-Mk-4Rq" id="B7J-SR-BQ8"/>
+                        <outlet property="missingTransfersLabel" destination="LtG-jr-d4f" id="uAk-BS-83w"/>
                         <outlet property="navigationBar" destination="SOK-Kv-NHP" id="Z0b-9t-6DW"/>
                         <outlet property="receiverSegmentedControl" destination="FAh-GX-HRx" id="OIg-9u-pVc"/>
                         <outlet property="senderSegmentedControl" destination="Bq4-M6-3Ng" id="tYA-PO-pfU"/>

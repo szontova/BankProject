@@ -57,7 +57,7 @@ extension UIViewController {
         return nil
     }
     
-    func findCard(by idNumber: Int64) -> Card?{
+    func findCard(by idNumber: String) -> Card?{
         let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
         cardRequest.predicate = NSPredicate(format: "idNumber == %@", idNumber)
         do {

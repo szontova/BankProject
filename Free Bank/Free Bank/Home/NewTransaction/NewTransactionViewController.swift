@@ -56,13 +56,29 @@ class NewTransactionViewController: UIViewController {
             receiverTextField.placeholder = "Введите номер счёта"
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToNewTransactionFromConfirmSegue" else {return}
         guard let _ = segue.destination as? ConfirmationTransactionViewController else {return}
     }
     
     @IBAction func continueTransactionButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "toConfirmationTransactionSegue", sender: nil)
+        var result = false
+        if senderType.0 {
+            result = findCard(by: senderCardNumberTextField.text!) != nil ? true : false
+            print(result)
+        }
+        if senderType.1 {
+            result = findAccount(by: senderAccountTextField.text!) != nil ? true : false
+            print(result)
+        }
+        if result {
+            performSegue(withIdentifier: "toConfirmationTransactionSegue", sender: nil)
+        } else {showAlertError(message: "Неверно введены данные отправителя.")}
     }
 }
 

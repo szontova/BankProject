@@ -45,6 +45,7 @@
 		592AE70825F64500003543B7 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AE70625F64500003543B7 /* TransactionTableViewCell.xib */; };
 		592AE70F25F65310003543B7 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE70E25F65310003543B7 /* NewTransactionViewController.swift */; };
 		592AE71225F65426003543B7 /* NewTransaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592AE71125F65426003543B7 /* NewTransaction.storyboard */; };
+		592AE71725F66AD5003543B7 /* ConfirmationTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE71625F66AD5003543B7 /* ConfirmationTransactionViewController.swift */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
 		593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593AE04E25E692FF00DEB157 /* Home.storyboard */; };
 		593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE05525E6A00200DEB157 /* HomeTabBarController.swift */; };
@@ -126,6 +127,7 @@
 		592AE70625F64500003543B7 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		592AE70E25F65310003543B7 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
 		592AE71125F65426003543B7 /* NewTransaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTransaction.storyboard; sourceTree = "<group>"; };
+		592AE71625F66AD5003543B7 /* ConfirmationTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationTransactionViewController.swift; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		593AE04E25E692FF00DEB157 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		593AE05525E6A00200DEB157 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			children = (
 				592AE71125F65426003543B7 /* NewTransaction.storyboard */,
 				592AE70E25F65310003543B7 /* NewTransactionViewController.swift */,
+				592AE71625F66AD5003543B7 /* ConfirmationTransactionViewController.swift */,
 			);
 			path = NewTransaction;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				5904335025EE751500BF5412 /* CardTableViewCell.swift in Sources */,
 				5916FA6D25EA38890022A4B0 /* AddressesTableViewController.swift in Sources */,
 				59031DB625EF90E400B4DE9D /* CreditTableViewCell.swift in Sources */,
+				592AE71725F66AD5003543B7 /* ConfirmationTransactionViewController.swift in Sources */,
 				311D8E4D25F0C816005BFB51 /* Account+CoreDataClass.swift in Sources */,
 				59A42D0F25ECE3D9002C8EF9 /* TransfersViewController.swift in Sources */,
 				3153816125F0EDB500659252 /* Credit+CoreDataProperties.swift in Sources */,

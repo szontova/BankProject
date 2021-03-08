@@ -56,7 +56,10 @@ class NewTransactionViewController: UIViewController {
             receiverTextField.placeholder = "Введите номер счёта"
         }
     }
-
+    
+    @IBAction func continueTransactionButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "toConfirmationTransactionSegue", sender: nil)
+    }
 }
 
 extension NewTransactionViewController: OrgIndivid{

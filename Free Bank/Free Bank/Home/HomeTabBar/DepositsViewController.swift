@@ -47,6 +47,13 @@ class DepositsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toDepositSegue" {
+            if let destinationVC = segue.destination as? DepositViewController {
+                destinationVC.setDeposit(depositForTransfer!)
+            }
+        }
+        
         guard segue.identifier == "toNewDepositSegue" else { return }
         guard let destinationVC = segue.destination as? NewDepositViewController else { return }
         destinationVC.setIndividual(individual)
@@ -128,6 +135,7 @@ extension DepositsViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        depositForTransfer = deposits[indexPath.row]
         performSegue(withIdentifier: "toDepositSegue", sender: nil)
     }
 }

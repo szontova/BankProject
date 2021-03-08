@@ -85,7 +85,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPD-xY-44E">
                                 <rect key="frame" x="5" y="306" width="365" height="220"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счёт: BY00FREE000000FBС00000000000" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt4-Ef-l2F">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счёт: BY00FREE000000FBA00000000000" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt4-Ef-l2F">
                                         <rect key="frame" x="15" y="14.999999999999996" width="335" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -112,8 +112,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-ZZ-PNc">
-                                        <rect key="frame" x="195.66666666666666" y="90" width="36.666666666666657" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Z5-ZZ-PNc">
+                                        <rect key="frame" x="195.66666666666666" y="90" width="30" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="orN-LI-uFh"/>
                                         </constraints>
@@ -224,6 +224,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="withdrawMoneyAction:" destination="3J8-hJ-UnB" eventType="touchUpInside" id="X92-kQ-e5c"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -257,7 +260,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accountNumberLabel" destination="gt4-Ef-l2F" id="QgT-By-j0i"/>
+                        <outlet property="amountLabel" destination="Mnx-ui-yl0" id="98f-Uc-vha"/>
+                        <outlet property="beginDateLabel" destination="1TP-ec-ug9" id="htt-Mc-Vc0"/>
+                        <outlet property="depositNumberLabel" destination="2jI-G1-F9B" id="R94-5L-ENl"/>
+                        <outlet property="endDateLabel" destination="kF8-gE-0sJ" id="wZN-w5-PIn"/>
                         <outlet property="navigationBar" destination="ioL-ze-bcP" id="U8N-t2-jZX"/>
+                        <outlet property="procentLabel" destination="6Z5-ZZ-PNc" id="WkB-tJ-32d"/>
+                        <outlet property="revocableLabel" destination="30O-19-GUY" id="d5m-tM-2lF"/>
+                        <outlet property="withdrawMoneyButton" destination="W43-pD-7ND" id="3s6-nv-LgX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdS-3E-xza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

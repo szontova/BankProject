@@ -2,7 +2,7 @@
 //  Individual+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Пользователь on 25.02.21.
+//  Created by Sasha Zontova on 3/5/21.
 //
 //
 
@@ -16,13 +16,14 @@ extension Individual {
         return NSFetchRequest<Individual>(entityName: "Individual")
     }
 
+    @NSManaged public var codeWord: String?
     @NSManaged public var email: String?
     @NSManaged public var fullName: String?
     @NSManaged public var login: String?
     @NSManaged public var password: String?
-    @NSManaged public var codeWord: String?
     @NSManaged public var accounts: NSSet?
     @NSManaged public var credits: NSSet?
+    @NSManaged public var deposits: NSSet?
     @NSManaged public var employer: Organization?
 
 }
@@ -58,6 +59,23 @@ extension Individual {
 
     @objc(removeCredits:)
     @NSManaged public func removeFromCredits(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for deposits
+extension Individual {
+
+    @objc(addDepositsObject:)
+    @NSManaged public func addToDeposits(_ value: Deposit)
+
+    @objc(removeDepositsObject:)
+    @NSManaged public func removeFromDeposits(_ value: Deposit)
+
+    @objc(addDeposits:)
+    @NSManaged public func addToDeposits(_ values: NSSet)
+
+    @objc(removeDeposits:)
+    @NSManaged public func removeFromDeposits(_ values: NSSet)
 
 }
 

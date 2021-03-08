@@ -2,7 +2,7 @@
 //  Organization+CoreDataClass.swift
 //  Free Bank
 //
-//  Created by Пользователь on 25.02.21.
+//  Created by Sasha Zontova on 3/5/21.
 //
 //
 

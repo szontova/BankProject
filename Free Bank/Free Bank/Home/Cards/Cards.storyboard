@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W5e-BJ-FJZ">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards View Controller-->
+        <scene sceneID="cZQ-5J-a7I">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="W5e-BJ-FJZ" customClass="CardsViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zH5-Cz-Nfq">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="MLw-kF-aDa">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Баланс: 20.00 BYR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeq-lV-v2D">
+                                <rect key="frame" x="15" y="167" width="127" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счёт: BY00FREE000000FBS00000000007" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkM-XA-RP7">
+                                <rect key="frame" x="15" y="145" width="398" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3x-WC-uA9">
+                                <rect key="frame" x="0.0" y="54" width="428" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="emd-9Z-Ic8">
+                                        <barButtonItem key="leftBarButtonItem" id="UTW-KQ-HnS">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xIu-Fj-buz">
+                                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="4Jl-GU-W9t"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Mix-cM-bMW"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="vJm-wd-BXB" kind="unwind" identifier="unwindToAccFromAccCardsSegue" unwindAction="unwindToAccountsVCFromAccCardsVCWithSegue:" id="Q34-Rt-8wj"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wix-QM-QUz">
+                                <rect key="frame" x="15" y="98" width="398" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzT-rA-j8I">
+                                <rect key="frame" x="15" y="189" width="398" height="60"/>
+                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mK5-FR-rVS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Добавить карту">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addCardButton:" destination="W5e-BJ-FJZ" eventType="touchUpInside" id="Mxj-Cw-w5O"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="К данному счёту нет привязанных карт" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kD-Ok-9pY">
+                                <rect key="frame" x="15" y="269" width="398" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N1u-za-vtn">
+                                <rect key="frame" x="15" y="254" width="398" height="270"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="mxY-kV-5oX"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hYT-Vz-QKW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wix-QM-QUz" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="8ee-aH-5fl"/>
+                            <constraint firstItem="N1u-za-vtn" firstAttribute="top" secondItem="YzT-rA-j8I" secondAttribute="bottom" constant="5" id="97P-zt-pt8"/>
+                            <constraint firstItem="hYT-Vz-QKW" firstAttribute="trailing" secondItem="N1u-za-vtn" secondAttribute="trailing" constant="15" id="Cgg-s1-PkS"/>
+                            <constraint firstItem="YzT-rA-j8I" firstAttribute="top" secondItem="zeq-lV-v2D" secondAttribute="bottom" constant="5" id="Drm-IL-d6o"/>
+                            <constraint firstItem="MLw-kF-aDa" firstAttribute="bottom" secondItem="zH5-Cz-Nfq" secondAttribute="bottom" id="E9x-lV-G3s"/>
+                            <constraint firstItem="MLw-kF-aDa" firstAttribute="leading" secondItem="zH5-Cz-Nfq" secondAttribute="leading" id="GgD-NA-v9s"/>
+                            <constraint firstItem="6kD-Ok-9pY" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="HSr-mX-VpT"/>
+                            <constraint firstItem="6kD-Ok-9pY" firstAttribute="centerX" secondItem="zH5-Cz-Nfq" secondAttribute="centerX" id="IEH-13-S8P"/>
+                            <constraint firstItem="wix-QM-QUz" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Iid-dc-Zgc"/>
+                            <constraint firstItem="YzT-rA-j8I" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Plr-y7-Fcd"/>
+                            <constraint firstItem="zeq-lV-v2D" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="RM2-md-LcQ"/>
+                            <constraint firstItem="MLw-kF-aDa" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" id="SNm-fo-KPI"/>
+                            <constraint firstItem="r3x-WC-uA9" firstAttribute="top" secondItem="hYT-Vz-QKW" secondAttribute="top" constant="10" id="WZx-np-NL8"/>
+                            <constraint firstItem="N1u-za-vtn" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="Z7p-Qk-eyJ"/>
+                            <constraint firstItem="r3x-WC-uA9" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" id="cAV-Xh-ez0"/>
+                            <constraint firstItem="MLw-kF-aDa" firstAttribute="top" secondItem="zH5-Cz-Nfq" secondAttribute="top" id="h5t-Na-SnK"/>
+                            <constraint firstItem="wix-QM-QUz" firstAttribute="top" secondItem="r3x-WC-uA9" secondAttribute="bottom" id="hfU-ru-aQW"/>
+                            <constraint firstItem="6kD-Ok-9pY" firstAttribute="top" secondItem="YzT-rA-j8I" secondAttribute="bottom" constant="20" id="jVB-L7-5mx"/>
+                            <constraint firstItem="vkM-XA-RP7" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="meB-Kv-74f"/>
+                            <constraint firstItem="vkM-XA-RP7" firstAttribute="leading" secondItem="hYT-Vz-QKW" secondAttribute="leading" constant="15" id="osa-if-Xid"/>
+                            <constraint firstItem="zeq-lV-v2D" firstAttribute="top" secondItem="vkM-XA-RP7" secondAttribute="bottom" constant="5" id="pGL-rx-Ayi"/>
+                            <constraint firstItem="r3x-WC-uA9" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" id="wmT-Hx-Uvh"/>
+                            <constraint firstItem="YzT-rA-j8I" firstAttribute="trailing" secondItem="hYT-Vz-QKW" secondAttribute="trailing" constant="-15" id="ysf-uZ-Qbl"/>
+                            <constraint firstItem="vkM-XA-RP7" firstAttribute="top" secondItem="wix-QM-QUz" secondAttribute="bottom" constant="5" id="zK7-W2-7J7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accountBalanceLabel" destination="zeq-lV-v2D" id="NQT-By-wJ1"/>
+                        <outlet property="accountNumberLabel" destination="vkM-XA-RP7" id="Mp8-5B-cnR"/>
+                        <outlet property="cardsTableView" destination="N1u-za-vtn" id="ZXV-mT-dfw"/>
+                        <outlet property="missingCardsLabel" destination="6kD-Ok-9pY" id="iUF-Gb-U7B"/>
+                        <outlet property="navigationBar" destination="r3x-WC-uA9" id="DTv-MQ-kq7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJB-N1-dug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="vJm-wd-BXB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="mainBackground" width="1080" height="1920"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

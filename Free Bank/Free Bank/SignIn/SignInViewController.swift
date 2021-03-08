@@ -9,7 +9,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
-    //MARK: - @IBOutlet
+    //MARK: - @IBOutlets
     
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
@@ -24,7 +24,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         //print("ViewDidLoad")
         super.viewDidLoad()
-        printAllOrganization()
+        //printAllOrganization()
     }
     
     override func loadView() {
@@ -35,9 +35,13 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         // только появится
-        // rf;lsq hfp rjulf gjgflftim yf 'rhfy
+        // every time you hit the screen
         super.viewWillAppear(animated)
+        
+        loginTextField.text = "lerachubakova"
+        passwordTextField.text = "Qwerty1234"
         //print("viewWillAppear")
+        //printAllIndividual()
     }
 
     override func viewWillLayoutSubviews() {
@@ -78,7 +82,7 @@ class SignInViewController: UIViewController {
         //print("deinit")
     }
     
-//MARK: - Override methods
+    //MARK: - OverrideMethods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -91,11 +95,91 @@ class SignInViewController: UIViewController {
         destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
     
-//MARK: - Our methods
+    //MARK: - OurMethods
     
+    func showAlertForgotPassword( _ status: Int, _  login: String){
+        var statusString = ""
+        
+        switch status {
+        case 0: statusString  = "логин"
+        case 1: statusString = "УНП"
+        default: break
+        }
+       
+        let alert = UIAlertController(title: "", message: "Введите \(statusString) и кодовое слово.", preferredStyle: .alert)
+            
+        let attributedString = NSAttributedString(string: "Восстановление пароля", attributes: [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+            NSAttributedString.Key.foregroundColor : UIColor.black
+        ])
+        
+        alert.setValue(attributedString, forKey: "attributedTitle")
+                
+        alert.view.tintColor = UIColor.black
+        
+        alert.addTextField(configurationHandler: {
+            (textField) in
+            textField.placeholder = "Введите \(statusString)"
+            textField.text = login
+            textField.borderStyle = UITextField.BorderStyle.roundedRect
+        })
+        
+        alert.addTextField(configurationHandler: {
+            (textField) in
+            textField.placeholder = "Введите кодовое слово"
+            textField.borderStyle = UITextField.BorderStyle.roundedRect
+        })
+        
+        for textField in alert.textFields! {
+            let container = textField.superview
+            let effectView = container?.superview?.subviews[0]
+            if (effectView != nil) {
+                container?.backgroundColor = UIColor.clear
+                effectView?.removeFromSuperview()
+            }
+        }
+                
+        let okAction = UIAlertAction(title: "Восстановить", style: .default){ _ in
+            let login = alert.textFields![0].text ?? ""
+            let codeWord = alert.textFields![1].text ?? ""
+          
+            switch status {
+            case 0:
+                if !self.checkLogin(login: login) { return }
+                    
+                if let person = self.findIndivididual(by: login) {
+                        
+                    if person.codeWord == codeWord.lowercased(){
+                        self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                    } else {
+                        self.showAlertError(message: "Кодовое слово введено неверно")
+                    }
+                } else {
+                    self.showAlertError(message: "Пользователь не найден")
+                }
+            case 1:
+                if let org = self.findOrganization(by: login) {
+                    if org.codeWord == codeWord.lowercased(){
+                        self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                    } else {
+                        self.showAlertError(message: "Кодовое слово введено неверно")
+                    }
+                } else {
+                    self.showAlertError(message: "Организация не найдена")
+                }
+            default: break
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+                
+        present(alert, animated: true, completion: nil)
+    }
     
-    
-    //MARK:- @IBAction
+    //MARK:- @IBActions
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -118,6 +202,7 @@ class SignInViewController: UIViewController {
             switch status {
             case 0:
                 if validIndividual(login, password) {
+                    passwordTextField.text = ""
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
@@ -125,6 +210,7 @@ class SignInViewController: UIViewController {
                 }
             case 1:
                 if validOrganization(login, password) {
+                    passwordTextField.text = ""
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
@@ -151,6 +237,7 @@ class SignInViewController: UIViewController {
         showAlertForgotPassword(status, login)
     }
     
+    //MARK: - unwind @IBActions
     @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
         guard let _ = segue.destination as? SignUpViewController else {return}
@@ -159,6 +246,11 @@ class SignInViewController: UIViewController {
     @IBAction func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindFomEndToSignInVCSegue" else {return}
         guard let _ = segue.destination as? EndOfSignUpViewController else {return}
+    }
+    
+    @IBAction func unwindToSignInFromHome(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindFromHomeToSignInVCSegue" else {return}
+        guard let _ = segue.destination as? OtherPageHomeViewController else {return}
     }
     
 }

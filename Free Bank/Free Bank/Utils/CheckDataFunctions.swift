@@ -7,13 +7,9 @@
 
 import Foundation
 import UIKit
-import CoreData
-import CryptoKit
-
-private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 extension UIViewController{
-    
+    //MARK:- CheckOnePropery
     func checkLogin(login: String) -> Bool{
         let allowLetters: ClosedRange<Character> = "A"..."z"
         let allowSymbols: Set<Character> = [".","_"]
@@ -92,67 +88,6 @@ extension UIViewController{
         return true
     }
     
-    func findIndivididual(by login: String) -> Bool{
-        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
-        individRequest.predicate = NSPredicate(format: "login == %@", login)
-        do {
-            let items = try context.fetch(individRequest)
-            if items.count != 0 {
-                return true
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return false
-    }
-    
-    func validIndividual(_ login: String, _ password: String) -> Bool{
-        let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
-        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
-        individRequest.predicate = NSPredicate(format: "login == %@", login)
-        do {
-            let items = try context.fetch(individRequest)
-            if items.count != 0 {
-                if(items[0].password == hashPassword){
-                    return true
-                }
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return false
-    }
-    
-    func findOrganization(by prn: String) -> Bool{
-        let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
-        orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
-        do {
-            let items = try context.fetch(orgRequest)
-            if items.count != 0 {
-            return true
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return false
-    }
-    
-    func validOrganization(_ prn: String, _ password: String) -> Bool{
-        let individRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
-        let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
-        individRequest.predicate = NSPredicate(format: "prn == %@", prn)
-        do {
-            let items = try context.fetch(individRequest)
-            if items.count != 0 {
-                if(items[0].password == hashPassword){
-                    return true
-                }
-            }
-        } catch {
-            print("Error in check login")
-        }
-        return false
-    }
     
     func checkPersonName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
@@ -206,6 +141,31 @@ extension UIViewController{
         return true
     }
     
+    func checkCreditAmount(_ amount: Int) -> Bool{
+        if amount < 100 || amount > 10000{
+            showAlertError(message: "Неверно введена сумма кредита.\nМинимальная сумма - 100 BYR\nМаксимальная - 10000 BYR")
+            return false
+        }
+        return true
+    }
+    
+    func checkCreditTerm(_ term: Int) -> Bool{
+        if term < 6 || term > 84{
+            showAlertError(message: "Неверно введен срок кредита.\nМинимальный срок - 6 месяцев\nМаксимальный - 84 месяца")
+            return false
+        }
+        return true
+    }
+    
+    func checkCreditSalary(_ amount: Int) -> Bool{
+        if amount < 782 || amount > 2500{
+            showAlertError(message: "Неверно введен минимальный доход.\nМинимальный доход - 782 BYR\nМаксимальный - 2500 BYR")
+            return false
+        }
+        return true
+    }
+    
+    //MARK:- CheckDatasInPages
     func checkSignInDatas(_ status: Int,  _ login: String, _ password: String) -> Bool{
              
         if login.isEmpty || password.isEmpty {
@@ -242,7 +202,7 @@ extension UIViewController{
             
             if !checkLogin(login: login) { return false }
             
-            if findIndivididual(by: login) {
+            if let _ = findIndivididual(by: login) {
                 showAlertError( message: "Данный логин занят другим пользователем")
                 return false
             }
@@ -253,7 +213,7 @@ extension UIViewController{
             
             if !checkUNP(unp: login) { return false }
             
-            if findOrganization(by: login) {
+            if let _ = findOrganization(by: login) {
                 showAlertError( message: "Вы ввели уже существующий УНП")
                 return false
             }
@@ -267,6 +227,18 @@ extension UIViewController{
             showAlertError(message: "Пароли не совпадают")
             return false
         }
+        
+        return true
+    }
+    
+    func checkCreditDatas(_ amount: Int, _ term: Int, _ salary: Int) -> Bool{
+        if amount == 0 || term == 0 || salary == 0 {
+            showAlertError(message: "Не все поля заполнены.")
+            return false
+        }
+        if !checkCreditAmount(amount) {return false}
+        if !checkCreditTerm(term) {return false}
+        if !checkCreditSalary(salary) {return false}
         
         return true
     }

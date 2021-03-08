@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                         <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="80" id="Vwh-u6-cJA"/>
+                            <constraint firstAttribute="height" constant="80" id="e0v-Da-qfR"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -29,13 +29,21 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6B0-f4-hTE">
+                        <rect key="frame" x="139" y="34" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="wnG-le-8cF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6hy-nU-TNI"/>
-                    <constraint firstAttribute="bottom" secondItem="wnG-le-8cF" secondAttribute="bottom" constant="10" id="FgA-K4-zeM"/>
+                    <constraint firstItem="6B0-f4-hTE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="34" id="9zM-5e-c4o"/>
+                    <constraint firstAttribute="bottom" secondItem="6B0-f4-hTE" secondAttribute="bottom" constant="35" id="Gof-VH-Ew6"/>
                     <constraint firstAttribute="trailing" secondItem="wnG-le-8cF" secondAttribute="trailing" id="i3v-69-jDa"/>
                     <constraint firstItem="wnG-le-8cF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kmN-ks-Vpu"/>
+                    <constraint firstItem="6B0-f4-hTE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="139" id="tVv-Wh-YL5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

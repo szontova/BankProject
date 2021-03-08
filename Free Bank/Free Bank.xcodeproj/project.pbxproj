@@ -43,6 +43,8 @@
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
 		592AE70725F64500003543B7 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE70525F64500003543B7 /* TransactionTableViewCell.swift */; };
 		592AE70825F64500003543B7 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AE70625F64500003543B7 /* TransactionTableViewCell.xib */; };
+		592AE70F25F65310003543B7 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE70E25F65310003543B7 /* NewTransactionViewController.swift */; };
+		592AE71225F65426003543B7 /* NewTransaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592AE71125F65426003543B7 /* NewTransaction.storyboard */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
 		593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593AE04E25E692FF00DEB157 /* Home.storyboard */; };
 		593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE05525E6A00200DEB157 /* HomeTabBarController.swift */; };
@@ -122,6 +124,8 @@
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		592AE70525F64500003543B7 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		592AE70625F64500003543B7 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		592AE70E25F65310003543B7 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
+		592AE71125F65426003543B7 /* NewTransaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTransaction.storyboard; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		593AE04E25E692FF00DEB157 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		593AE05525E6A00200DEB157 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
@@ -338,9 +342,19 @@
 			path = TransactionTableViewCell;
 			sourceTree = "<group>";
 		};
+		592AE70D25F652EE003543B7 /* NewTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				592AE71125F65426003543B7 /* NewTransaction.storyboard */,
+				592AE70E25F65310003543B7 /* NewTransactionViewController.swift */,
+			);
+			path = NewTransaction;
+			sourceTree = "<group>";
+		};
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				592AE70D25F652EE003543B7 /* NewTransaction */,
 				592AE6FF25F604A8003543B7 /* TableViewCells */,
 				31C1A60F25F125D5001C6C14 /* HomeTabBar */,
 				59FC3A3825F247080019EE72 /* NewDeposit */,
@@ -549,6 +563,7 @@
 				59B3B2AA25F15A8A008BC962 /* DepositTableViewCell.xib in Resources */,
 				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
 				5904330C25EE4C6700BF5412 /* Cards.storyboard in Resources */,
+				592AE71225F65426003543B7 /* NewTransaction.storyboard in Resources */,
 				593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +610,7 @@
 				311D8E4D25F0C816005BFB51 /* Account+CoreDataClass.swift in Sources */,
 				59A42D0F25ECE3D9002C8EF9 /* TransfersViewController.swift in Sources */,
 				3153816125F0EDB500659252 /* Credit+CoreDataProperties.swift in Sources */,
+				592AE70F25F65310003543B7 /* NewTransactionViewController.swift in Sources */,
 				593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */,
 				5996B4AC25E54C3A00FB0BDB /* Bank+CoreDataProperties.swift in Sources */,
 				59B3B2A925F15A8A008BC962 /* DepositTableViewCell.swift in Sources */,

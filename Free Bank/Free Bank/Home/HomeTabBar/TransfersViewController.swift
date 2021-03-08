@@ -37,6 +37,27 @@ class TransfersViewController: UIViewController {
         updateTransactionsTableView(accounts[0])
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toNewTransactionSegue" else { return }
+        guard let destinationVC = segue.destination as? NewTransactionViewController else { return }
+        destinationVC.setIndividual(individual)
+        destinationVC.setOrganization(organization)
+        
+        if senderSegmentedControl.selectedSegmentIndex == 0 {
+            destinationVC.setSender(card: true, acc: false)
+        } else {
+            destinationVC.setSender(card: false, acc: true)
+        }
+        
+        if receiverSegmentedControl.selectedSegmentIndex == 0 {
+            destinationVC.setReceiver(card: true, acc: false)
+        } else {
+            destinationVC.setReceiver(card: false, acc: true)
+        }
+        
+        
+    }
+    
     func accountsPickerViewConfigurations(){
         
         accountsPickerView.delegate = self
@@ -86,22 +107,29 @@ class TransfersViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToTransactionsVCFromNewTransactionVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToTransactionsFromNewTransactionSegue" else {return}
+        guard let _ = segue.destination as? NewTransactionViewController else {return}
+    }
+    
     @IBAction func addTransaction(_ sender: UIButton) {
-        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        var card: Card?
-        var acc: Account?
-        let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
-        let accRequest = Account.fetchRequest() as NSFetchRequest<Account>
-        do{
-            let items = try context.fetch(cardRequest)
-            let item = try context.fetch(accRequest)
-            card = items.first
-            acc = item.last
-        } catch{
-            print("generation: error in add new branch")
-        }
+        performSegue(withIdentifier: "toNewTransactionSegue", sender: nil)
         
-        addTransaction(40000, (card, nil), (nil, acc))
+//        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        var card: Card?
+//        var acc: Account?
+//        let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
+//        let accRequest = Account.fetchRequest() as NSFetchRequest<Account>
+//        do{
+//            let items = try context.fetch(cardRequest)
+//            let item = try context.fetch(accRequest)
+//            card = items.first
+//            acc = item.last
+//        } catch{
+//            print("generation: error in add new branch")
+//        }
+//        
+//        addTransaction(40000, (card, nil), (nil, acc))
     }
 }
 

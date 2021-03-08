@@ -13,7 +13,12 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var idNumberLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var myBackgroundView: UIView!
-    @IBOutlet weak var moreLabel: UILabel!
+    
+    @IBOutlet weak var buttonsStackView: UIStackView!
+    @IBOutlet weak var toUpButton: UIButton!
+    @IBOutlet weak var deactivationButton: UIButton!
+    @IBOutlet weak var moreImageView: UIImageView!
+    
     
     static let identifier = "accountCell"
     
@@ -31,14 +36,30 @@ class AccountTableViewCell: UITableViewCell {
     
     public func configure(with account: Account) {
         
-        if Util.getAccCategory(account) == "D" {
-            moreLabel.isHidden = true
+        switch Util.getAccCategory(account){
+        case "C":
+            deactivationButton.isHidden = true
+        case "D":
+            buttonsStackView.isHidden = true
+        case "S":
+            buttonsStackView.isHidden = false
+            deactivationButton.isHidden = false
+        default: break
         }
-        
+            
         self.myBackgroundView.layer.cornerRadius = 5.0
         
         self.idNumberLabel.text = account.idNumber
    
         self.balanceLabel.text = Util.getIntBYRbyString(account.balance)
     }
+    
+    @IBAction func topUpAccBalance(_ sender: UIButton) {
+        print("Yes")
+    }
+    
+    @IBAction func deactivationAcc(_ sender: UIButton) {
+        print("No")
+    }
+    
 }

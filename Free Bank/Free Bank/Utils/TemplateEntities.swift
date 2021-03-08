@@ -397,6 +397,37 @@ extension UIViewController {
         return id
     }
     
+    func generationIdTransaction (_ amount: Int, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Int64{
+        var id: Int64 = 1_00000
+        let transactionRequest = Transaction.fetchRequest() as NSFetchRequest<Transaction>
+        do{
+            var items = try context.fetch(transactionRequest)
+            items.sort(by: {return $0.idNumber < $1.idNumber})
+            if (items.count == 0){ id *= 1 }
+            else{
+                let newIdNumber = Int64(items.last!.idNumber / id) + 1
+                id *= newIdNumber
+            }
+        } catch{
+            print("generation: error in add new transaction")
+        }
+        
+        var category: Int64 = 0;
+        
+        if sender.0 != nil && receiver.0 != nil { category = 1 }
+        if sender.0 != nil && receiver.1 != nil { category = 2 }
+        if sender.1 != nil && receiver.0 != nil { category = 3 }
+        if sender.1 != nil && receiver.1 != nil { category = 4 }
+        
+        print(category)
+        
+        id += category % 10 * 10000
+        
+        id += Int64(amount) / 100
+        
+        return id
+    }
+    
     //MARK:- PrintEntities
     func printAllIndividual(){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>

@@ -271,6 +271,9 @@ extension UIViewController {
         
     }
 
+    func addTransaction(){
+        
+    }
     
     //MARK: -HelperFunctions
     
@@ -749,6 +752,26 @@ extension Deposit{
         }
         if let org = self.orgOwner {
             result += "\n indOwner: " + org.string()
+        }
+        
+        return result
+    }
+}
+
+extension Transaction{
+    func string() -> String{
+        var result = "Transaction:\n idNumber: \(self.idNumber)"
+        result += "\n amount: \(self.amount)"
+        result += "\n sender: \(self.sender ?? "")"
+        result += "\n receiver: \(self.receiver ?? "")"
+        result += "\n \(String(describing: self.date))"
+        
+        if let accounts = self.accounts?.allObjects {
+            for account in accounts  {
+                if let acc = account as? Account {
+                   result += "\t" + acc.string() + "\n"
+                }
+            }
         }
         
         return result

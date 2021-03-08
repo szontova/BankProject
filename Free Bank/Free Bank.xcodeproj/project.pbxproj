@@ -236,6 +236,7 @@
 		31C1A60F25F125D5001C6C14 /* HomeTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				592AE6FF25F604A8003543B7 /* TableViewCells */,
 				593AE04E25E692FF00DEB157 /* Home.storyboard */,
 				59A42D1125ECE407002C8EF9 /* CreditsViewController.swift */,
 				593AE05525E6A00200DEB157 /* HomeTabBarController.swift */,
@@ -333,7 +334,6 @@
 				5904330A25EE4C3F00BF5412 /* Cards */,
 				5968708525F29B26001BDE11 /* Deposit */,
 				5923D6D925F1151900EBA865 /* Credit */,
-				592AE6FF25F604A8003543B7 /* TableViewCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";

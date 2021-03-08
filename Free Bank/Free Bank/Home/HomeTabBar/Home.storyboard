@@ -451,7 +451,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vc0-Mk-4Rq">
-                                <rect key="frame" x="15" y="253" width="506" height="113"/>
+                                <rect key="frame" x="15" y="253" width="398" height="113"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="Fcg-QX-oLF"/>
@@ -525,7 +525,7 @@
                         <outlet property="navigationBar" destination="SOK-Kv-NHP" id="Z0b-9t-6DW"/>
                         <outlet property="receiverSegmentedControl" destination="FAh-GX-HRx" id="OIg-9u-pVc"/>
                         <outlet property="senderSegmentedControl" destination="Bq4-M6-3Ng" id="tYA-PO-pfU"/>
-                        <outlet property="transfersTableView" destination="7d7-xa-85F" id="kw9-pq-v1e"/>
+                        <outlet property="transactionsTableView" destination="7d7-xa-85F" id="kw9-pq-v1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLV-Lw-AKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,26 +15,26 @@ class TransfersViewController: UIViewController {
     @IBOutlet weak var receiverSegmentedControl: UISegmentedControl!
     @IBOutlet weak var accountsPickerView: UIPickerView!
     @IBOutlet weak var missingTransfersLabel: UILabel!
-    @IBOutlet weak var transfersTableView: UITableView!
+    @IBOutlet weak var transactionsTableView: UITableView!
     
     private var individual: Individual?
     private var organization: Organization?
 
     private var accounts: [Account] = []
-    private var transfers: [Transaction] = []
+    private var transactions: [Transaction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         transparentNavBar(navigationBar)
         accountsPickerViewConfigurations()
-        transfersTableViewConfigurations()
+        transactionsTableViewConfigurations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateAccounts()
-        updateTransfers(accounts[0])
-        updateTransfersTableView(accounts[0])
+        updateTransactions(accounts[0])
+        updateTransactionsTableView(accounts[0])
     }
     
     func accountsPickerViewConfigurations(){
@@ -43,14 +43,14 @@ class TransfersViewController: UIViewController {
         accountsPickerView.dataSource = self
     }
     
-    func transfersTableViewConfigurations(){
+    func transactionsTableViewConfigurations(){
         
-        transfersTableView.backgroundColor = .clear
+        transactionsTableView.backgroundColor = .clear
         
-       // transfersTableView.register(TransferTableViewCell.nib(), forCellReuseIdentifier: TransferTableViewCell.identifier)
+        transactionsTableView.register(TransactionTableViewCell.nib(), forCellReuseIdentifier: TransactionTableViewCell.identifier)
         
-        transfersTableView.delegate = self
-        transfersTableView.dataSource = self
+        transactionsTableView.delegate = self
+        transactionsTableView.dataSource = self
         
     }
     
@@ -63,26 +63,26 @@ class TransfersViewController: UIViewController {
         }
     }
     
-    func updateTransfers(_ account: Account) {
-        transfers = Array ( account.transactions as! Set<Transaction> )
+    func updateTransactions(_ account: Account) {
+        transactions = Array ( account.transactions as! Set<Transaction> )
        
-        transfers.sort(){
+        transactions.sort(){
             return $0.date! < $1.date!
         }
     }
     
-    func  updateTransfersTableView( _ account: Account){
-        if transfers.isEmpty {
+    func  updateTransactionsTableView( _ account: Account){
+        if transactions.isEmpty {
             missingTransfersLabel.isHidden = false
-            transfersTableView.isHidden = true
+            transactionsTableView.isHidden = true
         }
         else {
             missingTransfersLabel.isHidden = true
-            transfersTableView.isHidden = false
+            transactionsTableView.isHidden = false
         }
         
         DispatchQueue.main.async {
-            self.transfersTableView.reloadData()
+            self.transactionsTableView.reloadData()
         }
     }
     
@@ -147,23 +147,23 @@ extension TransfersViewController: UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        updateTransfers(accounts[row])
-        updateTransfersTableView(accounts[row])
+        updateTransactions(accounts[row])
+        updateTransactionsTableView(accounts[row])
     }
 }
 
 extension TransfersViewController: UITableViewDelegate {}
 extension TransfersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transfers.count
+        return transactions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = self.transfersTableView.dequeueReusableCell(withIdentifier: TransferTableViewCell.identifier) as? TransferTableViewCell {
-//            cell.selectionStyle = .none
-//            cell.configure()
-//            return cell
-//        }
+        if let cell = self.transactionsTableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.identifier) as? TransactionTableViewCell {
+            cell.selectionStyle = .none
+            cell.configure()
+            return cell
+        }
         return UITableViewCell()
     }
 }

@@ -41,6 +41,8 @@
 		5923D6DF25F115EF00EBA865 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5923D6DE25F115EF00EBA865 /* CreditViewController.swift */; };
 		59298A5E25E3EDD3007F0622 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59298A5D25E3EDD3007F0622 /* CollectionView.swift */; };
 		592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE50A25D3D45D000C99E5 /* Alerts.swift */; };
+		592AE70725F64500003543B7 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592AE70525F64500003543B7 /* TransactionTableViewCell.swift */; };
+		592AE70825F64500003543B7 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592AE70625F64500003543B7 /* TransactionTableViewCell.xib */; };
 		59385FF025CC50A9003600D2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59385FEF25CC50A9003600D2 /* SignUpViewController.swift */; };
 		593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 593AE04E25E692FF00DEB157 /* Home.storyboard */; };
 		593AE05625E6A00200DEB157 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593AE05525E6A00200DEB157 /* HomeTabBarController.swift */; };
@@ -118,6 +120,8 @@
 		5923D6DE25F115EF00EBA865 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		59298A5D25E3EDD3007F0622 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		592AE50A25D3D45D000C99E5 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		592AE70525F64500003543B7 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		592AE70625F64500003543B7 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		59385FEF25CC50A9003600D2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		593AE04E25E692FF00DEB157 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		593AE05525E6A00200DEB157 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 		592AE70425F6447D003543B7 /* TransactionTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				592AE70525F64500003543B7 /* TransactionTableViewCell.swift */,
+				592AE70625F64500003543B7 /* TransactionTableViewCell.xib */,
 			);
 			path = TransactionTableViewCell;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 				5968708B25F29B48001BDE11 /* Deposit.storyboard in Resources */,
 				5923D6DC25F115D000EBA865 /* Credit.storyboard in Resources */,
 				5916FA6A25EA376C0022A4B0 /* Adresses.storyboard in Resources */,
+				592AE70825F64500003543B7 /* TransactionTableViewCell.xib in Resources */,
 				59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */,
 				5904335125EE751500BF5412 /* CardTableViewCell.xib in Resources */,
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
@@ -603,6 +610,7 @@
 				312CE37025F24DF200E477FB /* Organization+CoreDataClass.swift in Sources */,
 				5996B4A525E54C3A00FB0BDB /* Branch+CoreDataClass.swift in Sources */,
 				5996B4A625E54C3A00FB0BDB /* Branch+CoreDataProperties.swift in Sources */,
+				592AE70725F64500003543B7 /* TransactionTableViewCell.swift in Sources */,
 				311D8E5025F0C816005BFB51 /* Transaction+CoreDataProperties.swift in Sources */,
 				31EB9D6825F252F600C53408 /* NewDepositViewController.swift in Sources */,
 				5996B4AD25E54C3A00FB0BDB /* ATM+CoreDataClass.swift in Sources */,

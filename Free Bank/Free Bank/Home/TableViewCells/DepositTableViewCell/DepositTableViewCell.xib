@@ -23,6 +23,11 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="145" id="qDs-9M-wd6"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0001 0060 0100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aj-ZC-YyU">
                         <rect key="frame" x="10" y="15" width="140.5" height="22"/>
@@ -109,7 +114,7 @@
                     <constraint firstItem="E1p-Zh-xvD" firstAttribute="top" secondItem="s9N-NK-LeA" secondAttribute="bottom" constant="5" id="SVh-Jk-Xe4"/>
                     <constraint firstItem="2aj-ZC-YyU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Wgy-9q-hWv"/>
                     <constraint firstItem="s9N-NK-LeA" firstAttribute="bottom" secondItem="zbr-M0-uni" secondAttribute="bottom" id="XAm-GN-baJ"/>
-                    <constraint firstItem="eEN-cg-X57" firstAttribute="top" secondItem="g2t-A5-HCw" secondAttribute="bottom" constant="3.5" id="Z6R-bR-LOx"/>
+                    <constraint firstItem="eEN-cg-X57" firstAttribute="top" secondItem="EEL-db-t4s" secondAttribute="bottom" constant="3.5" id="Z6R-bR-LOx"/>
                     <constraint firstItem="2aj-ZC-YyU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="eOS-aR-Bgw"/>
                     <constraint firstItem="EEL-db-t4s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="jKk-wC-NJp"/>
                     <constraint firstItem="E1p-Zh-xvD" firstAttribute="bottom" secondItem="CzT-iV-hva" secondAttribute="bottom" id="tul-Fx-5xd"/>

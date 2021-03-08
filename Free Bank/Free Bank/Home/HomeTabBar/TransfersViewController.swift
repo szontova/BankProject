@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TransfersViewController: UIViewController {
     
@@ -23,6 +24,21 @@ class TransfersViewController: UIViewController {
     }
     
     @IBAction func addTransaction(_ sender: UIButton) {
+        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        var card: Card?
+        var acc: Account?
+        let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
+        let accRequest = Account.fetchRequest() as NSFetchRequest<Account>
+        do{
+            let items = try context.fetch(cardRequest)
+            let item = try context.fetch(accRequest)
+            card = items.last
+            acc = item.last
+        } catch{
+            print("generation: error in add new branch")
+        }
+        
+        addTransaction(250000, (nil, acc), (card, nil))
     }
 }
 

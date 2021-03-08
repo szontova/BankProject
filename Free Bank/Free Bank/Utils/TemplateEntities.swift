@@ -271,8 +271,43 @@ extension UIViewController {
         
     }
 
-    func addTransaction(){
+    func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)){
+        let newTransaction = Transaction(context: context)
+        let something = "Счёт вне банка"
         
+        newTransaction.idNumber = generationIdTransaction(amount, sender, receiver)
+        newTransaction.amount = amount
+        newTransaction.date = Util.getDate()
+        
+        //find sender
+        //find reciever
+
+        if let cardSender = sender.0 {
+            cardSender.account?.addToTransactions(newTransaction)
+            newTransaction.sender = String(cardSender.idNumber)
+        } else if let accountSender = sender.1 {
+            accountSender.addToTransactions(newTransaction)
+            newTransaction.sender = accountSender.idNumber
+        } else {
+            newTransaction.sender = something
+        }
+        
+        if let cardReceiver = receiver.0 {
+            cardReceiver.account?.addToTransactions(newTransaction)
+            newTransaction.receiver = String(cardReceiver.idNumber)
+        } else if let accountReceiver = receiver.1 {
+            accountReceiver.addToTransactions(newTransaction)
+            newTransaction.receiver = accountReceiver.idNumber
+        } else {
+            newTransaction.receiver = something
+        }
+        
+        print(newTransaction.string())
+        do {
+            context.insert(newTransaction)
+            try context.save()
+        }
+        catch { print("addTransaction: error in add transaction") }
     }
     
     //MARK: -HelperFunctions
@@ -400,7 +435,7 @@ extension UIViewController {
         return id
     }
     
-    func generationIdTransaction (_ amount: Int, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Int64{
+    func generationIdTransaction (_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Int64{
         var id: Int64 = 1_00000
         let transactionRequest = Transaction.fetchRequest() as NSFetchRequest<Transaction>
         do{
@@ -422,7 +457,7 @@ extension UIViewController {
         if sender.1 != nil && receiver.0 != nil { category = 3 }
         if sender.1 != nil && receiver.1 != nil { category = 4 }
         
-        print(category)
+        //print(category)
         
         id += category % 10 * 10000
         
@@ -690,6 +725,16 @@ extension Account{
         if let credit = self.credit {
             result += " credit: \(credit.idNumber)"
         }
+        
+        result += "\nTransactions:\n"
+        if let transactions = self.transactions?.allObjects {
+            for transaction in transactions  {
+                if let trans = transaction as? Transaction {
+                    result += "\t" + String(trans.idNumber) + "\n"
+                }
+            }
+        }
+        
         return result
     }
     
@@ -766,6 +811,7 @@ extension Transaction{
         result += "\n receiver: \(self.receiver ?? "")"
         result += "\n \(String(describing: self.date))"
         
+        result += "\nAccounts:\n"
         if let accounts = self.accounts?.allObjects {
             for account in accounts  {
                 if let acc = account as? Account {

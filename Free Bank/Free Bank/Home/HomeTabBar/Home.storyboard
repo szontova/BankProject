@@ -526,6 +526,7 @@
                         <outlet property="receiverSegmentedControl" destination="FAh-GX-HRx" id="OIg-9u-pVc"/>
                         <outlet property="senderSegmentedControl" destination="Bq4-M6-3Ng" id="tYA-PO-pfU"/>
                         <outlet property="transactionsTableView" destination="7d7-xa-85F" id="kw9-pq-v1e"/>
+                        <segue destination="l9S-W5-hqT" kind="show" identifier="toNewTransactionSegue" id="idr-ee-1Kz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLV-Lw-AKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -628,6 +629,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pT-UB-wYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1078" y="1168"/>
+        </scene>
+        <!--NewTransaction-->
+        <scene sceneID="xkC-ud-NPx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewTransaction" id="l9S-W5-hqT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hQ5-wS-CHc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wvV-Bd-s7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-419" y="1168"/>
         </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="cyv-13-P47">

@@ -56,6 +56,10 @@ class NewTransactionViewController: UIViewController {
             receiverTextField.placeholder = "Введите номер счёта"
         }
     }
+    @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue){
+        guard segue.identifier == "unwindToNewTransactionFromConfirmSegue" else {return}
+        guard let _ = segue.destination as? ConfirmationTransactionViewController else {return}
+    }
     
     @IBAction func continueTransactionButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toConfirmationTransactionSegue", sender: nil)

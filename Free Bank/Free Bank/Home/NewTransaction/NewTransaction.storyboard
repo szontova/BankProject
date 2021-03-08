@@ -263,16 +263,73 @@
         <!--Confirmation Transaction View Controller-->
         <scene sceneID="V6D-U1-dxx">
             <objects>
-                <viewController id="2cm-nA-RGT" customClass="ConfirmationTransactionViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="2cm-nA-RGT" customClass="ConfirmationTransactionViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qi6-MY-6cG">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="tnO-Eo-w6h">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZf-6y-MEn">
+                                <rect key="frame" x="0.0" y="54" width="428" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="oQL-bn-JG4"/>
+                                </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Новый перевод" id="0x1-L9-7Ze">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="lGR-e5-L3R">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1OR-72-2aK">
+                                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="9Sb-Cb-rdC"/>
+                                                    <constraint firstAttribute="height" constant="40" id="iXd-SD-HWH"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="EgM-BQ-17u" kind="unwind" identifier="unwindToNewTransactionFromConfirmSegue" unwindAction="unwindToNewTransactionFromConfirmationTransactionWithSegue:" id="MC4-kY-vNK"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="071-gT-nqv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cZf-6y-MEn" firstAttribute="leading" secondItem="071-gT-nqv" secondAttribute="leading" id="1aw-2G-EtS"/>
+                            <constraint firstItem="cZf-6y-MEn" firstAttribute="top" secondItem="071-gT-nqv" secondAttribute="top" constant="10" id="Hqq-iu-Wky"/>
+                            <constraint firstItem="tnO-Eo-w6h" firstAttribute="trailing" secondItem="071-gT-nqv" secondAttribute="trailing" id="IfV-0r-2qY"/>
+                            <constraint firstItem="tnO-Eo-w6h" firstAttribute="leading" secondItem="071-gT-nqv" secondAttribute="leading" id="QuE-aS-apD"/>
+                            <constraint firstItem="tnO-Eo-w6h" firstAttribute="top" secondItem="Qi6-MY-6cG" secondAttribute="top" id="fIb-Wa-1cq"/>
+                            <constraint firstItem="tnO-Eo-w6h" firstAttribute="bottom" secondItem="Qi6-MY-6cG" secondAttribute="bottom" id="hZ2-4t-8nm"/>
+                            <constraint firstAttribute="trailing" secondItem="cZf-6y-MEn" secondAttribute="trailing" id="pYb-ek-CID"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QQu-Qt-WcS"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="cZf-6y-MEn" id="vkq-d8-rHl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTP-cW-V8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="EgM-BQ-17u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1035" y="150"/>
         </scene>

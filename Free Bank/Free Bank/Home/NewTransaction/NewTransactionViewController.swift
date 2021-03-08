@@ -39,6 +39,12 @@ class NewTransactionViewController: UIViewController {
         
         transparentNavBar(navigationBar)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toConfirmationTransactionSegue" else { return }
+        guard let destinationVC = segue.destination as? ConfirmationTransactionViewController else { return }
+//        destinationVC.setSender(card: <#T##Card?#>, acc: <#T##Account?#>)
+//        destinationVC.setReceiver(card: <#T##Card?#>, acc: <#T##Account?#>)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         //print("\(individual) \(organization) \(senderType) \(receiverType)")

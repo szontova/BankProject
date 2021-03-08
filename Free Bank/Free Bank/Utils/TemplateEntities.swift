@@ -295,6 +295,7 @@ extension UIViewController {
         }
         catch { print("addDeposit: error in add deposit") }
         
+        addTransaction(Int64(amount), (nil, nil), (nil, newAccount))
     }
 
     func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)){

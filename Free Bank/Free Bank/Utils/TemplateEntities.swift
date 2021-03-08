@@ -219,6 +219,17 @@ extension UIViewController {
      
         let newCredit = Credit(context: context)
         let newAccount = Account(context: context)
+        let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
+        var bankAccount: Account?
+        
+        do {
+            let banks = try context.fetch(bankRequest)
+            for bank in banks{
+                bankAccount = bank.account
+            }
+        } catch {
+            print("createBank: error in get bank account")
+        }
         
         newCredit.amount = amount
         newCredit.term = term
@@ -227,7 +238,6 @@ extension UIViewController {
         newCredit.idNumber = generationIdCredit(individ, org, term, amount)
         
         newAccount.idNumber = generationIdAccount("C")
-        newAccount.balance = Int64(amount)
         newCredit.account = newAccount
         
         if let _ = individ {
@@ -247,6 +257,8 @@ extension UIViewController {
             try context.save()
         }
         catch { print("addCredit: error in add credit") }
+        
+        addTransaction(Int64(amount), (nil, bankAccount), (nil, newAccount))
     }
     
     func addDeposit(_ amount: Int64, _ term: Int16, _ procent: Int16, _ date: Date,_ revocable: Bool, _ individ: Individual?, _ org: Organization?){

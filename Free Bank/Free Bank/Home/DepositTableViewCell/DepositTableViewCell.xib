@@ -41,9 +41,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.02.2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-M0-uni">
-                        <rect key="frame" x="271" y="42" width="83" height="21.5"/>
+                        <rect key="frame" x="264" y="42" width="90" height="21.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21.5" id="4iN-Eh-oPD"/>
+                            <constraint firstAttribute="width" constant="90" id="rze-Qs-dGx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,7 +60,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000 BYR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzT-iV-hva">
-                        <rect key="frame" x="271" y="68.5" width="85" height="21.5"/>
+                        <rect key="frame" x="264" y="68.5" width="85" height="21.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21.5" id="lBY-Ct-bTJ"/>
                         </constraints>
@@ -77,7 +78,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="отзывной" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2t-A5-HCw">
-                        <rect key="frame" x="271" y="95" width="80.5" height="21.5"/>
+                        <rect key="frame" x="264" y="95" width="80.5" height="21.5"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21.5" id="uy7-G7-moH"/>
                         </constraints>

@@ -23,13 +23,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
-    private var activeTextField : UITextField? {
-        willSet(newActiveField){
-            print("new")
-//            self.view.frame.origin.y = 0
-//            isMoving = false
-        }
-    }
+    private var activeTextField : UITextField?
     private var isMoving = false
     
     //MARK: - LifeCycleMethods

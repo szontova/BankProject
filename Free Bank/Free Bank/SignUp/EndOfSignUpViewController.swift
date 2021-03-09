@@ -38,12 +38,31 @@ class EndOfSignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 
+    @IBAction func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let bottomOfTextField = codeWordTextField.convert(codeWordTextField.bounds, to: self.view).maxY;
+            
+            let topOfKeyboard = self.view.frame.height - keyboardSize.height
+            
+            let inset =  bottomOfTextField - topOfKeyboard
+            if inset > 0 && self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= (inset + 50)//keyboardSize.height
+            }
+        }
+    }
+
+    @IBAction func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+    
     @IBAction func EndOgSignUpButton(_ sender: Any) {
         let codeWord = codeWordTextField.text ?? ""
         if codeWord.isEmpty {

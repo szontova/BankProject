@@ -343,11 +343,11 @@
 		592AE6FF25F604A8003543B7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				59ED9D8825F7F29C00C43CEE /* FormTableViewCell */,
 				5904330025EE2D5300BF5412 /* AccountTableViewCell */,
 				592AE70425F6447D003543B7 /* TransactionTableViewCell */,
 				59031DB325EF90C700B4DE9D /* CreditTableViewCell */,
 				59B3B2A625F15A6D008BC962 /* DepositTableViewCell */,
+				59ED9D8825F7F29C00C43CEE /* FormTableViewCell */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -501,8 +501,8 @@
 			isa = PBXGroup;
 			children = (
 				59ED9D7225F7DDC400C43CEE /* CreateSalaryProject */,
-				59ED9D7325F7DDE900C43CEE /* PaySalaryProject */,
 				59ED9D7425F7DDF500C43CEE /* ChangeSalaryProject */,
+				59ED9D7325F7DDE900C43CEE /* PaySalaryProject */,
 			);
 			path = SalaryProject;
 			sourceTree = "<group>";

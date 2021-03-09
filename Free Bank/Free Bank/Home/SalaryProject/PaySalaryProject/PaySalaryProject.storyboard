@@ -46,6 +46,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="PnQ-IV-bPZ" kind="unwind" identifier="unwindToOtherFromPaySPSegue" unwindAction="unwindToOtherVCFromPaySPVCWithSegue:" id="VuF-nN-Gf8"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -78,6 +81,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ViL-Z8-Daj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="PnQ-IV-bPZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="320" y="169"/>
         </scene>

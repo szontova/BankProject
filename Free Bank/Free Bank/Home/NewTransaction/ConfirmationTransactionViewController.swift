@@ -22,6 +22,8 @@ class ConfirmationTransactionViewController: UIViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var titleSenderLabel: UILabel!
     @IBOutlet weak var titleReceiverLabel: UILabel!
+    private var amount:Int?
+    private var commission: Int?
     
     private var senderType: (Card?, Account?)
     private var receiverType: (Card?, Account?)
@@ -40,21 +42,32 @@ class ConfirmationTransactionViewController: UIViewController {
         if senderType.0 != nil {
             titleSenderLabel.text = "Номер карты:"
             senderLabel.text = String(senderType.0!.idNumber)
-            balanceLabel.text = String((senderType.0?.account!.balance)!)
+            balanceLabel.text = Util.getIntBYRbyString((senderType.0?.account!.balance)!)
         }else if senderType.1 != nil {
             senderLabel.text = senderType.1?.idNumber
-            balanceLabel.text = "\((senderType.1?.balance)!/100) BYR"
+            balanceLabel.text = Util.getIntBYRbyString((senderType.1?.balance)!)
         }
         
         if receiverType.0 != nil {
             titleReceiverLabel.text = "Номер карты получателя:"
-            receiverLabel.text = "\(receiverType.0!.idNumber/100) BYR"
+            receiverLabel.text = Util.getIntBYRbyString((receiverType.0!.idNumber))
         } else if receiverType.1 != nil { receiverLabel.text = receiverType.1?.idNumber }
         else {
             receiverLabel.text = "Счёт вне банка"
+            commissionLabel.text = Util.getIntBYRbyString(100)
         }
-        
+        amount = (Int.parse(amountTextField.text ?? "0") ?? 0) * 100
+        commission = Int.parse(commissionLabel.text ?? "0") ?? 0
+        totalLabel.text = Util.getIntBYRbyString((amount ?? 0) + (commission ?? 0))
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        amount = (Int.parse(amountTextField.text ?? "0") ?? 0) * 100
+        commission = Int.parse(commissionLabel.text ?? "0") ?? 0
+        totalLabel.text = Util.getIntBYRbyString((amount ?? 0) + (commission ?? 0))
+    }
+    
     @IBAction func confirmTransaction(_ sender: UIButton) {
         
     }

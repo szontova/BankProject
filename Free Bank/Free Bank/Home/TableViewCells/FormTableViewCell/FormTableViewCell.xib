@@ -30,7 +30,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28B-XI-hEY">
-                        <rect key="frame" x="255" y="157" width="60" height="30"/>
+                        <rect key="frame" x="245" y="157" width="60" height="30"/>
                         <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="hXG-Qj-znm"/>
@@ -171,7 +171,7 @@
                     <constraint firstItem="6HX-qV-lWZ" firstAttribute="top" secondItem="hXU-ug-rde" secondAttribute="top" id="JpQ-4a-Pmh"/>
                     <constraint firstItem="hXU-ug-rde" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Nlg-iH-jyB"/>
                     <constraint firstItem="hXU-ug-rde" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" id="Ts3-ka-OHF"/>
-                    <constraint firstAttribute="trailing" secondItem="28B-XI-hEY" secondAttribute="trailing" constant="5" id="caH-9L-ymu"/>
+                    <constraint firstAttribute="trailing" secondItem="28B-XI-hEY" secondAttribute="trailing" constant="15" id="caH-9L-ymu"/>
                     <constraint firstItem="hXU-ug-rde" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="e9E-rs-vWV"/>
                     <constraint firstItem="6HX-qV-lWZ" firstAttribute="leading" secondItem="hXU-ug-rde" secondAttribute="leading" id="lN7-uK-U8O"/>
                     <constraint firstAttribute="bottom" secondItem="28B-XI-hEY" secondAttribute="bottom" constant="47" id="sV3-6I-2jO"/>

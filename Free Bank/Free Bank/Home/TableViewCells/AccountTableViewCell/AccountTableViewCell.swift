@@ -41,7 +41,7 @@ class AccountTableViewCell: UITableViewCell {
         return UINib(nibName: "AccountTableViewCell", bundle: nil)
     }
     
-    public func configure(with account: Account) {
+    public func configure(with account: Account, count: Int) {
         
         switch Util.getAccCategory(account){
         case "C":
@@ -51,6 +51,9 @@ class AccountTableViewCell: UITableViewCell {
         case "S":
             buttonsStackView.isHidden = false
             deactivationButton.isHidden = false
+            if count == 1 {
+                deactivationButton.isHidden = true
+            }
         default: break
         }
             

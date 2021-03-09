@@ -306,7 +306,11 @@ extension AccountsViewController: UITableViewDataSource {
             
             cell.cellDelegate = self
             cell.selectionStyle = .none
-            cell.configure(with: getAccount(row: indexPath.row, section: indexPath.section))
+            
+            let acc = getAccount(row: indexPath.row, section: indexPath.section)
+            var count = 0
+            if Util.getAccCategory(acc) == "S" { count = simpleAccounts.count}
+            cell.configure(with: acc, count: count)
             return cell
             
         }

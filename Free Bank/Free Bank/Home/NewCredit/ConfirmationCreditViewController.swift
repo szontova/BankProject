@@ -40,7 +40,7 @@ class ConfirmationCreditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
-        amountLabel.text = "\((amount ?? 0)/100) BYR"
+        amountLabel.text = Util.getIntBYRbyString(amount ?? 0)
         termLabel.text = "\(term ?? 0) месяцев"
         let monthlyPay = Util.calculateMonthlyPay(amount: amount!, term: term!, procent: 13)
         

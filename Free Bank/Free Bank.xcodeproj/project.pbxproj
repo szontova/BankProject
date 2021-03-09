@@ -198,10 +198,10 @@
 		3148234B25D6CED1008288FC /* Static Pages */ = {
 			isa = PBXGroup;
 			children = (
-				5916FA6825EA37380022A4B0 /* Addresses */,
 				596A697E25DE70F90068099E /* CollectionView */,
 				3148234C25D6CF79008288FC /* Exchange Rate */,
 				59DFC2A225E77D17000EDCF9 /* BankInfo */,
+				5916FA6825EA37380022A4B0 /* Addresses */,
 				59DFC2AD25E783E7000EDCF9 /* Contacts */,
 			);
 			path = "Static Pages";
@@ -327,9 +327,9 @@
 		592AE6FF25F604A8003543B7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				5904330025EE2D5300BF5412 /* AccountTableViewCell */,
 				592AE70425F6447D003543B7 /* TransactionTableViewCell */,
 				59031DB325EF90C700B4DE9D /* CreditTableViewCell */,
-				5904330025EE2D5300BF5412 /* AccountTableViewCell */,
 				59B3B2A625F15A6D008BC962 /* DepositTableViewCell */,
 			);
 			path = TableViewCells;
@@ -357,14 +357,14 @@
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				592AE70D25F652EE003543B7 /* NewTransaction */,
-				592AE6FF25F604A8003543B7 /* TableViewCells */,
 				31C1A60F25F125D5001C6C14 /* HomeTabBar */,
-				59FC3A3825F247080019EE72 /* NewDeposit */,
-				311E330C25EE2A510048C231 /* NewCredit */,
 				5904330A25EE4C3F00BF5412 /* Cards */,
-				5968708525F29B26001BDE11 /* Deposit */,
+				592AE70D25F652EE003543B7 /* NewTransaction */,
 				5923D6D925F1151900EBA865 /* Credit */,
+				311E330C25EE2A510048C231 /* NewCredit */,
+				5968708525F29B26001BDE11 /* Deposit */,
+				59FC3A3825F247080019EE72 /* NewDeposit */,
+				592AE6FF25F604A8003543B7 /* TableViewCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";

@@ -97,3 +97,11 @@ extension NewTransactionViewController: OrgIndivid{
         self.organization = org
     }
 }
+
+extension NewTransactionViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}

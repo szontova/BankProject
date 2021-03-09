@@ -189,7 +189,7 @@ extension TransfersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.transactionsTableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.identifier) as? TransactionTableViewCell {
             cell.selectionStyle = .none
-            cell.configure()
+            cell.configure(transactions[indexPath.row])
             return cell
         }
         return UITableViewCell()

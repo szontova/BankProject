@@ -9,6 +9,12 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var idNumberLabel: UILabel!
+    @IBOutlet weak var senderLabel: UILabel!
+    @IBOutlet weak var receiverLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     static let identifier = "transactionCell"
     
     static func nib() -> UINib {
@@ -25,8 +31,32 @@ class TransactionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     public func configure(){
         
+    }
+    
+    public func configure(_ transaction: Transaction){
+        idNumberLabel.text = String(transaction.idNumber)
+        
+        if let sendString = transaction.sender{
+            if let sender = Int(sendString) {
+                senderLabel.text = "Карта: \(sender)"
+            } else {
+                senderLabel.text = "Счёт: \(sendString)"
+            }
+        }
+        
+        if let recString = transaction.receiver {
+            if let receiver = Int(recString) {
+                receiverLabel.text = "Карта: \(receiver)"
+            } else {
+                receiverLabel.text = "Счёт: \(recString)"
+            }
+        }
+        amountLabel.text = Util.getIntBYRbyString(transaction.amount)
+        
+        dateLabel.text = Util.getddMMyyyyDateString(transaction.date!)
     }
     
 }

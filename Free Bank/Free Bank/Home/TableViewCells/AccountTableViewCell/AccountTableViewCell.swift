@@ -46,6 +46,7 @@ class AccountTableViewCell: UITableViewCell {
         switch Util.getAccCategory(account){
         case "C":
             deactivationButton.isHidden = true
+            buttonsStackView.isHidden = false
         case "D":
             buttonsStackView.isHidden = true
         case "S":

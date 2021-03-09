@@ -312,7 +312,7 @@ extension UIViewController {
         addTransaction(Int64(amount), (nil, nil), (nil, newAccount))
     }
 
-    func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)){
+    func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Bool{
         let newTransaction = Transaction(context: context)
         let something = "Счёт вне банка"
         var allow = false
@@ -327,14 +327,18 @@ extension UIViewController {
                 cardSender.account?.addToTransactions(newTransaction)
                 newTransaction.sender = String(cardSender.idNumber)
                 allow = true
-            } else { showAlertMessage(message: "Недостаточно средств.") }
+            } else {
+                showAlertMessage(message: "Недостаточно средств.")
+            }
         } else if let accountSender = sender.1 {
             if checkAccountBalance(amount, (sender.1?.balance)!) {
                 accountSender.balance = accountSender.balance - amount
                 accountSender.addToTransactions(newTransaction)
                 newTransaction.sender = accountSender.idNumber
                 allow = true
-            } else { showAlertMessage(message: "Недостаточно средств.") }
+            } else {
+                showAlertMessage(message: "Недостаточно средств.")
+            }
         } else {
             newTransaction.sender = something
         }
@@ -367,6 +371,7 @@ extension UIViewController {
             try context.save()
         }
         catch { print("addTransaction: error in add transaction") }
+        return allow
     }
     
     //MARK: -HelperFunctions

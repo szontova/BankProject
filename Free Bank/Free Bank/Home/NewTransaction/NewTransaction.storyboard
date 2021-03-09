@@ -546,6 +546,7 @@
                         <outlet property="titleReceiverLabel" destination="TYA-L5-mO8" id="nxC-GI-Fh3"/>
                         <outlet property="titleSenderLabel" destination="Bsd-sj-YFW" id="IIs-r4-Nn0"/>
                         <outlet property="totalLabel" destination="jcV-aw-j1n" id="8lo-ap-kfF"/>
+                        <segue destination="EgM-BQ-17u" kind="unwind" identifier="unwindToTransactionsFromConfirmTransactionSegue" animates="NO" unwindAction="unwindToTransactionsVCFromConfirmTransactionVCWithSegue:" id="0iv-ah-V7p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTP-cW-V8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

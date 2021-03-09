@@ -51,7 +51,7 @@ class ConfirmationTransactionViewController: UIViewController {
         
         if receiverType.0 != nil {
             titleReceiverLabel.text = "Номер карты получателя:"
-            receiverLabel.text = Util.getIntBYRbyString((receiverType.0!.idNumber))
+            receiverLabel.text = String(receiverType.0!.idNumber)
         } else if receiverType.1 != nil { receiverLabel.text = receiverType.1?.idNumber }
         else {
             receiverLabel.text = "Счёт вне банка"
@@ -71,10 +71,17 @@ class ConfirmationTransactionViewController: UIViewController {
     }
     
     @IBAction func confirmTransaction(_ sender: UIButton) {
+        amount = (Int.parse(amountTextField.text ?? "0") ?? 0) * 100
+        commission = Int.parse(commissionLabel.text ?? "0") ?? 0
+        total = Int64((amount ?? 0) + (commission ?? 0))
+        totalLabel.text = Util.getIntBYRbyString(total ?? 0)
         if (amount ?? 0) < 100 || (amount ?? 0) > 250000 {
             showAlertError(message: "Неверно введена сумма.")
         } else {
-            addTransaction((total ?? 0), senderType, receiverType)
+            if addTransaction((total ?? 0), senderType, receiverType)
+            {
+            performSegue(withIdentifier: "unwindToTransactionsFromConfirmTransactionSegue", sender: nil)
+            }
         }
     }
     

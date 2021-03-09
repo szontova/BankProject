@@ -82,7 +82,8 @@ class AccountsViewController: UIViewController {
        // print(depositAccounts)
        // print(creditAccounts)
     }
-
+    //MARK:-@IBActions
+    
     @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToAccFromAccCardsSegue" else {return}
         guard let _ = segue.destination as? CardsViewController else {return}
@@ -147,20 +148,35 @@ extension AccountsViewController: UITableViewDelegate {}
 extension AccountsViewController: UITableViewDataSource {
     
     func setCountOfSection() -> Int {
-        if creditAccounts.count == 0 && depositAccounts.count == 0{
-            return 1
-        }
-         else if creditAccounts.count == 0 || depositAccounts.count == 0{
-            return 2
-        }
-        else {
-            return 3
-        }
+        if creditAccounts.isEmpty && depositAccounts.isEmpty { return 1 }
+        else if creditAccounts.isEmpty || depositAccounts.isEmpty { return 2 }
+        else { return 3 }
     }
     
-    //MARK: tableView return count of sections
+    func getAccount (row: Int, section: Int) -> Account{
+        var acc: Account = accounts[0]
+        if setCountOfSection() == 2 {
+            if depositAccounts.count != 0 {
+                if section == 0 { acc = depositAccounts[row]}
+                else { acc = simpleAccounts[row] }
+            }
+            else {
+                if section == 0 { acc = creditAccounts[row]}
+                else { acc = simpleAccounts[row] }
+            }
+        } else if setCountOfSection() == 3 {
+            if section == 0 { acc = creditAccounts[row] }
+            if section == 1 { acc = depositAccounts[row] }
+            if section == 2 { acc = simpleAccounts[row] }
+        }
+        else { acc = simpleAccounts[row] }
+        return acc
+    }
+    
+    //MARK: CountOfSections
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         let label = UILabel()
         label.backgroundColor = UIColor.init(red: 181/255, green: 150/255, blue: 142/255, alpha: 1.0)
         label.textColor = UIColor.white
@@ -168,20 +184,21 @@ extension AccountsViewController: UITableViewDataSource {
         label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
+        
         switch setCountOfSection() {
         case 1:
-            if section == 0 {label.text = "Расчетные счета"}
+            if section == 0 { label.text = "Расчетные счета" }
         case 2:
-            if depositAccounts.count != 0{
+            if depositAccounts.count != 0 {
                 label.text = section == 0 ? "Депозитные счета" : "Расчетные счета"
             }
-            else{
+            else {
                 label.text = section == 0 ? "Кредитные счета" : "Расчетные счета"
             }
         case 3:
-            if section == 0 {label.text = "Кредитные счета"}
-            if section == 1 {label.text = "Депозитные счета"}
-            if section == 2 {label.text = "Расчетные счета"}
+            if section == 0 { label.text = "Кредитные счета" }
+            if section == 1 { label.text = "Депозитные счета" }
+            if section == 2 { label.text = "Расчетные счета" }
         default:
             print("Error in show section in AccountsViewController")
         }
@@ -192,7 +209,7 @@ extension AccountsViewController: UITableViewDataSource {
         return setCountOfSection()
     }
     
-    //MARK: tableView return count of cells
+    //MARK: CountOfCells
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if setCountOfSection() == 2 {
@@ -214,54 +231,41 @@ extension AccountsViewController: UITableViewDataSource {
         return simpleAccounts.count
     }
     
-    //MARK: tableView Cell
+    //MARK: TableViewCell
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = self.accountsTableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier) as? AccountTableViewCell {
-            cell.selectionStyle = .none
             
-            if setCountOfSection() == 2 {
-                if depositAccounts.count != 0 {
-                    if indexPath.section == 0 { cell.configure(with: depositAccounts[indexPath.row]) }
-                    else { cell.configure(with: simpleAccounts[indexPath.row]) }
-                }
-                else {
-                        if indexPath.section == 0 { cell.configure(with: creditAccounts[indexPath.row]) }
-                        else { cell.configure(with: simpleAccounts[indexPath.row]) }
-                }
-            } else if setCountOfSection() == 3 {
-                if indexPath.section == 0 { cell.configure(with: creditAccounts[indexPath.row]) }
-                if indexPath.section == 1 { cell.configure(with: depositAccounts[indexPath.row]) }
-                if indexPath.section == 2 { cell.configure(with: simpleAccounts[indexPath.row]) }
-            }
-            else {
-                cell.configure(with: accounts[indexPath.row])
-            }
+            cell.cellDelegate = self
+            cell.selectionStyle = .none
+            cell.configure(with: getAccount(row: indexPath.row, section: indexPath.section))
             return cell
+            
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if setCountOfSection() == 2 {
-            if depositAccounts.count != 0 {
-                if indexPath.section == 0 { accountForTransfer = depositAccounts[indexPath.row]}
-                else { accountForTransfer = simpleAccounts[indexPath.row] }
-            }
-            else {
-                if indexPath.section == 0 { accountForTransfer = creditAccounts[indexPath.row]}
-                else { accountForTransfer = simpleAccounts[indexPath.row] }
-            }
-        } else if setCountOfSection() == 3 {
-            if indexPath.section == 0 { accountForTransfer = creditAccounts[indexPath.row] }
-            if indexPath.section == 1 { accountForTransfer = depositAccounts[indexPath.row] }
-            if indexPath.section == 2 { accountForTransfer = simpleAccounts[indexPath.row] }
-        }
-        else { accountForTransfer = simpleAccounts[indexPath.row] }
-        //accountForTransfer = accounts[indexPath.row]
+        
+        accountForTransfer = getAccount(row: indexPath.row, section: indexPath.section)
+        
         if Util.getAccCategory(accountForTransfer!) != "D" {
             performSegue(withIdentifier: "toCardsSegue", sender: nil)
         }
     }
+    
+}
+
+//MARK: Cell Delegate
+extension AccountsViewController: AccountTableViewCellDelegate {
+    func addMoney(cell: AccountTableViewCell, didTappedThe button: UIButton?) {
+        guard let indexPath = accountsTableView.indexPath(for: cell) else  { return }
+        getAccount(row: indexPath.row, section: indexPath.section)
+    }
+    func deactivateAccount(cell: AccountTableViewCell, didTappedThe button: UIButton?) {
+        guard let indexPath = accountsTableView.indexPath(for: cell) else  { return }
+        showAlertError(message: "Ячейка номер \(indexPath.row) секция: \(indexPath.section)")
+    }
+    
 }

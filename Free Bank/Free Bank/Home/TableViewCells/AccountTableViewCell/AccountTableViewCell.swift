@@ -7,6 +7,12 @@
 
 import UIKit
 
+//Protocol declaration
+protocol AccountTableViewCellDelegate:class {
+    func addMoney(cell:AccountTableViewCell, didTappedThe button:UIButton?)
+    func deactivateAccount(cell:AccountTableViewCell, didTappedThe button:UIButton?)
+}
+
 class AccountTableViewCell: UITableViewCell {
 
    
@@ -19,6 +25,7 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var deactivationButton: UIButton!
     @IBOutlet weak var moreImageView: UIImageView!
     
+    weak var cellDelegate: AccountTableViewCellDelegate?
     
     static let identifier = "accountCell"
     
@@ -55,11 +62,11 @@ class AccountTableViewCell: UITableViewCell {
     }
     
     @IBAction func topUpAccBalance(_ sender: UIButton) {
-        print("Yes")
+        cellDelegate?.addMoney(cell: self, didTappedThe: sender)
     }
     
     @IBAction func deactivationAcc(_ sender: UIButton) {
-        print("No")
+        cellDelegate?.deactivateAccount(cell: self, didTappedThe: sender)
     }
     
 }

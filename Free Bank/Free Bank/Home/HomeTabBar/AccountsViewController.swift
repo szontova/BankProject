@@ -84,7 +84,7 @@ class AccountsViewController: UIViewController {
     }
     
     func showATMAlert( acc: Account) {
-        let alert = UIAlertController(title: "Банкомат", message: "Так как у нашего банка пока нет реальных банкоматов, вы можете положить деньги здесь. Введите необходимую сумму и она зачислится на данный счёт. Ввведите сумму до 2500 BYR.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Банкомат", message: "Так как у нашего банка пока нет реальных банкоматов, вы можете положить деньги здесь. Введите необходимую сумму и она зачислится на данный счёт. Введите сумму до 2500 BYR.", preferredStyle: .alert)
       
         alert.view.tintColor = UIColor.black
         

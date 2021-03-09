@@ -84,6 +84,12 @@
 		59DFC2D025E7DE62000EDCF9 /* EndOfSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DFC2CF25E7DE62000EDCF9 /* EndOfSignUpViewController.swift */; };
 		59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */; };
 		59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */; };
+		59ED9D7625F7DEB200C43CEE /* CreateSalaryProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED9D7525F7DEB200C43CEE /* CreateSalaryProjectViewController.swift */; };
+		59ED9D7925F7DED300C43CEE /* PaySalaryProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED9D7825F7DED300C43CEE /* PaySalaryProjectViewController.swift */; };
+		59ED9D7C25F7DEEC00C43CEE /* ChangeSalaryProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED9D7B25F7DEEC00C43CEE /* ChangeSalaryProjectViewController.swift */; };
+		59ED9D7F25F7DF0900C43CEE /* CreateSalaryProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ED9D7E25F7DF0900C43CEE /* CreateSalaryProject.storyboard */; };
+		59ED9D8225F7DF2000C43CEE /* PaySalaryProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ED9D8125F7DF2000C43CEE /* PaySalaryProject.storyboard */; };
+		59ED9D8525F7DF3700C43CEE /* ChangeSalaryProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ED9D8425F7DF3700C43CEE /* ChangeSalaryProject.storyboard */; };
 		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
 		59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */; };
 		59FC3A4525F24DB20019EE72 /* ConfirmationDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */; };
@@ -168,6 +174,12 @@
 		59DFC2CF25E7DE62000EDCF9 /* EndOfSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfSignUpViewController.swift; sourceTree = "<group>"; };
 		59E5DAAA25CD8D0400354F4B /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		59E5DAAE25CD8DA700354F4B /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		59ED9D7525F7DEB200C43CEE /* CreateSalaryProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSalaryProjectViewController.swift; sourceTree = "<group>"; };
+		59ED9D7825F7DED300C43CEE /* PaySalaryProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaySalaryProjectViewController.swift; sourceTree = "<group>"; };
+		59ED9D7B25F7DEEC00C43CEE /* ChangeSalaryProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSalaryProjectViewController.swift; sourceTree = "<group>"; };
+		59ED9D7E25F7DF0900C43CEE /* CreateSalaryProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateSalaryProject.storyboard; sourceTree = "<group>"; };
+		59ED9D8125F7DF2000C43CEE /* PaySalaryProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaySalaryProject.storyboard; sourceTree = "<group>"; };
+		59ED9D8425F7DF3700C43CEE /* ChangeSalaryProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeSalaryProject.storyboard; sourceTree = "<group>"; };
 		59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEntities.swift; sourceTree = "<group>"; };
 		59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewDeposit.storyboard; sourceTree = "<group>"; };
 		59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +369,7 @@
 		593AE04D25E6909700DEB157 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				59ED9D7125F7DDAE00C43CEE /* SalaryProject */,
 				31C1A60F25F125D5001C6C14 /* HomeTabBar */,
 				5904330A25EE4C3F00BF5412 /* Cards */,
 				592AE70D25F652EE003543B7 /* NewTransaction */,
@@ -479,6 +492,43 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		59ED9D7125F7DDAE00C43CEE /* SalaryProject */ = {
+			isa = PBXGroup;
+			children = (
+				59ED9D7225F7DDC400C43CEE /* CreateSalaryProject */,
+				59ED9D7325F7DDE900C43CEE /* PaySalaryProject */,
+				59ED9D7425F7DDF500C43CEE /* ChangeSalaryProject */,
+			);
+			path = SalaryProject;
+			sourceTree = "<group>";
+		};
+		59ED9D7225F7DDC400C43CEE /* CreateSalaryProject */ = {
+			isa = PBXGroup;
+			children = (
+				59ED9D7E25F7DF0900C43CEE /* CreateSalaryProject.storyboard */,
+				59ED9D7525F7DEB200C43CEE /* CreateSalaryProjectViewController.swift */,
+			);
+			path = CreateSalaryProject;
+			sourceTree = "<group>";
+		};
+		59ED9D7325F7DDE900C43CEE /* PaySalaryProject */ = {
+			isa = PBXGroup;
+			children = (
+				59ED9D8125F7DF2000C43CEE /* PaySalaryProject.storyboard */,
+				59ED9D7825F7DED300C43CEE /* PaySalaryProjectViewController.swift */,
+			);
+			path = PaySalaryProject;
+			sourceTree = "<group>";
+		};
+		59ED9D7425F7DDF500C43CEE /* ChangeSalaryProject */ = {
+			isa = PBXGroup;
+			children = (
+				59ED9D8425F7DF3700C43CEE /* ChangeSalaryProject.storyboard */,
+				59ED9D7B25F7DEEC00C43CEE /* ChangeSalaryProjectViewController.swift */,
+			);
+			path = ChangeSalaryProject;
+			sourceTree = "<group>";
+		};
 		59FC3A3825F247080019EE72 /* NewDeposit */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +603,7 @@
 				592AE70825F64500003543B7 /* TransactionTableViewCell.xib in Resources */,
 				59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */,
 				5904335125EE751500BF5412 /* CardTableViewCell.xib in Resources */,
+				59ED9D7F25F7DF0900C43CEE /* CreateSalaryProject.storyboard in Resources */,
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
 				596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */,
 				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,
@@ -560,12 +611,14 @@
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
 				597D66AE25C80FA40051E84A /* Main.storyboard in Resources */,
+				59ED9D8225F7DF2000C43CEE /* PaySalaryProject.storyboard in Resources */,
 				311E330E25EE2A8C0048C231 /* NewCredit.storyboard in Resources */,
 				5904330425EE2D8C00BF5412 /* AccountTableViewCell.xib in Resources */,
 				59DFC2B725E784EC000EDCF9 /* Contacts.storyboard in Resources */,
 				59B3B2AA25F15A8A008BC962 /* DepositTableViewCell.xib in Resources */,
 				3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */,
 				5904330C25EE4C6700BF5412 /* Cards.storyboard in Resources */,
+				59ED9D8525F7DF3700C43CEE /* ChangeSalaryProject.storyboard in Resources */,
 				592AE71225F65426003543B7 /* NewTransaction.storyboard in Resources */,
 				593AE04F25E692FF00DEB157 /* Home.storyboard in Resources */,
 			);
@@ -600,10 +653,13 @@
 				592AE50B25D3D45D000C99E5 /* Alerts.swift in Sources */,
 				3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */,
 				5904330325EE2D8C00BF5412 /* AccountTableViewCell.swift in Sources */,
+				59ED9D7625F7DEB200C43CEE /* CreateSalaryProjectViewController.swift in Sources */,
+				59ED9D7925F7DED300C43CEE /* PaySalaryProjectViewController.swift in Sources */,
 				3153816025F0EDB500659252 /* Credit+CoreDataClass.swift in Sources */,
 				5996B4AE25E54C3A00FB0BDB /* ATM+CoreDataProperties.swift in Sources */,
 				59A42D1925ED2D0B002C8EF9 /* DesignFunctions.swift in Sources */,
 				59A42D1225ECE407002C8EF9 /* CreditsViewController.swift in Sources */,
+				59ED9D7C25F7DEEC00C43CEE /* ChangeSalaryProjectViewController.swift in Sources */,
 				5916FA7225EA679D0022A4B0 /* OtherPageHomeViewController.swift in Sources */,
 				5904330F25EE4D9000BF5412 /* CardsViewController.swift in Sources */,
 				5923D6DF25F115EF00EBA865 /* CreditViewController.swift in Sources */,

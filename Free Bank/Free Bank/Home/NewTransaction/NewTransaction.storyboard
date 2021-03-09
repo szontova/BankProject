@@ -388,8 +388,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер счёта: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYA-L5-mO8">
-                                        <rect key="frame" x="15" y="97.666666666666686" width="116" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер счёта получателя: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYA-L5-mO8">
+                                        <rect key="frame" x="15" y="97.666666666666686" width="216" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="PjI-JZ-SwK"/>
                                         </constraints>
@@ -501,6 +501,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="confirmTransaction:" destination="2cm-nA-RGT" eventType="touchUpInside" id="GK9-rt-Npf"/>
                                     <action selector="continueTransactionButton:" destination="EWw-6t-fl0" eventType="touchUpInside" id="mcK-aY-qpB"/>
                                 </connections>
                             </button>
@@ -533,7 +534,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="QQu-Qt-WcS"/>
                     <connections>
+                        <outlet property="amountTextField" destination="W7x-T3-DpP" id="odo-RH-mQn"/>
+                        <outlet property="balanceLabel" destination="N3J-fg-JDk" id="STq-xE-txd"/>
+                        <outlet property="commissionLabel" destination="7LX-h1-E3r" id="rhl-Vw-ytr"/>
                         <outlet property="navigationBar" destination="cZf-6y-MEn" id="vkq-d8-rHl"/>
+                        <outlet property="receiverLabel" destination="glV-hf-21h" id="eKW-4y-EPc"/>
+                        <outlet property="senderLabel" destination="B0b-fT-gEE" id="sMk-CS-qx3"/>
+                        <outlet property="titleReceiverLabel" destination="TYA-L5-mO8" id="nxC-GI-Fh3"/>
+                        <outlet property="titleSenderLabel" destination="Bsd-sj-YFW" id="IIs-r4-Nn0"/>
+                        <outlet property="totalLabel" destination="jcV-aw-j1n" id="8lo-ap-kfF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTP-cW-V8X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

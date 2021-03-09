@@ -25,6 +25,7 @@ class NewTransactionViewController: UIViewController {
     private var organization: Organization?
     private var senderType: (Bool, Bool) = (false,false)
     private var receiverType: (Bool, Bool) = (false,false)
+    private var account: Account?
     
     private var accounts: [Account] = []
     
@@ -36,6 +37,10 @@ class NewTransactionViewController: UIViewController {
         self.receiverType = (card, acc)
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        account = accounts[row]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,9 +50,9 @@ class NewTransactionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toConfirmationTransactionSegue" else { return }
-        guard let _ = segue.destination as? ConfirmationTransactionViewController else { return }
-//        destinationVC.setSender(card: <#T##Card?#>, acc: <#T##Account?#>)
-//        destinationVC.setReceiver(card: <#T##Card?#>, acc: <#T##Account?#>)
+        guard let destinationVC = segue.destination as? ConfirmationTransactionViewController else { return }
+        destinationVC.setSender(card: findCard(by: (senderCardNumberTextField.text)!), acc: account)
+        destinationVC.setReceiver(card: findCard(by: (receiverTextField.text)!), acc: findAccount(by: (receiverTextField.text)!))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +62,7 @@ class NewTransactionViewController: UIViewController {
             accountView.isHidden = false
             updateAccounts()
             senderAccountPickerViewConfigurations()
+            account = accounts[0]
         } else {
             cardView.isHidden = false
             accountView.isHidden = true

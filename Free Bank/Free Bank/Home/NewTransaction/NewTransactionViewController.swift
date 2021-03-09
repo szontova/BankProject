@@ -64,6 +64,7 @@ class NewTransactionViewController: UIViewController {
         
         if receiverType.0 {
             receiverTextField.placeholder = "Введите номер карты"
+            receiverTextField.keyboardType = .numberPad
         } else {
             receiverTextField.placeholder = "Введите номер счёта"
         }
@@ -106,14 +107,12 @@ class NewTransactionViewController: UIViewController {
         if senderType.0 {
             result = findCard(by: senderCardNumberTextField.text!) != nil ? true : false
             print(result)
+            if senderCardNumberTextField.text == "" || senderCardValidity.text == "" || senderCardCVV.text == "" { result = false }
         }
-//        if senderType.1 {
-//           // result = findAccount(by: senderAccountTextField.text!) != nil ? true : false
-//            print(result)
-//        }
+        if receiverTextField.text == "" { result = false }
         if result {
             performSegue(withIdentifier: "toConfirmationTransactionSegue", sender: nil)
-        } else {showAlertError(message: "Неверно введены данные отправителя.")}
+        } else {showAlertError(message: "Неверные данные для проведения операции.")}
     }
 }
 

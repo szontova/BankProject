@@ -24,6 +24,7 @@ class ConfirmationTransactionViewController: UIViewController {
     @IBOutlet weak var titleReceiverLabel: UILabel!
     private var amount:Int?
     private var commission: Int?
+    private var total: Int64?
     
     private var senderType: (Card?, Account?)
     private var receiverType: (Card?, Account?)
@@ -65,11 +66,16 @@ class ConfirmationTransactionViewController: UIViewController {
         self.view.endEditing(true)
         amount = (Int.parse(amountTextField.text ?? "0") ?? 0) * 100
         commission = Int.parse(commissionLabel.text ?? "0") ?? 0
-        totalLabel.text = Util.getIntBYRbyString((amount ?? 0) + (commission ?? 0))
+        total = Int64((amount ?? 0) + (commission ?? 0))
+        totalLabel.text = Util.getIntBYRbyString(total ?? 0)
     }
     
     @IBAction func confirmTransaction(_ sender: UIButton) {
-        
+        if (amount ?? 0) < 100 || (amount ?? 0) > 250000 {
+            showAlertError(message: "Неверно введена сумма.")
+        } else {
+            addTransaction((total ?? 0), senderType, receiverType)
+        }
     }
     
 }

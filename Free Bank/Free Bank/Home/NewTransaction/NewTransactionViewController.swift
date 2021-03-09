@@ -21,6 +21,8 @@ class NewTransactionViewController: UIViewController {
     
     @IBOutlet weak var receiverTextField: UITextField!
     
+    private var activeTextField : UITextField?
+    
     private var individual: Individual?
     private var organization: Organization?
     private var senderType: (Bool, Bool) = (false,false)
@@ -46,7 +48,36 @@ class NewTransactionViewController: UIViewController {
         
         transparentNavBar(navigationBar)
         senderAccountPickerViewConfigurations()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    @IBAction func keyboardWillShow(notification: NSNotification) {
+        var shouldMoveViewUp = false
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if let activeTextField = activeTextField {
+                
+                let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+                
+                let topOfKeyboard = self.view.frame.height - keyboardSize.height
+                
+                let inset =  bottomOfTextField - topOfKeyboard
+                if inset > 0 { shouldMoveViewUp = true }
+                
+                if shouldMoveViewUp {
+                    self.view.frame.origin.y -= (inset + 15)//keyboardSize.height
+                }
+            
+            }
+        }
+    }
+
+    @IBAction func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toConfirmationTransactionSegue" else { return }
@@ -136,6 +167,14 @@ extension NewTransactionViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      self.activeTextField = nil
     }
     
 }

@@ -33,7 +33,7 @@ class CreateSalaryProjectViewController: UIViewController {
         
         formsTableView.backgroundColor = .clear
         
-        //formsTableView.register(FormTableViewCell.nib(), forCellReuseIdentifier: FormTableViewCell.identifier)
+        formsTableView.register(FormTableViewCell.nib(), forCellReuseIdentifier: FormTableViewCell.identifier)
         
         formsTableView.delegate = self
         formsTableView.dataSource = self
@@ -70,11 +70,11 @@ extension CreateSalaryProjectViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = self.formsTableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier) as? FormTableViewCell {
-//            cell.selectionStyle = .none
-//            cell.configure()
-//            return cell
-//        }
+        if let cell = self.formsTableView.dequeueReusableCell(withIdentifier: FormTableViewCell.identifier) as? FormTableViewCell {
+            cell.selectionStyle = .none
+            cell.configure()
+            return cell
+        }
         return UITableViewCell()
     }
 }

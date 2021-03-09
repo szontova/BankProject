@@ -768,6 +768,18 @@ extension Organization {
 }
 
 extension Account{
+    func topUpAccountBalance (amount: Int64){
+        let newBalance = self.balance + amount
+        if newBalance < 10000000 {
+            self.balance = newBalance
+            do { try context.save() }
+            catch { print("topUpAccountBalance: error save context") }
+        } else {
+            print("topUpAccountBalance: limit reached")
+            
+        }
+        
+    }
     
     func string() -> String{
         let null = "Nothing"

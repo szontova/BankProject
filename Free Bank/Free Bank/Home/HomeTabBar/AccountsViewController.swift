@@ -261,11 +261,53 @@ extension AccountsViewController: UITableViewDataSource {
 extension AccountsViewController: AccountTableViewCellDelegate {
     func addMoney(cell: AccountTableViewCell, didTappedThe button: UIButton?) {
         guard let indexPath = accountsTableView.indexPath(for: cell) else  { return }
-        getAccount(row: indexPath.row, section: indexPath.section)
+      
+        let alert = UIAlertController(title: "Банкомат", message: "Так как у нашего банка пока нет реальных банкоматов, вы можете положить деньги здесь. Введите необходимую сумму и она зачислится на данный счёт. Ввведите сумму до 2500 BYR.", preferredStyle: .alert)
+      
+        alert.view.tintColor = UIColor.black
+        
+        alert.addTextField(configurationHandler: {
+            (textField) in
+            textField.placeholder = "Введите сумму BYR"
+            textField.keyboardType = .numberPad
+            textField.borderStyle = UITextField.BorderStyle.roundedRect
+        })
+        
+        for textField in alert.textFields! {
+            let container = textField.superview
+            let effectView = container?.superview?.subviews[0]
+            if (effectView != nil) {
+                container?.backgroundColor = UIColor.clear
+                effectView?.removeFromSuperview()
+            }
+        }
+        
+        let okAction = UIAlertAction(title: "Зачислить", style: .default){ _ in
+            let amount = (Int64(alert.textFields![0].text ?? "") ?? 0 ) * 100
+            if amount > 250000 { self.showAlertError(message: "Сумма не должна превышать 2500 BYR")
+            }
+            else {
+                self.getAccount(row: indexPath.row, section: indexPath.section).topUpAccountBalance(amount: amount)
+                self.updateAccounts()
+                DispatchQueue.main.async {
+                    self.accountsTableView.reloadData()
+                }
+            }
+           
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+                
+        present(alert, animated: true, completion: nil)
+
     }
     func deactivateAccount(cell: AccountTableViewCell, didTappedThe button: UIButton?) {
         guard let indexPath = accountsTableView.indexPath(for: cell) else  { return }
-        showAlertError(message: "Ячейка номер \(indexPath.row) секция: \(indexPath.section)")
+        _ = getAccount(row: indexPath.row, section: indexPath.section)
+        
     }
     
 }

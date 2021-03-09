@@ -35,6 +35,7 @@ class TransansactionsViewController: UIViewController {
         updateAccounts()
         updateTransactions(accounts[0])
         updateTransactionsTableView(accounts[0])
+        accountsPickerViewConfigurations()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

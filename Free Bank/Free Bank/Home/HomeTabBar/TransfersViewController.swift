@@ -88,7 +88,7 @@ class TransfersViewController: UIViewController {
         transactions = Array ( account.transactions as! Set<Transaction> )
        
         transactions.sort(){
-            return $0.date! < $1.date!
+            return $0.date! > $1.date!
         }
     }
     

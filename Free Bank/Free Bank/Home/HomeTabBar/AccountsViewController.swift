@@ -110,6 +110,7 @@ class AccountsViewController: UIViewController {
             }
             else {
                 acc.topUpAccountBalance(amount: amount)
+                _  = self.addTransaction(Int64(amount), (nil, nil), (nil, acc))
                 self.updateAccounts()
                 DispatchQueue.main.async {
                     self.accountsTableView.reloadData()

@@ -272,7 +272,7 @@ extension UIViewController {
         }
         catch { print("addCredit: error in add credit") }
         
-        addTransaction(Int64(amount), (nil, bankAccount), (nil, newAccount))
+        _ = addTransaction(Int64(amount), (nil, bankAccount), (nil, newAccount))
     }
     
     func addDeposit(_ amount: Int64, _ term: Int16, _ procent: Int16, _ date: Date,_ revocable: Bool, _ individ: Individual?, _ org: Organization?){
@@ -309,7 +309,7 @@ extension UIViewController {
         }
         catch { print("addDeposit: error in add deposit") }
         
-        addTransaction(Int64(amount), (nil, nil), (nil, newAccount))
+        _ = addTransaction(Int64(amount), (nil, nil), (nil, newAccount))
     }
 
     func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Bool{

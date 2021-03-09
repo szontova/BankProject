@@ -137,29 +137,28 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-Mt-J6U">
                                                 <rect key="frame" x="15" y="15.666666666666686" width="368" height="185"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите номер счёта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WFv-cF-Nyr">
-                                                        <rect key="frame" x="15" y="75.333333333333314" width="338" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="EWw-6t-fl0" id="SaR-6w-G40"/>
-                                                        </connections>
-                                                    </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отправитель:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojh-59-MvZ">
-                                                        <rect key="frame" x="14.999999999999993" y="9.9999999999999982" width="113.33333333333331" height="20.333333333333329"/>
+                                                        <rect key="frame" x="14.999999999999993" y="10" width="113.33333333333331" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="gjO-88-G95"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3v-LX-Ll8">
+                                                        <rect key="frame" x="0.0" y="31" width="368" height="144"/>
+                                                    </pickerView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="e3v-LX-Ll8" firstAttribute="top" secondItem="ojh-59-MvZ" secondAttribute="bottom" id="FYq-pv-6z4"/>
                                                     <constraint firstItem="ojh-59-MvZ" firstAttribute="top" secondItem="3W1-Mt-J6U" secondAttribute="top" constant="10" id="ODK-vf-4Tj"/>
                                                     <constraint firstAttribute="height" constant="185" id="OiD-Dk-YDW"/>
-                                                    <constraint firstAttribute="trailing" secondItem="WFv-cF-Nyr" secondAttribute="trailing" constant="15" id="PvL-IO-xyy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="e3v-LX-Ll8" secondAttribute="bottom" constant="10" id="PWh-b1-9Fv"/>
                                                     <constraint firstItem="ojh-59-MvZ" firstAttribute="leading" secondItem="3W1-Mt-J6U" secondAttribute="leading" constant="15" id="Qqj-qs-4ED"/>
-                                                    <constraint firstItem="WFv-cF-Nyr" firstAttribute="centerY" secondItem="3W1-Mt-J6U" secondAttribute="centerY" id="o5q-z7-YJk"/>
-                                                    <constraint firstItem="WFv-cF-Nyr" firstAttribute="leading" secondItem="3W1-Mt-J6U" secondAttribute="leading" constant="15" id="qjb-Bk-WNI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="e3v-LX-Ll8" secondAttribute="trailing" id="Yo8-Ww-oUd"/>
+                                                    <constraint firstItem="e3v-LX-Ll8" firstAttribute="leading" secondItem="3W1-Mt-J6U" secondAttribute="leading" id="cRR-fH-dml"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -263,7 +262,7 @@
                         <outlet property="cardView" destination="23r-04-ouS" id="fgf-2S-bSf"/>
                         <outlet property="navigationBar" destination="pkf-UK-CLQ" id="sBe-qO-QLl"/>
                         <outlet property="receiverTextField" destination="NAI-Jc-kAF" id="EYT-hE-KFj"/>
-                        <outlet property="senderAccountTextField" destination="WFv-cF-Nyr" id="zvG-du-GIf"/>
+                        <outlet property="senderAccountPickerView" destination="e3v-LX-Ll8" id="Epr-bg-ub4"/>
                         <outlet property="senderCardCVV" destination="SGh-Ip-o4J" id="GMV-lP-ISE"/>
                         <outlet property="senderCardNumberTextField" destination="TOf-tV-mfm" id="p33-fg-Eqx"/>
                         <outlet property="senderCardValidity" destination="omM-7F-dwd" id="jQ3-A6-80g"/>

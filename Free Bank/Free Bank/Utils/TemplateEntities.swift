@@ -703,6 +703,15 @@ extension UIViewController {
             print("deleteAccount: Error in deleting")
         }
     }
+    
+    func deleteAccount(_ acc: Account){
+        do {
+            context.delete(acc)
+            try context.save()
+        } catch {
+            print("deleteAccount: Error in deleting")
+        }
+    }
 }
 
 //MARK:- Entities extensions

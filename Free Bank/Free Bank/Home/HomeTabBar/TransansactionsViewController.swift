@@ -1,5 +1,5 @@
 //
-//  TransfersViewController.swift
+//  TransansactionsViewController.swift
 //  Free Bank
 //
 //  Created by Пользователь on 1.03.21.
@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class TransfersViewController: UIViewController {
+class TransansactionsViewController: UIViewController {
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var senderSegmentedControl: UISegmentedControl!
@@ -133,7 +133,7 @@ class TransfersViewController: UIViewController {
     }
 }
 
-extension TransfersViewController: OrgIndivid {
+extension TransansactionsViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){
         self.individual = individ
@@ -145,8 +145,8 @@ extension TransfersViewController: OrgIndivid {
     
 }
 
-extension TransfersViewController: UIPickerViewDelegate{}
-extension TransfersViewController: UIPickerViewDataSource{
+extension TransansactionsViewController: UIPickerViewDelegate{}
+extension TransansactionsViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        return 1
     }
@@ -180,8 +180,8 @@ extension TransfersViewController: UIPickerViewDataSource{
     }
 }
 
-extension TransfersViewController: UITableViewDelegate {}
-extension TransfersViewController: UITableViewDataSource {
+extension TransansactionsViewController: UITableViewDelegate {}
+extension TransansactionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transactions.count
     }

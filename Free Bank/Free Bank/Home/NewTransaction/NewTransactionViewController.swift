@@ -22,6 +22,7 @@ class NewTransactionViewController: UIViewController {
     @IBOutlet weak var receiverTextField: UITextField!
     
     private var activeTextField : UITextField?
+    private var isMoving = false
     
     private var individual: Individual?
     private var organization: Organization?
@@ -54,7 +55,7 @@ class NewTransactionViewController: UIViewController {
     }
     
     @IBAction func keyboardWillShow(notification: NSNotification) {
-        var shouldMoveViewUp = false
+        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             
             if let activeTextField = activeTextField {
@@ -64,18 +65,17 @@ class NewTransactionViewController: UIViewController {
                 let topOfKeyboard = self.view.frame.height - keyboardSize.height
                 
                 let inset =  bottomOfTextField - topOfKeyboard
-                if inset > 0 { shouldMoveViewUp = true }
-                
-                if shouldMoveViewUp {
-                    self.view.frame.origin.y -= (inset + 15)//keyboardSize.height
+                if inset > 0 && !isMoving {
+                    self.view.frame.origin.y -= (inset + 50)//keyboardSize.height
+                    isMoving = true
                 }
-            
             }
         }
     }
 
     @IBAction func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
+        isMoving = false
     }
     
     

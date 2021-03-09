@@ -26,10 +26,15 @@ class NewCreditViewController: UIViewController {
     private var salary = 0
     private let procent = 13
     
+    private var activeTextField : UITextField?
+    private var isMoving = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewCreditViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewCreditViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func checkclientSolvency(amount: Int, term: Int, salary: Int) -> Bool{
@@ -61,6 +66,30 @@ class NewCreditViewController: UIViewController {
 //        }
     }
    
+    @IBAction func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if let activeTextField = activeTextField {
+                
+                let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+                
+                let topOfKeyboard = self.view.frame.height - keyboardSize.height
+                
+                let inset =  bottomOfTextField - topOfKeyboard
+                if inset > 0 && !isMoving {
+                    self.view.frame.origin.y -= (inset + 20)//keyboardSize.height
+                    isMoving = true
+                }
+            }
+        }
+    }
+
+    @IBAction func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+        isMoving = false
+    }
+    
     @IBAction func addCreditButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         term = Int.parse(termTextField.text ?? "") ?? 0
@@ -108,6 +137,18 @@ extension NewCreditViewController: OrgIndivid {
     
     func setOrganization (_ org: Organization?) {
         self.organization = org
+    }
+    
+}
+
+extension NewCreditViewController: UITextFieldDelegate{
+   
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      self.activeTextField = nil
     }
     
 }

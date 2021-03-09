@@ -93,7 +93,7 @@ class NewTransactionViewController: UIViewController {
             }
             return true
         }
-        print(accounts)
+        //print(accounts)
     }
     
     @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue){
@@ -102,7 +102,7 @@ class NewTransactionViewController: UIViewController {
     }
     
     @IBAction func continueTransactionButton(_ sender: UIButton) {
-        var result = false
+        var result = true
         if senderType.0 {
             result = findCard(by: senderCardNumberTextField.text!) != nil ? true : false
             print(result)

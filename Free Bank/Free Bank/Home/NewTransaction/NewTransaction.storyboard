@@ -61,13 +61,13 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XB9-89-Mzu">
-                                <rect key="frame" x="15" y="154" width="398" height="648"/>
+                                <rect key="frame" x="0.0" y="154" width="428" height="648"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23r-04-ouS">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="202.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="202.66666666666666"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FtC-53-Mwe" userLabel="cardView">
-                                                <rect key="frame" x="15" y="14" width="368" height="175"/>
+                                                <rect key="frame" x="15" y="14" width="398" height="175"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отправитель:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tY-Ns-H07">
                                                         <rect key="frame" x="14.999999999999993" y="9.9999999999999982" width="113.33333333333331" height="20.333333333333329"/>
@@ -76,7 +76,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите номер карты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOf-tV-mfm">
-                                                        <rect key="frame" x="15" y="45.333333333333343" width="338" height="34"/>
+                                                        <rect key="frame" x="15" y="45.333333333333343" width="368" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -84,10 +84,10 @@
                                                         </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="h2k-Aa-o4R">
-                                                        <rect key="frame" x="15" y="94.333333333333314" width="338" height="34"/>
+                                                        <rect key="frame" x="15" y="94.333333333333314" width="368" height="34"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Срок действия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omM-7F-dwd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="149" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="164" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
@@ -95,7 +95,7 @@
                                                                 </connections>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV/CVC" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGh-Ip-o4J">
-                                                                <rect key="frame" x="189" y="0.0" width="149" height="34"/>
+                                                                <rect key="frame" x="204" y="0.0" width="164" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
@@ -132,10 +132,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAX-uC-3E3">
-                                        <rect key="frame" x="0.0" y="222.66666666666669" width="398" height="202.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="222.66666666666669" width="428" height="202.66666666666669"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-Mt-J6U">
-                                                <rect key="frame" x="15" y="14" width="368" height="175"/>
+                                                <rect key="frame" x="15" y="14" width="398" height="175"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отправитель:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojh-59-MvZ">
                                                         <rect key="frame" x="14.999999999999993" y="10" width="113.33333333333331" height="21"/>
@@ -147,7 +147,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3v-LX-Ll8">
-                                                        <rect key="frame" x="0.0" y="31" width="368" height="134"/>
+                                                        <rect key="frame" x="0.0" y="31" width="398" height="134"/>
                                                     </pickerView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -174,10 +174,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ted-aZ-IJR">
-                                        <rect key="frame" x="0.0" y="445.33333333333343" width="398" height="202.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="445.33333333333343" width="428" height="202.66666666666669"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hN3-5z-3IK">
-                                                <rect key="frame" x="15" y="14" width="368" height="175"/>
+                                                <rect key="frame" x="15" y="14" width="398" height="175"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Получатель:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gZ-x9-a6e">
                                                         <rect key="frame" x="14.999999999999993" y="9.9999999999999982" width="103.33333333333331" height="20.333333333333329"/>
@@ -186,7 +186,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите номер карты или счёта" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAI-Jc-kAF">
-                                                        <rect key="frame" x="15" y="70.333333333333258" width="338" height="34"/>
+                                                        <rect key="frame" x="15" y="70.333333333333258" width="368" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -257,13 +257,13 @@
                             <constraint firstItem="T1B-9m-vNj" firstAttribute="leading" secondItem="Y50-Dy-cBZ" secondAttribute="leading" id="3ui-LO-no2"/>
                             <constraint firstItem="T1B-9m-vNj" firstAttribute="bottom" secondItem="byo-0s-r2a" secondAttribute="bottom" id="6JY-FV-7Mj"/>
                             <constraint firstItem="dhg-48-zzW" firstAttribute="bottom" secondItem="Y50-Dy-cBZ" secondAttribute="bottom" constant="-15" id="8qn-SK-G81"/>
-                            <constraint firstItem="XB9-89-Mzu" firstAttribute="leading" secondItem="Y50-Dy-cBZ" secondAttribute="leading" constant="15" id="AUx-69-mzw"/>
+                            <constraint firstItem="XB9-89-Mzu" firstAttribute="leading" secondItem="Y50-Dy-cBZ" secondAttribute="leading" id="AUx-69-mzw"/>
                             <constraint firstItem="pkf-UK-CLQ" firstAttribute="trailing" secondItem="byo-0s-r2a" secondAttribute="trailing" id="IXa-YC-fL9"/>
                             <constraint firstItem="k43-ac-VHg" firstAttribute="top" secondItem="pkf-UK-CLQ" secondAttribute="bottom" id="UEB-f2-1Ej"/>
                             <constraint firstItem="Y50-Dy-cBZ" firstAttribute="trailing" secondItem="k43-ac-VHg" secondAttribute="trailing" constant="15" id="UJ5-oV-Pj3"/>
                             <constraint firstItem="T1B-9m-vNj" firstAttribute="top" secondItem="byo-0s-r2a" secondAttribute="top" id="g9B-L8-bM2"/>
                             <constraint firstItem="pkf-UK-CLQ" firstAttribute="leading" secondItem="Y50-Dy-cBZ" secondAttribute="leading" id="hl7-Rp-S0p"/>
-                            <constraint firstItem="XB9-89-Mzu" firstAttribute="trailing" secondItem="Y50-Dy-cBZ" secondAttribute="trailing" constant="-15" id="oJt-1J-Pze"/>
+                            <constraint firstItem="XB9-89-Mzu" firstAttribute="trailing" secondItem="Y50-Dy-cBZ" secondAttribute="trailing" id="oJt-1J-Pze"/>
                             <constraint firstItem="XB9-89-Mzu" firstAttribute="top" secondItem="k43-ac-VHg" secondAttribute="bottom" constant="15" id="oPF-wu-SJ5"/>
                             <constraint firstItem="dhg-48-zzW" firstAttribute="leading" secondItem="Y50-Dy-cBZ" secondAttribute="leading" constant="30" id="qtY-kj-wk4"/>
                             <constraint firstItem="XB9-89-Mzu" firstAttribute="bottom" secondItem="dhg-48-zzW" secondAttribute="top" constant="-15" id="zcF-Ye-uKR"/>

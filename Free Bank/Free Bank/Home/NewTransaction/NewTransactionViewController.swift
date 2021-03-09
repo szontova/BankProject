@@ -56,6 +56,7 @@ class NewTransactionViewController: UIViewController {
             cardView.isHidden = true
             accountView.isHidden = false
             updateAccounts()
+            senderAccountPickerViewConfigurations()
         } else {
             cardView.isHidden = false
             accountView.isHidden = true

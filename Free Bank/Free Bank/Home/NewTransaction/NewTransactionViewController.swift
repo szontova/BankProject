@@ -94,7 +94,6 @@ class NewTransactionViewController: UIViewController {
             }
             return true
         }
-        print(accounts)
     }
     
     @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue){

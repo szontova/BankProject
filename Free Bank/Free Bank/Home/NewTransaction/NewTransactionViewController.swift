@@ -56,6 +56,7 @@ class NewTransactionViewController: UIViewController {
             cardView.isHidden = true
             accountView.isHidden = false
             updateAccounts()
+            senderAccountPickerViewConfigurations()
         } else {
             cardView.isHidden = false
             accountView.isHidden = true
@@ -93,7 +94,6 @@ class NewTransactionViewController: UIViewController {
             }
             return true
         }
-        //print(accounts)
     }
     
     @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue){

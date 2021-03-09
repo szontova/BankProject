@@ -113,6 +113,11 @@ class TransansactionsViewController: UIViewController {
         guard let _ = segue.destination as? NewTransactionViewController else {return}
     }
     
+    @IBAction func unwindToTransactionsVCFromConfirmTransactionVC(segue:UIStoryboardSegue){
+        guard segue.identifier == "unwindToTransactionsFromConfirmTransactionSegue" else {return}
+        guard let _ = segue.destination as? ConfirmationTransactionViewController else {return}
+    }
+    
     @IBAction func addTransaction(_ sender: UIButton) {
         performSegue(withIdentifier: "toNewTransactionSegue", sender: nil)
         

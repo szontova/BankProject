@@ -40,16 +40,20 @@ class ConfirmationTransactionViewController: UIViewController {
         if senderType.0 != nil {
             titleSenderLabel.text = "Номер карты:"
             senderLabel.text = String(senderType.0!.idNumber)
-        }else if senderType.1 != nil { senderLabel.text = senderType.1?.idNumber }
+            balanceLabel.text = String((senderType.0?.account!.balance)!)
+        }else if senderType.1 != nil {
+            senderLabel.text = senderType.1?.idNumber
+            balanceLabel.text = "\((senderType.1?.balance)!/100) BYR"
+        }
         
         if receiverType.0 != nil {
             titleReceiverLabel.text = "Номер карты получателя:"
-            receiverLabel.text = String(receiverType.0!.idNumber)
+            receiverLabel.text = "\(receiverType.0!.idNumber/100) BYR"
         } else if receiverType.1 != nil { receiverLabel.text = receiverType.1?.idNumber }
         else {
             receiverLabel.text = "Счёт вне банка"
         }
-
+        
     }
     @IBAction func confirmTransaction(_ sender: UIButton) {
         

@@ -23,10 +23,21 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
     
+    private var activeTextField : UITextField? {
+        willSet(newActiveField){
+            print("new")
+//            self.view.frame.origin.y = 0
+//            isMoving = false
+        }
+    }
+    private var isMoving = false
+    
     //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     //MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -44,6 +55,30 @@ class SignUpViewController: UIViewController {
     }
     
     //MARK: - @IBActions
+    @IBAction func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if let activeTextField = activeTextField {
+                
+                let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+                
+                let topOfKeyboard = self.view.frame.height - keyboardSize.height
+                
+                let inset =  bottomOfTextField - topOfKeyboard
+                if inset > 0 && !isMoving {
+                    self.view.frame.origin.y -= (inset + 50)//keyboardSize.height
+                    isMoving = true
+                }
+            }
+        }
+    }
+
+    @IBAction func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+        isMoving = false
+    }
+    
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -84,5 +119,13 @@ extension SignUpViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      self.activeTextField = nil
     }
 }

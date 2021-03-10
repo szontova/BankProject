@@ -108,7 +108,7 @@ class SignUpViewController: UIViewController {
         guard let _ = segue.destination as? EndOfSignUpViewController else {return}
     }
 }
-    //MARK: - Extensions
+//MARK: - Extensions
 extension SignUpViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

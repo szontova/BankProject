@@ -8,7 +8,7 @@
 import UIKit
 
 class DepositsViewController: UIViewController {
-
+    //MARK: - @IBOutlets
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var depositsTableView: UITableView!
     @IBOutlet weak var missingDepositsLabel: UILabel!
@@ -19,6 +19,7 @@ class DepositsViewController: UIViewController {
     private var deposits: [Deposit] = []
     private var depositForTransfer: Deposit?
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +46,7 @@ class DepositsViewController: UIViewController {
         }
         
     }
-    
+    //MARK: - OverrideMethods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toDepositSegue" {
@@ -59,7 +60,7 @@ class DepositsViewController: UIViewController {
         destinationVC.setIndividual(individual)
         destinationVC.setOrganization(organization)
     }
-    
+    //MARK: -
     func updateDeposits() {
         let accs = individual?.deposits ?? organization?.deposits
         deposits = Array ( accs as! Set<Deposit> )
@@ -80,6 +81,17 @@ class DepositsViewController: UIViewController {
         
     }
     
+    //MARK: - @IBActions
+    
+    @IBAction func addDepositButton(_ sender: UIButton) {
+        if deposits.count > 1 {
+            showAlertError(message: "На одного пользователя не может быть оформлено не более 2 депозитов")
+        }
+        else {
+            performSegue(withIdentifier: "toNewDepositSegue", sender: nil)
+        }
+    }
+    
     @IBAction func unwindToDepositsVCFromNewDepositVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToDepositsFromNewDepositSegue" else {return}
         guard let _ = segue.destination as? NewDepositViewController else {return}
@@ -96,17 +108,8 @@ class DepositsViewController: UIViewController {
         guard let _ = segue.destination as? ConfirmationDepositViewController else {return}
     }
     
-    @IBAction func addDepositButton(_ sender: UIButton) {
-        if deposits.count > 1 {
-            showAlertError(message: "На одного пользователя не может быть оформлено не более 2 депозитов")
-        }
-        else {
-            performSegue(withIdentifier: "toNewDepositSegue", sender: nil)
-        }
-    }
-    
 }
-
+//MARK: - Extensions
 extension DepositsViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){
@@ -117,9 +120,9 @@ extension DepositsViewController: OrgIndivid {
         self.organization = org
     }
 }
+//MARK: - TableView
 
 extension DepositsViewController: UITableViewDelegate {}
-
 extension DepositsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return deposits.count

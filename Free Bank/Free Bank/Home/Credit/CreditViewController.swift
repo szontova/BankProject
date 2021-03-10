@@ -18,7 +18,6 @@ class CreditViewController: UIViewController {
     @IBOutlet weak var beginDateLabel: UILabel!
     @IBOutlet weak var monthlyPayLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var countOfPaymentsLabel: UILabel!
     @IBOutlet weak var nextPayDateLabel: UILabel!
     
     private var credit: Credit?
@@ -44,6 +43,8 @@ class CreditViewController: UIViewController {
             endDateLabel.text = Util.getddMMyyyyDateString(endDate)
             
             monthlyPayLabel.text = Util.getIntBYRbyString(Util.calculateMonthlyPay(amount: cred.amount, term: cred.term, procent: cred.procent))
+            
+            nextPayDateLabel.text = Util.getddMMyyyyDateString(Util.getIntervalDate(cred.date!,1/12))
         }
     }
     @IBAction func payOffButton(_ sender: UIButton) {

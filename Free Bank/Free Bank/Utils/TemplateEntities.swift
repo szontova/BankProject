@@ -365,7 +365,7 @@ extension UIViewController {
             }
         }
         
-        print(newTransaction.string())
+        //print(newTransaction.string())
         do {
             context.insert(newTransaction)
             try context.save()

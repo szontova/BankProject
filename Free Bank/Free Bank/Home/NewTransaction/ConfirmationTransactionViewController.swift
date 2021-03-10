@@ -76,7 +76,7 @@ class ConfirmationTransactionViewController: UIViewController {
         total = Int64((amount ?? 0) + (commission ?? 0))
         totalLabel.text = Util.getIntBYRbyString(total ?? 0)
         if (amount ?? 0) < 100 || (amount ?? 0) > 250000 {
-            showAlertError(message: "Неверно введена сумма.")
+            showAlertError(message: "Сумма не должна превышать 2500 BYR")
         } else {
             if addTransaction((total ?? 0), senderType, receiverType)
             {

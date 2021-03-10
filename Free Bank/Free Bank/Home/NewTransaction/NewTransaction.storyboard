@@ -76,15 +76,15 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите номер карты" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOf-tV-mfm">
-                                                        <rect key="frame" x="15" y="45.333333333333343" width="354" height="34"/>
+                                                        <rect key="frame" x="15" y="70.333333333333343" width="354" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="EWw-6t-fl0" id="Zam-8d-kFD"/>
                                                         </connections>
                                                     </textField>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="h2k-Aa-o4R">
-                                                        <rect key="frame" x="15" y="94.333333333333314" width="354" height="34"/>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="h2k-Aa-o4R">
+                                                        <rect key="frame" x="15" y="119.33333333333331" width="354" height="34"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Срок действия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omM-7F-dwd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="34"/>
@@ -108,7 +108,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="TOf-tV-mfm" firstAttribute="centerY" secondItem="FtC-53-Mwe" secondAttribute="centerY" constant="-25" id="14d-HV-x6w"/>
+                                                    <constraint firstItem="TOf-tV-mfm" firstAttribute="centerY" secondItem="FtC-53-Mwe" secondAttribute="centerY" id="14d-HV-x6w"/>
                                                     <constraint firstItem="h2k-Aa-o4R" firstAttribute="top" secondItem="TOf-tV-mfm" secondAttribute="bottom" constant="15" id="2VT-2m-OBp"/>
                                                     <constraint firstItem="h2k-Aa-o4R" firstAttribute="leading" secondItem="FtC-53-Mwe" secondAttribute="leading" constant="15" id="8lg-mX-Ezv"/>
                                                     <constraint firstItem="9tY-Ns-H07" firstAttribute="top" secondItem="FtC-53-Mwe" secondAttribute="top" constant="10" id="Uzq-cW-Svy"/>

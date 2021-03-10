@@ -144,7 +144,7 @@ class NewTransactionViewController: UIViewController {
         if senderType.0 {
             result = findCard(by: senderCardNumberTextField.text!) != nil ? true : false
             print(result)
-            if senderCardNumberTextField.text == "" || senderCardValidity.text == "" || senderCardCVV.text == "" { result = false }
+            if senderCardNumberTextField.text == "" /*|| senderCardValidity.text == "" || senderCardCVV.text == ""*/ { result = false }
         }
         if receiverTextField.text == "" { result = false }
         if result {

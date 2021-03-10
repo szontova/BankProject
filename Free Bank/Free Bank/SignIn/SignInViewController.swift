@@ -19,6 +19,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
   
+    private var login: String = ""
     //MARK: - LifeCycleMethods
     
     override func viewDidLoad() {
@@ -38,8 +39,8 @@ class SignInViewController: UIViewController {
         // every time you hit the screen
         super.viewWillAppear(animated)
         
-        loginTextField.text = "lerachubakova"
-        passwordTextField.text = "Qwerty1234"
+//        loginTextField.text = "lerachubakova"
+//        passwordTextField.text = "Qwerty1234"
         //print("viewWillAppear")
         //printAllIndividual()
     }
@@ -91,7 +92,7 @@ class SignInViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toHomeSegue" else { return }
         guard let destinationTBC = segue.destination as? HomeTabBarController else { return }
-        destinationTBC.setLogin(loginTextField.text!)
+        destinationTBC.setLogin(login)
         destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
     
@@ -150,6 +151,7 @@ class SignInViewController: UIViewController {
                 if let person = self.findIndivididual(by: login) {
                         
                     if person.codeWord == codeWord.lowercased(){
+                        self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
                         self.showAlertError(message: "Кодовое слово введено неверно")
@@ -203,6 +205,7 @@ class SignInViewController: UIViewController {
             case 0:
                 if validIndividual(login, password) {
                     passwordTextField.text = ""
+                    self.login = login
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
@@ -211,6 +214,7 @@ class SignInViewController: UIViewController {
             case 1:
                 if validOrganization(login, password) {
                     passwordTextField.text = ""
+                    self.login = login
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {

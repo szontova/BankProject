@@ -11,6 +11,7 @@ import CoreData
 
 class BankInfoViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var prnLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!

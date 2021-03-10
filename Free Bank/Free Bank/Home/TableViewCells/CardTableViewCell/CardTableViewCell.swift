@@ -9,9 +9,9 @@ import UIKit
 
 class CardTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var myBackgroundView: UIView!
-    @IBOutlet weak var cardNumberLabel: UILabel!
-    @IBOutlet weak var validDateLabel: UILabel!
+    @IBOutlet private weak var myBackgroundView: UIView!
+    @IBOutlet private weak var cardNumberLabel: UILabel!
+    @IBOutlet private weak var validDateLabel: UILabel!
     
     
     static let identifier = "cardCell"

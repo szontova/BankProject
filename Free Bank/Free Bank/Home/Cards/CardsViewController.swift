@@ -9,20 +9,22 @@ import UIKit
 
 class CardsViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var accountNumberLabel: UILabel!
-    @IBOutlet weak var accountBalanceLabel: UILabel!
-    @IBOutlet weak var missingCardsLabel: UILabel!
-    @IBOutlet weak var cardsTableView: UITableView!
+    //MARK: - @IBOutlets
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var accountNumberLabel: UILabel!
+    @IBOutlet private weak var accountBalanceLabel: UILabel!
+    @IBOutlet private weak var missingCardsLabel: UILabel!
+    @IBOutlet private weak var cardsTableView: UITableView!
     
     
     private var account: Account?
     private var cards: [Card] = []
     
+    //MARK: -
     func setAccount(_ acc: Account?) {
         self.account = acc
     }
-    
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +46,7 @@ class CardsViewController: UIViewController {
         else { cardsTableView.isHidden = false }
         cardsTableViewConfigurations()
     }
-
+    //MARK: -
     func updateCards() {
         let cardsSet = account?.cards
         cards = Array ( cardsSet as! Set<Card> )
@@ -52,7 +54,6 @@ class CardsViewController: UIViewController {
             return $0.idNumber > $1.idNumber
         }
     }
-    
     
     func cardsTableViewConfigurations(){
         
@@ -65,6 +66,7 @@ class CardsViewController: UIViewController {
         
     }
     
+    //MARK: - @IBActions
     @IBAction func addCardButton(_ sender: UIButton) {
         if let acc = account {
             switch Util.getAccCategory(acc) {
@@ -101,8 +103,8 @@ class CardsViewController: UIViewController {
     }
 }
 
+//MARK: - TableView
 extension CardsViewController: UITableViewDelegate {}
-
 extension CardsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

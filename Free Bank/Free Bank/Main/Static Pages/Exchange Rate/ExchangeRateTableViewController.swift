@@ -8,9 +8,9 @@
 import UIKit
 
 class RateTableViewCell: UITableViewCell{
-    @IBOutlet weak var flagImageView: UIImageView!
-    @IBOutlet weak var foreignRateLabel: UILabel!
-    @IBOutlet weak var nationalRateLabel: UILabel!
+    @IBOutlet fileprivate weak var flagImageView: UIImageView!
+    @IBOutlet fileprivate weak var foreignRateLabel: UILabel!
+    @IBOutlet fileprivate weak var nationalRateLabel: UILabel!
     
 }
 
@@ -68,7 +68,7 @@ class ExchangeRateTableViewController: UITableViewController {
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "mainBackground"))
     }
     
-    // MARK: - Table view data source
+    // MARK: - TableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

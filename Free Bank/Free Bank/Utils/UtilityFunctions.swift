@@ -8,24 +8,49 @@
 import Foundation
 import UIKit
 
+extension Int {
+    static func parse(_ string: String) -> Int? {
+        return Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
+    }
+}
+
+protocol OrgIndivid: class {
+    
+    func setIndividual(_ individ: Individual?)
+      
+    func setOrganization(_ org: Organization?)
+    
+}
 
 public class Util {
-   static func calculateMonthlyPay(amount: Int32, term: Int16, procent: Int16) -> Int{
+    
+   static func calculateMonthlyPay(amount: Int32, term: Int16, procent: Int16) -> Int {
         let monthlyPay = (Float(amount) + (Float(amount) * Float(procent)/100))/Float(term)
         return Int(monthlyPay)
     }
+
+    static func getAccCategory(_ acc: Account) -> Character {
+        return acc.idNumber!.dropFirst(16).first!
+    }
     
-    static func getDate() -> Date{
+    static func setValueOfSlider(slider: UISlider, step: Float) -> Float {
+        let value = round(slider.value/step) * step
+        return value
+    }
+    
+    //MARK: - DateFunctions
+    static func getDate() -> Date {
         let seconds:TimeInterval = 180.0 * 60.0;
         let date = Date(timeIntervalSinceNow: seconds)
         return date
     }
     
-    static func getAccCategory(_ acc: Account) -> Character{
-        return acc.idNumber!.dropFirst(16).first!
+    static func getIntervalDate(_ date: Date, _ years: Float) -> Date {
+       return NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: date) as Date
     }
     
-    static func getValidityDate(_ years: Int) -> String{
+    //MARK: - PrintFunctions
+    static func getValidityDate(_ years: Int) -> String {
         let validDate = NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: NSDate() as Date)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/yy"
@@ -38,7 +63,7 @@ public class Util {
         return dateFormatter.string(for: date) ?? "00.00.0000"
     }
     
-    static func defineWordForDepositTerm(term: Int) -> String{
+    static func defineWordForDepositTerm(term: Int) -> String {
         switch term {
         case 1:
             return "год"
@@ -62,10 +87,8 @@ public class Util {
         return NSString(format: "%.2f BYR", Float(amount)/100) as String
     }
     
-    static func getIntervalDate(_ date: Date, _ years: Float) -> Date {
-       return NSDate(timeInterval: TimeInterval(years * 365 * 24 * 60 * 60) , since: date) as Date
-    }
     
+    //MARK: - LinkFunctions
     static func callNumber(number: String) {
         if let url: NSURL = URL(string: "TEL://" + number) as NSURL?  { UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)}
     }
@@ -74,8 +97,4 @@ public class Util {
         if let url = URL(string: url) { UIApplication.shared.open(url, options: [:], completionHandler: nil)}
     }
     
-    static func setValueOfSlider(slider: UISlider, step: Float) -> Float{
-        let value = round(slider.value/step) * step
-        return value
-    }
 }

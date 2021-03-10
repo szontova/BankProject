@@ -76,7 +76,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" red="0.77287308210000005" green="0.77287308210000005" blue="0.77287308210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -101,7 +101,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" red="0.77287308210000005" green="0.77287308210000005" blue="0.77287308210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,7 +126,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" red="0.77287308210000005" green="0.77287308210000005" blue="0.77287308210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,7 +151,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" red="0.77287308210000005" green="0.77287308210000005" blue="0.77287308210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -176,7 +176,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" red="0.77287308210000005" green="0.77287308210000005" blue="0.77287308210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -321,7 +321,7 @@
                                 </connections>
                             </button>
                             <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GN0-2v-Yus">
-                                <rect key="frame" x="15" y="338" width="384" height="190"/>
+                                <rect key="frame" x="15" y="338.66666666666669" width="384" height="189.00000000000006"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puh-MH-EJg">
                                         <rect key="frame" x="10" y="42" width="364" height="67"/>
@@ -346,7 +346,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
                                                 <color key="value" red="0.77287308210000005" green="0.77287308210000005" blue="0.77287308210000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -362,8 +362,8 @@
                                 <constraints>
                                     <constraint firstItem="puh-MH-EJg" firstAttribute="top" secondItem="5uG-Cl-4fd" secondAttribute="bottom" constant="10" id="2Gc-Xa-59K"/>
                                     <constraint firstItem="puh-MH-EJg" firstAttribute="leading" secondItem="GN0-2v-Yus" secondAttribute="leading" constant="10" id="3PF-vn-CMA"/>
-                                    <constraint firstAttribute="height" constant="190" id="9IZ-DE-Gkf"/>
                                     <constraint firstItem="5uG-Cl-4fd" firstAttribute="top" secondItem="GN0-2v-Yus" secondAttribute="top" constant="10" id="Ary-wi-LHt"/>
+                                    <constraint firstAttribute="bottom" secondItem="b5z-IY-SSt" secondAttribute="bottom" constant="20" id="EHk-ms-KJc"/>
                                     <constraint firstItem="b5z-IY-SSt" firstAttribute="top" secondItem="puh-MH-EJg" secondAttribute="bottom" constant="20" id="MWp-W3-if4"/>
                                     <constraint firstItem="b5z-IY-SSt" firstAttribute="leading" secondItem="GN0-2v-Yus" secondAttribute="leading" constant="15" id="Qzg-oG-N18"/>
                                     <constraint firstItem="5uG-Cl-4fd" firstAttribute="centerX" secondItem="GN0-2v-Yus" secondAttribute="centerX" id="U5i-dN-962"/>
@@ -377,7 +377,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gez-yJ-aCz">
-                                <rect key="frame" x="30" y="553" width="354" height="60"/>
+                                <rect key="frame" x="30" y="552.66666666666663" width="354" height="60"/>
                                 <color key="backgroundColor" red="0.18812021609999999" green="0.01377134491" blue="0.01348064281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Fsi-OI-kJQ"/>
@@ -416,7 +416,7 @@
                     <navigationItem key="navigationItem" id="Byp-YY-ODN"/>
                     <connections>
                         <outlet property="codeWordTextField" destination="b5z-IY-SSt" id="hd1-tg-gw4"/>
-                        <segue destination="eyk-uJ-tV0" kind="unwind" identifier="unwindFomEndToSignInVCSegue" unwindAction="unwindToSignInFromEndRegistationWithSegue:" id="COx-R4-elR"/>
+                        <segue destination="eyk-uJ-tV0" kind="unwind" identifier="unwindFomEndToSignInVCSegue" animates="NO" unwindAction="unwindToSignInFromEndRegistationWithSegue:" id="COx-R4-elR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4j-DU-BV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

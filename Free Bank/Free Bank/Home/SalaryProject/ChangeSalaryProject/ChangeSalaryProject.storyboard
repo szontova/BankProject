@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpn-5b-h8Y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Change Salary Project View Controller-->
+        <scene sceneID="wja-IO-zhH">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="kpn-5b-h8Y" customClass="ChangeSalaryProjectViewController" customModule="Free_Bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uZI-Nf-evQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wvf-hv-uvr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfB-2c-a4b">
+                                <rect key="frame" x="0.0" y="54" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="OyQ-cG-Qrg">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="2bT-On-tdm">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="osc-x0-IxC">
+                                                <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="5Ht-ib-pSt"/>
+                                                    <constraint firstAttribute="width" constant="40" id="cUJ-jn-W2s"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="default" weight="light"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="Y5b-vd-O5F" kind="unwind" identifier="unwindToOtherFromChangeSPSegue" unwindAction="unwindToOtherVCFromChangeSPVCWithSegue:" id="nCr-tX-qdO"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изменение ЗП" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4b-mt-eXQ">
+                                <rect key="frame" x="15" y="98" width="379" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uM5-es-Sj2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wvf-hv-uvr" firstAttribute="top" secondItem="uZI-Nf-evQ" secondAttribute="top" id="13A-af-VyH"/>
+                            <constraint firstItem="uM5-es-Sj2" firstAttribute="trailing" secondItem="d4b-mt-eXQ" secondAttribute="trailing" constant="20" id="Afp-SP-Oxm"/>
+                            <constraint firstItem="vfB-2c-a4b" firstAttribute="top" secondItem="uM5-es-Sj2" secondAttribute="top" constant="10" id="B8H-Pr-MEU"/>
+                            <constraint firstItem="d4b-mt-eXQ" firstAttribute="leading" secondItem="uM5-es-Sj2" secondAttribute="leading" constant="15" id="Bha-fa-7js"/>
+                            <constraint firstItem="vfB-2c-a4b" firstAttribute="trailing" secondItem="uM5-es-Sj2" secondAttribute="trailing" id="PLZ-Zg-B4l"/>
+                            <constraint firstItem="d4b-mt-eXQ" firstAttribute="top" secondItem="vfB-2c-a4b" secondAttribute="bottom" id="URq-J6-iel"/>
+                            <constraint firstItem="vfB-2c-a4b" firstAttribute="leading" secondItem="uM5-es-Sj2" secondAttribute="leading" id="Ymh-iD-VSV"/>
+                            <constraint firstItem="wvf-hv-uvr" firstAttribute="trailing" secondItem="uM5-es-Sj2" secondAttribute="trailing" id="kUI-dz-lqi"/>
+                            <constraint firstItem="wvf-hv-uvr" firstAttribute="bottom" secondItem="uZI-Nf-evQ" secondAttribute="bottom" id="qvB-AM-Q7E"/>
+                            <constraint firstItem="wvf-hv-uvr" firstAttribute="leading" secondItem="uM5-es-Sj2" secondAttribute="leading" id="zFT-b0-GlU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="vfB-2c-a4b" id="SoD-PH-MF3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKd-Qq-KXf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Y5b-vd-O5F" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="251" y="147"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="mainBackground" width="1080" height="1920"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

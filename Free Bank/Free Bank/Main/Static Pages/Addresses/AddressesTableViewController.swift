@@ -46,7 +46,7 @@ class AddressesTableViewController: UITableViewController {
     }
     
    
-    // MARK: - Table view data source
+    // MARK: - TableViewDataSource
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()

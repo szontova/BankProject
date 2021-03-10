@@ -9,14 +9,14 @@ import UIKit
 
 class NewDepositViewController: UIViewController {
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    //MARK: - @IBOutlets
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     
-    @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var termLabel: UILabel!
+    @IBOutlet private weak var amountTextField: UITextField!
+    @IBOutlet private weak var termLabel: UILabel!
 
-    @IBOutlet weak var termSlider: UISlider!
-    @IBOutlet weak var revocableSwitch: UISwitch!
-    
+    @IBOutlet private weak var termSlider: UISlider!
+    @IBOutlet private weak var revocableSwitch: UISwitch!
     
     private var individual: Individual?
     private var organization: Organization?
@@ -26,6 +26,7 @@ class NewDepositViewController: UIViewController {
     private var revocable = false
     private let procent = 17
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +34,7 @@ class NewDepositViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    //MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -49,6 +50,7 @@ class NewDepositViewController: UIViewController {
         destinationVC.setOrganization(organization)
     }
     
+    //MARK: - @IBActions
     @IBAction func unwindToNewDepositFromConfirmationDeposit(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToNewDepositFromConfirmSegue" else {return}
         guard let _ = segue.destination as? ConfirmationDepositViewController else {return}
@@ -72,7 +74,7 @@ class NewDepositViewController: UIViewController {
     }
     
 }
-
+//MARK: - Extensions
 extension NewDepositViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){

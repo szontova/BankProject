@@ -9,13 +9,13 @@ import UIKit
 
 class ConfirmationCreditViewController: UIViewController {
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var termLabel: UILabel!
-    @IBOutlet weak var monthlyPayLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    //MARK: - @IBOutlets
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var termLabel: UILabel!
+    @IBOutlet private weak var monthlyPayLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
-
     private var amount: Int32?
     private var term: Int16?
     private var procent: Int16?
@@ -24,6 +24,7 @@ class ConfirmationCreditViewController: UIViewController {
     private var individual: Individual?
     private var organization: Organization?
 
+    //MARK: -
     func setAmount(_ amount: Int32?){
         self.amount = amount
     }
@@ -36,11 +37,11 @@ class ConfirmationCreditViewController: UIViewController {
         self.procent = procent
     }
     
-    
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
-        amountLabel.text = "\((amount ?? 0)/100) BYR"
+        amountLabel.text = Util.getIntBYRbyString(amount ?? 0)
         termLabel.text = "\(term ?? 0) месяцев"
         let monthlyPay = Util.calculateMonthlyPay(amount: amount!, term: term!, procent: 13)
         
@@ -50,7 +51,7 @@ class ConfirmationCreditViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         dateLabel.text = dateFormatter.string(for: date) ?? "00.00.0000"
         }
-    
+    //MARK: - @IBActions
     @IBAction func confirmCreditButton(_ sender: UIButton) {
         addCredit( amount!, term!, procent!, date, individual, organization)
         showAlertMessageWithSegue(message: "Кредит успешно оформлен", segue: "unwindToCreditsFromConfirmCreditSegue")
@@ -58,6 +59,7 @@ class ConfirmationCreditViewController: UIViewController {
     
 }
 
+//MARK: - Extensions
 extension ConfirmationCreditViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){

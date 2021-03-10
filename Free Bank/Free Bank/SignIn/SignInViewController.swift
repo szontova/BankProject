@@ -11,75 +11,21 @@ class SignInViewController: UIViewController {
 
     //MARK: - @IBOutlets
     
-    @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var loginErrorLabel: UILabel!
+    @IBOutlet private weak var loginLabel: UILabel!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var loginErrorLabel: UILabel!
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
   
+    private var login: String = ""
     //MARK: - LifeCycleMethods
     
     override func viewDidLoad() {
         //print("ViewDidLoad")
         super.viewDidLoad()
         //printAllOrganization()
-    }
-    
-    override func loadView() {
-        super.loadView()
-        //print("loadView")
-        //для файлов свёрстанных кодом
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        // только появится
-        // every time you hit the screen
-        super.viewWillAppear(animated)
-        
-        loginTextField.text = "lerachubakova"
-        passwordTextField.text = "Qwerty1234"
-        //print("viewWillAppear")
-        //printAllIndividual()
-    }
-
-    override func viewWillLayoutSubviews() {
-        //constraints
-        super.viewWillLayoutSubviews()
-        //print("viewWillLayoutSubviews")
-    }
-
-    override func viewDidLayoutSubviews() {
-        //
-        super.viewDidLayoutSubviews()
-        //print("viewDidLayoutSubviews")
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        //
-        super.viewDidAppear(animated)
-        //print("viewDidAppear")
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        //
-        super.viewWillDisappear(animated)
-        //print("viewWillDisappear")
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        //
-        super.viewDidDisappear(animated)
-        //print("viewDidDisappear")
-    }
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        //print("viewWillTransition")
-    }
-
-    deinit {
-        //print("deinit")
     }
     
     //MARK: - OverrideMethods
@@ -91,7 +37,7 @@ class SignInViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toHomeSegue" else { return }
         guard let destinationTBC = segue.destination as? HomeTabBarController else { return }
-        destinationTBC.setLogin(loginTextField.text!)
+        destinationTBC.setLogin(login)
         destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
     
@@ -150,6 +96,7 @@ class SignInViewController: UIViewController {
                 if let person = self.findIndivididual(by: login) {
                         
                     if person.codeWord == codeWord.lowercased(){
+                        self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
                         self.showAlertError(message: "Кодовое слово введено неверно")
@@ -160,6 +107,7 @@ class SignInViewController: UIViewController {
             case 1:
                 if let org = self.findOrganization(by: login) {
                     if org.codeWord == codeWord.lowercased(){
+                        self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
                         self.showAlertError(message: "Кодовое слово введено неверно")
@@ -203,6 +151,7 @@ class SignInViewController: UIViewController {
             case 0:
                 if validIndividual(login, password) {
                     passwordTextField.text = ""
+                    self.login = login
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {
@@ -211,6 +160,7 @@ class SignInViewController: UIViewController {
             case 1:
                 if validOrganization(login, password) {
                     passwordTextField.text = ""
+                    self.login = login
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
                 }
                 else {

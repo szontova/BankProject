@@ -9,6 +9,7 @@ import UIKit
 
 extension UIViewController {
     
+    //MARK: AlertError
     func showAlertError(message: String){
         let alertError = UIAlertController(title: "", message: message, preferredStyle: .alert)
                 
@@ -26,6 +27,7 @@ extension UIViewController {
         present(alertError, animated: true, completion: nil)
     }
     
+    //MARK: AlertMesSegue
     func showAlertMessageWithSegue(message: String, segue: String){
         let alertError = UIAlertController(title: "", message: message, preferredStyle: .alert)
                 
@@ -46,6 +48,7 @@ extension UIViewController {
         present(alertError, animated: true, completion: nil)
     }
     
+    //MARK: AlertMessage
     func showAlertMessage(message: String){
         let alertError = UIAlertController(title: "", message: message, preferredStyle: .alert)
                 

@@ -9,14 +9,15 @@ import UIKit
 
 class NewCreditViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    //MARK: - @IBOutlets
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     
-    @IBOutlet weak var amountSlider: UISlider!
-    @IBOutlet weak var termSlider: UISlider!
+    @IBOutlet private weak var amountSlider: UISlider!
+    @IBOutlet private weak var termSlider: UISlider!
     
-    @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var salaryTextField: UITextField!
-    @IBOutlet weak var termTextField: UITextField!
+    @IBOutlet private weak var amountTextField: UITextField!
+    @IBOutlet private weak var salaryTextField: UITextField!
+    @IBOutlet private weak var termTextField: UITextField!
     
     private var individual: Individual?
     private var organization: Organization?
@@ -26,21 +27,18 @@ class NewCreditViewController: UIViewController {
     private var salary = 0
     private let procent = 13
     
+    private var activeTextField : UITextField?
+    private var isMoving = false
 
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewCreditViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewCreditViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    func checkclientSolvency(amount: Int, term: Int, salary: Int) -> Bool{
-        let monthlyPay = (amount + amount*(procent/100))/term
-        let costs = Double(salary) * 0.4
-        if monthlyPay > Int(costs) {
-            return false
-        }
-        return true
-    }
-    
+    //MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         amountSlider.value = Float(amountTextField.text ?? "") ?? 0
@@ -55,12 +53,42 @@ class NewCreditViewController: UIViewController {
         destinationVC.setProcent(Int16(procent))
         destinationVC.setIndividual(individual)
         destinationVC.setOrganization(organization)
-//        if let vc = destinationVC as? OrgIndivid {
-//            vc.setIndividual(individual)
-//            vc.setOrganization(organization)
-//        }
     }
-   
+    //MARK: -
+    func checkclientSolvency(amount: Int, term: Int, salary: Int) -> Bool{
+        let monthlyPay = (amount + amount*(procent/100))/term
+        let costs = Double(salary) * 0.4
+        if monthlyPay > Int(costs) {
+            return false
+        }
+        return true
+    }
+
+    //MARK: - @IBActions
+    @IBAction func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if let activeTextField = activeTextField {
+                
+                let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+                
+                let topOfKeyboard = self.view.frame.height - keyboardSize.height
+                
+                let inset =  bottomOfTextField - topOfKeyboard
+                if inset > 0 && !isMoving {
+                    self.view.frame.origin.y -= (inset + 20)//keyboardSize.height
+                    isMoving = true
+                }
+            }
+        }
+    }
+
+    @IBAction func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+        isMoving = false
+    }
+    
     @IBAction func addCreditButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         term = Int.parse(termTextField.text ?? "") ?? 0
@@ -94,12 +122,7 @@ class NewCreditViewController: UIViewController {
     
 }
 
-extension Int {
-    static func parse(_ string: String) -> Int? {
-        return Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
-    }
-}
-
+//MARK: - Extensions
 extension NewCreditViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){
@@ -108,6 +131,19 @@ extension NewCreditViewController: OrgIndivid {
     
     func setOrganization (_ org: Organization?) {
         self.organization = org
+    }
+    
+}
+
+//MARK: - TextFieldDelegate
+extension NewCreditViewController: UITextFieldDelegate{
+   
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      self.activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      self.activeTextField = nil
     }
     
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class DepositsViewController: UIViewController {
 
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var depositsTableView: UITableView!
     @IBOutlet private weak var missingDepositsLabel: UILabel!

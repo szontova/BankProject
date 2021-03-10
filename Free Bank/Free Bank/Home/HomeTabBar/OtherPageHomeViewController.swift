@@ -9,6 +9,7 @@ import UIKit
 
 class OtherPageHomeViewController: UIViewController {
 
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var loginLabel: UILabel!

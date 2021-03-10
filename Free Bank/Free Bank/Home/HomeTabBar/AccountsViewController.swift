@@ -9,6 +9,7 @@ import UIKit
 
 class AccountsViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var accountsTableView: UITableView!
     

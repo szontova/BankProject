@@ -10,6 +10,7 @@ import CoreData
 
 class TransansactionsViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var senderSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var receiverSegmentedControl: UISegmentedControl!

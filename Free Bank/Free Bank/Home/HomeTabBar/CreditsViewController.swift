@@ -9,6 +9,7 @@ import UIKit
 
 class CreditsViewController: UIViewController {
 
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var missingCreditsLabel: UILabel!
     @IBOutlet private weak var creditsTableView: UITableView!

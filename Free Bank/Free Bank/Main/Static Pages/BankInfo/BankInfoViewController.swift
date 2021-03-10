@@ -11,6 +11,7 @@ import CoreData
 
 class BankInfoViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var prnLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -18,9 +19,9 @@ class BankInfoViewController: UIViewController {
     @IBOutlet weak var fullNumberButton: UIButton!
     @IBOutlet weak var emailButton: UIButton!
 
-    
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabelsAndButtons(getBank())
@@ -59,7 +60,7 @@ class BankInfoViewController: UIViewController {
             customStyleButton(emailButton, fb.email)
         }
     }
-        
+    //MARK: - @IBActions
     @IBAction func shortCallButton(_ sender: UIButton) {
         Util.callNumber(number: shortNumberButton.currentTitle!)
     }
@@ -84,6 +85,7 @@ class BankInfoViewController: UIViewController {
     
 }
 
+//MARK: - Extensions
 extension BankInfoViewController: MFMailComposeViewControllerDelegate{
         func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
                 dismiss(animated: true)

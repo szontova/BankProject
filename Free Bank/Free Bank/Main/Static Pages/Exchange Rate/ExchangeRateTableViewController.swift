@@ -68,7 +68,7 @@ class ExchangeRateTableViewController: UITableViewController {
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "mainBackground"))
     }
     
-    // MARK: - Table view data source
+    // MARK: - TableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

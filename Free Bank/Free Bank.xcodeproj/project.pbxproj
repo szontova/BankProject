@@ -303,7 +303,6 @@
 		5904330A25EE4C3F00BF5412 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				59031DBA25EF941E00B4DE9D /* CardTableViewCell */,
 				5904330B25EE4C6700BF5412 /* Cards.storyboard */,
 				5904330E25EE4D9000BF5412 /* CardsViewController.swift */,
 			);
@@ -343,6 +342,7 @@
 		592AE6FF25F604A8003543B7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				59031DBA25EF941E00B4DE9D /* CardTableViewCell */,
 				5904330025EE2D5300BF5412 /* AccountTableViewCell */,
 				592AE70425F6447D003543B7 /* TransactionTableViewCell */,
 				59031DB325EF90C700B4DE9D /* CreditTableViewCell */,

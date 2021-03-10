@@ -14,7 +14,9 @@ private let context: NSManagedObjectContext = (UIApplication.shared.delegate as!
 
 extension UIViewController {
     
-    //MARK:- FindEntities
+    //MARK: - FindEntities
+  
+    // Individual
     func findIndivididual(by login: String) -> Individual?{
         let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
         individRequest.predicate = NSPredicate(format: "login == %@", login)
@@ -29,6 +31,7 @@ extension UIViewController {
         return nil
     }
     
+    // Organization
     func findOrganization(by prn: String) -> Organization?{
         let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
         orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
@@ -43,6 +46,7 @@ extension UIViewController {
         return nil
     }
     
+    // Account
     func findAccount(by idNumber: String) -> Account?{
         let accountRequest = Account.fetchRequest() as NSFetchRequest<Account>
         accountRequest.predicate = NSPredicate(format: "idNumber == %@", idNumber)
@@ -57,6 +61,7 @@ extension UIViewController {
         return nil
     }
     
+    // Card
     func findCard(by idNumber: String) -> Card?{
         let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
         cardRequest.predicate = NSPredicate(format: "idNumber == %@", idNumber)
@@ -72,6 +77,8 @@ extension UIViewController {
     }
     
     //MARK:- ValidEntities
+ 
+    // Individual
     func validIndividual(_ login: String, _ password: String) -> Bool{
         let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
         let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
@@ -89,6 +96,7 @@ extension UIViewController {
         return false
     }
     
+    // Organization
     func validOrganization(_ prn: String, _ password: String) -> Bool{
         let individRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
         let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap{ String(format: "%02x", $0)}.joined()
@@ -106,7 +114,9 @@ extension UIViewController {
         return false
     }
     
-    //MARK:- AddEntities
+    //MARK: - AddEntities
+    
+    // Card
     func addCardForAccount( _ account: Account){
         let newCard = Card(context: context)
         var firsTemplateNumbers = 4725_6900_0000_0000
@@ -135,7 +145,7 @@ extension UIViewController {
         }
     }
     
-    
+    // Account
     func addAccount (_ idNumber: String, _ individ: Individual?, _ org: Organization?){
         let newAccount = Account(context:context)
         newAccount.idNumber = idNumber
@@ -157,6 +167,7 @@ extension UIViewController {
         
     }
     
+    // Individual
     func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
         
         let newIndivid = Individual(context: context)
@@ -181,6 +192,7 @@ extension UIViewController {
         
     }
     
+    // Organization
     func addOrganization ( _ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
         
         let newOrganization = Organization(context: context)
@@ -203,6 +215,7 @@ extension UIViewController {
         catch { print("addOrganization: error in add organization") }
     }
     
+    // Branch
     func addBranch(address: String){
         let newBranch = Branch(context: context)
         newBranch.idNumber = generationIdBranch()
@@ -216,6 +229,7 @@ extension UIViewController {
         }
     }
     
+    // ATM
     func addATM(address: String){
         let newATM = ATM(context: context)
         newATM.idNumber = generationIdATM()
@@ -229,6 +243,7 @@ extension UIViewController {
         }
     }
     
+    // Credit
     func addCredit(_ amount: Int32, _ term: Int16, _ procent: Int16, _ date: Date, _ individ: Individual?, _ org: Organization?){
      
         let newCredit = Credit(context: context)
@@ -275,6 +290,7 @@ extension UIViewController {
         _ = addTransaction(Int64(amount), (nil, bankAccount), (nil, newAccount))
     }
     
+    // Deposit
     func addDeposit(_ amount: Int64, _ term: Int16, _ procent: Int16, _ date: Date,_ revocable: Bool, _ individ: Individual?, _ org: Organization?){
         
         let newDeposit = Deposit(context: context)
@@ -312,6 +328,7 @@ extension UIViewController {
         _ = addTransaction(Int64(amount), (nil, nil), (nil, newAccount))
     }
 
+    // Transaction
     func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Bool{
         let newTransaction = Transaction(context: context)
         let something = "Счёт вне банка"
@@ -375,8 +392,9 @@ extension UIViewController {
         return allow
     }
     
-    //MARK: -HelperFunctions
+    //MARK: - GenerationID
     
+    // Account
     func generationIdAccount (_ category: String) -> String {
         var result: String = ""
         
@@ -402,6 +420,7 @@ extension UIViewController {
         return result
     }
     
+    // Branch
     func generationIdBranch () -> Int64{
         var id: Int64 = 0
         let request = Branch.fetchRequest() as NSFetchRequest<Branch>
@@ -421,6 +440,7 @@ extension UIViewController {
         return id
     }
     
+    // ATM
     func generationIdATM () -> Int64{
         var id: Int64 = 0
         let request = ATM.fetchRequest() as NSFetchRequest<ATM>
@@ -440,6 +460,7 @@ extension UIViewController {
         return id
     }
     
+    // Credit
     func generationIdCredit (_ ind: Individual?, _ org: Organization?, _ term: Int16, _ amount: Int32) -> Int64{
         var id: Int64 = 1_0000_0000
         let creditRequest = Credit.fetchRequest() as NSFetchRequest<Credit>
@@ -470,6 +491,7 @@ extension UIViewController {
         return id
     }
     
+    // Deposit
     func generationIdDeposit (_ ind: Individual?, _ org: Organization?, _ term: Int16, _ amount: Int64) -> Int64{
         var id: Int64 = 1_0000_0000
         let depositRequest = Deposit.fetchRequest() as NSFetchRequest<Deposit>
@@ -500,6 +522,7 @@ extension UIViewController {
         return id
     }
     
+    // Transaction
     func generationIdTransaction (_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Int64{
         var id: Int64 = 1_00000
         let transactionRequest = Transaction.fetchRequest() as NSFetchRequest<Transaction>
@@ -531,7 +554,9 @@ extension UIViewController {
         return id
     }
     
-    //MARK:- PrintEntities
+    //MARK: - PrintAllEntities
+
+    // Individual
     func printAllIndividual(){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         do {
@@ -544,6 +569,7 @@ extension UIViewController {
         catch { print("printAllIndividual: error in print people") }
     }
     
+    // Account
     func printAllAccounts(){
         let request = Account.fetchRequest() as NSFetchRequest<Account>
         do {
@@ -556,6 +582,7 @@ extension UIViewController {
         catch { print("printAllAccounts: error in print accounts") }
     }
     
+    // Organization
     func printAllOrganization(){
         let request = Organization.fetchRequest() as NSFetchRequest<Organization>
         do {
@@ -568,7 +595,9 @@ extension UIViewController {
         catch { print("printAllOrganization: error in print people") }
     }
     
-    //MARK:- CrTemplateEntities
+    //MARK: - CreateTemplateEntities
+
+    // Bank
     func createBank (){
         let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
         do {
@@ -592,6 +621,7 @@ extension UIViewController {
         }
     }
    
+    // Individuals
     func createTemplateIndividuals (){
  
         let tempNames = ["Чубакова Валерия Вадимовна", "Зонтова Александра Юрьевна", "Чекун Илья Леонидович"]
@@ -613,6 +643,7 @@ extension UIViewController {
 
     }
     
+    // Branches
     func createBranches(){
         let tempAdresses = ["г. Минск, ул. Матусевича 20", "г. Минск, ул. Центральная 8", "г. Минск, ул. Подлесная 56", "г. Минск, ул. Ольшевского 18", "г. Минск, ул. Парковая 1", "г. Брест, ул. Рыжского 28", "г. Могилев, ул. Проспект Победы 1", "г. Могилев, ул. Дунина 20", "г. Витебск, ул. Пушкина 88а", "г. Витебск, Проспект Мунина 44", "г. Гомель, ул. Матусевича 88", "г. Гродно, ул. Центральная 22"]
         
@@ -621,6 +652,7 @@ extension UIViewController {
         }
     }
     
+    // ATMs
     func createATMs(){
         let tempAdresses = ["г. Минск, ул. Матусевича 20", "г. Минск, ул. Минина 33", "г. Минск, ул. Академическая 2/1", "г. Минск, ул. Рижская 9", "г. Минск, ул. Ушакова 33", "г. Минск, ул. Ольшевского 18", "г. Минск, ул. Притыцкого 8", "г. Брест, ул. Бунина 44", "г. Брест, ул. Центральная 1", "г. Брест, ул. Рыжского 28", "г. Могилев, Проспект Победы 1", "г. Могилев, ул. ул. Дунина 20", "г. Витебск, ул. Центральная 21", "г. Витебск, ул. Пушкина 88а", "г. Витебск, Проспект Мунина 44", "г. Гомель, ул. Матусевича 88", "г. Гродно, ул. Центральная 22"]
         for i in 0..<tempAdresses.count{
@@ -628,6 +660,7 @@ extension UIViewController {
         }
     }
     
+    // Organizations
     func createTemplateOrganizations (){
         
         let tempNames = ["ЕАС Профессионал", "ГазПром"]
@@ -650,6 +683,8 @@ extension UIViewController {
     }
     
     //MARK:- DeleteEntities
+
+    // Individual
     func deleteIndividual(by login: String){
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         request.predicate = NSPredicate(format: "login == %@", login)
@@ -670,6 +705,7 @@ extension UIViewController {
         }
     }
 
+    // Organization
     func deleteOrganization(by prn: String){
         let request = Organization.fetchRequest() as NSFetchRequest<Organization>
         request.predicate = NSPredicate(format: "prn == %@", prn)
@@ -690,6 +726,7 @@ extension UIViewController {
         }
     }
 
+    // Account
     func deleteAccount(by idNumber: String){
         let request = Account.fetchRequest() as NSFetchRequest<Account>
         request.predicate = NSPredicate(format: "idNumber == %@", idNumber)
@@ -720,7 +757,7 @@ extension UIViewController {
     }
 }
 
-//MARK:- Entities extensions
+//MARK: - EntityExtensions
 
 extension Bank {
     

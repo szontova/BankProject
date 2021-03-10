@@ -9,7 +9,11 @@ import Foundation
 import UIKit
 
 extension UIViewController{
-    //MARK:- CheckOnePropery
+    //MARK: - CheckOnePropery
+    
+    
+    
+    //MARK: Login
     func checkLogin(login: String) -> Bool{
         let allowLetters: ClosedRange<Character> = "A"..."z"
         let allowSymbols: Set<Character> = [".","_"]
@@ -29,6 +33,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK: Password
     func checkPassword(password: String) -> Bool{
         
         if password.count < 8 || password.count > 50 {
@@ -72,6 +77,7 @@ extension UIViewController{
                 
     }
     
+    //MARK: PRN
     func checkUNP(unp: String) -> Bool {
               
         if unp.count != 9 {
@@ -88,7 +94,7 @@ extension UIViewController{
         return true
     }
     
-    
+    //MARK: IndividName
     func checkPersonName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
         let allowSymbols: Set<Character> = ["ё"]
@@ -112,6 +118,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK: OrganizationName
     func checkOrgName (name: String) -> Bool {
         let allowLetters: ClosedRange<Character> = "А"..."я"
         let allowNumbers: ClosedRange<Character> = "0"..."9"
@@ -131,6 +138,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK: Email
     func checkEmail (email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -141,6 +149,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK: CreditProperties
     func checkCreditAmount(_ amount: Int) -> Bool{
         if amount < 100 || amount > 10000{
             showAlertError(message: "Неверно введена сумма кредита.\nМинимальная сумма - 100 BYR\nМаксимальная - 10000 BYR")
@@ -166,6 +175,10 @@ extension UIViewController{
     }
     
     //MARK:- CheckDatasInPages
+    
+    
+    
+    //MARK: SignIn
     func checkSignInDatas(_ status: Int,  _ login: String, _ password: String) -> Bool{
              
         if login.isEmpty || password.isEmpty {
@@ -187,6 +200,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK: SignUP
     func checkSignUpDatas(_ status: Int, _ name: String, _ email: String, _ login: String, _ password: String, _ repeatPassword: String) -> Bool{
        
         if name.isEmpty || login.isEmpty || password.isEmpty || repeatPassword.isEmpty || email.isEmpty {
@@ -231,6 +245,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK: Credit
     func checkCreditDatas(_ amount: Int, _ term: Int, _ salary: Int) -> Bool{
         if amount == 0 || term == 0 || salary == 0 {
             showAlertError(message: "Не все поля заполнены.")
@@ -243,6 +258,7 @@ extension UIViewController{
         return true
     }
     
+    //MARK: Transaction
     func checkAccountBalance(_ amount: Int64, _ balance: Int64) -> Bool {
         if balance - amount < 0 {
             return false

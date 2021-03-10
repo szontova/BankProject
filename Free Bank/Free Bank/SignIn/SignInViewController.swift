@@ -28,61 +28,6 @@ class SignInViewController: UIViewController {
         //printAllOrganization()
     }
     
-    override func loadView() {
-        super.loadView()
-        //print("loadView")
-        //для файлов свёрстанных кодом
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        // только появится
-        // every time you hit the screen
-        super.viewWillAppear(animated)
-        
-//        loginTextField.text = "lerachubakova"
-//        passwordTextField.text = "Qwerty1234"
-        //print("viewWillAppear")
-        //printAllIndividual()
-    }
-
-    override func viewWillLayoutSubviews() {
-        //constraints
-        super.viewWillLayoutSubviews()
-        //print("viewWillLayoutSubviews")
-    }
-
-    override func viewDidLayoutSubviews() {
-        //
-        super.viewDidLayoutSubviews()
-        //print("viewDidLayoutSubviews")
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        //
-        super.viewDidAppear(animated)
-        //print("viewDidAppear")
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        //
-        super.viewWillDisappear(animated)
-        //print("viewWillDisappear")
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        //
-        super.viewDidDisappear(animated)
-        //print("viewDidDisappear")
-    }
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        //print("viewWillTransition")
-    }
-
-    deinit {
-        //print("deinit")
-    }
-    
     //MARK: - OverrideMethods
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

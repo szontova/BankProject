@@ -92,7 +92,7 @@
 		59ED9D8525F7DF3700C43CEE /* ChangeSalaryProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59ED9D8425F7DF3700C43CEE /* ChangeSalaryProject.storyboard */; };
 		59ED9D8B25F7F34500C43CEE /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59ED9D8925F7F34500C43CEE /* FormTableViewCell.swift */; };
 		59ED9D8C25F7F34500C43CEE /* FormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59ED9D8A25F7F34500C43CEE /* FormTableViewCell.xib */; };
-		59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */; };
+		59F4BAED25E64AA7002FF477 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* CoreDataFunctions.swift */; };
 		59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */; };
 		59FC3A4525F24DB20019EE72 /* ConfirmationDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */; };
 /* End PBXBuildFile section */
@@ -184,7 +184,7 @@
 		59ED9D8425F7DF3700C43CEE /* ChangeSalaryProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeSalaryProject.storyboard; sourceTree = "<group>"; };
 		59ED9D8925F7F34500C43CEE /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
 		59ED9D8A25F7F34500C43CEE /* FormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormTableViewCell.xib; sourceTree = "<group>"; };
-		59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEntities.swift; sourceTree = "<group>"; };
+		59F4BAEC25E64AA7002FF477 /* CoreDataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFunctions.swift; sourceTree = "<group>"; };
 		59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewDeposit.storyboard; sourceTree = "<group>"; };
 		59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositViewController.swift; sourceTree = "<group>"; };
 		59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDepositViewController.swift; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 			children = (
 				592AE50A25D3D45D000C99E5 /* Alerts.swift */,
 				59CF7AB825DBDB3700DEF5DC /* CheckDataFunctions.swift */,
-				59F4BAEC25E64AA7002FF477 /* TemplateEntities.swift */,
+				59F4BAEC25E64AA7002FF477 /* CoreDataFunctions.swift */,
 				31E793A525E9565100667F99 /* UtilityFunctions.swift */,
 				59A42D1825ED2D0B002C8EF9 /* DesignFunctions.swift */,
 			);
@@ -652,7 +652,7 @@
 				59A42D0C25ECE3AC002C8EF9 /* AccountsViewController.swift in Sources */,
 				31E793A625E9565100667F99 /* UtilityFunctions.swift in Sources */,
 				596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */,
-				59F4BAED25E64AA7002FF477 /* TemplateEntities.swift in Sources */,
+				59F4BAED25E64AA7002FF477 /* CoreDataFunctions.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
 				31FA59D725F24E9300EA5D3D /* Deposit+CoreDataClass.swift in Sources */,
 				59DFC2D025E7DE62000EDCF9 /* EndOfSignUpViewController.swift in Sources */,

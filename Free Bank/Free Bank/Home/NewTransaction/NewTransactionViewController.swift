@@ -8,7 +8,7 @@
 import UIKit
 
 class NewTransactionViewController: UIViewController {
-
+    //MARK: - @IBOutlets
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var accountView: UIView!
@@ -32,6 +32,7 @@ class NewTransactionViewController: UIViewController {
     
     private var accounts: [Account] = []
     
+    //MARK: -
     func setSender( card: Bool,  acc: Bool){
         self.senderType = (card, acc)
     }
@@ -39,11 +40,7 @@ class NewTransactionViewController: UIViewController {
     func setReceiver( card: Bool,  acc: Bool){
         self.receiverType = (card, acc)
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        account = accounts[row]
-    }
-    
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +51,63 @@ class NewTransactionViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //print("\(individual) \(organization) \(senderType) \(receiverType)")
+        if senderType.1 {
+            cardView.isHidden = true
+            accountView.isHidden = false
+            updateAccounts()
+            senderAccountPickerViewConfigurations()
+            account = accounts[0]
+        } else {
+            cardView.isHidden = false
+            accountView.isHidden = true
+        }
+        
+        if receiverType.0 {
+            receiverTextField.placeholder = "Введите номер карты"
+            receiverTextField.keyboardType = .numberPad
+        } else {
+            receiverTextField.placeholder = "Введите номер счёта"
+        }
+    }
+    
+    //MARK: - OverrideMethods
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toConfirmationTransactionSegue" else { return }
+        guard let destinationVC = segue.destination as? ConfirmationTransactionViewController else { return }
+        destinationVC.setSender(card: findCard(by: (senderCardNumberTextField.text)!), acc: account)
+        destinationVC.setReceiver(card: findCard(by: (receiverTextField.text)!), acc: findAccount(by: (receiverTextField.text)!))
+    }
+     
+    //MARK: -
+    func senderAccountPickerViewConfigurations(){
+        
+        senderAccountPickerView.delegate = self
+        senderAccountPickerView.dataSource = self
+    }
+    
+    func updateAccounts(){
+        let accs = individual?.accounts ?? organization?.accounts
+        accounts = Array ( accs as! Set<Account> )
+       
+        accounts.sort(){
+            return $0.idNumber! < $1.idNumber!
+        }
+        
+       accounts = accounts.filter { (acc) -> Bool in
+            if let rev = acc.deposit?.revocable {
+                return rev
+            }
+            return true
+        }
+    }
+    
+    //MARK: - @IBActions
     @IBAction func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -78,62 +132,6 @@ class NewTransactionViewController: UIViewController {
         isMoving = false
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "toConfirmationTransactionSegue" else { return }
-        guard let destinationVC = segue.destination as? ConfirmationTransactionViewController else { return }
-        destinationVC.setSender(card: findCard(by: (senderCardNumberTextField.text)!), acc: account)
-        destinationVC.setReceiver(card: findCard(by: (receiverTextField.text)!), acc: findAccount(by: (receiverTextField.text)!))
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //print("\(individual) \(organization) \(senderType) \(receiverType)")
-        if senderType.1 {
-            cardView.isHidden = true
-            accountView.isHidden = false
-            updateAccounts()
-            senderAccountPickerViewConfigurations()
-            account = accounts[0]
-        } else {
-            cardView.isHidden = false
-            accountView.isHidden = true
-        }
-        
-        if receiverType.0 {
-            receiverTextField.placeholder = "Введите номер карты"
-            receiverTextField.keyboardType = .numberPad
-        } else {
-            receiverTextField.placeholder = "Введите номер счёта"
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    func senderAccountPickerViewConfigurations(){
-        
-        senderAccountPickerView.delegate = self
-        senderAccountPickerView.dataSource = self
-    }
-    
-    
-    func updateAccounts(){
-        let accs = individual?.accounts ?? organization?.accounts
-        accounts = Array ( accs as! Set<Account> )
-       
-        accounts.sort(){
-            return $0.idNumber! < $1.idNumber!
-        }
-        
-       accounts = accounts.filter { (acc) -> Bool in
-            if let rev = acc.deposit?.revocable {
-                return rev
-            }
-            return true
-        }
-    }
-    
     @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue){
         guard segue.identifier == "unwindToNewTransactionFromConfirmSegue" else {return}
         guard let _ = segue.destination as? ConfirmationTransactionViewController else {return}
@@ -152,7 +150,7 @@ class NewTransactionViewController: UIViewController {
         } else {showAlertError(message: "Неверные данные для проведения операции.")}
     }
 }
-
+//MARK: - Extensions
 extension NewTransactionViewController: OrgIndivid{
     func setIndividual(_ individ: Individual?) {
         self.individual = individ
@@ -162,7 +160,7 @@ extension NewTransactionViewController: OrgIndivid{
         self.organization = org
     }
 }
-
+//MARK: TextFieldDelegate
 extension NewTransactionViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -178,11 +176,15 @@ extension NewTransactionViewController: UITextFieldDelegate{
     }
     
 }
-
+//MARK: PickerView
 extension NewTransactionViewController: UIPickerViewDelegate {}
 extension NewTransactionViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        account = accounts[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

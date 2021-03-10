@@ -9,6 +9,7 @@ import UIKit
 
 class CreditViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var creditNumberLabel: UILabel!
     @IBOutlet private weak var accountNumberLabel: UILabel!
@@ -22,10 +23,12 @@ class CreditViewController: UIViewController {
     
     private var credit: Credit?
     
+    //MARK: -
     func setCredit(_ credit: Credit) {
         self.credit = credit
     }
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
@@ -47,6 +50,8 @@ class CreditViewController: UIViewController {
             nextPayDateLabel.text = Util.getddMMyyyyDateString(Util.getIntervalDate(cred.date!,1/12))
         }
     }
+    
+    //MARK: - @IBActions
     @IBAction func payOffButton(_ sender: UIButton) {
     }
     @IBAction func TransferMoneyButton(_ sender: UIButton) {

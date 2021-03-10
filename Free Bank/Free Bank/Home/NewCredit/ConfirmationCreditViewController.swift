@@ -9,6 +9,7 @@ import UIKit
 
 class ConfirmationCreditViewController: UIViewController {
     
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var termLabel: UILabel!
@@ -23,6 +24,7 @@ class ConfirmationCreditViewController: UIViewController {
     private var individual: Individual?
     private var organization: Organization?
 
+    //MARK: -
     func setAmount(_ amount: Int32?){
         self.amount = amount
     }
@@ -35,7 +37,7 @@ class ConfirmationCreditViewController: UIViewController {
         self.procent = procent
     }
     
-    
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
@@ -49,7 +51,7 @@ class ConfirmationCreditViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         dateLabel.text = dateFormatter.string(for: date) ?? "00.00.0000"
         }
-    
+    //MARK: - @IBActions
     @IBAction func confirmCreditButton(_ sender: UIButton) {
         addCredit( amount!, term!, procent!, date, individual, organization)
         showAlertMessageWithSegue(message: "Кредит успешно оформлен", segue: "unwindToCreditsFromConfirmCreditSegue")
@@ -57,6 +59,7 @@ class ConfirmationCreditViewController: UIViewController {
     
 }
 
+//MARK: - Extensions
 extension ConfirmationCreditViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){

@@ -9,6 +9,7 @@ import UIKit
 
 class NewCreditViewController: UIViewController {
 
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     
     @IBOutlet private weak var amountSlider: UISlider!
@@ -29,6 +30,7 @@ class NewCreditViewController: UIViewController {
     private var activeTextField : UITextField?
     private var isMoving = false
 
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
@@ -36,16 +38,7 @@ class NewCreditViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(NewCreditViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(NewCreditViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    func checkclientSolvency(amount: Int, term: Int, salary: Int) -> Bool{
-        let monthlyPay = (amount + amount*(procent/100))/term
-        let costs = Double(salary) * 0.4
-        if monthlyPay > Int(costs) {
-            return false
-        }
-        return true
-    }
-    
+    //MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         amountSlider.value = Float(amountTextField.text ?? "") ?? 0
@@ -60,12 +53,18 @@ class NewCreditViewController: UIViewController {
         destinationVC.setProcent(Int16(procent))
         destinationVC.setIndividual(individual)
         destinationVC.setOrganization(organization)
-//        if let vc = destinationVC as? OrgIndivid {
-//            vc.setIndividual(individual)
-//            vc.setOrganization(organization)
-//        }
     }
-   
+    //MARK: -
+    func checkclientSolvency(amount: Int, term: Int, salary: Int) -> Bool{
+        let monthlyPay = (amount + amount*(procent/100))/term
+        let costs = Double(salary) * 0.4
+        if monthlyPay > Int(costs) {
+            return false
+        }
+        return true
+    }
+
+    //MARK: - @IBActions
     @IBAction func keyboardWillShow(notification: NSNotification) {
         
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -123,12 +122,7 @@ class NewCreditViewController: UIViewController {
     
 }
 
-extension Int {
-    static func parse(_ string: String) -> Int? {
-        return Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
-    }
-}
-
+//MARK: - Extensions
 extension NewCreditViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){
@@ -141,6 +135,7 @@ extension NewCreditViewController: OrgIndivid {
     
 }
 
+//MARK: - TextFieldDelegate
 extension NewCreditViewController: UITextFieldDelegate{
    
     func textFieldDidBeginEditing(_ textField: UITextField) {

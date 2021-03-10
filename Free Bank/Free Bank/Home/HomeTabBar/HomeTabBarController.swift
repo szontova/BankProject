@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol OrgIndivid: class {
-    
-    func setIndividual(_ individ: Individual?)
-      
-    func setOrganization(_ org: Organization?)
-    
-}
 
 class HomeTabBarController: UITabBarController {
     //MARK: - @IBOutlets

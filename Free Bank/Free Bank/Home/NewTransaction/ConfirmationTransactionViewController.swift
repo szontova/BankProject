@@ -9,6 +9,7 @@ import UIKit
 
 class ConfirmationTransactionViewController: UIViewController {
 
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     
     @IBOutlet private weak var senderLabel: UILabel!
@@ -30,6 +31,7 @@ class ConfirmationTransactionViewController: UIViewController {
     private var senderType: (Card?, Account?)
     private var receiverType: (Card?, Account?)
     
+    //MARK: -
     func setSender( card: Card?,  acc: Account?){
         self.senderType = (card, acc)
     }
@@ -38,6 +40,7 @@ class ConfirmationTransactionViewController: UIViewController {
         self.receiverType = (card, acc)
     }
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
@@ -45,7 +48,7 @@ class ConfirmationTransactionViewController: UIViewController {
             titleSenderLabel.text = "Номер карты:"
             senderLabel.text = String(senderType.0!.idNumber)
             balanceLabel.text = Util.getIntBYRbyString((senderType.0?.account!.balance)!)
-        }else if senderType.1 != nil {
+        } else if senderType.1 != nil {
             senderLabel.text = senderType.1?.idNumber
             balanceLabel.text = Util.getIntBYRbyString((senderType.1?.balance)!)
         }
@@ -63,6 +66,7 @@ class ConfirmationTransactionViewController: UIViewController {
         totalLabel.text = Util.getIntBYRbyString((amount ?? 0) + (commission ?? 0))
     }
     
+    //MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         amount = (Int.parse(amountTextField.text ?? "0") ?? 0) * 100
@@ -71,6 +75,7 @@ class ConfirmationTransactionViewController: UIViewController {
         totalLabel.text = Util.getIntBYRbyString(total ?? 0)
     }
     
+    //MARK: - @IBActions
     @IBAction func confirmTransaction(_ sender: UIButton) {
         amount = (Int.parse(amountTextField.text ?? "0") ?? 0) * 100
         commission = Int.parse(commissionLabel.text ?? "0") ?? 0

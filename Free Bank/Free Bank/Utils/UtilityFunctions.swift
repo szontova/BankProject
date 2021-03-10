@@ -8,6 +8,19 @@
 import Foundation
 import UIKit
 
+extension Int {
+    static func parse(_ string: String) -> Int? {
+        return Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
+    }
+}
+
+protocol OrgIndivid: class {
+    
+    func setIndividual(_ individ: Individual?)
+      
+    func setOrganization(_ org: Organization?)
+    
+}
 
 public class Util {
     

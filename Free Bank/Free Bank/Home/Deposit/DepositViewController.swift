@@ -8,7 +8,10 @@
 import UIKit
 
 class DepositViewController: UIViewController {
+    
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
+    
     @IBOutlet private weak var depositNumberLabel: UILabel!
     @IBOutlet private weak var accountNumberLabel: UILabel!
     @IBOutlet private weak var amountLabel: UILabel!
@@ -16,14 +19,17 @@ class DepositViewController: UIViewController {
     @IBOutlet private weak var revocableLabel: UILabel!
     @IBOutlet private weak var beginDateLabel: UILabel!
     @IBOutlet private weak var endDateLabel: UILabel!
+    
     @IBOutlet private weak var withdrawMoneyButton: UIButton!
     
     private var deposit: Deposit?
     
+    //MARK: -
     func setDeposit(_ deposit: Deposit){
         self.deposit = deposit
     }
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +58,8 @@ class DepositViewController: UIViewController {
         }
       
     }
+    
+    //MARK: - @IBActions
     @IBAction func withdrawMoneyAction(_ sender: UIButton) {
         
     }

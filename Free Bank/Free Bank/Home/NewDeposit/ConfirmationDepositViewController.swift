@@ -8,7 +8,10 @@
 import UIKit
 
 class ConfirmationDepositViewController: UIViewController {
+    
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
+    
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var procentLabel: UILabel!
     @IBOutlet private weak var termLabel: UILabel!
@@ -24,6 +27,7 @@ class ConfirmationDepositViewController: UIViewController {
     private var individual: Individual?
     private var organization: Organization?
 
+    //MARK: -
     func setAmount(_ amount: Int64?){
         self.amount = amount
     }
@@ -40,6 +44,7 @@ class ConfirmationDepositViewController: UIViewController {
         self.revocable = revocable
     }
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
@@ -61,6 +66,7 @@ class ConfirmationDepositViewController: UIViewController {
         dateLabel.text = Util.getddMMyyyyDateString(date)
     }
     
+    //MARK: - @IBActions
     @IBAction func confirmDepositButton(_ sender: UIButton) {
         addDeposit(amount!, term!, procent!, date, revocable!, individual, organization)
         showAlertMessageWithSegue(message: "Депозит успешно оформлен", segue: "unwindToDepositsFromConfirmDepositSegue")
@@ -68,6 +74,7 @@ class ConfirmationDepositViewController: UIViewController {
     
 }
 
+//MARK: - Extensions
 extension ConfirmationDepositViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){

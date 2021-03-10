@@ -8,12 +8,15 @@
 import UIKit
 
 class CreateSalaryProjectViewController: UIViewController {
+    
+    //MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var countsOfWorkersTextField: UITextField!
     @IBOutlet private weak var formsTableView: UITableView!
     
     private var count = 0
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
@@ -25,10 +28,12 @@ class CreateSalaryProjectViewController: UIViewController {
         updateFormsTableView()
     }
     
+    //MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    //MARK: -
     func formsTableViewConfigurations(){
         
         formsTableView.backgroundColor = .clear
@@ -40,7 +45,7 @@ class CreateSalaryProjectViewController: UIViewController {
         
     }
     
-    func  updateFormsTableView(){
+    func updateFormsTableView(){
         if count == 0 {
             formsTableView.isHidden = true
         }
@@ -52,7 +57,7 @@ class CreateSalaryProjectViewController: UIViewController {
             self.formsTableView.reloadData()
         }
     }
-    
+    //MARK: - @IBActions
     @IBAction func formsGenerationAction(_ sender: UIButton) {
         count = Int(countsOfWorkersTextField.text ?? "") ?? 0
         updateFormsTableView()
@@ -63,6 +68,7 @@ class CreateSalaryProjectViewController: UIViewController {
     
 }
 
+//MARK: - Extensions
 extension CreateSalaryProjectViewController: UITableViewDelegate {}
 extension CreateSalaryProjectViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

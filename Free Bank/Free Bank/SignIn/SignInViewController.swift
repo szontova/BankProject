@@ -11,13 +11,13 @@ class SignInViewController: UIViewController {
 
     //MARK: - @IBOutlets
     
-    @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
     
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var loginErrorLabel: UILabel!
+    @IBOutlet private weak var loginLabel: UILabel!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var loginErrorLabel: UILabel!
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
   
     private var login: String = ""
     //MARK: - LifeCycleMethods
@@ -162,6 +162,7 @@ class SignInViewController: UIViewController {
             case 1:
                 if let org = self.findOrganization(by: login) {
                     if org.codeWord == codeWord.lowercased(){
+                        self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
                         self.showAlertError(message: "Кодовое слово введено неверно")

@@ -10,18 +10,18 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     //MARK: - @IBOutlets
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameTextField: UITextField!
     
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet private weak var loginLabel: UILabel!
+    @IBOutlet private weak var loginTextField: UITextField!
     
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var repeatPasswordTextField: UITextField!
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
     
-    @IBOutlet weak var statusSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
     
     private var activeTextField : UITextField?
     private var isMoving = false

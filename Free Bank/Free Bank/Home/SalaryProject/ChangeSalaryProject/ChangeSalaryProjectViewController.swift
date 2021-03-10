@@ -8,7 +8,7 @@
 import UIKit
 
 class ChangeSalaryProjectViewController: UIViewController {
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()

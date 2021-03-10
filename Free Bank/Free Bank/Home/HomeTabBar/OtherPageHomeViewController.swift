@@ -9,13 +9,13 @@ import UIKit
 
 class OtherPageHomeViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var loginLabel: UILabel!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var loginLabel: UILabel!
     
-    @IBOutlet weak var createSPButton: UIButton!
-    @IBOutlet weak var changeSPButton: UIButton!
-    @IBOutlet weak var paySPButton: UIButton!
+    @IBOutlet private weak var createSPButton: UIButton!
+    @IBOutlet private weak var changeSPButton: UIButton!
+    @IBOutlet private weak var paySPButton: UIButton!
     
     
     private var individual: Individual?

@@ -9,13 +9,12 @@ import UIKit
 
 class ConfirmationCreditViewController: UIViewController {
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var termLabel: UILabel!
-    @IBOutlet weak var monthlyPayLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var termLabel: UILabel!
+    @IBOutlet private weak var monthlyPayLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
-
     private var amount: Int32?
     private var term: Int16?
     private var procent: Int16?

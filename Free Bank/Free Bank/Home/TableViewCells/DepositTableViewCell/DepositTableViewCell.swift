@@ -9,10 +9,10 @@ import UIKit
 
 class DepositTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var idNumberLabel: UILabel!
-    @IBOutlet weak var depositDateLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var revocableLabel: UILabel!
+    @IBOutlet private weak var idNumberLabel: UILabel!
+    @IBOutlet private weak var depositDateLabel: UILabel!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var revocableLabel: UILabel!
     static let identifier = "depositCell"
     
     override func awakeFromNib() {

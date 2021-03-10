@@ -8,15 +8,15 @@
 import UIKit
 
 class DepositViewController: UIViewController {
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var depositNumberLabel: UILabel!
-    @IBOutlet weak var accountNumberLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var procentLabel: UILabel!
-    @IBOutlet weak var revocableLabel: UILabel!
-    @IBOutlet weak var beginDateLabel: UILabel!
-    @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var withdrawMoneyButton: UIButton!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var depositNumberLabel: UILabel!
+    @IBOutlet private weak var accountNumberLabel: UILabel!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var procentLabel: UILabel!
+    @IBOutlet private weak var revocableLabel: UILabel!
+    @IBOutlet private weak var beginDateLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
+    @IBOutlet private weak var withdrawMoneyButton: UIButton!
     
     private var deposit: Deposit?
     

@@ -9,11 +9,11 @@ import UIKit
 
 class CardsViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var accountNumberLabel: UILabel!
-    @IBOutlet weak var accountBalanceLabel: UILabel!
-    @IBOutlet weak var missingCardsLabel: UILabel!
-    @IBOutlet weak var cardsTableView: UITableView!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var accountNumberLabel: UILabel!
+    @IBOutlet private weak var accountBalanceLabel: UILabel!
+    @IBOutlet private weak var missingCardsLabel: UILabel!
+    @IBOutlet private weak var cardsTableView: UITableView!
     
     
     private var account: Account?

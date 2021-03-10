@@ -9,11 +9,10 @@ import UIKit
 
 class CreditTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var creditNumberLabel: UILabel!
-    @IBOutlet weak var mounthlyPayLabel: UILabel!
-    @IBOutlet weak var dateOfRegistrationLabel: UILabel!
-    @IBOutlet weak var myBackgroundView: UIView!
-    
+    @IBOutlet private weak var creditNumberLabel: UILabel!
+    @IBOutlet private weak var mounthlyPayLabel: UILabel!
+    @IBOutlet private weak var dateOfRegistrationLabel: UILabel!
+    @IBOutlet private weak var myBackgroundView: UIView!
 
     static let identifier = "creditCell"
     

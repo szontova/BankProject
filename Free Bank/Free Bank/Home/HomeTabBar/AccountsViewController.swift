@@ -9,8 +9,8 @@ import UIKit
 
 class AccountsViewController: UIViewController {
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var accountsTableView: UITableView!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var accountsTableView: UITableView!
     
     private var individual: Individual?
     private var organization: Organization?

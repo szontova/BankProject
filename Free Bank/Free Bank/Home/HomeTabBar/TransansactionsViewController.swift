@@ -10,12 +10,12 @@ import CoreData
 
 class TransansactionsViewController: UIViewController {
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var senderSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var receiverSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var accountsPickerView: UIPickerView!
-    @IBOutlet weak var missingTransfersLabel: UILabel!
-    @IBOutlet weak var transactionsTableView: UITableView!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var senderSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var receiverSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var accountsPickerView: UIPickerView!
+    @IBOutlet private weak var missingTransfersLabel: UILabel!
+    @IBOutlet private weak var transactionsTableView: UITableView!
     
     private var individual: Individual?
     private var organization: Organization?

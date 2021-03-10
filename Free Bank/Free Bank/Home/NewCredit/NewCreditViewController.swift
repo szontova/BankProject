@@ -9,14 +9,14 @@ import UIKit
 
 class NewCreditViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     
-    @IBOutlet weak var amountSlider: UISlider!
-    @IBOutlet weak var termSlider: UISlider!
+    @IBOutlet private weak var amountSlider: UISlider!
+    @IBOutlet private weak var termSlider: UISlider!
     
-    @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var salaryTextField: UITextField!
-    @IBOutlet weak var termTextField: UITextField!
+    @IBOutlet private weak var amountTextField: UITextField!
+    @IBOutlet private weak var salaryTextField: UITextField!
+    @IBOutlet private weak var termTextField: UITextField!
     
     private var individual: Individual?
     private var organization: Organization?

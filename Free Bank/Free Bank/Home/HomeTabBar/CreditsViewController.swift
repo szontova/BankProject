@@ -9,9 +9,9 @@ import UIKit
 
 class CreditsViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var missingCreditsLabel: UILabel!
-    @IBOutlet weak var creditsTableView: UITableView!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var missingCreditsLabel: UILabel!
+    @IBOutlet private weak var creditsTableView: UITableView!
     
     private var individual: Individual?
     private var organization: Organization?

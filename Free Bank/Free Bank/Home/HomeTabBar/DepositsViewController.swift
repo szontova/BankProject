@@ -9,9 +9,9 @@ import UIKit
 
 class DepositsViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var depositsTableView: UITableView!
-    @IBOutlet weak var missingDepositsLabel: UILabel!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var depositsTableView: UITableView!
+    @IBOutlet private weak var missingDepositsLabel: UILabel!
     
     private var individual: Individual?
     private var organization: Organization?

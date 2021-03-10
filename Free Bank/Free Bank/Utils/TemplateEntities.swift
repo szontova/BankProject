@@ -350,8 +350,6 @@ extension UIViewController {
                 }
                 accountReciever.addToTransactions(newTransaction)
                 newTransaction.receiver = String(cardReceiver.idNumber)
-            } else {
-                newTransaction.receiver = something
             }
         } else if let accountReceiver = receiver.1 {
             if let ourReciever = findAccount(by: accountReceiver.idNumber ?? "") {
@@ -363,6 +361,9 @@ extension UIViewController {
             } else {
                 newTransaction.receiver = something
             }
+        } else {
+            newTransaction.receiver = something
+            //print(newTransaction.receiver)
         }
         
         //print(newTransaction.string())

@@ -8,12 +8,12 @@
 import UIKit
 
 class ConfirmationDepositViewController: UIViewController {
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var procentLabel: UILabel!
-    @IBOutlet weak var termLabel: UILabel!
-    @IBOutlet weak var revocableLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var procentLabel: UILabel!
+    @IBOutlet private weak var termLabel: UILabel!
+    @IBOutlet private weak var revocableLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
     private var amount: Int64?
     private var term: Int16?

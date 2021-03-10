@@ -14,16 +14,14 @@ protocol AccountTableViewCellDelegate:class {
 }
 
 class AccountTableViewCell: UITableViewCell {
-
-   
-    @IBOutlet weak var idNumberLabel: UILabel!
-    @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var myBackgroundView: UIView!
+    @IBOutlet private weak var idNumberLabel: UILabel!
+    @IBOutlet private weak var balanceLabel: UILabel!
+    @IBOutlet private weak var myBackgroundView: UIView!
     
-    @IBOutlet weak var buttonsStackView: UIStackView!
-    @IBOutlet weak var toUpButton: UIButton!
-    @IBOutlet weak var deactivationButton: UIButton!
-    @IBOutlet weak var moreImageView: UIImageView!
+    @IBOutlet private weak var buttonsStackView: UIStackView!
+    @IBOutlet private weak var toUpButton: UIButton!
+    @IBOutlet private weak var deactivationButton: UIButton!
+    @IBOutlet private weak var moreImageView: UIImageView!
     
     weak var cellDelegate: AccountTableViewCellDelegate?
     

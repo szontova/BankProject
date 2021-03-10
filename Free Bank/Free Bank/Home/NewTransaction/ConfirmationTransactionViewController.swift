@@ -9,19 +9,20 @@ import UIKit
 
 class ConfirmationTransactionViewController: UIViewController {
 
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     
-    @IBOutlet weak var senderLabel: UILabel!
-    @IBOutlet weak var receiverLabel: UILabel!
+    @IBOutlet private weak var senderLabel: UILabel!
+    @IBOutlet private weak var receiverLabel: UILabel!
     
-    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet private weak var amountTextField: UITextField!
     
-    @IBOutlet weak var commissionLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet private weak var commissionLabel: UILabel!
+    @IBOutlet private weak var totalLabel: UILabel!
     
-    @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var titleSenderLabel: UILabel!
-    @IBOutlet weak var titleReceiverLabel: UILabel!
+    @IBOutlet private weak var balanceLabel: UILabel!
+    @IBOutlet private weak var titleSenderLabel: UILabel!
+    @IBOutlet private weak var titleReceiverLabel: UILabel!
+    
     private var amount:Int?
     private var commission: Int?
     private var total: Int64?

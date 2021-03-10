@@ -10,15 +10,15 @@ import UIKit
 class CreditViewController: UIViewController {
     
     @IBOutlet private weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var creditNumberLabel: UILabel!
-    @IBOutlet weak var accountNumberLabel: UILabel!
-    @IBOutlet weak var balanceAccountLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var procentLabel: UILabel!
-    @IBOutlet weak var beginDateLabel: UILabel!
-    @IBOutlet weak var monthlyPayLabel: UILabel!
-    @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var nextPayDateLabel: UILabel!
+    @IBOutlet private weak var creditNumberLabel: UILabel!
+    @IBOutlet private weak var accountNumberLabel: UILabel!
+    @IBOutlet private weak var balanceAccountLabel: UILabel!
+    @IBOutlet private weak var amountLabel: UILabel!
+    @IBOutlet private weak var procentLabel: UILabel!
+    @IBOutlet private weak var beginDateLabel: UILabel!
+    @IBOutlet private weak var monthlyPayLabel: UILabel!
+    @IBOutlet private weak var endDateLabel: UILabel!
+    @IBOutlet private weak var nextPayDateLabel: UILabel!
     
     private var credit: Credit?
     

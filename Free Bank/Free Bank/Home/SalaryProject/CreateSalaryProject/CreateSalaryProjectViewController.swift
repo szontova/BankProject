@@ -8,9 +8,9 @@
 import UIKit
 
 class CreateSalaryProjectViewController: UIViewController {
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var countsOfWorkersTextField: UITextField!
-    @IBOutlet weak var formsTableView: UITableView!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var countsOfWorkersTextField: UITextField!
+    @IBOutlet private weak var formsTableView: UITableView!
     
     private var count = 0
     

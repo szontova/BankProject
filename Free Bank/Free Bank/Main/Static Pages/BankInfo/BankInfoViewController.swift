@@ -11,12 +11,12 @@ import CoreData
 
 class BankInfoViewController: UIViewController {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var prnLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var shortNumberButton: UIButton!
-    @IBOutlet weak var fullNumberButton: UIButton!
-    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var prnLabel: UILabel!
+    @IBOutlet private weak var addressLabel: UILabel!
+    @IBOutlet private weak var shortNumberButton: UIButton!
+    @IBOutlet private weak var fullNumberButton: UIButton!
+    @IBOutlet private weak var emailButton: UIButton!
 
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

@@ -9,14 +9,13 @@ import UIKit
 
 class NewDepositViewController: UIViewController {
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var navigationBar: UINavigationBar!
     
-    @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var termLabel: UILabel!
+    @IBOutlet private weak var amountTextField: UITextField!
+    @IBOutlet private weak var termLabel: UILabel!
 
-    @IBOutlet weak var termSlider: UISlider!
-    @IBOutlet weak var revocableSwitch: UISwitch!
-    
+    @IBOutlet private weak var termSlider: UISlider!
+    @IBOutlet private weak var revocableSwitch: UISwitch!
     
     private var individual: Individual?
     private var organization: Organization?

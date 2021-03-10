@@ -22,7 +22,7 @@ class TransansactionsViewController: UIViewController {
 
     private var accounts: [Account] = []
     private var transactions: [Transaction] = []
-    
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -37,7 +37,7 @@ class TransansactionsViewController: UIViewController {
         updateTransactionsTableView(accounts[0])
         accountsPickerViewConfigurations()
     }
-    
+    //MARK: - OverrideMethods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toNewTransactionSegue" else { return }
         guard let destinationVC = segue.destination as? NewTransactionViewController else { return }
@@ -58,7 +58,7 @@ class TransansactionsViewController: UIViewController {
         
         
     }
-    
+    //MARK: -
     func accountsPickerViewConfigurations(){
         
         accountsPickerView.delegate = self
@@ -107,7 +107,7 @@ class TransansactionsViewController: UIViewController {
             self.transactionsTableView.reloadData()
         }
     }
-    
+    //MARK: - @IBActions
     @IBAction func unwindToTransactionsVCFromNewTransactionVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToTransactionsFromNewTransactionSegue" else {return}
         guard let _ = segue.destination as? NewTransactionViewController else {return}
@@ -120,25 +120,9 @@ class TransansactionsViewController: UIViewController {
     
     @IBAction func addTransaction(_ sender: UIButton) {
         performSegue(withIdentifier: "toNewTransactionSegue", sender: nil)
-        
-//        let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        var card: Card?
-//        var acc: Account?
-//        let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
-//        let accRequest = Account.fetchRequest() as NSFetchRequest<Account>
-//        do{
-//            let items = try context.fetch(cardRequest)
-//            let item = try context.fetch(accRequest)
-//            card = items.first
-//            acc = item.last
-//        } catch{
-//            print("generation: error in add new branch")
-//        }
-//        
-//        addTransaction(40000, (card, nil), (nil, acc))
     }
 }
-
+//MARK: - Extensions
 extension TransansactionsViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){
@@ -151,6 +135,7 @@ extension TransansactionsViewController: OrgIndivid {
     
 }
 
+//MARK: PickerView
 extension TransansactionsViewController: UIPickerViewDelegate{}
 extension TransansactionsViewController: UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -186,6 +171,7 @@ extension TransansactionsViewController: UIPickerViewDataSource{
     }
 }
 
+//MARK: TableView
 extension TransansactionsViewController: UITableViewDelegate {}
 extension TransansactionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

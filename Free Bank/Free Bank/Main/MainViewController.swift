@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     
     let imageLinks: Dictionary<String, String> = ["cards" : "https://myfin.by/cards", "bank" : "https://www.nbrb.by", "worldNews" : "https://myfin.by/stati"]
 
+    //MARK: - 
     func getImages() -> [String] {
         return Array(imageLinks.keys)
     }

@@ -16,13 +16,14 @@ protocol OrgIndivid: class {
 }
 
 class HomeTabBarController: UITabBarController {
-
+    //MARK: - @IBOutlets
     private var status: Int?
     private var login: String?
     
     private var individual: Individual?
     private var organization: Organization?
     
+    //MARK: - 
     func setLogin(_ login: String){
         self.login = login
     }
@@ -30,7 +31,7 @@ class HomeTabBarController: UITabBarController {
     func setStatus(_ status: Int?){
         self.status = status
     }
-
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         

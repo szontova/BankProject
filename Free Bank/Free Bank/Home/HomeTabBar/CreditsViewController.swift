@@ -19,6 +19,7 @@ class CreditsViewController: UIViewController {
     private var credits: [Credit] = []
     private var creditForTransfer: Credit?
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +46,7 @@ class CreditsViewController: UIViewController {
         }
     }
     
+    //MARK: - OverrideMethods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toCreditSegue" {
@@ -60,6 +62,7 @@ class CreditsViewController: UIViewController {
 
     }
     
+    //MARK: -
     func updateCredits() {
         let accs = individual?.credits ?? organization?.credits
         credits = Array ( accs as! Set<Credit> )
@@ -79,6 +82,7 @@ class CreditsViewController: UIViewController {
         
     }
     
+    //MARK: - @IBActions
     @IBAction func unwindToCreditsVCFromNewCreditVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToCreditsFromNewCreditSegue" else {return}
         guard let _ = segue.destination as? NewCreditViewController else {return}
@@ -106,7 +110,7 @@ class CreditsViewController: UIViewController {
     }
     
 }
-
+//MARK: - Extensions
 extension CreditsViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){

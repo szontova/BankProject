@@ -21,6 +21,7 @@ class OtherPageHomeViewController: UIViewController {
     private var individual: Individual?
     private var organization: Organization?
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +33,16 @@ class OtherPageHomeViewController: UIViewController {
         loginLabel.text = individual?.login ?? organization?.prn
     }
     
+    //MARK: - @IBActions
+    @IBAction func createSPAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "toCreateSPSegue", sender: nil)
+    }
+    @IBAction func changeSPAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "toChangeSPSegue", sender: nil)
+    }
+    @IBAction func paySPAction(_ sender: UIButton) {
+        performSegue(withIdentifier: "toPaySPSegue", sender: nil)
+    }
     
     @IBAction func unwindToOtherVCFromCreateSPVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToOtherFromCreateSPSegue" else {return}
@@ -46,21 +57,8 @@ class OtherPageHomeViewController: UIViewController {
         guard let _ = segue.destination as? PaySalaryProjectViewController else {return}
     }
     
-    
-    
-    
-    @IBAction func createSPAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "toCreateSPSegue", sender: nil)
-    }
-    @IBAction func changeSPAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "toChangeSPSegue", sender: nil)
-    }
-    @IBAction func paySPAction(_ sender: UIButton) {
-        performSegue(withIdentifier: "toPaySPSegue", sender: nil)
-    }
-    
 }
-
+//MARK: - Extensions
 extension OtherPageHomeViewController: OrgIndivid {
     
     func setIndividual(_ individ: Individual?){

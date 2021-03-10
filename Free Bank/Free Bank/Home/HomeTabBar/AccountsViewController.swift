@@ -22,6 +22,7 @@ class AccountsViewController: UIViewController {
     
     private var accountForTransfer: Account?
     
+    //MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,13 +41,14 @@ class AccountsViewController: UIViewController {
         }
     }
     
+    //MARK: - OverrideMethods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toCardsSegue" else { return }
         guard let destinationVC = segue.destination as? CardsViewController else { return }
         destinationVC.setAccount(accountForTransfer)
     }
 
-    
+    //MARK: -
     func accountsTableViewConfigurations(){
         
         accountsTableView.backgroundColor = .clear
@@ -150,7 +152,7 @@ class AccountsViewController: UIViewController {
     }
     
     
-    //MARK:-@IBActions
+    //MARK: - @IBActions
     
     @IBAction func unwindToAccountsVCFromAccCardsVC(segue:UIStoryboardSegue){
         guard segue.identifier == "unwindToAccFromAccCardsSegue" else {return}
@@ -197,7 +199,7 @@ class AccountsViewController: UIViewController {
     
 }
 
-//MARK: extension
+//MARK: - Extensions
 
 extension AccountsViewController: OrgIndivid {
     
@@ -210,6 +212,7 @@ extension AccountsViewController: OrgIndivid {
     }
     
 }
+//MARK: TableView
 
 extension AccountsViewController: UITableViewDelegate {}
 
@@ -241,7 +244,7 @@ extension AccountsViewController: UITableViewDataSource {
         return acc
     }
     
-    //MARK: CountOfSections
+    // CountOfSections
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -277,7 +280,7 @@ extension AccountsViewController: UITableViewDataSource {
         return setCountOfSection()
     }
     
-    //MARK: CountOfCells
+    // CountOfCells
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if setCountOfSection() == 2 {
@@ -299,7 +302,7 @@ extension AccountsViewController: UITableViewDataSource {
         return simpleAccounts.count
     }
     
-    //MARK: TableViewCell
+    // TableViewCell
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -329,7 +332,7 @@ extension AccountsViewController: UITableViewDataSource {
     
 }
 
-//MARK: Cell Delegate
+//MARK: TableViewCellDelegate
 extension AccountsViewController: AccountTableViewCellDelegate {
     func addMoney(cell: AccountTableViewCell, didTappedThe button: UIButton?) {
         guard let indexPath = accountsTableView.indexPath(for: cell) else  { return }

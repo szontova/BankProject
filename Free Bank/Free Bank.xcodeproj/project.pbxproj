@@ -234,13 +234,6 @@
 			path = "Exchange Rate";
 			sourceTree = "<group>";
 		};
-		318C20E6261B44DB00660DC1 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		318CA72A25E524360066957D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +396,7 @@
 		5923D6D925F1151900EBA865 /* Credit */ = {
 			isa = PBXGroup;
 			children = (
+				311E330C25EE2A510048C231 /* NewCredit */,
 				5923D6DB25F115D000EBA865 /* Credit.storyboard */,
 				5923D6DE25F115EF00EBA865 /* CreditViewController.swift */,
 			);
@@ -457,9 +451,7 @@
 				5904330A25EE4C3F00BF5412 /* Cards */,
 				592AE70D25F652EE003543B7 /* NewTransaction */,
 				5923D6D925F1151900EBA865 /* Credit */,
-				311E330C25EE2A510048C231 /* NewCredit */,
 				5968708525F29B26001BDE11 /* Deposit */,
-				59FC3A3825F247080019EE72 /* NewDeposit */,
 				592AE6FF25F604A8003543B7 /* TableViewCells */,
 			);
 			path = Home;
@@ -468,6 +460,7 @@
 		5968708525F29B26001BDE11 /* Deposit */ = {
 			isa = PBXGroup;
 			children = (
+				59FC3A3825F247080019EE72 /* NewDeposit */,
 				5968708A25F29B48001BDE11 /* Deposit.storyboard */,
 				5968708625F29B39001BDE11 /* DepositViewController.swift */,
 			);
@@ -503,7 +496,6 @@
 		597D66A525C80FA40051E84A /* Free Bank */ = {
 			isa = PBXGroup;
 			children = (
-				318C20E6261B44DB00660DC1 /* Network */,
 				31AC37E5261B3CDB00F0DFF9 /* Parents */,
 				31AC37E3261B3C0A00F0DFF9 /* Modules */,
 				31AC37E1261B3B7300F0DFF9 /* CoreData */,

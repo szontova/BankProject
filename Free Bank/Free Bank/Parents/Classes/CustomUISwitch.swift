@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class UISwitchCustom: UISwitch {
+class CustomUISwitch: UISwitch {
     @IBInspectable var OffTint: UIColor? {
         didSet {
             self.tintColor = OffTint

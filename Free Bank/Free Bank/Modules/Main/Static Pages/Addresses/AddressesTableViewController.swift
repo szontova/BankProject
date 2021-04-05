@@ -5,8 +5,8 @@
 //  Created by Пользователь on 27.02.21.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 

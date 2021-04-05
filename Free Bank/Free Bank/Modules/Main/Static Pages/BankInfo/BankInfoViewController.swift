@@ -5,9 +5,9 @@
 //  Created by Пользователь on 25.02.21.
 //
 
-import UIKit
-import MessageUI
 import CoreData
+import MessageUI
+import UIKit
 
 class BankInfoViewController: UIViewController {
     

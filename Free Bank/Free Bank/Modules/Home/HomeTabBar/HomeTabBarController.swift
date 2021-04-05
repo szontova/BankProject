@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class HomeTabBarController: UITabBarController {
     //MARK: - @IBOutlets
     private var status: Int?

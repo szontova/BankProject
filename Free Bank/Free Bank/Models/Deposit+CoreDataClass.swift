@@ -6,8 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(Deposit)
 public class Deposit: NSManagedObject {

@@ -5,8 +5,8 @@
 //  Created by Пользователь on 1.03.21.
 //
 
-import UIKit
 import CoreData
+import UIKit
 
 class TransansactionsViewController: UIViewController {
     

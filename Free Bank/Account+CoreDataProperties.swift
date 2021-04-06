@@ -46,7 +46,6 @@ extension Account {
 
 // MARK: Generated accessors for transactions
 extension Account {
-
     @objc(addTransactionsObject:)
     @NSManaged public func addToTransactions(_ value: Transaction)
 
@@ -58,9 +57,5 @@ extension Account {
 
     @objc(removeTransactions:)
     @NSManaged public func removeFromTransactions(_ values: NSSet)
-
 }
-
-extension Account : Identifiable {
-
-}
+extension Account: Identifiable {}

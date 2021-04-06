@@ -21,6 +21,4 @@ extension ATM {
 
 }
 
-extension ATM : Identifiable {
-
-}
+extension ATM: Identifiable {}

@@ -10,24 +10,20 @@ import MessageUI
 import UIKit
 
 class BankInfoViewController: UIViewController {
-    
-    //MARK: - @IBOutlets
+    // MARK: - @IBOutlets
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var prnLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var shortNumberButton: UIButton!
     @IBOutlet private weak var fullNumberButton: UIButton!
     @IBOutlet private weak var emailButton: UIButton!
-
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-    //MARK: -
+    // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabelsAndButtons(getBank())
         // Do any additional setup after loading the view.
     }
-    
     func getBank () -> Bank? {
         let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
         do {
@@ -35,22 +31,16 @@ class BankInfoViewController: UIViewController {
             if  !bank.isEmpty {
                 return bank[0]
             }
-        }
-        catch{ print("getBank: error with data")}
+        } catch {print("getBank: error with data")}
         return nil
     }
-    
-    
-    func customStyleButton(_ button: UIButton, _ title: String?){
+    func customStyleButton(_ button: UIButton, _ title: String?) {
         button.setTitle(title, for: .normal)
-        let attrs : [NSAttributedString.Key: Any] = [ .underlineStyle : 1]
+        let attrs: [NSAttributedString.Key: Any] = [.underlineStyle: 1]
         let attributedString = NSAttributedString(string: title ?? "", attributes: attrs)
         button.setAttributedTitle( attributedString, for: .normal)
-        
     }
-    
-    
-    func configureLabelsAndButtons(_ freeBank: Bank?){
+    func configureLabelsAndButtons(_ freeBank: Bank?) {
         if let fb = freeBank {
             nameLabel.text = fb.name
             prnLabel.text = fb.prn
@@ -60,15 +50,13 @@ class BankInfoViewController: UIViewController {
             customStyleButton(emailButton, fb.email)
         }
     }
-    //MARK: - @IBActions
+    // MARK: - @IBActions
     @IBAction func shortCallButton(_ sender: UIButton) {
         MyCustomVC.callNumber(number: shortNumberButton.currentTitle!)
     }
-    
     @IBAction func fullCallButton(_ sender: UIButton) {
         MyCustomVC.callNumber(number: fullNumberButton.currentTitle!)
     }
-    
     @IBAction func sendMailButton(_ sender: UIButton) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
@@ -82,11 +70,10 @@ class BankInfoViewController: UIViewController {
             showAlertError(message: "Ошибка при отправлении письма.")
         }
     }
-    
 }
 
-//MARK: - Extensions
-extension BankInfoViewController: MFMailComposeViewControllerDelegate{
+// MARK: - Extensions
+extension BankInfoViewController: MFMailComposeViewControllerDelegate {
         func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
                 dismiss(animated: true)
             }

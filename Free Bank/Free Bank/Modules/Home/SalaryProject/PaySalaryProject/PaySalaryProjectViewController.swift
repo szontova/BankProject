@@ -9,10 +9,8 @@ import UIKit
 
 class PaySalaryProjectViewController: UIViewController {
     @IBOutlet private weak var navigationBar: UINavigationBar!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
     }
-    
 }

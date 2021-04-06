@@ -96,9 +96,11 @@
 		59F4BAED25E64AA7002FF477 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* CoreDataFunctions.swift */; };
 		59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */; };
 		59FC3A4525F24DB20019EE72 /* ConfirmationDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */; };
+		A97C9CA3A0CA7D1EA7655732 /* Pods_Free_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BD5271ED92C698CC342194 /* Pods_Free_Bank.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0B720CF4B9A4E7CC1F6521 /* Pods-Free Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Free Bank.release.xcconfig"; path = "Target Support Files/Pods-Free Bank/Pods-Free Bank.release.xcconfig"; sourceTree = "<group>"; };
 		311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCreditViewController.swift; sourceTree = "<group>"; };
 		311D8E4525F0C816005BFB51 /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataClass.swift"; path = "../../Account+CoreDataClass.swift"; sourceTree = "<group>"; };
 		311D8E4625F0C816005BFB51 /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataProperties.swift"; path = "../../Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,8 @@
 		59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewDeposit.storyboard; sourceTree = "<group>"; };
 		59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositViewController.swift; sourceTree = "<group>"; };
 		59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDepositViewController.swift; sourceTree = "<group>"; };
+		9DB8FCF471C4435F140F7E16 /* Pods-Free Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Free Bank.debug.xcconfig"; path = "Target Support Files/Pods-Free Bank/Pods-Free Bank.debug.xcconfig"; sourceTree = "<group>"; };
+		C6BD5271ED92C698CC342194 /* Pods_Free_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Free_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A97C9CA3A0CA7D1EA7655732 /* Pods_Free_Bank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +353,15 @@
 			path = HomeTabBar;
 			sourceTree = "<group>";
 		};
+		31CD4860CEDCFB8F6A4093F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DB8FCF471C4435F140F7E16 /* Pods-Free Bank.debug.xcconfig */,
+				1B0B720CF4B9A4E7CC1F6521 /* Pods-Free Bank.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		59031DB325EF90C700B4DE9D /* CreditTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +496,8 @@
 			children = (
 				597D66A525C80FA40051E84A /* Free Bank */,
 				597D66A425C80FA40051E84A /* Products */,
+				31CD4860CEDCFB8F6A4093F6 /* Pods */,
+				CD22C05BD5EEF79127901437 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -620,6 +636,14 @@
 			path = NewDeposit;
 			sourceTree = "<group>";
 		};
+		CD22C05BD5EEF79127901437 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6BD5271ED92C698CC342194 /* Pods_Free_Bank.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -627,6 +651,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 597D66B725C80FA50051E84A /* Build configuration list for PBXNativeTarget "Free Bank" */;
 			buildPhases = (
+				31271D66261C3B18008EB775 /* ShellScript */,
+				F3FE0C4CD84E711D151D4C9F /* [CP] Check Pods Manifest.lock */,
 				597D669F25C80FA40051E84A /* Sources */,
 				597D66A025C80FA40051E84A /* Frameworks */,
 				597D66A125C80FA40051E84A /* Resources */,
@@ -707,6 +733,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31271D66261C3B18008EB775 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		F3FE0C4CD84E711D151D4C9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Free Bank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		597D669F25C80FA40051E84A /* Sources */ = {
@@ -919,6 +987,7 @@
 		};
 		597D66B825C80FA50051E84A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DB8FCF471C4435F140F7E16 /* Pods-Free Bank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -939,6 +1008,7 @@
 		};
 		597D66B925C80FA50051E84A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B0B720CF4B9A4E7CC1F6521 /* Pods-Free Bank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

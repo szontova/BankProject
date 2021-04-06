@@ -26,6 +26,4 @@ extension Credit {
 
 }
 
-extension Credit : Identifiable {
-
-}
+extension Credit: Identifiable {}

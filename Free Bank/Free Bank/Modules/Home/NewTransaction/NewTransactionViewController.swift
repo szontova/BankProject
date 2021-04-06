@@ -8,51 +8,38 @@
 import UIKit
 
 class NewTransactionViewController: UIViewController {
-    //MARK: - @IBOutlets
+    // MARK: - @IBOutlets
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var accountView: UIView!
-    
     @IBOutlet weak var senderCardNumberTextField: UITextField!
     @IBOutlet weak var senderCardValidity: UITextField!
     @IBOutlet weak var senderCardCVV: UITextField!
-    
     @IBOutlet weak var senderAccountPickerView: UIPickerView!
-    
     @IBOutlet weak var receiverTextField: UITextField!
-    
-    private var activeTextField : UITextField?
+    private var activeTextField: UITextField?
     private var isMoving = false
-    
     private var individual: Individual?
     private var organization: Organization?
-    private var senderType: (Bool, Bool) = (false,false)
-    private var receiverType: (Bool, Bool) = (false,false)
+    private var senderType: (Bool, Bool) = (false, false)
+    private var receiverType: (Bool, Bool) = (false, false)
     private var account: Account?
-    
     private var accounts: [Account] = []
-    
-    //MARK: -
-    func setSender( card: Bool,  acc: Bool){
+    func setSender( card: Bool, acc: Bool) {
         self.senderType = (card, acc)
     }
-    
-    func setReceiver( card: Bool,  acc: Bool){
+    func setReceiver( card: Bool, acc: Bool) {
         self.receiverType = (card, acc)
     }
-    //MARK: - LifeCycleMethods
+    // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         transparentNavBar(navigationBar)
         senderAccountPickerViewConfigurations()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
     override func viewWillAppear(_ animated: Bool) {
-        //print("\(individual) \(organization) \(senderType) \(receiverType)")
         if senderType.1 {
             cardView.isHidden = true
             accountView.isHidden = false
@@ -63,7 +50,6 @@ class NewTransactionViewController: UIViewController {
             cardView.isHidden = false
             accountView.isHidden = true
         }
-        
         if receiverType.0 {
             receiverTextField.placeholder = "Введите номер карты"
             receiverTextField.keyboardType = .numberPad
@@ -71,34 +57,26 @@ class NewTransactionViewController: UIViewController {
             receiverTextField.placeholder = "Введите номер счёта"
         }
     }
-    
-    //MARK: - OverrideMethods
+    // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toConfirmationTransactionSegue" else { return }
         guard let destinationVC = segue.destination as? ConfirmationTransactionViewController else { return }
         destinationVC.setSender(card: findCard(by: (senderCardNumberTextField.text)!), acc: account)
         destinationVC.setReceiver(card: findCard(by: (receiverTextField.text)!), acc: findAccount(by: (receiverTextField.text)!))
     }
-     
-    //MARK: -
-    func senderAccountPickerViewConfigurations(){
-        
+    func senderAccountPickerViewConfigurations() {
         senderAccountPickerView.delegate = self
         senderAccountPickerView.dataSource = self
     }
-    
-    func updateAccounts(){
+    func updateAccounts() {
         let accs = individual?.accounts ?? organization?.accounts
-        accounts = Array ( accs as! Set<Account> )
-       
-        accounts.sort(){
+        accounts = Array( accs as! Set<Account> )
+        accounts.sort {
             return $0.idNumber! < $1.idNumber!
         }
-        
        accounts = accounts.filter { (acc) -> Bool in
             if let rev = acc.deposit?.revocable {
                 return rev
@@ -106,37 +84,28 @@ class NewTransactionViewController: UIViewController {
             return true
         }
     }
-    
-    //MARK: - @IBActions
+    // MARK: - @IBActions
     @IBAction func keyboardWillShow(notification: NSNotification) {
-        
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            
             if let activeTextField = activeTextField {
-                
-                let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
-                
+                let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY
                 let topOfKeyboard = self.view.frame.height - keyboardSize.height
-                
                 let inset =  bottomOfTextField - topOfKeyboard
                 if inset > 0 && !isMoving {
-                    self.view.frame.origin.y -= (inset + 50)//keyboardSize.height
+                    self.view.frame.origin.y -= (inset + 50)
                     isMoving = true
                 }
             }
         }
     }
-
     @IBAction func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
         isMoving = false
     }
-    
-    @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue){
+    @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToNewTransactionFromConfirmSegue" else {return}
-        guard let _ = segue.destination as? ConfirmationTransactionViewController else {return}
+        guard segue.destination as? ConfirmationTransactionViewController != nil else {return}
     }
-    
     @IBAction func continueTransactionButton(_ sender: UIButton) {
         var result = true
         if senderType.0 {
@@ -150,63 +119,51 @@ class NewTransactionViewController: UIViewController {
         } else {showAlertError(message: "Неверные данные для проведения операции.")}
     }
 }
-//MARK: - Extensions
-extension NewTransactionViewController: OrgIndivid{
+// MARK: - Extensions
+extension NewTransactionViewController: OrgIndivid {
     func setIndividual(_ individ: Individual?) {
         self.individual = individ
     }
-    
     func setOrganization(_ org: Organization?) {
         self.organization = org
     }
 }
-//MARK: TextFieldDelegate
-extension NewTransactionViewController: UITextFieldDelegate{
+// MARK: TextFieldDelegate
+extension NewTransactionViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
       self.activeTextField = textField
     }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
       self.activeTextField = nil
     }
-    
 }
-//MARK: PickerView
+// MARK: PickerView
 extension NewTransactionViewController: UIPickerViewDelegate {}
 extension NewTransactionViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        return 1
     }
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         account = accounts[row]
     }
-    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return accounts.count
     }
-    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
-        //label.backgroundColor = UIColor.init(red: 181/255, green: 150/255, blue: 142/255, alpha: 1.0)
         label.backgroundColor = UIColor.init(red: 96/255, green: 3/255, blue: 0/255, alpha: 1.0)
         label.textColor = UIColor.white
         label.textAlignment = .center
-        //label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
-        
-        label.layer.frame = CGRect(x: 0,y: 0, width: pickerView.frame.width - 20, height: 26 )
+        label.layer.frame = CGRect(x: 0, y: 0, width: pickerView.frame.width - 20, height: 26)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-        
         label.text = accounts[row].idNumber
         return label
     }
-    
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 27.5
     }

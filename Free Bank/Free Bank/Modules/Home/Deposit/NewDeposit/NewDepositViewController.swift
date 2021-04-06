@@ -8,37 +8,29 @@
 import UIKit
 
 class NewDepositViewController: UIViewController {
-    
-    //MARK: - @IBOutlets
+    // MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
-    
     @IBOutlet private weak var amountTextField: UITextField!
     @IBOutlet private weak var termLabel: UILabel!
 
     @IBOutlet private weak var termSlider: UISlider!
     @IBOutlet private weak var revocableSwitch: UISwitch!
-    
     private var individual: Individual?
     private var organization: Organization?
-    
     private var amount = 0
     private var term = 0
     private var revocable = false
     private let procent = 17
-    
-    //MARK: - LifeCycleMethods
+    // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
-
         transparentNavBar(navigationBar)
         // Do any additional setup after loading the view.
     }
-    
-    //MARK: - OverrideMethods
+    // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toConfirmationDepositSegue" else { return }
         guard let destinationVC = segue.destination as? ConfirmationDepositViewController else { return }
@@ -49,18 +41,15 @@ class NewDepositViewController: UIViewController {
         destinationVC.setIndividual(individual)
         destinationVC.setOrganization(organization)
     }
-    
-    //MARK: - @IBActions
-    @IBAction func unwindToNewDepositFromConfirmationDeposit(segue: UIStoryboardSegue){
+    // MARK: - @IBActions
+    @IBAction func unwindToNewDepositFromConfirmationDeposit(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToNewDepositFromConfirmSegue" else {return}
-        guard let _ = segue.destination as? ConfirmationDepositViewController else {return}
+        guard segue.destination as? ConfirmationDepositViewController != nil else {return}
     }
-    
     @IBAction func termSlider(_ sender: UISlider) {
         term = Int(MyCustomVC.setValueOfSlider(slider: termSlider, step: 1))
         termLabel.text = String(format: "%g", MyCustomVC.setValueOfSlider(slider: termSlider, step: 1)) + " \(MyCustomVC.defineWordForDepositTerm(term: term))"
     }
-    
     @IBAction func addDepositButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         if !Range(100...10000).contains(amount) {
@@ -68,21 +57,16 @@ class NewDepositViewController: UIViewController {
             return
         }
         term = (Int.parse(termLabel.text ?? "") ?? 0) * 12
-        if revocableSwitch.isOn { revocable = true }
-        else { revocable = false }
+        if revocableSwitch.isOn { revocable = true } else { revocable = false }
         performSegue(withIdentifier: "toConfirmationDepositSegue", sender: nil)
     }
-    
 }
-//MARK: - Extensions
+// MARK: - Extensions
 extension NewDepositViewController: OrgIndivid {
-    
-    func setIndividual(_ individ: Individual?){
+    func setIndividual(_ individ: Individual?) {
         self.individual = individ
     }
-    
     func setOrganization (_ org: Organization?) {
         self.organization = org
     }
-    
 }

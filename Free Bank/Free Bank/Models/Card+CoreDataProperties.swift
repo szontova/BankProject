@@ -22,6 +22,4 @@ extension Card {
 
 }
 
-extension Card : Identifiable {
-
-}
+extension Card: Identifiable {}

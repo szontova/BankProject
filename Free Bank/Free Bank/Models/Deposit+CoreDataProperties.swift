@@ -27,6 +27,4 @@ extension Deposit {
 
 }
 
-extension Deposit : Identifiable {
-
-}
+extension Deposit: Identifiable {}

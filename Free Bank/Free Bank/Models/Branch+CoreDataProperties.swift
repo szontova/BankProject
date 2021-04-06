@@ -21,6 +21,4 @@ extension Branch {
 
 }
 
-extension Branch : Identifiable {
-
-}
+extension Branch: Identifiable {}

@@ -9,6 +9,4 @@
 import CoreData
 import Foundation
 
-public class Organization: NSManagedObject {
-
-}
+public class Organization: NSManagedObject {}

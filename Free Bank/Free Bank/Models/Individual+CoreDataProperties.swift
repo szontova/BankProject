@@ -78,6 +78,4 @@ extension Individual {
 
 }
 
-extension Individual : Identifiable {
-
-}
+extension Individual: Identifiable {}

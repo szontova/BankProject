@@ -9,64 +9,47 @@ import UIKit
 
 class CardsViewController: UIViewController {
 
-    //MARK: - @IBOutlets
+    // MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var accountNumberLabel: UILabel!
     @IBOutlet private weak var accountBalanceLabel: UILabel!
     @IBOutlet private weak var missingCardsLabel: UILabel!
     @IBOutlet private weak var cardsTableView: UITableView!
-    
-    
     private var account: Account?
     private var cards: [Card] = []
-    
-    //MARK: -
     func setAccount(_ acc: Account?) {
         self.account = acc
     }
-    //MARK: - LifeCycleMethods
+    // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         transparentNavBar(navigationBar)
-
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         accountNumberLabel.text = "Cчёт: \(account?.idNumber ?? "")"
         accountBalanceLabel.text = NSString(format: "Баланс: %.2f BYR", Float(account?.balance ?? 0) / 100 ) as String
         missingCardsLabel.isHidden = true
         cardsTableView.isHidden = true
-        
         updateCards()
-             
-        if cards.isEmpty { missingCardsLabel.isHidden = false }
-        else { cardsTableView.isHidden = false }
+        if cards.isEmpty {missingCardsLabel.isHidden = false} else { cardsTableView.isHidden = false }
         cardsTableViewConfigurations()
     }
-    //MARK: -
+    // MARK: -
     func updateCards() {
         let cardsSet = account?.cards
-        cards = Array ( cardsSet as! Set<Card> )
-        cards.sort(){
+        cards = Array( cardsSet as! Set<Card> )
+        cards.sort {
             return $0.idNumber > $1.idNumber
         }
     }
-    
-    func cardsTableViewConfigurations(){
-        
+    func cardsTableViewConfigurations() {
         cardsTableView.backgroundColor = .clear
-        
         cardsTableView.register(CardTableViewCell.nib(), forCellReuseIdentifier: CardTableViewCell.identifier)
-        
         cardsTableView.delegate = self
         cardsTableView.dataSource = self
-        
     }
-    
-    //MARK: - @IBActions
+    // MARK: - @IBActions
     @IBAction func addCardButton(_ sender: UIButton) {
         if let acc = account {
             switch MyCustomVC.getAccCategory(acc) {
@@ -84,33 +67,26 @@ class CardsViewController: UIViewController {
                 }
             default: break
             }
-            
             updateCards()
-            
             if cards.isEmpty {
                 missingCardsLabel.isHidden = false
                 cardsTableView.isHidden = true
-            }
-            else {
+            } else {
                 missingCardsLabel.isHidden = true
                 cardsTableView.isHidden = false
             }
-            
             DispatchQueue.main.async {
                 self.cardsTableView.reloadData()
             }
         }
     }
 }
-
-//MARK: - TableView
+// MARK: - TableView
 extension CardsViewController: UITableViewDelegate {}
 extension CardsViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = self.cardsTableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier) as? CardTableViewCell {
             cell.selectionStyle = .none
@@ -119,5 +95,4 @@ extension CardsViewController: UITableViewDataSource {
         }
         return UITableViewCell()
     }
-
 }

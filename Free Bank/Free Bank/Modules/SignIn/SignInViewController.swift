@@ -8,94 +8,65 @@
 import UIKit
 
 class SignInViewController: UIViewController {
-
-    //MARK: - @IBOutlets
-    
+    // MARK: - @IBOutlets
     @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
-    
     @IBOutlet private weak var loginLabel: UILabel!
     @IBOutlet private weak var loginTextField: UITextField!
     @IBOutlet private weak var loginErrorLabel: UILabel!
-    
     @IBOutlet private weak var passwordTextField: UITextField!
-  
     private var login: String = ""
-    //MARK: - LifeCycleMethods
-    
+    // MARK: - LifeCycleMethods
     override func viewDidLoad() {
-        //print("ViewDidLoad")
         super.viewDidLoad()
-        //printAllOrganization()
     }
-    
-    //MARK: - OverrideMethods
-    
+    // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "toHomeSegue" else { return }
         guard let destinationTBC = segue.destination as? HomeTabBarController else { return }
         destinationTBC.setLogin(login)
         destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
-    
-    //MARK: - OurMethods
-    
-    func showAlertForgotPassword( _ status: Int, _  login: String){
+    // MARK: - OurMethods
+    func showAlertForgotPassword(_ status: Int, _ login: String) {
         var statusString = ""
-        
         switch status {
         case 0: statusString  = "логин"
         case 1: statusString = "УНП"
         default: break
         }
-       
         let alert = UIAlertController(title: "", message: "Введите \(statusString) и кодовое слово.", preferredStyle: .alert)
-            
-        let attributedString = NSAttributedString(string: "Восстановление пароля", attributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
-            NSAttributedString.Key.foregroundColor : UIColor.black
+        let attributedString = NSAttributedString(string: "Восстановление пароля", attributes: [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.black
         ])
-        
         alert.setValue(attributedString, forKey: "attributedTitle")
-                
         alert.view.tintColor = UIColor.black
-        
-        alert.addTextField(configurationHandler: {
-            (textField) in
+        alert.addTextField(configurationHandler: { (textField) in
             textField.placeholder = "Введите \(statusString)"
             textField.text = login
             textField.borderStyle = UITextField.BorderStyle.roundedRect
         })
-        
-        alert.addTextField(configurationHandler: {
-            (textField) in
+        alert.addTextField(configurationHandler: { (textField) in
             textField.placeholder = "Введите кодовое слово"
             textField.borderStyle = UITextField.BorderStyle.roundedRect
         })
-        
         for textField in alert.textFields! {
             let container = textField.superview
             let effectView = container?.superview?.subviews[0]
-            if (effectView != nil) {
+            if effectView != nil {
                 container?.backgroundColor = UIColor.clear
                 effectView?.removeFromSuperview()
             }
         }
-                
-        let okAction = UIAlertAction(title: "Восстановить", style: .default){ _ in
+        let okAction = UIAlertAction(title: "Восстановить", style: .default) {_ in
             let login = alert.textFields![0].text ?? ""
             let codeWord = alert.textFields![1].text ?? ""
-          
             switch status {
             case 0:
-                if !self.checkLogin(login: login) { return }
-                    
+                if !self.checkLogin(login: login) {return}
                 if let person = self.findIndivididual(by: login) {
-                        
-                    if person.codeWord == codeWord.lowercased(){
+                    if person.codeWord == codeWord.lowercased() {
                         self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
@@ -106,7 +77,7 @@ class SignInViewController: UIViewController {
                 }
             case 1:
                 if let org = self.findOrganization(by: login) {
-                    if org.codeWord == codeWord.lowercased(){
+                    if org.codeWord == codeWord.lowercased() {
                         self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
@@ -118,34 +89,27 @@ class SignInViewController: UIViewController {
             default: break
             }
         }
-        
-        let cancelAction = UIAlertAction(title: "Отмена", style: .default){ _ in}
-        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default) {_ in}
         alert.addAction(okAction)
         alert.addAction(cancelAction)
-                
         present(alert, animated: true, completion: nil)
     }
-    
-    //MARK:- @IBActions
+    // MARK: - @IBActions
     @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
             loginLabel.text = "Логин"
             loginTextField.placeholder = "Введите логин"
-            
         case 1:
             loginLabel.text = "УНП"
             loginTextField.placeholder = "Введите УНП"
         default: break
         }
     }
-    
     @IBAction func signInButton(_ sender: UIButton) {
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-      
         if checkSignInDatas(status, login, password) {
             switch status {
             case 0:
@@ -153,8 +117,7 @@ class SignInViewController: UIViewController {
                     passwordTextField.text = ""
                     self.login = login
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
-                }
-                else {
+                } else {
                     showAlertError(message: "Неверный логин и/или пароль.")
                 }
             case 1:
@@ -162,8 +125,7 @@ class SignInViewController: UIViewController {
                     passwordTextField.text = ""
                     self.login = login
                     performSegue(withIdentifier: "toHomeSegue", sender: nil)
-                }
-                else {
+                } else {
                     showAlertError(message: "Неверный логин и/или пароль.")
                 }
             default: break
@@ -171,56 +133,44 @@ class SignInViewController: UIViewController {
         } else {
          //   print("datas error")
         }
-        
-       
-        //find login or UNP in database and compare passwords
-        
     }
-    
     @IBAction func registrationButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignUpSegue", sender: nil)
     }
-    
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         showAlertForgotPassword(status, login)
     }
-    
-    //MARK: - unwind @IBActions
-    @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue){
+    // MARK: - unwind @IBActions
+    @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
-        guard let _ = segue.destination as? SignUpViewController else {return}
+        guard segue.destination as? SignUpViewController != nil else {return}
     }
-    
-    @IBAction func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue){
+    @IBAction func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindFomEndToSignInVCSegue" else {return}
-        guard let _ = segue.destination as? EndOfSignUpViewController else {return}
+        guard segue.destination as? EndOfSignUpViewController != nil else {return}
     }
-    
-    @IBAction func unwindToSignInFromHome(segue: UIStoryboardSegue){
+    @IBAction func unwindToSignInFromHome(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindFromHomeToSignInVCSegue" else {return}
-        guard let _ = segue.destination as? OtherPageHomeViewController else {return}
+        guard segue.destination as? OtherPageHomeViewController != nil else {return}
     }
-    
 }
-
-//MARK:- Extensions
-extension SignInViewController: UITextFieldDelegate{
+// MARK: - Extensions
+extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
 }
 
-extension UITextField{
+extension UITextField {
    @IBInspectable var placeHolderColor: UIColor? {
         get {
             return self.placeHolderColor
         }
         set {
-            self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
+            self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor: newValue!])
         }
     }
 }

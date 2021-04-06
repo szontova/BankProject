@@ -95,6 +95,4 @@ extension Organization {
 
 }
 
-extension Organization : Identifiable {
-
-}
+extension Organization: Identifiable {}

@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 class CustomUISwitch: UISwitch {
-    @IBInspectable var OffTint: UIColor? {
+    @IBInspectable var offTint: UIColor? {
         didSet {
-            self.tintColor = OffTint
+            self.tintColor = offTint
             self.layer.cornerRadius = self.frame.height / 2.0
-            self.backgroundColor = OffTint
+            self.backgroundColor = offTint
         }
     }
 }

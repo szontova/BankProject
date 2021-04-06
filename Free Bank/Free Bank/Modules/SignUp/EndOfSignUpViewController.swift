@@ -9,72 +9,60 @@ import UIKit
 
 class EndOfSignUpViewController: UIViewController {
 
-    //MARK: - @IBOutlets
+    // MARK: - @IBOutlets
     @IBOutlet weak var codeWordTextField: UITextField!
     private var status: Int?
     private var name: String?
     private var email: String?
     private var login: String?
     private var password: String?
-    
-    //MARK: - SetFunctions
-    func setStatus(_ status: Int?){
+    // MARK: - SetFunctions
+    func setStatus(_ status: Int?) {
         self.status = status
     }
-    
-    func setName(_ name: String?){
+    func setName(_ name: String?) {
         self.name = name
     }
-    
-    func setEmail(_ email: String?){
+    func setEmail(_ email: String?) {
         self.email = email
     }
-    
-    func setLogin(_ login: String?){
+    func setLogin(_ login: String?) {
         self.login = login
     }
-    
-    func setPassword(_ password: String?){
+    func setPassword(_ password: String?) {
         self.password = password
     }
-    
-    //MARK: - LifeCycleMethods
+    // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(NewTransactionViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    //MARK: - OverrideMethods
+    // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    //MARK: - @IBActions
+    // MARK: - @IBActions
     @IBAction func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            let bottomOfTextField = codeWordTextField.convert(codeWordTextField.bounds, to: self.view).maxY;
-            
+            let bottomOfTextField = codeWordTextField.convert(codeWordTextField.bounds, to: self.view).maxY
             let topOfKeyboard = self.view.frame.height - keyboardSize.height
-            
             let inset =  bottomOfTextField - topOfKeyboard
-            if inset > 0 && self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= (inset + 50)//keyboardSize.height
+            if inset > 0 && self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (inset + 50)
             }
         }
     }
-
     @IBAction func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
     }
-    
-    @IBAction func EndOgSignUpButton(_ sender: Any) {
+    @IBAction func endOgSignUpButton(_ sender: Any) {
         let codeWord = codeWordTextField.text ?? ""
         if codeWord.isEmpty {
             showAlertError(message: "Введите кодовое слово")
             return
         } else {
-            if let _ = name, let _ = email, let _ = login, let _ = password {
+            if name != nil && email != nil && login != nil && password != nil {
                 switch status {
                 case 0:
                     addIndividal(name!, email!, login!, password!, codeWord)
@@ -87,10 +75,9 @@ class EndOfSignUpViewController: UIViewController {
             }
         }
     }
-    
 }
-//MARK: - Extensions
-extension EndOfSignUpViewController: UITextFieldDelegate{
+// MARK: - Extensions
+extension EndOfSignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

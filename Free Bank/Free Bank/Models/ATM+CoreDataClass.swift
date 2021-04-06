@@ -9,6 +9,4 @@
 import CoreData
 import Foundation
 
-public class ATM: NSManagedObject {
-
-}
+public class ATM: NSManagedObject {}

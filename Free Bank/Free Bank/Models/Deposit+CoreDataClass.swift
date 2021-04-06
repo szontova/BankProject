@@ -10,6 +10,4 @@ import CoreData
 import Foundation
 
 @objc(Deposit)
-public class Deposit: NSManagedObject {
-
-}
+public class Deposit: NSManagedObject {}

@@ -10,11 +10,9 @@ import CoreData
 import Foundation
 
 extension Bank {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Bank> {
         return NSFetchRequest<Bank>(entityName: "Bank")
     }
-
     @NSManaged public var address: String?
     @NSManaged public var email: String?
     @NSManaged public var fullNumber: String?
@@ -61,6 +59,4 @@ extension Bank {
 
 }
 
-extension Bank : Identifiable {
-
-}
+extension Bank: Identifiable {}

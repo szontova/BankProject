@@ -9,6 +9,4 @@
 import CoreData
 import Foundation
 
-public class Card: NSManagedObject {
-
-}
+public class Card: NSManagedObject {}

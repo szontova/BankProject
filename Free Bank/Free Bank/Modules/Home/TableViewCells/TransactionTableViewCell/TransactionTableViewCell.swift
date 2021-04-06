@@ -9,7 +9,7 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var idNumberLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var senderLabel: UILabel!
     @IBOutlet weak var receiverLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
@@ -29,7 +29,7 @@ class TransactionTableViewCell: UITableViewCell {
     }
     public func configure() {}
     public func configure(_ transaction: Transaction) {
-        idNumberLabel.text = String(transaction.idNumber)
+        idLabel.text = String(transaction.id)
         if let sendString = transaction.sender {
             if let sender = Int(sendString) {
                 senderLabel.text = "Карта: \(sender)"

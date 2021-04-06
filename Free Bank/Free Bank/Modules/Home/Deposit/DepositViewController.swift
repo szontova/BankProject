@@ -29,8 +29,8 @@ class DepositViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         if let dep = deposit {
-            depositNumberLabel.text = String(dep.idNumber)
-            accountNumberLabel.text = "Счёт: \(dep.account!.idNumber!)"
+            depositNumberLabel.text = String(dep.id)
+            accountNumberLabel.text = "Счёт: \(dep.account!.id!)"
             amountLabel.text = MyCustomVC.getIntBYRbyString(dep.amount)
             procentLabel.text = "\(dep.procent) %"
             switch dep.revocable {

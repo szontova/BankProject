@@ -66,7 +66,7 @@ class TransansactionsViewController: UIViewController {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array( accs as! Set<Account>)
         accounts.sort {
-            return $0.idNumber! < $1.idNumber!
+            return $0.id! < $1.id!
         }
     }
     func updateTransactions(_ account: Account) {
@@ -128,7 +128,7 @@ extension TransansactionsViewController: UIPickerViewDataSource {
         label.layer.frame = CGRect(x: 0, y: 0, width: pickerView.frame.width - 20, height: 24 )
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-        label.text = accounts[row].idNumber
+        label.text = accounts[row].id
         return label
     }
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

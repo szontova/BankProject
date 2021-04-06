@@ -29,7 +29,7 @@ class CreditTableViewCell: UITableViewCell {
     }
     public func configure(_ credit: Credit) {
         self.myBackgroundView.layer.cornerRadius = 5.0
-        creditNumberLabel.text = String(credit.idNumber)
+        creditNumberLabel.text = String(credit.id)
         let monthlyPay = MyCustomVC.calculateMonthlyPay(amount: credit.amount, term: credit.term, procent: 13)
         mounthlyPayLabel.text = MyCustomVC.getIntBYRbyString(monthlyPay)
         let dateFormatter = DateFormatter()

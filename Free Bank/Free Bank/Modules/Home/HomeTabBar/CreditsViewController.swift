@@ -56,7 +56,7 @@ class CreditsViewController: UIViewController {
         let accs = individual?.credits ?? organization?.credits
         credits = Array(accs as! Set<Credit>)
         credits.sort {
-            return $0.idNumber < $1.idNumber
+            return $0.id < $1.id
         }
     }
     func creditsTableViewConfigurations() {

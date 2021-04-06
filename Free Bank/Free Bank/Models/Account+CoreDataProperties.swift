@@ -2,12 +2,12 @@
 //  Account+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/4/21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
-import CoreData
 import Foundation
+import CoreData
 
 extension Account {
 
@@ -16,14 +16,14 @@ extension Account {
     }
 
     @NSManaged public var balance: Int64
-    @NSManaged public var idNumber: String?
+    @NSManaged public var id: String?
     @NSManaged public var bank: Bank?
     @NSManaged public var cards: NSSet?
     @NSManaged public var company: Organization?
     @NSManaged public var credit: Credit?
+    @NSManaged public var deposit: Deposit?
     @NSManaged public var owner: Individual?
     @NSManaged public var transactions: NSSet?
-    @NSManaged public var deposit: Deposit?
 
 }
 
@@ -46,6 +46,7 @@ extension Account {
 
 // MARK: Generated accessors for transactions
 extension Account {
+
     @objc(addTransactionsObject:)
     @NSManaged public func addToTransactions(_ value: Transaction)
 
@@ -57,5 +58,7 @@ extension Account {
 
     @objc(removeTransactions:)
     @NSManaged public func removeFromTransactions(_ values: NSSet)
+
 }
+
 extension Account: Identifiable {}

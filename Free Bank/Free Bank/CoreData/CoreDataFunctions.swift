@@ -42,9 +42,9 @@ extension UIViewController {
         return nil
     }
     // Account
-    func findAccount(by idNumber: String) -> Account? {
+    func findAccount(by id: String) -> Account? {
         let accountRequest = Account.fetchRequest() as NSFetchRequest<Account>
-        accountRequest.predicate = NSPredicate(format: "idNumber == %@", idNumber)
+        accountRequest.predicate = NSPredicate(format: "id == %@", id)
         do {
             let items = try context.fetch(accountRequest)
             if items.count != 0 {
@@ -56,9 +56,9 @@ extension UIViewController {
         return nil
     }
     // Card
-    func findCard(by idNumber: String) -> Card? {
+    func findCard(by id: String) -> Card? {
         let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
-        cardRequest.predicate = NSPredicate(format: "idNumber == %@", idNumber)
+        cardRequest.predicate = NSPredicate(format: "id == %@", id)
         do {
             let items = try context.fetch(cardRequest)
             if items.count != 0 {
@@ -115,10 +115,10 @@ extension UIViewController {
         case "D": firsTemplateNumbers += 04_0000_0000
         default: break
         }
-        let numbersOfAccount = (Int(account.idNumber!.suffix(7)) ?? 0) * 10
+        let numbersOfAccount = (Int(account.id!.suffix(7)) ?? 0) * 10
         let lastNumber = (account.cards?.count ?? 0) + 1
         let cardNumber = firsTemplateNumbers + numbersOfAccount + lastNumber
-        newCard.idNumber = Int64(cardNumber)
+        newCard.id = Int64(cardNumber)
         newCard.validity = MyCustomVC.getValidityDate(4)
         newCard.cvv = Int16.random(in: 100..<1000)
         account.addToCards(newCard)
@@ -130,9 +130,9 @@ extension UIViewController {
         }
     }
     // Account
-    func addAccount (_ idNumber: String, _ individ: Individual?, _ org: Organization?) {
+    func addAccount (_ id: String, _ individ: Individual?, _ org: Organization?) {
         let newAccount = Account(context: context)
-        newAccount.idNumber = idNumber
+        newAccount.id = id
         if individ != nil {
             individ?.addToAccounts(newAccount)
         }
@@ -155,7 +155,7 @@ extension UIViewController {
         newIndivid.login = login
         newIndivid.password = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap { String(format: "%02x", $0)}.joined()
         newIndivid.codeWord = codeWord.lowercased()
-        newAccount.idNumber = generationIdAccount("S")
+        newAccount.id = generationIdAccount("S")
         newIndivid.addToAccounts(newAccount)
         do {
             context.insert(newIndivid)
@@ -174,7 +174,7 @@ extension UIViewController {
         newOrganization.prn = login
         newOrganization.password = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap { String(format: "%02x", $0)}.joined()
         newOrganization.codeWord = codeWord.lowercased()
-        newAccount.idNumber = generationIdAccount("S")
+        newAccount.id = generationIdAccount("S")
         newOrganization.addToAccounts(newAccount)
         do {
             context.insert(newOrganization)
@@ -185,7 +185,7 @@ extension UIViewController {
     // Branch
     func addBranch(address: String) {
         let newBranch = Branch(context: context)
-        newBranch.idNumber = generationIdBranch()
+        newBranch.id = generationIdBranch()
         newBranch.address = address
         do {
             context.insert(newBranch)
@@ -197,7 +197,7 @@ extension UIViewController {
     // ATM
     func addATM(address: String) {
         let newATM = ATM(context: context)
-        newATM.idNumber = generationIdATM()
+        newATM.id = generationIdATM()
         newATM.address = address
         do {
             context.insert(newATM)
@@ -224,8 +224,8 @@ extension UIViewController {
         newCredit.term = term
         newCredit.procent = procent
         newCredit.date = date
-        newCredit.idNumber = generationIdCredit(individ, org, term, amount)
-        newAccount.idNumber = generationIdAccount("C")
+        newCredit.id = generationIdCredit(individ, org, term, amount)
+        newAccount.id = generationIdAccount("C")
         newCredit.account = newAccount
         if individ != nil {
             individ?.addToCredits(newCredit)
@@ -251,8 +251,8 @@ extension UIViewController {
         newDeposit.procent = procent
         newDeposit.date = date
         newDeposit.revocable = revocable
-        newDeposit.idNumber = generationIdDeposit(individ, org, term, amount)
-        newAccount.idNumber = generationIdAccount("D")
+        newDeposit.id = generationIdDeposit(individ, org, term, amount)
+        newAccount.id = generationIdAccount("D")
         newAccount.balance = amount
         newDeposit.account = newAccount
         if individ != nil {
@@ -275,14 +275,14 @@ extension UIViewController {
         let newTransaction = Transaction(context: context)
         let something = "Счёт вне банка"
         var allow = false
-        newTransaction.idNumber = generationIdTransaction(amount, sender, receiver)
+        newTransaction.id = generationIdTransaction(amount, sender, receiver)
         newTransaction.amount = amount
         newTransaction.date = MyCustomVC.getDate()
         if let cardSender = sender.0 {
             if checkAccountBalance(amount, (sender.0?.account!.balance)!) {
                 cardSender.account?.balance = cardSender.account!.balance - amount
                 cardSender.account?.addToTransactions(newTransaction)
-                newTransaction.sender = String(cardSender.idNumber)
+                newTransaction.sender = String(cardSender.id)
                 allow = true
             } else {
                 showAlertMessage(message: "Недостаточно средств.")
@@ -291,7 +291,7 @@ extension UIViewController {
             if checkAccountBalance(amount, (sender.1?.balance)!) {
                 accountSender.balance -= amount
                 accountSender.addToTransactions(newTransaction)
-                newTransaction.sender = accountSender.idNumber
+                newTransaction.sender = accountSender.id
                 allow = true
             } else {
                 showAlertMessage(message: "Недостаточно средств.")
@@ -300,20 +300,20 @@ extension UIViewController {
             newTransaction.sender = something
         }
         if let cardReceiver = receiver.0 {
-            if let accountReciever = findAccount(by: cardReceiver.account?.idNumber ?? "") {
+            if let accountReciever = findAccount(by: cardReceiver.account?.id ?? "") {
                 if allow {
                     accountReciever.balance += amount
                 }
                 accountReciever.addToTransactions(newTransaction)
-                newTransaction.receiver = String(cardReceiver.idNumber)
+                newTransaction.receiver = String(cardReceiver.id)
             }
         } else if let accountReceiver = receiver.1 {
-            if let ourReciever = findAccount(by: accountReceiver.idNumber ?? "") {
+            if let ourReciever = findAccount(by: accountReceiver.id ?? "") {
                 if allow {
                     ourReciever.balance += amount
                 }
                 ourReciever.addToTransactions(newTransaction)
-                newTransaction.receiver = accountReceiver.idNumber
+                newTransaction.receiver = accountReceiver.id
             } else {
                 newTransaction.receiver = something
             }
@@ -331,17 +331,17 @@ extension UIViewController {
     func generationIdAccount (_ category: String) -> String {
         var result: String = ""
         let request = Account.fetchRequest() as NSFetchRequest<Account>
-        let predicate = NSPredicate(format: "idNumber LIKE %@", "????????????????" + category + "???????????")
+        let predicate = NSPredicate(format: "id LIKE %@", "????????????????" + category + "???????????")
         request.predicate = predicate
         do {
             var items = try context.fetch(request)
-            items.sort(by: {str1, str2 in return str1.idNumber! < str2.idNumber!})
+            items.sort(by: {str1, str2 in return str1.id! < str2.id!})
             if items.count == 0 {
                 result = "BY00FREE000000FB" + category + "00000000000"
                 return result
             } else {
-                let lastpart = (Int(items.last!.idNumber?.suffix(11) ?? "0") ?? 0) + 1
-                result = items.last!.idNumber!.prefix(items.last!.idNumber!.count - String(lastpart).count) + String(lastpart)
+                let lastpart = (Int(items.last!.id?.suffix(11) ?? "0") ?? 0) + 1
+                result = items.last!.id!.prefix(items.last!.id!.count - String(lastpart).count) + String(lastpart)
                 return result
             }
         } catch {
@@ -355,12 +355,12 @@ extension UIViewController {
         let request = Branch.fetchRequest() as NSFetchRequest<Branch>
         do {
             var items = try context.fetch(request)
-            items.sort(by: {str1, str2 in return str1.idNumber < str2.idNumber})
+            items.sort(by: {str1, str2 in return str1.id < str2.id})
             if items.count == 0 {
                 id = 1
             } else {
-                let newIdNumber = Int64(items.last!.idNumber) + 1
-                id = newIdNumber
+                let newid = Int64(items.last!.id) + 1
+                id = newid
             }
         } catch {
             print("generation: error in add new branch")
@@ -373,12 +373,12 @@ extension UIViewController {
         let request = ATM.fetchRequest() as NSFetchRequest<ATM>
         do {
             var items = try context.fetch(request)
-            items.sort(by: {str1, str2 in return str1.idNumber < str2.idNumber})
+            items.sort(by: {str1, str2 in return str1.id < str2.id})
             if items.count == 0 {
                 id = 1
             } else {
-                let newIdNumber = Int64(items.last!.idNumber) + 1
-                id = newIdNumber
+                let newid = Int64(items.last!.id) + 1
+                id = newid
             }
         } catch {
             print("generation: error in add new atm")
@@ -391,10 +391,10 @@ extension UIViewController {
         let creditRequest = Credit.fetchRequest() as NSFetchRequest<Credit>
         do {
             var items = try context.fetch(creditRequest)
-            items.sort(by: {return $0.idNumber < $1.idNumber})
+            items.sort(by: {return $0.id < $1.id})
             if items.count == 0 { id *= 1 } else {
-                let newIdNumber = Int64(items.last!.idNumber / id) + 1
-                id *= newIdNumber
+                let newid = Int64(items.last!.id / id) + 1
+                id *= newid
             }
         } catch {
             print("generation: error in add new credit")
@@ -415,10 +415,10 @@ extension UIViewController {
         let depositRequest = Deposit.fetchRequest() as NSFetchRequest<Deposit>
         do {
             var items = try context.fetch(depositRequest)
-            items.sort(by: {return $0.idNumber < $1.idNumber})
+            items.sort(by: {return $0.id < $1.id})
             if items.count == 0 { id *= 1 } else {
-                let newIdNumber = Int64(items.last!.idNumber / id) + 1
-                id *= newIdNumber
+                let newid = Int64(items.last!.id / id) + 1
+                id *= newid
             }
         } catch {
             print("generation: error in add new deposit")
@@ -439,10 +439,10 @@ extension UIViewController {
         let transactionRequest = Transaction.fetchRequest() as NSFetchRequest<Transaction>
         do {
             var items = try context.fetch(transactionRequest)
-            items.sort(by: {return $0.idNumber < $1.idNumber})
+            items.sort(by: {return $0.id < $1.id})
             if items.count == 0 { id *= 1 } else {
-                let newIdNumber = Int64(items.last!.idNumber / id) + 1
-                id *= newIdNumber
+                let newid = Int64(items.last!.id / id) + 1
+                id *= newid
             }
         } catch {
             print("generation: error in add new transaction")
@@ -498,7 +498,7 @@ extension UIViewController {
             if banks.isEmpty {
                 let ourBank = Bank(context: context)
                 let bankAccount = Account(context: context)
-                bankAccount.idNumber = "BY00FREE000000FBA00000000000"
+                bankAccount.id = "BY00FREE000000FBA00000000000"
                 bankAccount.balance = 100_000_000
                 ourBank.account = bankAccount
                 context.insert(ourBank)
@@ -605,9 +605,9 @@ extension UIViewController {
     }
 
     // Account
-    func deleteAccount(by idNumber: String) {
+    func deleteAccount(by id: String) {
         let request = Account.fetchRequest() as NSFetchRequest<Account>
-        request.predicate = NSPredicate(format: "idNumber == %@", idNumber)
+        request.predicate = NSPredicate(format: "id == %@", id)
         do {
             let items = try context.fetch(request)
             if items.count == 0 {
@@ -618,7 +618,7 @@ extension UIViewController {
                 context.delete(items[item])
                 try context.save()
             }
-            print("deleteAccount: \(idNumber) deleted")
+            print("deleteAccount: \(id) deleted")
         } catch {
             print("deleteAccount: Error in deleting")
         }
@@ -695,7 +695,7 @@ extension Account {
     }
     func string() -> String {
         let null = "Nothing"
-        var result =  "id: \(self.idNumber ?? null), balance: \(self.balance / 100)р."
+        var result =  "id: \(self.id ?? null), balance: \(self.balance / 100)р."
         if let bank = self.bank {
             result += " bank: \(bank.name ?? null)"
         }
@@ -706,13 +706,13 @@ extension Account {
             result += " company: \(company.name ?? null)"
         }
         if let credit = self.credit {
-            result += " credit: \(credit.idNumber)"
+            result += " credit: \(credit.id)"
         }
         result += "\nTransactions:\n"
         if let transactions = self.transactions?.allObjects {
             for transaction in transactions {
                 if let trans = transaction as? Transaction {
-                    result += "\t" + String(trans.idNumber) + "\n"
+                    result += "\t" + String(trans.id) + "\n"
                 }
             }
         }
@@ -723,7 +723,7 @@ extension Account {
 extension Card {
     func string() -> String {
         let null = "Nothing"
-        var result = "idNumber: \(self.idNumber),\n cvv: \(self.cvv),\n validity: \(self.validity ?? null)\n"
+        var result = "id: \(self.id),\n cvv: \(self.cvv),\n validity: \(self.validity ?? null)\n"
         if let account = self.account {
             result += " account: " + account.string()
         }
@@ -733,7 +733,7 @@ extension Card {
 
 extension Credit {
     func string() -> String {
-        var result = "Credit:\n idNumber: \(self.idNumber)"
+        var result = "Credit:\n id: \(self.id)"
         result += "\n amount: \(self.amount)"
         result += "\n procent: \(self.procent)"
         result += "\n term: \(self.term)"
@@ -753,7 +753,7 @@ extension Credit {
 
 extension Deposit {
     func string() -> String {
-        var result = "Deposit:\n idNumber: \(self.idNumber)"
+        var result = "Deposit:\n id: \(self.id)"
         result += "\n amount: \(self.amount)"
         result += "\n procent: \(self.procent)"
         result += "\n term: \(self.term)"
@@ -774,7 +774,7 @@ extension Deposit {
 
 extension Transaction {
     func string() -> String {
-        var result = "Transaction:\n idNumber: \(self.idNumber)"
+        var result = "Transaction:\n id: \(self.id)"
         result += "\n amount: \(self.amount)"
         result += "\n sender: \(self.sender ?? "")"
         result += "\n receiver: \(self.receiver ?? "")"

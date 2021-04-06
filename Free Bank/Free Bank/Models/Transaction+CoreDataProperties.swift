@@ -2,12 +2,12 @@
 //  Transaction+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/4/21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
-import CoreData
 import Foundation
+import CoreData
 
 extension Transaction {
 
@@ -17,7 +17,7 @@ extension Transaction {
 
     @NSManaged public var amount: Int64
     @NSManaged public var date: Date?
-    @NSManaged public var idNumber: Int64
+    @NSManaged public var id: Int64
     @NSManaged public var receiver: String?
     @NSManaged public var sender: String?
     @NSManaged public var accounts: NSSet?

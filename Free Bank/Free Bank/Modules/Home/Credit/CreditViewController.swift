@@ -28,9 +28,9 @@ class CreditViewController: UIViewController {
         super.viewDidLoad()
         transparentNavBar(navigationBar)
         if let cred = credit {
-            creditNumberLabel.text = String(cred.idNumber)
+            creditNumberLabel.text = String(cred.id)
             if let acc = cred.account {
-                accountNumberLabel.text = "Счёт: \(acc.idNumber!)"
+                accountNumberLabel.text = "Счёт: \(acc.id!)"
                 balanceAccountLabel.text = MyCustomVC.getIntBYRbyString(acc.balance)
             }
             amountLabel.text = MyCustomVC.getIntBYRbyString(cred.amount)

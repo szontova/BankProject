@@ -12,7 +12,7 @@ protocol AccountTableViewCellDelegate: class {
     func deactivateAccount(cell: AccountTableViewCell, didTappedThe button: UIButton?)
 }
 class AccountTableViewCell: UITableViewCell {
-    @IBOutlet private weak var idNumberLabel: UILabel!
+    @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var balanceLabel: UILabel!
     @IBOutlet private weak var myBackgroundView: UIView!
     @IBOutlet private weak var buttonsStackView: UIStackView!
@@ -46,7 +46,7 @@ class AccountTableViewCell: UITableViewCell {
         default: break
         }
         self.myBackgroundView.layer.cornerRadius = 5.0
-        self.idNumberLabel.text = account.idNumber
+        self.idLabel.text = account.id
         self.balanceLabel.text = MyCustomVC.getIntBYRbyString(account.balance)
     }
     @IBAction func topUpAccBalance(_ sender: UIButton) {

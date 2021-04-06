@@ -2,12 +2,12 @@
 //  Credit+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/4/21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
-import CoreData
 import Foundation
+import CoreData
 
 extension Credit {
 
@@ -17,7 +17,7 @@ extension Credit {
 
     @NSManaged public var amount: Int32
     @NSManaged public var date: Date?
-    @NSManaged public var idNumber: Int64
+    @NSManaged public var id: Int64
     @NSManaged public var procent: Int16
     @NSManaged public var term: Int16
     @NSManaged public var account: Account?

@@ -27,7 +27,7 @@ class CardsViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        accountNumberLabel.text = "Cчёт: \(account?.idNumber ?? "")"
+        accountNumberLabel.text = "Cчёт: \(account?.id ?? "")"
         accountBalanceLabel.text = NSString(format: "Баланс: %.2f BYR", Float(account?.balance ?? 0) / 100 ) as String
         missingCardsLabel.isHidden = true
         cardsTableView.isHidden = true
@@ -40,7 +40,7 @@ class CardsViewController: UIViewController {
         let cardsSet = account?.cards
         cards = Array( cardsSet as! Set<Card> )
         cards.sort {
-            return $0.idNumber > $1.idNumber
+            return $0.id > $1.id
         }
     }
     func cardsTableViewConfigurations() {

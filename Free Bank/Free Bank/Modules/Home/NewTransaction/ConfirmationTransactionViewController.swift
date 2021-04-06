@@ -36,16 +36,16 @@ class ConfirmationTransactionViewController: UIViewController {
         transparentNavBar(navigationBar)
         if senderType.0 != nil {
             titleSenderLabel.text = "Номер карты:"
-            senderLabel.text = String(senderType.0!.idNumber)
+            senderLabel.text = String(senderType.0!.id)
             balanceLabel.text = MyCustomVC.getIntBYRbyString((senderType.0?.account!.balance)!)
         } else if senderType.1 != nil {
-            senderLabel.text = senderType.1?.idNumber
+            senderLabel.text = senderType.1?.id
             balanceLabel.text = MyCustomVC.getIntBYRbyString((senderType.1?.balance)!)
         }
         if receiverType.0 != nil {
             titleReceiverLabel.text = "Номер карты получателя:"
-            receiverLabel.text = String(receiverType.0!.idNumber)
-        } else if receiverType.1 != nil { receiverLabel.text = receiverType.1?.idNumber } else {
+            receiverLabel.text = String(receiverType.0!.id)
+        } else if receiverType.1 != nil { receiverLabel.text = receiverType.1?.id } else {
             receiverLabel.text = "Счёт вне банка"
             commissionLabel.text = MyCustomVC.getIntBYRbyString(100)
         }

@@ -2,17 +2,19 @@
 //  Bank+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Пользователь on 23.02.21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
-import CoreData
 import Foundation
+import CoreData
 
 extension Bank {
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Bank> {
         return NSFetchRequest<Bank>(entityName: "Bank")
     }
+
     @NSManaged public var address: String?
     @NSManaged public var email: String?
     @NSManaged public var fullNumber: String?

@@ -27,7 +27,7 @@ class CardTableViewCell: UITableViewCell {
     }
     func configure(with card: Card) {
         self.myBackgroundView.layer.cornerRadius = 5.0
-        cardNumberLabel.text = formatIntByBlocks(card.idNumber)
+        cardNumberLabel.text = formatIntByBlocks(card.id)
         validDateLabel.text = card.validity
     }
     func formatIntByBlocks(_ number: Int64) -> String {

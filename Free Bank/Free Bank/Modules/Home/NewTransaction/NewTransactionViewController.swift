@@ -75,7 +75,7 @@ class NewTransactionViewController: UIViewController {
         let accs = individual?.accounts ?? organization?.accounts
         accounts = Array( accs as! Set<Account> )
         accounts.sort {
-            return $0.idNumber! < $1.idNumber!
+            return $0.id! < $1.id!
         }
        accounts = accounts.filter { (acc) -> Bool in
             if let rev = acc.deposit?.revocable {
@@ -161,7 +161,7 @@ extension NewTransactionViewController: UIPickerViewDataSource {
         label.layer.frame = CGRect(x: 0, y: 0, width: pickerView.frame.width - 20, height: 26)
         label.layer.masksToBounds = true
         label.layer.cornerRadius = 5
-        label.text = accounts[row].idNumber
+        label.text = accounts[row].id
         return label
     }
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {

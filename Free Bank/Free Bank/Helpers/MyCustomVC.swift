@@ -5,7 +5,6 @@
 //  Created by Sasha Zontova on 4/5/21.
 //
 
-import Foundation
 import UIKit
 
 public class MyCustomVC {
@@ -15,7 +14,7 @@ public class MyCustomVC {
     }
 
     static func getAccCategory(_ acc: Account) -> Character {
-        return acc.idNumber!.dropFirst(16).first!
+        return acc.id!.dropFirst(16).first!
     }
     static func setValueOfSlider(slider: UISlider, step: Float) -> Float {
         let value = round(slider.value/step) * step

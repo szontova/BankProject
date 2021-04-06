@@ -9,7 +9,7 @@ import UIKit
 
 class DepositTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var idNumberLabel: UILabel!
+    @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var depositDateLabel: UILabel!
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var revocableLabel: UILabel!
@@ -27,7 +27,7 @@ class DepositTableViewCell: UITableViewCell {
     }
     public func configure() {}
     public func configure(_ deposit: Deposit) {
-        idNumberLabel.text = String(deposit.idNumber)
+        idLabel.text = String(deposit.id)
         depositDateLabel.text = MyCustomVC.getddMMyyyyDateString( deposit.date!)
         amountLabel.text = MyCustomVC.getIntBYRbyString(deposit.amount)
         var revocableString = ""

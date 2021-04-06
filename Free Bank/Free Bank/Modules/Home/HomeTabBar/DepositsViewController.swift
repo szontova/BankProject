@@ -53,7 +53,7 @@ class DepositsViewController: UIViewController {
         let accs = individual?.deposits ?? organization?.deposits
         deposits = Array( accs as! Set<Deposit> )
         deposits.sort {
-            return $0.idNumber < $1.idNumber
+            return $0.id < $1.id
         }
     }
     func depositsTableViewConfigurations() {

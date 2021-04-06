@@ -5,14 +5,34 @@
 //  Created by Пользователь on 1.02.21.
 //
 
-import UIKit
 import CoreData
+import UIKit
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let notificationCenter = UNUserNotificationCenter.current()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .alert]) { (granted, _) in
+            guard granted else {return}
+            self.notificationCenter.getNotificationSettings { (settings) in
+                guard settings.authorizationStatus == .authorized else { return }
+            }
+        }
+        sendNotification()
         return true
+    }
+    func sendNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Test Notification"
+        content.body = "Text of Notification"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
+        notificationCenter.add(request) { (error) in
+            print(error?.localizedDescription ?? "Error with Notifications")
+        }
     }
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

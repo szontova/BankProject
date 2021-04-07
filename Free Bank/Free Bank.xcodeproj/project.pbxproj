@@ -662,11 +662,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 597D66B725C80FA50051E84A /* Build configuration list for PBXNativeTarget "Free Bank" */;
 			buildPhases = (
-				31271D66261C3B18008EB775 /* ShellScript */,
 				F3FE0C4CD84E711D151D4C9F /* [CP] Check Pods Manifest.lock */,
+				31271D66261C3B18008EB775 /* ShellScript */,
 				597D669F25C80FA40051E84A /* Sources */,
 				597D66A025C80FA40051E84A /* Frameworks */,
 				597D66A125C80FA40051E84A /* Resources */,
+				2E2B3DAF957355203034A5D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -747,6 +748,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E2B3DAF957355203034A5D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Free Bank/Pods-Free Bank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Free Bank/Pods-Free Bank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Free Bank/Pods-Free Bank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		31271D66261C3B18008EB775 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1004,7 +1022,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BF2G2TXWDY;
+				DEVELOPMENT_TEAM = FFWMQ7T85M;
 				INFOPLIST_FILE = "Free Bank/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1025,7 +1043,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BF2G2TXWDY;
+				DEVELOPMENT_TEAM = FFWMQ7T85M;
 				INFOPLIST_FILE = "Free Bank/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (

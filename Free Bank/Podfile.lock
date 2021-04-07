@@ -1,16 +1,28 @@
 PODS:
+  - AMPopTip (4.4.0)
+  - PKHUD (5.3.0)
+  - SkyFloatingLabelTextField (4.0.0)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
+  - AMPopTip (= 4.4.0)
+  - PKHUD (= 5.3.0)
+  - SkyFloatingLabelTextField (= 4.0.0)
   - SwiftLint (= 0.43.1)
 
 SPEC REPOS:
   trunk:
+    - AMPopTip
+    - PKHUD
+    - SkyFloatingLabelTextField
     - SwiftLint
 
 SPEC CHECKSUMS:
+  AMPopTip: 093366c8dab16a2d0bf46c73d5837b6a2a603774
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 0b0245ab7eebe3f24537989c03911bcca8a7cd73
+PODFILE CHECKSUM: 58e59d1e08d3ac1486cbb02464fe4fc494432d1a
 
 COCOAPODS: 1.8.4

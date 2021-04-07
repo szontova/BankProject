@@ -85,7 +85,7 @@ class NewTransactionViewController: UIViewController {
         }
     }
     // MARK: - @IBActions
-    @IBAction func keyboardWillShow(notification: NSNotification) {
+    @IBAction internal func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if let activeTextField = activeTextField {
                 let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY
@@ -98,15 +98,15 @@ class NewTransactionViewController: UIViewController {
             }
         }
     }
-    @IBAction func keyboardWillHide(notification: NSNotification) {
+    @IBAction internal func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
         isMoving = false
     }
-    @IBAction func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToNewTransactionFromConfirmationTransaction(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToNewTransactionFromConfirmSegue" else {return}
         guard segue.destination as? ConfirmationTransactionViewController != nil else {return}
     }
-    @IBAction func continueTransactionButton(_ sender: UIButton) {
+    @IBAction private func continueTransactionButton(_ sender: UIButton) {
         var result = true
         if senderType.0 {
             result = findCard(by: senderCardNumberTextField.text!) != nil ? true : false

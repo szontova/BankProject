@@ -63,22 +63,22 @@ class DepositsViewController: UIViewController {
         depositsTableView.dataSource = self
     }
     // MARK: - @IBActions
-    @IBAction func addDepositButton(_ sender: UIButton) {
+    @IBAction private func addDepositButton(_ sender: UIButton) {
         if deposits.count > 1 {
             showAlertError(message: "На одного пользователя не может быть оформлено не более 2 депозитов")
         } else {
             performSegue(withIdentifier: "toNewDepositSegue", sender: nil)
         }
     }
-    @IBAction func unwindToDepositsVCFromNewDepositVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToDepositsVCFromNewDepositVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToDepositsFromNewDepositSegue" else {return}
         guard segue.destination as? NewDepositViewController != nil else {return}
     }
-    @IBAction func unwindToDepositsVCFromDepositVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToDepositsVCFromDepositVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToDepositsFromDepositSegue" else {return}
         guard segue.destination as? DepositViewController != nil else {return}
     }
-    @IBAction func unwindToDepositsVCFromConfirmDepositVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToDepositsVCFromConfirmDepositVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToDepositsFromConfirmDepositSegue" else {return}
         guard segue.destination as? ConfirmationDepositViewController != nil else {return}
     }

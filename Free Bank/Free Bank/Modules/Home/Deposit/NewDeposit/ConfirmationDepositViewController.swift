@@ -54,7 +54,7 @@ class ConfirmationDepositViewController: UIViewController {
         dateLabel.text = MyCustomVC.getddMMyyyyDateString(date)
     }
     // MARK: - @IBActions
-    @IBAction func confirmDepositButton(_ sender: UIButton) {
+    @IBAction private func confirmDepositButton(_ sender: UIButton) {
         addDeposit(amount!, term!, procent!, date, revocable!, individual, organization)
         showAlertMessageWithSegue(message: "Депозит успешно оформлен", segue: "unwindToDepositsFromConfirmDepositSegue")
     }

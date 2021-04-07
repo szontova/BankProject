@@ -95,7 +95,7 @@ class SignInViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     // MARK: - @IBActions
-    @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
+    @IBAction private func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
             loginLabel.text = "Логин"
@@ -106,7 +106,7 @@ class SignInViewController: UIViewController {
         default: break
         }
     }
-    @IBAction func signInButton(_ sender: UIButton) {
+    @IBAction private func signInButton(_ sender: UIButton) {
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
@@ -134,24 +134,24 @@ class SignInViewController: UIViewController {
          //   print("datas error")
         }
     }
-    @IBAction func registrationButton(_ sender: UIButton) {
+    @IBAction private func registrationButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignUpSegue", sender: nil)
     }
-    @IBAction func forgotPasswordButton(_ sender: UIButton) {
+    @IBAction private func forgotPasswordButton(_ sender: UIButton) {
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         showAlertForgotPassword(status, login)
     }
     // MARK: - unwind @IBActions
-    @IBAction func unwindToSignInFromRegistration(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToSignInFromRegistration(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToSignInVCSegue" else {return}
         guard segue.destination as? SignUpViewController != nil else {return}
     }
-    @IBAction func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToSignInFromEndRegistation(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindFomEndToSignInVCSegue" else {return}
         guard segue.destination as? EndOfSignUpViewController != nil else {return}
     }
-    @IBAction func unwindToSignInFromHome(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToSignInFromHome(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindFromHomeToSignInVCSegue" else {return}
         guard segue.destination as? OtherPageHomeViewController != nil else {return}
     }

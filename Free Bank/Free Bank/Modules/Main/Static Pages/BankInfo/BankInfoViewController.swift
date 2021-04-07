@@ -51,13 +51,13 @@ class BankInfoViewController: UIViewController {
         }
     }
     // MARK: - @IBActions
-    @IBAction func shortCallButton(_ sender: UIButton) {
+    @IBAction private func shortCallButton(_ sender: UIButton) {
         MyCustomVC.callNumber(number: shortNumberButton.currentTitle!)
     }
-    @IBAction func fullCallButton(_ sender: UIButton) {
+    @IBAction private func fullCallButton(_ sender: UIButton) {
         MyCustomVC.callNumber(number: fullNumberButton.currentTitle!)
     }
-    @IBAction func sendMailButton(_ sender: UIButton) {
+    @IBAction private func sendMailButton(_ sender: UIButton) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self

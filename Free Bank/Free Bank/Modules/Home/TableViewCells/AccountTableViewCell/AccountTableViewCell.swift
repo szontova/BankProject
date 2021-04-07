@@ -49,10 +49,10 @@ class AccountTableViewCell: UITableViewCell {
         self.idLabel.text = account.id
         self.balanceLabel.text = MyCustomVC.getIntBYRbyString(account.balance)
     }
-    @IBAction func topUpAccBalance(_ sender: UIButton) {
+    @IBAction private func topUpAccBalance(_ sender: UIButton) {
         cellDelegate?.addMoney(cell: self, didTappedThe: sender)
     }
-    @IBAction func deactivationAcc(_ sender: UIButton) {
+    @IBAction private func deactivationAcc(_ sender: UIButton) {
         cellDelegate?.deactivateAccount(cell: self, didTappedThe: sender)
     }
 }

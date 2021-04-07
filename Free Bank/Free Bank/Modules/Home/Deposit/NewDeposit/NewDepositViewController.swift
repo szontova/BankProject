@@ -42,15 +42,15 @@ class NewDepositViewController: UIViewController {
         destinationVC.setOrganization(organization)
     }
     // MARK: - @IBActions
-    @IBAction func unwindToNewDepositFromConfirmationDeposit(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToNewDepositFromConfirmationDeposit(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToNewDepositFromConfirmSegue" else {return}
         guard segue.destination as? ConfirmationDepositViewController != nil else {return}
     }
-    @IBAction func termSlider(_ sender: UISlider) {
+    @IBAction private func termSlider(_ sender: UISlider) {
         term = Int(MyCustomVC.setValueOfSlider(slider: termSlider, step: 1))
         termLabel.text = String(format: "%g", MyCustomVC.setValueOfSlider(slider: termSlider, step: 1)) + " \(MyCustomVC.defineWordForDepositTerm(term: term))"
     }
-    @IBAction func addDepositButton(_ sender: UIButton) {
+    @IBAction private func addDepositButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         if !Range(100...10000).contains(amount) {
             showAlertError(message: "Введите значение суммы от 100 до 10000 BYR.")

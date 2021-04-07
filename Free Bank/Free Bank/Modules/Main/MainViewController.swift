@@ -37,22 +37,22 @@ class MainViewController: UIViewController {
         _ = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollCollectionViewAutomatically), userInfo: nil, repeats: true)
     }
     // MARK: - @IBActions
-    @IBAction func moveToSignInButton(_ sender: UIButton) {
+    @IBAction private func moveToSignInButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignInSegue", sender: nil)
     }
-    @IBAction func moveToExchangeRateButton(_ sender: UIButton) {
+    @IBAction private func moveToExchangeRateButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toExchangeRateSegue", sender: nil)
     }
-    @IBAction func moveToContactsButton(_ sender: UIButton) {
+    @IBAction private func moveToContactsButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toContactsSegue", sender: nil)
     }
-    @IBAction func moveToBankInfoButton(_ sender: UIButton) {
+    @IBAction private func moveToBankInfoButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toBankInfoSegue", sender: nil)
     }
-    @IBAction func moveToAddressesButton(_ sender: UIButton) {
+    @IBAction private func moveToAddressesButton(_ sender: UIButton) {
         performSegue(withIdentifier: "toAddressesSegue", sender: nil)
     }
-    @IBAction func scrollCollectionViewAutomatically() {
+    @IBAction private func scrollCollectionViewAutomatically() {
         let pageInt = Int(round(collectionView.contentOffset.x / collectionView.frame.size.width))
         if pageInt == getImages().count {
             collectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
@@ -64,23 +64,23 @@ class MainViewController: UIViewController {
         }
     }
     // MARK: - unwind @IBActions
-    @IBAction func unwindToMainVCFromSignInVC (segue: UIStoryboardSegue) {
+    @IBAction private func unwindToMainVCFromSignInVC (segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToMainVCSegue" else {return}
         guard segue.destination as? SignInViewController != nil else {return}
     }
-    @IBAction func unwindToMainVCFromExchangeRateTVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToMainVCFromExchangeRateTVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToMainFromExRateSegue" else {return}
         guard segue.destination as? ExchangeRateTableViewController != nil else {return}
     }
-    @IBAction func unwindToMainVCFromContactsVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToMainVCFromContactsVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToMainFromContactsSegue" else {return}
         guard segue.destination as? ContactsViewController != nil else {return}
     }
-    @IBAction func unwindToMainVCFromBankInfoVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToMainVCFromBankInfoVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToMainFromBankInfoSegue" else {return}
         guard segue.destination as? BankInfoViewController != nil else {return}
     }
-    @IBAction func unwindToMainVCFromAddressesTVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToMainVCFromAddressesTVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToMainFromAddressesSegue" else {return}
         guard segue.destination as? AddressesTableViewController != nil else {return}
     }

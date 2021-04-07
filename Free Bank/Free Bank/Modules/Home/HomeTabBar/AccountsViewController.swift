@@ -111,11 +111,11 @@ class AccountsViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     // MARK: - @IBActions
-    @IBAction func unwindToAccountsVCFromAccCardsVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToAccountsVCFromAccCardsVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToAccFromAccCardsSegue" else {return}
         guard segue.destination as? CardsViewController != nil else {return}
     }
-    @IBAction func addAccountButton(_ sender: UIButton) {
+    @IBAction private func addAccountButton(_ sender: UIButton) {
         if simpleAccounts.count > 2 {
             showAlertError(message: "На одного пользователя может быть зарегистрировано не более 3 расчётных счетов ")
         } else {

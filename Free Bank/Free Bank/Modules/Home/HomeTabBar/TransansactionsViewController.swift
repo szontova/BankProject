@@ -88,15 +88,15 @@ class TransansactionsViewController: UIViewController {
         }
     }
     // MARK: - @IBActions
-    @IBAction func unwindToTransactionsVCFromNewTransactionVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToTransactionsVCFromNewTransactionVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToTransactionsFromNewTransactionSegue" else {return}
         guard segue.destination as? NewTransactionViewController != nil else {return}
     }
-    @IBAction func unwindToTransactionsVCFromConfirmTransactionVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToTransactionsVCFromConfirmTransactionVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToTransactionsFromConfirmTransactionSegue" else {return}
         guard segue.destination as? ConfirmationTransactionViewController != nil else {return}
     }
-    @IBAction func addTransaction(_ sender: UIButton) {
+    @IBAction private func addTransaction(_ sender: UIButton) {
         performSegue(withIdentifier: "toNewTransactionSegue", sender: nil)
     }
 }

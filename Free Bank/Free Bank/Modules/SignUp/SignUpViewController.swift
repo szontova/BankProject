@@ -40,7 +40,7 @@ class SignUpViewController: UIViewController {
         destinationVC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
     // MARK: - @IBActions
-    @IBAction func keyboardWillShow(notification: NSNotification) {
+    @IBAction private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if let activeTextField = activeTextField {
                 let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY
@@ -53,11 +53,11 @@ class SignUpViewController: UIViewController {
             }
         }
     }
-    @IBAction func keyboardWillHide(notification: NSNotification) {
+    @IBAction private func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
         isMoving = false
     }
-    @IBAction func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
+    @IBAction private func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
             nameLabel.text = "ФИО"
@@ -72,7 +72,7 @@ class SignUpViewController: UIViewController {
         default: break
         }
     }
-    @IBAction func signUpButton(_ sender: UIButton) {
+    @IBAction private func signUpButton(_ sender: UIButton) {
         let status = statusSegmentedControl.selectedSegmentIndex
         let name = nameTextField.text ?? ""
         let email = emailTextField.text ?? ""
@@ -84,7 +84,7 @@ class SignUpViewController: UIViewController {
             performSegue(withIdentifier: "endRegSegue", sender: nil)
         }
     }
-    @IBAction func unwindToSignUpFromEndSignUp(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToSignUpFromEndSignUp(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindFromEndToSignUpVCSegue" else {return}
         guard segue.destination as? EndOfSignUpViewController != nil else {return}
     }

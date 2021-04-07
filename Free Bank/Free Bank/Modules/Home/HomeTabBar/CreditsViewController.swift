@@ -66,19 +66,19 @@ class CreditsViewController: UIViewController {
         creditsTableView.dataSource = self
     }
     // MARK: - @IBActions
-    @IBAction func unwindToCreditsVCFromNewCreditVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToCreditsVCFromNewCreditVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToCreditsFromNewCreditSegue" else {return}
         guard segue.destination as? NewCreditViewController != nil else {return}
     }
-    @IBAction func unwindToCreditsVCFromConfirmCreditVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToCreditsVCFromConfirmCreditVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToCreditsFromConfirmCreditSegue" else {return}
         guard segue.destination as? ConfirmationCreditViewController != nil else {return}
     }
-    @IBAction func unwindToCreditsVCFromCreditVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToCreditsVCFromCreditVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToCreditsFromCreditSegue" else {return}
         guard segue.destination as? CreditViewController != nil else {return}
     }
-    @IBAction func addCredit(_ sender: UIButton) {
+    @IBAction private func addCredit(_ sender: UIButton) {
         if credits.count > 1 {
             showAlertError(message: "На одного пользователя не может быть оформлено не более 2 кредитов")
         } else {

@@ -27,24 +27,24 @@ class OtherPageHomeViewController: UIViewController {
         loginLabel.text = individual?.login ?? organization?.prn
     }
     // MARK: - @IBActions
-    @IBAction func createSPAction(_ sender: UIButton) {
+    @IBAction private func createSPAction(_ sender: UIButton) {
         performSegue(withIdentifier: "toCreateSPSegue", sender: nil)
     }
-    @IBAction func changeSPAction(_ sender: UIButton) {
+    @IBAction private func changeSPAction(_ sender: UIButton) {
         performSegue(withIdentifier: "toChangeSPSegue", sender: nil)
     }
-    @IBAction func paySPAction(_ sender: UIButton) {
+    @IBAction private func paySPAction(_ sender: UIButton) {
         performSegue(withIdentifier: "toPaySPSegue", sender: nil)
     }
-    @IBAction func unwindToOtherVCFromCreateSPVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToOtherVCFromCreateSPVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToOtherFromCreateSPSegue" else {return}
         guard segue.destination as? CreateSalaryProjectViewController != nil else {return}
     }
-    @IBAction func unwindToOtherVCFromChangeSPVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToOtherVCFromChangeSPVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToOtherFromChangeSPSegue" else {return}
         guard segue.destination as? ChangeSalaryProjectViewController != nil else {return}
     }
-    @IBAction func unwindToOtherVCFromPaySPVC(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToOtherVCFromPaySPVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToOtherFromPaySPSegue" else {return}
         guard segue.destination as? PaySalaryProjectViewController != nil else {return}
     }

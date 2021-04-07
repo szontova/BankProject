@@ -62,7 +62,7 @@ class ConfirmationTransactionViewController: UIViewController {
         totalLabel.text = MyCustomVC.getIntBYRbyString(total ?? 0)
     }
     // MARK: - @IBActions
-    @IBAction func confirmTransaction(_ sender: UIButton) {
+    @IBAction private func confirmTransaction(_ sender: UIButton) {
         amount = (Int.parse(amountTextField.text ?? "0") ?? 0) * 100
         commission = Int.parse(commissionLabel.text ?? "0") ?? 0
         total = Int64((amount ?? 0) + (commission ?? 0))

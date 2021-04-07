@@ -43,7 +43,7 @@ class EndOfSignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     // MARK: - @IBActions
-    @IBAction func keyboardWillShow(notification: NSNotification) {
+    @IBAction private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let bottomOfTextField = codeWordTextField.convert(codeWordTextField.bounds, to: self.view).maxY
             let topOfKeyboard = self.view.frame.height - keyboardSize.height
@@ -53,10 +53,10 @@ class EndOfSignUpViewController: UIViewController {
             }
         }
     }
-    @IBAction func keyboardWillHide(notification: NSNotification) {
+    @IBAction private func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
     }
-    @IBAction func endOgSignUpButton(_ sender: Any) {
+    @IBAction private func endOgSignUpButton(_ sender: Any) {
         let codeWord = codeWordTextField.text ?? ""
         if codeWord.isEmpty {
             showAlertError(message: "Введите кодовое слово")

@@ -43,7 +43,7 @@ class ConfirmationCreditViewController: UIViewController {
         dateLabel.text = dateFormatter.string(from: date)
         }
     // MARK: - @IBActions
-    @IBAction func confirmCreditButton(_ sender: UIButton) {
+    @IBAction private func confirmCreditButton(_ sender: UIButton) {
         addCredit( amount!, term!, procent!, date, individual, organization)
         showAlertMessageWithSegue(message: "Кредит успешно оформлен", segue: "unwindToCreditsFromConfirmCreditSegue")
     }

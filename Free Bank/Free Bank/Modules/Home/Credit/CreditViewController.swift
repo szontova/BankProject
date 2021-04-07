@@ -43,8 +43,8 @@ class CreditViewController: UIViewController {
         }
     }
     // MARK: - @IBActions
-    @IBAction func payOffButton(_ sender: UIButton) {
+    @IBAction private func payOffButton(_ sender: UIButton) {
     }
-    @IBAction func transferMoneyButton(_ sender: UIButton) {
+    @IBAction private func transferMoneyButton(_ sender: UIButton) {
     }
 }

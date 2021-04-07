@@ -47,6 +47,6 @@ class DepositViewController: UIViewController {
         }
     }
     // MARK: - @IBActions
-    @IBAction func withdrawMoneyAction(_ sender: UIButton) {
+    @IBAction private func withdrawMoneyAction(_ sender: UIButton) {
     }
 }

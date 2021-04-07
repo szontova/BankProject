@@ -44,11 +44,11 @@ class CreateSalaryProjectViewController: UIViewController {
         }
     }
     // MARK: - @IBActions
-    @IBAction func formsGenerationAction(_ sender: UIButton) {
+    @IBAction private func formsGenerationAction(_ sender: UIButton) {
         count = Int(countsOfWorkersTextField.text ?? "") ?? 0
         updateFormsTableView()
     }
-    @IBAction func addSalaryProject(_ sender: UIButton) {}
+    @IBAction private func addSalaryProject(_ sender: UIButton) {}
 }
 
 // MARK: - Extensions

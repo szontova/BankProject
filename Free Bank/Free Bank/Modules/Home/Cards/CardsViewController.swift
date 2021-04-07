@@ -50,7 +50,7 @@ class CardsViewController: UIViewController {
         cardsTableView.dataSource = self
     }
     // MARK: - @IBActions
-    @IBAction func addCardButton(_ sender: UIButton) {
+    @IBAction private func addCardButton(_ sender: UIButton) {
         if let acc = account {
             switch MyCustomVC.getAccCategory(acc) {
             case "S":

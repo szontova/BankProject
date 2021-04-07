@@ -56,7 +56,7 @@ class NewCreditViewController: UIViewController {
     }
 
     // MARK: - @IBActions
-    @IBAction func keyboardWillShow(notification: NSNotification) {
+    @IBAction private func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if let activeTextField = activeTextField {
                 let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY
@@ -69,11 +69,11 @@ class NewCreditViewController: UIViewController {
             }
         }
     }
-    @IBAction func keyboardWillHide(notification: NSNotification) {
+    @IBAction private func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
         isMoving = false
     }
-    @IBAction func addCreditButton(_ sender: UIButton) {
+    @IBAction private func addCreditButton(_ sender: UIButton) {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         term = Int.parse(termTextField.text ?? "") ?? 0
         salary = Int.parse(salaryTextField.text ?? "") ?? 0
@@ -85,16 +85,16 @@ class NewCreditViewController: UIViewController {
             }
         }
     }
-    @IBAction func backToCreditsButton(_ sender: UIButton) {
+    @IBAction private func backToCreditsButton(_ sender: UIButton) {
         performSegue(withIdentifier: "unwindFromNewCreditToCreditsSegue", sender: nil)
     }
-    @IBAction func amountSliderAction(_ sender: UISlider) {
+    @IBAction private func amountSliderAction(_ sender: UISlider) {
         amountTextField.text = String(format: "%g", MyCustomVC.setValueOfSlider(slider: amountSlider, step: 100))
     }
-    @IBAction func termSliderAction(_ sender: UISlider) {
+    @IBAction private func termSliderAction(_ sender: UISlider) {
         termTextField.text = String(format: "%g", MyCustomVC.setValueOfSlider(slider: termSlider, step: 6))
     }
-    @IBAction func unwindToNewCreditFromConfirmationCredit(segue: UIStoryboardSegue) {
+    @IBAction private func unwindToNewCreditFromConfirmationCredit(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToNewCreditFromConfirmSegue" else {return}
         guard segue.destination as? ConfirmationCreditViewController != nil else {return}
     }

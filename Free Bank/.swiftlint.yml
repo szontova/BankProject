@@ -39,9 +39,9 @@ custom_rules:
       message: "IBOutlet should be private"
       severity: warning
 
-#  open_ibaction:
-#      included: ".*.swift"
-#      name: "IBAction opening"
-#      regex: '@IBAction private func'
-#      message: "IBAction should be private"
-#      severity: warning
+  open_ibaction:
+      included: ".*.swift"
+      name: "IBAction opening"
+      regex: '@IBAction func'
+      message: "IBAction should be private"
+      severity: warning

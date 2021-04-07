@@ -10,7 +10,7 @@ import UIKit
 class EndOfSignUpViewController: UIViewController {
 
     // MARK: - @IBOutlets
-    @IBOutlet weak var codeWordTextField: UITextField!
+    @IBOutlet weak private var codeWordTextField: UITextField!
     private var status: Int?
     private var name: String?
     private var email: String?

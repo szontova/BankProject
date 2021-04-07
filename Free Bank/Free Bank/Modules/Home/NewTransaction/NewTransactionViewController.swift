@@ -9,14 +9,14 @@ import UIKit
 
 class NewTransactionViewController: UIViewController {
     // MARK: - @IBOutlets
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var accountView: UIView!
-    @IBOutlet weak var senderCardNumberTextField: UITextField!
-    @IBOutlet weak var senderCardValidity: UITextField!
-    @IBOutlet weak var senderCardCVV: UITextField!
-    @IBOutlet weak var senderAccountPickerView: UIPickerView!
-    @IBOutlet weak var receiverTextField: UITextField!
+    @IBOutlet weak private var navigationBar: UINavigationBar!
+    @IBOutlet weak private var cardView: UIView!
+    @IBOutlet weak private var accountView: UIView!
+    @IBOutlet weak private var senderCardNumberTextField: UITextField!
+    @IBOutlet weak private var senderCardValidity: UITextField!
+    @IBOutlet weak private var senderCardCVV: UITextField!
+    @IBOutlet weak private var senderAccountPickerView: UIPickerView!
+    @IBOutlet weak private var receiverTextField: UITextField!
     private var activeTextField: UITextField?
     private var isMoving = false
     private var individual: Individual?

@@ -42,9 +42,9 @@ extension MainViewController: UICollectionViewDataSource {
         let pageInt = Int(round(pageFloat))
         switch pageInt {
         case 0:
-            collectionView.scrollToItem(at: [0, getImages().count], at: .left, animated: false)
+            getCollectionView().scrollToItem(at: [0, getImages().count], at: .left, animated: false)
         case getImages().count :
-            collectionView.scrollToItem(at: [0, 0], at: .left, animated: false)
+            getCollectionView().scrollToItem(at: [0, 0], at: .left, animated: false)
         default:
             break
         }
@@ -54,8 +54,8 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = viewFofCollectionView.bounds.width
-        let height = viewFofCollectionView.bounds.height
+        let width = getViewForCollectionView().bounds.width
+        let height = getViewForCollectionView().bounds.height
         if height > width {
             return CGSize(width: width - 10, height: width - 10)
         } else {
@@ -64,8 +64,8 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        let width = viewFofCollectionView.bounds.width
-        let height = viewFofCollectionView.bounds.height
+        let width = getViewForCollectionView().bounds.width
+        let height = getViewForCollectionView().bounds.height
         if height < width {
             return (width - height + 10)
         }
@@ -74,8 +74,8 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var indent: CGFloat = 5.0
-        let width = viewFofCollectionView.bounds.width
-        let height = viewFofCollectionView.bounds.height
+        let width = getViewForCollectionView().bounds.width
+        let height = getViewForCollectionView().bounds.height
         if height < width {
             indent = (width - height) / 2 + 5
         }

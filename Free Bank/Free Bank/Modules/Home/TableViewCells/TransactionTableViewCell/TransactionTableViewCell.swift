@@ -9,11 +9,11 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var senderLabel: UILabel!
-    @IBOutlet weak var receiverLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak private var idLabel: UILabel!
+    @IBOutlet weak private var senderLabel: UILabel!
+    @IBOutlet weak private var receiverLabel: UILabel!
+    @IBOutlet weak private var amountLabel: UILabel!
+    @IBOutlet weak private var dateLabel: UILabel!
     static let identifier = "transactionCell"
     static func nib() -> UINib {
         return UINib(nibName: "TransactionTableViewCell", bundle: nil)

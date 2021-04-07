@@ -9,11 +9,17 @@ import UIKit
 
 class MainViewController: UIViewController {
     // MARK: - @IBOutlets
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var viewFofCollectionView: UIView!
+    @IBOutlet weak private var collectionView: UICollectionView!
+    @IBOutlet weak private var viewFofCollectionView: UIView!
     let imageLinks: [String: String] = ["cards": "https://myfin.by/cards", "bank": "https://www.nbrb.by", "worldNews": "https://myfin.by/stati"]
     func getImages() -> [String] {
         return Array(imageLinks.keys)
+    }
+    func getCollectionView() -> UICollectionView {
+        return self.collectionView
+    }
+    func getViewForCollectionView() -> UIView {
+        return self.viewFofCollectionView
     }
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {

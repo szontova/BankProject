@@ -111,7 +111,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Введите логин"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Введите ФИО"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="selectedTitle" value="ФИО"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="ФИО"/>
                                         </userDefinedRuntimeAttributes>
@@ -558,19 +558,19 @@
     </scenes>
     <designables>
         <designable name="0tc-uN-0d8">
-            <size key="intrinsicContentSize" width="354" height="41.607421875"/>
+            <size key="intrinsicContentSize" width="149" height="34"/>
         </designable>
         <designable name="3Bj-UO-Bm4">
-            <size key="intrinsicContentSize" width="354" height="41.607421875"/>
+            <size key="intrinsicContentSize" width="132" height="34"/>
         </designable>
         <designable name="620-H8-ebs">
-            <size key="intrinsicContentSize" width="354" height="41.607421875"/>
+            <size key="intrinsicContentSize" width="139.5" height="34"/>
         </designable>
         <designable name="Tfd-jK-YqC">
-            <size key="intrinsicContentSize" width="354" height="41.607421875"/>
+            <size key="intrinsicContentSize" width="254.5" height="34"/>
         </designable>
         <designable name="iCZ-t4-Dor">
-            <size key="intrinsicContentSize" width="354" height="41.607421875"/>
+            <size key="intrinsicContentSize" width="134" height="34"/>
         </designable>
     </designables>
     <resources>

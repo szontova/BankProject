@@ -34,8 +34,9 @@ class SignUpViewController: UIViewController {
             tf.placeholderFont = .systemFont(ofSize: 16.0)
             tf.titleFont = .boldSystemFont(ofSize: 14.0)
         }
-        passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        repeatPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        loginTextField.addTarget(self, action: #selector(loginTextFieldDidChange(_:)), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
+        repeatPasswordTextField.addTarget(self, action: #selector(repeatPasswordTextFieldDidChange(_:)), for: .editingChanged)
     }
     // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -105,7 +106,7 @@ class SignUpViewController: UIViewController {
         guard segue.identifier == "unwindFromEndToSignUpVCSegue" else {return}
         guard segue.destination as? EndOfSignUpViewController != nil else {return}
     }
-    @IBAction private func textFieldDidChange(_ textField: UITextField) {
+    @IBAction private func repeatPasswordTextFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if textField == self.repeatPasswordTextField {
                 if text == "" ||  text != passwordTextField.text {
@@ -116,7 +117,13 @@ class SignUpViewController: UIViewController {
                     self.repeatPasswordTextField.title = ""
                     self.repeatPasswordTextField.selectedTitle = ""
                 }
-            } else if textField == self.passwordTextField {
+            }
+        }
+    }
+    
+    @IBAction private func passwordTextFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            if textField == self.passwordTextField {
                 if text != "" && repeatPasswordTextField.text != "" {
                     if text != repeatPasswordTextField.text {
                         self.repeatPasswordTextField.errorMessage = "пароли не совпадают"
@@ -126,6 +133,21 @@ class SignUpViewController: UIViewController {
                         self.repeatPasswordTextField.title = ""
                         self.repeatPasswordTextField.selectedTitle = ""
                     }
+                }
+            }
+        }
+    }
+    
+    @IBAction private func loginTextFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            if textField == self.loginTextField {
+                print("!!")
+                let allowLetters: ClosedRange<Character> = "A"..."z"
+                let allowSymbols: Set<Character> = [".", "_"]
+                if text.count < 8 || text.count > 30 || (!allowLetters.contains(text.last ?? " ") && !allowSymbols.contains(text.last ?? " ")) {
+                    self.loginTextField.errorMessage = "неверный формат"
+                } else {
+                    self.loginTextField.errorMessage = ""
                 }
             }
         }

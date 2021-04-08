@@ -5,18 +5,17 @@
 //  Created by Пользователь on 4.02.21.
 //
 
+import SkyFloatingLabelTextField
 import UIKit
 
 class SignUpViewController: UIViewController {
 
     // MARK: - @IBOutlets
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var nameTextField: UITextField!
-    @IBOutlet private weak var loginLabel: UILabel!
-    @IBOutlet private weak var loginTextField: UITextField!
-    @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet private weak var repeatPasswordTextField: UITextField!
-    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var nameTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var loginTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var repeatPasswordTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
     private var activeTextField: UITextField?
     private var isMoving = false
@@ -25,6 +24,16 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(SignUpViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SignUpViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        textFieldsConfiguration()
+    }
+    // MARK: - OurMethods
+    func textFieldsConfiguration() {
+        let textFields:[SkyFloatingLabelTextField] = [self.nameTextField, self.loginTextField, self.passwordTextField, self.repeatPasswordTextField, self.emailTextField]
+        for tf in textFields {
+            tf.font = .systemFont(ofSize: 16.0)
+            tf.placeholderFont = .systemFont(ofSize: 16.0)
+            tf.titleFont = .boldSystemFont(ofSize: 14.0)
+        }
     }
     // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -60,15 +69,21 @@ class SignUpViewController: UIViewController {
     @IBAction private func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
-            nameLabel.text = "ФИО"
             nameTextField.placeholder = "Введите ФИО"
-            loginLabel.text = "Логин"
+            nameTextField.title = "ФИО"
+            nameTextField.selectedTitle = "ФИО"
+            
             loginTextField.placeholder = "Введите логин"
+            loginTextField.title = "Логин"
+            loginTextField.selectedTitle = "Логин"
         case 1:
-            nameLabel.text = "Название компании"
             nameTextField.placeholder = "Введите название компании"
-            loginLabel.text = "УНП"
+            nameTextField.title = "название компании"
+            nameTextField.selectedTitle = "название компании"
+            
             loginTextField.placeholder = "Введите УНП"
+            loginTextField.title = "УНП"
+            loginTextField.selectedTitle = "УНП"
         default: break
         }
     }

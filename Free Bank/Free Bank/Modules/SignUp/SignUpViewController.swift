@@ -34,6 +34,8 @@ class SignUpViewController: UIViewController {
             tf.placeholderFont = .systemFont(ofSize: 16.0)
             tf.titleFont = .boldSystemFont(ofSize: 14.0)
         }
+        passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        repeatPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -102,6 +104,31 @@ class SignUpViewController: UIViewController {
     @IBAction private func unwindToSignUpFromEndSignUp(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindFromEndToSignUpVCSegue" else {return}
         guard segue.destination as? EndOfSignUpViewController != nil else {return}
+    }
+    @IBAction private func textFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            if textField == self.repeatPasswordTextField {
+                if text == "" ||  text != passwordTextField.text {
+                    self.repeatPasswordTextField.errorMessage = "пароли не совпадают"
+                    self.repeatPasswordTextField.placeholder = ""
+                } else {
+                    self.repeatPasswordTextField.errorMessage = ""
+                    self.repeatPasswordTextField.title = ""
+                    self.repeatPasswordTextField.selectedTitle = ""
+                }
+            } else if textField == self.passwordTextField {
+                if text != "" && repeatPasswordTextField.text != "" {
+                    if text != repeatPasswordTextField.text {
+                        self.repeatPasswordTextField.errorMessage = "пароли не совпадают"
+                        self.repeatPasswordTextField.placeholder = ""
+                    } else {
+                        self.repeatPasswordTextField.errorMessage = ""
+                        self.repeatPasswordTextField.title = ""
+                        self.repeatPasswordTextField.selectedTitle = ""
+                    }
+                }
+            }
+        }
     }
 }
 // MARK: - Extensions

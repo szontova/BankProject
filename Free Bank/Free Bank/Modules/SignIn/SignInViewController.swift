@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldsConfiguration()
     }
     // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -29,6 +30,15 @@ class SignInViewController: UIViewController {
         destinationTBC.setStatus(statusSegmentedControl.selectedSegmentIndex)
     }
     // MARK: - OurMethods
+    func textFieldsConfiguration() {
+        loginTextField.font = .systemFont(ofSize: 16.0)
+        loginTextField.placeholderFont = .systemFont(ofSize: 16.0)
+        loginTextField.titleFont = .boldSystemFont(ofSize: 14.0)
+        
+        passwordTextField.font = .systemFont(ofSize: 16.0)
+        passwordTextField.placeholderFont = .systemFont(ofSize: 16.0)
+        passwordTextField.titleFont = .boldSystemFont(ofSize: 14.0)
+    }
     func showAlertForgotPassword(_ status: Int, _ login: String) {
         var statusString = ""
         switch status {

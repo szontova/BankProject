@@ -5,15 +5,14 @@
 //  Created by Пользователь on 1.02.21.
 //
 
+import SkyFloatingLabelTextField
 import UIKit
 
 class SignInViewController: UIViewController {
     // MARK: - @IBOutlets
     @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
-    @IBOutlet private weak var loginLabel: UILabel!
-    @IBOutlet private weak var loginTextField: UITextField!
-    @IBOutlet private weak var loginErrorLabel: UILabel!
-    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     private var login: String = ""
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
@@ -98,11 +97,13 @@ class SignInViewController: UIViewController {
     @IBAction private func statusChangeSegmentedControl(_ sender: UISegmentedControl) {
         switch statusSegmentedControl.selectedSegmentIndex {
         case 0:
-            loginLabel.text = "Логин"
             loginTextField.placeholder = "Введите логин"
+            loginTextField.title = "Логин"
+            loginTextField.selectedTitle = "Логин"
         case 1:
-            loginLabel.text = "УНП"
             loginTextField.placeholder = "Введите УНП"
+            loginTextField.title = "УНП"
+            loginTextField.selectedTitle = "УНП"
         default: break
         }
     }

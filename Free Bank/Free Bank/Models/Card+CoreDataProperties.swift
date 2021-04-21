@@ -2,13 +2,12 @@
 //  Card+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Пользователь on 23.02.21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
 import Foundation
 import CoreData
-
 
 extension Card {
 
@@ -17,12 +16,10 @@ extension Card {
     }
 
     @NSManaged public var cvv: Int16
-    @NSManaged public var idNumber: Int64
+    @NSManaged public var id: Int64
     @NSManaged public var validity: String?
     @NSManaged public var account: Account?
 
 }
 
-extension Card : Identifiable {
-
-}
+extension Card: Identifiable {}

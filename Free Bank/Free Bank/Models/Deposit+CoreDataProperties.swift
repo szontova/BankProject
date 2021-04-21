@@ -2,13 +2,12 @@
 //  Deposit+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/5/21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
 import Foundation
 import CoreData
-
 
 extension Deposit {
 
@@ -18,7 +17,7 @@ extension Deposit {
 
     @NSManaged public var amount: Int64
     @NSManaged public var date: Date?
-    @NSManaged public var idNumber: Int64
+    @NSManaged public var id: Int64
     @NSManaged public var procent: Int16
     @NSManaged public var revocable: Bool
     @NSManaged public var term: Int16
@@ -28,6 +27,4 @@ extension Deposit {
 
 }
 
-extension Deposit : Identifiable {
-
-}
+extension Deposit: Identifiable {}

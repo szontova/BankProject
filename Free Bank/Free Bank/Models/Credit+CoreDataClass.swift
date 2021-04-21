@@ -2,14 +2,11 @@
 //  Credit+CoreDataClass.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/4/21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
 import Foundation
 import CoreData
 
-
-public class Credit: NSManagedObject {
-
-}
+public class Credit: NSManagedObject {}

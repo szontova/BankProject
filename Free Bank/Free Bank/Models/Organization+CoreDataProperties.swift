@@ -2,13 +2,12 @@
 //  Organization+CoreDataProperties.swift
 //  Free Bank
 //
-//  Created by Sasha Zontova on 3/5/21.
+//  Created by Sasha Zontova on 4/6/21.
 //
 //
 
 import Foundation
 import CoreData
-
 
 extension Organization {
 
@@ -96,6 +95,4 @@ extension Organization {
 
 }
 
-extension Organization : Identifiable {
-
-}
+extension Organization: Identifiable {}

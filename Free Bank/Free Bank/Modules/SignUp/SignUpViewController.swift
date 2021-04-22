@@ -5,6 +5,7 @@
 //  Created by Пользователь on 4.02.21.
 //
 
+import Reachability
 import SkyFloatingLabelTextField
 import UIKit
 
@@ -19,6 +20,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
     private var activeTextField: UITextField?
     private var isMoving = false
+    
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class SignUpViewController: UIViewController {
         textFieldsConfiguration()
     }
     // MARK: - OurMethods
-    func textFieldsConfiguration() {
+    private func textFieldsConfiguration() {
         let textFields:[SkyFloatingLabelTextField] = [self.nameTextField, self.loginTextField, self.passwordTextField, self.repeatPasswordTextField, self.emailTextField]
         for tf in textFields {
             tf.font = .systemFont(ofSize: 16.0)
@@ -38,6 +40,7 @@ class SignUpViewController: UIViewController {
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
         repeatPasswordTextField.addTarget(self, action: #selector(repeatPasswordTextFieldDidChange(_:)), for: .editingChanged)
     }
+    
     // MARK: - OverrideMethods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -91,6 +94,7 @@ class SignUpViewController: UIViewController {
         }
     }
     @IBAction private func signUpButton(_ sender: UIButton) {
+        checkConnection()
         let status = statusSegmentedControl.selectedSegmentIndex
         let name = nameTextField.text ?? ""
         let email = emailTextField.text ?? ""
@@ -99,7 +103,14 @@ class SignUpViewController: UIViewController {
         let repeatPassword = repeatPasswordTextField.text ?? ""
 
         if checkSignUpDatas(status, name, email, login, password, repeatPassword) {
-            performSegue(withIdentifier: "endRegSegue", sender: nil)
+            if let connection = reachability?.connection {
+                switch connection {
+                case .wifi, .cellular:
+                    performSegue(withIdentifier: "endRegSegue", sender: nil)
+                case .none, .unavailable:
+                    showAlertError(message: "Нет соединения к интернету. \nПроверьте соединение.")
+                }
+            }
         }
     }
     @IBAction private func unwindToSignUpFromEndSignUp(segue: UIStoryboardSegue) {

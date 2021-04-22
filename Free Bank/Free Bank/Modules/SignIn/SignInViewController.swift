@@ -119,26 +119,42 @@ class SignInViewController: UIViewController {
         }
     }
     @IBAction private func signInButton(_ sender: UIButton) {
+        checkConnection()
         let status = statusSegmentedControl.selectedSegmentIndex
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         if checkSignInDatas(status, login, password) {
             switch status {
             case 0:
-                if validIndividual(login, password) {
-                    passwordTextField.text = ""
-                    self.login = login
-                    performSegue(withIdentifier: "toHomeSegue", sender: nil)
-                } else {
-                    showAlertError(message: "Неверный логин и/или пароль.")
+                if let connection = reachability?.connection {
+                    switch connection {
+                    case .wifi, .cellular:
+                        if validIndividual(login, password) {
+                            passwordTextField.text = ""
+                            self.login = login
+                            performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                        } else {
+                            showAlertError(message: "Неверный логин и/или пароль.")
+                        }
+                    case .none, .unavailable:
+                        showAlertError(message: "Нет соединения к интернету. \nПроверьте соединение.")
+                    }
                 }
+               
             case 1:
-                if validOrganization(login, password) {
-                    passwordTextField.text = ""
-                    self.login = login
-                    performSegue(withIdentifier: "toHomeSegue", sender: nil)
-                } else {
-                    showAlertError(message: "Неверный логин и/или пароль.")
+                if let connection = reachability?.connection {
+                    switch connection {
+                    case .wifi, .cellular:
+                        if validOrganization(login, password) {
+                            passwordTextField.text = ""
+                            self.login = login
+                            performSegue(withIdentifier: "toHomeSegue", sender: nil)
+                        } else {
+                            showAlertError(message: "Неверный логин и/или пароль.")
+                        }
+                    case .none, .unavailable:
+                        showAlertError(message: "Нет соединения к интернету. \nПроверьте соединение.")
+                    }
                 }
             default: break
             }

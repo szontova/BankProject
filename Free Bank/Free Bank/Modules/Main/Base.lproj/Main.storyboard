@@ -88,7 +88,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="THe-xk-Ut4"/>
                                                 </constraints>
-                                                <state key="normal" image="currencyButton">
+                                                <state key="normal" image="icRates">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -106,7 +106,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="QwY-Am-cM6"/>
                                                 </constraints>
-                                                <state key="normal" image="bankButton">
+                                                <state key="normal" image="icBank">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -124,7 +124,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Xyk-oX-ruS"/>
                                                 </constraints>
-                                                <state key="normal" image="addressButton">
+                                                <state key="normal" image="icMap">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -142,7 +142,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="VWo-dg-yAt"/>
                                                 </constraints>
-                                                <state key="normal" image="communicationButton">
+                                                <state key="normal" image="icContacts">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </state>
@@ -309,10 +309,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addressButton" width="100" height="100"/>
-        <image name="bankButton" width="100" height="100"/>
-        <image name="communicationButton" width="100" height="100"/>
-        <image name="currencyButton" width="100" height="100"/>
+        <image name="icBank" width="96" height="96"/>
+        <image name="icContacts" width="96" height="96"/>
+        <image name="icMap" width="96" height="96"/>
+        <image name="icRates" width="96" height="96"/>
         <image name="mainBackground" width="480" height="852"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

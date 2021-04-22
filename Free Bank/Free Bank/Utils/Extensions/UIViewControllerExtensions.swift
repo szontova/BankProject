@@ -6,7 +6,10 @@
 //
 
 import MBProgressHUD
+import Reachability
 import UIKit
+
+var reachability = try? Reachability()
 
 extension UIViewController {
     // MARK: Login
@@ -265,5 +268,17 @@ extension UIViewController {
         DispatchQueue.main.async {
             hud.hide(animated: true)
         }
+    }
+    
+    func checkConnection() {
+        reachability = try? Reachability()
+        reachability?.whenReachable = { reachability in
+            if reachability.connection == .wifi {} else {}
+        }
+        reachability?.whenUnreachable = { _ in }
+        do {
+            try reachability?.startNotifier()
+        } catch {}
+        reachability?.stopNotifier()
     }
 }

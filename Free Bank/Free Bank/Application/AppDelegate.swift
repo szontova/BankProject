@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func sendNotification() {
         let content = UNMutableNotificationContent()
-        content.title = "Test Notification"
-        content.body = "Text of Notification"
+        content.title = "Уведомление"
+        content.body = "Text"
         content.sound = UNNotificationSound.default
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
         notificationCenter.add(request) { (error) in
             print(error?.localizedDescription ?? "Error with Notifications")

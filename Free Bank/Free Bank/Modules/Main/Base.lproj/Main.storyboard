@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="EZB-6Q-yQF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBackground" translatesAutoresizingMaskIntoConstraints="NO" id="EZB-6Q-yQF">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm5-dT-r3B">
@@ -60,7 +60,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u6-q9-UKg">
                                 <rect key="frame" x="30" y="498" width="354" height="60"/>
-                                <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1339810491" green="0.20966657999999999" blue="0.37317442890000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WNI-Gu-tlz"/>
                                 </constraints>
@@ -207,7 +207,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.71120893959999998" green="0.58861547709999995" blue="0.55840510129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.40343320370000002" green="0.52437698840000002" blue="0.74849867820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Wxr-Tg-9JO" firstAttribute="leading" secondItem="XY0-TO-ZqO" secondAttribute="leading" constant="15" id="51l-bw-t9h"/>
                                     <constraint firstItem="Wxr-Tg-9JO" firstAttribute="top" secondItem="WYB-zN-m60" secondAttribute="bottom" constant="5" id="AfH-Jw-KuN"/>
@@ -313,7 +313,7 @@
         <image name="bankButton" width="100" height="100"/>
         <image name="communicationButton" width="100" height="100"/>
         <image name="currencyButton" width="100" height="100"/>
-        <image name="mainBackground" width="1080" height="1920"/>
+        <image name="mainBackground" width="480" height="852"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

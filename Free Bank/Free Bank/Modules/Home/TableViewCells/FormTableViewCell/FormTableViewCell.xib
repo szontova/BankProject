@@ -17,9 +17,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXU-ug-rde" userLabel="myBackgroundView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXU-ug-rde" userLabel="myBackgroundView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="197"/>
-                        <color key="backgroundColor" red="0.21615087990000001" green="0.014269128440000001" blue="0.0060168728230000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.40343320370000002" green="0.52437698840000002" blue="0.74849867820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="197" id="2mG-GR-e1T"/>
                         </constraints>

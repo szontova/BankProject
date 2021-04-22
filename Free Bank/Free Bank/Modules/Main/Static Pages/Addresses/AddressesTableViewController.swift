@@ -38,7 +38,7 @@ class AddressesTableViewController: UITableViewController {
     // MARK: - TableViewDataSource
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.backgroundColor = UIColor.init(red: 60/255, green: 22/255, blue: 22/255, alpha: 1.0)
+        label.backgroundColor = UIColor.init(red: 155/255, green: 194/255, blue: 255/255, alpha: 1.0)
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
@@ -58,5 +58,8 @@ class AddressesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "address", for: indexPath)
         cell.textLabel?.text = indexPath.section == 0 ? branches[indexPath.row].address : atms[indexPath.row].address
         return cell
+    }
+    @IBAction private func tappedBackButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: false, completion: nil)
     }
 }

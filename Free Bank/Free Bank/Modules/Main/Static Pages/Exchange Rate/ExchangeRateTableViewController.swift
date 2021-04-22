@@ -70,4 +70,8 @@ class ExchangeRateTableViewController: UITableViewController {
         cell.nationalRateLabel?.text = "\(currencies[indexPath.row].officialRate ?? 0.0) BYR"
         return cell
     }
+    
+    @IBAction private func tappedBackButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: false, completion: nil)
+    }
 }

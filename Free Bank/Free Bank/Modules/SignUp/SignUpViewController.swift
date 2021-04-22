@@ -141,7 +141,6 @@ class SignUpViewController: UIViewController {
     @IBAction private func loginTextFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if textField == self.loginTextField {
-                print("!!")
                 let allowLetters: ClosedRange<Character> = "A"..."z"
                 let allowSymbols: Set<Character> = [".", "_"]
                 if text.count < 8 || text.count > 30 || (!allowLetters.contains(text.last ?? " ") && !allowSymbols.contains(text.last ?? " ")) {

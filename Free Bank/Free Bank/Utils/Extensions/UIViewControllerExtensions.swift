@@ -5,7 +5,7 @@
 //  Created by Sasha Zontova on 4/5/21.
 //
 
-import Foundation
+import MBProgressHUD
 import UIKit
 
 extension UIViewController {
@@ -250,5 +250,20 @@ extension UIViewController {
     func transparentNavBar ( _ navigationBar: UINavigationBar ) {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
+    }
+    
+    func showLoading() {
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.indeterminate
+        hud.label.text = "Loading..."
+        hud.minShowTime = 3.0
+        hud.backgroundColor = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
+        hud.contentColor = .blue
+        hud.bezelView.color = .init(red: 1, green: 1, blue: 1, alpha: 0.8)
+        hud.bezelView.style = .solidColor
+
+        DispatchQueue.main.async {
+            hud.hide(animated: true)
+        }
     }
 }

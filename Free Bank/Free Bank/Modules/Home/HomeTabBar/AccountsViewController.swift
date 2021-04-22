@@ -174,7 +174,7 @@ extension AccountsViewController: UITableViewDataSource {
     // CountOfSections
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.backgroundColor = UIColor.init(red: 181/255, green: 150/255, blue: 142/255, alpha: 1.0)
+        label.backgroundColor = UIColor.init(red: 206/255, green: 218/255, blue: 255/255, alpha: 1.0)
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)

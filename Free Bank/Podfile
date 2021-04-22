@@ -16,6 +16,8 @@ target 'Free Bank' do
   
   pod 'ReachabilitySwift', '5.0.0'
   
+  pod 'SwiftyGif', '5.4.0'
+  
   pod 'SkyFloatingLabelTextField','4.0.0'
   
   pod 'SwiftLint', '0.43.1'

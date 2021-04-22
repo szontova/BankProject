@@ -31,6 +31,8 @@
 		31271DEA261CB6E9008EB775 /* Bank+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31271DD6261CB6E9008EB775 /* Bank+CoreDataProperties.swift */; };
 		31271DEB261CB6E9008EB775 /* Deposit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31271DD7261CB6E9008EB775 /* Deposit+CoreDataClass.swift */; };
 		31271DEC261CB6E9008EB775 /* Deposit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31271DD8261CB6E9008EB775 /* Deposit+CoreDataProperties.swift */; };
+		314182CC263232320000BAF4 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314182CB263232320000BAF4 /* GifView.swift */; };
+		314182E1263238A20000BAF4 /* moveCards.gif in Resources */ = {isa = PBXBuildFile; fileRef = 314182E0263238A20000BAF4 /* moveCards.gif */; };
 		3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3148234D25D6D23E008288FC /* ExchangeRate.storyboard */; };
 		3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */; };
 		31AC37EA261B3F2200F0DFF9 /* MyCustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC37E9261B3F2200F0DFF9 /* MyCustomVC.swift */; };
@@ -97,11 +99,11 @@
 		59F4BAED25E64AA7002FF477 /* CoreDataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4BAEC25E64AA7002FF477 /* CoreDataFunctions.swift */; };
 		59FC3A3A25F2472E0019EE72 /* NewDeposit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */; };
 		59FC3A4525F24DB20019EE72 /* ConfirmationDepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */; };
-		A97C9CA3A0CA7D1EA7655732 /* Pods_Free_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6BD5271ED92C698CC342194 /* Pods_Free_Bank.framework */; };
+		88A6892519DAB4A796AE2E10 /* Pods_Free_Bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEF78D54227532F13AF9768 /* Pods_Free_Bank.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B0B720CF4B9A4E7CC1F6521 /* Pods-Free Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Free Bank.release.xcconfig"; path = "Target Support Files/Pods-Free Bank/Pods-Free Bank.release.xcconfig"; sourceTree = "<group>"; };
+		2905F3E890D7914C5D5A89ED /* Pods-Free Bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Free Bank.release.xcconfig"; path = "Target Support Files/Pods-Free Bank/Pods-Free Bank.release.xcconfig"; sourceTree = "<group>"; };
 		311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCreditViewController.swift; sourceTree = "<group>"; };
 		311E330D25EE2A8C0048C231 /* NewCredit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCredit.storyboard; sourceTree = "<group>"; };
 		311E331025EE2AA70048C231 /* NewCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreditViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 		31271DD6261CB6E9008EB775 /* Bank+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bank+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		31271DD7261CB6E9008EB775 /* Deposit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		31271DD8261CB6E9008EB775 /* Deposit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		314182CB263232320000BAF4 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
+		314182E0263238A20000BAF4 /* moveCards.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = moveCards.gif; sourceTree = "<group>"; };
 		3148234D25D6D23E008288FC /* ExchangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeRate.storyboard; sourceTree = "<group>"; };
 		3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewController.swift; sourceTree = "<group>"; };
 		31AC37E9261B3F2200F0DFF9 /* MyCustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomVC.swift; sourceTree = "<group>"; };
@@ -194,8 +198,8 @@
 		59FC3A3925F2472E0019EE72 /* NewDeposit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewDeposit.storyboard; sourceTree = "<group>"; };
 		59FC3A4125F2484A0019EE72 /* NewDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepositViewController.swift; sourceTree = "<group>"; };
 		59FC3A4425F24DB20019EE72 /* ConfirmationDepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDepositViewController.swift; sourceTree = "<group>"; };
-		9DB8FCF471C4435F140F7E16 /* Pods-Free Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Free Bank.debug.xcconfig"; path = "Target Support Files/Pods-Free Bank/Pods-Free Bank.debug.xcconfig"; sourceTree = "<group>"; };
-		C6BD5271ED92C698CC342194 /* Pods_Free_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Free_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EEF78D54227532F13AF9768 /* Pods_Free_Bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Free_Bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD88E7F56D3096CF0473ACB3 /* Pods-Free Bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Free Bank.debug.xcconfig"; path = "Target Support Files/Pods-Free Bank/Pods-Free Bank.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A97C9CA3A0CA7D1EA7655732 /* Pods_Free_Bank.framework in Frameworks */,
+				88A6892519DAB4A796AE2E10 /* Pods_Free_Bank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +230,15 @@
 				31AC37E9261B3F2200F0DFF9 /* MyCustomVC.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		314182E3263239A10000BAF4 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				314182CB263232320000BAF4 /* GifView.swift */,
+				597D66B125C80FA50051E84A /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		3148234B25D6CED1008288FC /* Static Pages */ = {
@@ -288,6 +301,7 @@
 		31AC37DE261B3A4C00F0DFF9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				314182E0263238A20000BAF4 /* moveCards.gif */,
 				597D66AF25C80FA50051E84A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -305,8 +319,8 @@
 		31AC37E3261B3C0A00F0DFF9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				597D66B125C80FA50051E84A /* LaunchScreen.storyboard */,
 				593AE04D25E6909700DEB157 /* Home */,
+				314182E3263239A10000BAF4 /* LaunchScreen */,
 				59E5DAB525CD90E700354F4B /* Main */,
 				59E5DAB325CD901700354F4B /* SignIn */,
 				59E5DAB425CD906C00354F4B /* SignUp */,
@@ -365,8 +379,8 @@
 		31CD4860CEDCFB8F6A4093F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9DB8FCF471C4435F140F7E16 /* Pods-Free Bank.debug.xcconfig */,
-				1B0B720CF4B9A4E7CC1F6521 /* Pods-Free Bank.release.xcconfig */,
+				BD88E7F56D3096CF0473ACB3 /* Pods-Free Bank.debug.xcconfig */,
+				2905F3E890D7914C5D5A89ED /* Pods-Free Bank.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -506,7 +520,7 @@
 				597D66A525C80FA40051E84A /* Free Bank */,
 				597D66A425C80FA40051E84A /* Products */,
 				31CD4860CEDCFB8F6A4093F6 /* Pods */,
-				CD22C05BD5EEF79127901437 /* Frameworks */,
+				762D0CC8BC7A95D04E0E5C94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -647,10 +661,10 @@
 			path = NewDeposit;
 			sourceTree = "<group>";
 		};
-		CD22C05BD5EEF79127901437 /* Frameworks */ = {
+		762D0CC8BC7A95D04E0E5C94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C6BD5271ED92C698CC342194 /* Pods_Free_Bank.framework */,
+				5EEF78D54227532F13AF9768 /* Pods_Free_Bank.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -662,12 +676,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 597D66B725C80FA50051E84A /* Build configuration list for PBXNativeTarget "Free Bank" */;
 			buildPhases = (
-				F3FE0C4CD84E711D151D4C9F /* [CP] Check Pods Manifest.lock */,
+				9225F79ACDC405B3AC7E2F3F /* [CP] Check Pods Manifest.lock */,
 				31271D66261C3B18008EB775 /* ShellScript */,
 				597D669F25C80FA40051E84A /* Sources */,
 				597D66A025C80FA40051E84A /* Frameworks */,
 				597D66A125C80FA40051E84A /* Resources */,
-				2E2B3DAF957355203034A5D6 /* [CP] Embed Pods Frameworks */,
+				2944114572300237DB096675 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -728,6 +742,7 @@
 				596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */,
 				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,
 				59ED9D8C25F7F34500C43CEE /* FormTableViewCell.xib in Resources */,
+				314182E1263238A20000BAF4 /* moveCards.gif in Resources */,
 				59031DB725EF90E400B4DE9D /* CreditTableViewCell.xib in Resources */,
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
@@ -748,7 +763,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2E2B3DAF957355203034A5D6 /* [CP] Embed Pods Frameworks */ = {
+		2944114572300237DB096675 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -782,7 +797,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		F3FE0C4CD84E711D151D4C9F /* [CP] Check Pods Manifest.lock */ = {
+		9225F79ACDC405B3AC7E2F3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -836,6 +851,7 @@
 				5904330325EE2D8C00BF5412 /* AccountTableViewCell.swift in Sources */,
 				31AC37F5261B431500F0DFF9 /* UIViewControllerExtensions.swift in Sources */,
 				59ED9D7625F7DEB200C43CEE /* CreateSalaryProjectViewController.swift in Sources */,
+				314182CC263232320000BAF4 /* GifView.swift in Sources */,
 				59ED9D7925F7DED300C43CEE /* PaySalaryProjectViewController.swift in Sources */,
 				31271DEA261CB6E9008EB775 /* Bank+CoreDataProperties.swift in Sources */,
 				31271DDD261CB6E9008EB775 /* Credit+CoreDataClass.swift in Sources */,
@@ -1017,7 +1033,7 @@
 		};
 		597D66B825C80FA50051E84A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DB8FCF471C4435F140F7E16 /* Pods-Free Bank.debug.xcconfig */;
+			baseConfigurationReference = BD88E7F56D3096CF0473ACB3 /* Pods-Free Bank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1038,7 +1054,7 @@
 		};
 		597D66B925C80FA50051E84A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B0B720CF4B9A4E7CC1F6521 /* Pods-Free Bank.release.xcconfig */;
+			baseConfigurationReference = 2905F3E890D7914C5D5A89ED /* Pods-Free Bank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -5,12 +5,14 @@
 //  Created by Пользователь on 3.02.21.
 //
 
+import SwiftyGif
 import UIKit
 
 class MainViewController: UIViewController {
     // MARK: - @IBOutlets
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var viewFofCollectionView: UIView!
+    let gifView = GifView()
     let imageLinks: [String: String] = ["cards": "https://myfin.by/cards", "bank": "https://www.nbrb.by", "worldNews": "https://myfin.by/stati"]
     func getImages() -> [String] {
         return Array(imageLinks.keys)
@@ -24,6 +26,9 @@ class MainViewController: UIViewController {
     // MARK: - LifeCycleMethods
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(gifView)
+        gifView.pinEdgesToSuperView()
+        gifView.logoGifImageView.delegate = self
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -32,6 +37,12 @@ class MainViewController: UIViewController {
         createTemplateIndividuals()
         createTemplateOrganizations()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        gifView.logoGifImageView.startAnimatingGif()
+    }
+    
     // MARK: - OurMethods
     func startCollectionViewTimer() {
         _ = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollCollectionViewAutomatically), userInfo: nil, repeats: true)
@@ -83,5 +94,11 @@ class MainViewController: UIViewController {
     @IBAction private func unwindToMainVCFromAddressesTVC(segue: UIStoryboardSegue) {
         guard segue.identifier == "unwindToMainFromAddressesSegue" else {return}
         guard segue.destination as? AddressesTableViewController != nil else {return}
+    }
+}
+
+extension MainViewController: SwiftyGifDelegate {
+    func gifDidStop(sender: UIImageView) {
+        gifView.isHidden = true
     }
 }

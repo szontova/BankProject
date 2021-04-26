@@ -19,7 +19,7 @@ extension String {
     }
     
     func isLoginValidate() -> Bool {
-        let pattern = "^(?=.*\\d)(?=.*[a-z])[0-9a-zA-Z_.]{8,30}$"
+        let pattern = "^[0-9a-zA-Z_.]{8,30}"
         return NSPredicate(format: "SELF MATCHES %@", pattern).evaluate(with: self)
     }
 }

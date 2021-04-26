@@ -119,6 +119,7 @@ class SignUpViewController: BaseViewController {
         guard segue.identifier == "unwindFromEndToSignUpVCSegue" else {return}
         guard segue.destination as? EndOfSignUpViewController != nil else {return}
     }
+    
     @IBAction private func repeatPasswordTextFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if textField == self.repeatPasswordTextField {
@@ -137,7 +138,13 @@ class SignUpViewController: BaseViewController {
     @IBAction private func passwordTextFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if textField == self.passwordTextField {
-                if text != "" && repeatPasswordTextField.text != "" {
+                if textField == self.passwordTextField {
+                    if !text.isPasswordValidate() {
+                        self.passwordTextField.errorMessage = "Неверный формат"
+                    } else {
+                        self.passwordTextField.errorMessage = ""
+                    }
+                } else if text != "" && repeatPasswordTextField.text != "" {
                     if text != repeatPasswordTextField.text {
                         self.repeatPasswordTextField.errorMessage = "пароли не совпадают"
                         self.repeatPasswordTextField.placeholder = ""
@@ -156,18 +163,28 @@ class SignUpViewController: BaseViewController {
     }
     
     @IBAction private func tappedPasswordInfo(_ sender: UIButton) {
-        showInfo(passwordInfoButton, 3, "Пароль должен содержать:\n- от 8 до 50 символов\n- допустимы любые символы ")
+        showInfo(passwordInfoButton, 3, "Пароль должен содержать:\n- от 8 до 50 символов\n- cодержать хотя бы одну латиницу в нижнем регистре\n- cодержать хотя бы одну латиницу в верхнем регистре\n- cодержать хотя бы одну цифру\n- допустимы любые символы")
     }
     
     @IBAction private func loginTextFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if textField == self.loginTextField {
-                let allowLetters: ClosedRange<Character> = "A"..."z"
-                let allowSymbols: Set<Character> = [".", "_"]
-                if text.count < 8 || text.count > 30 || (!allowLetters.contains(text.last ?? " ") && !allowSymbols.contains(text.last ?? " ")) {
-                    self.loginTextField.errorMessage = "неверный формат"
+                if !text.isLoginValidate() {
+                    self.loginTextField.errorMessage = "Неверный формат"
                 } else {
                     self.loginTextField.errorMessage = ""
+                }
+            }
+        }
+    }
+    
+    @IBAction private func emailTextFieldDidChange(_ textField: UITextField) {
+        if let text = textField.text {
+            if textField == self.emailTextField {
+                if !text.isEmailValidate() {
+                    self.emailTextField.errorMessage = "Неверный формат"
+                } else {
+                    self.emailTextField.errorMessage = ""
                 }
             }
         }

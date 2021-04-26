@@ -10,7 +10,6 @@ import CryptoKit
 import UIKit
 
 class CoreDataViewController: UIViewController {
-        
     // MARK: - FindEntities
     // Individual
     func findIndivididual(by login: String) -> Individual? {
@@ -26,6 +25,7 @@ class CoreDataViewController: UIViewController {
         }
         return nil
     }
+    
     // Organization
     func findOrganization(by prn: String) -> Organization? {
         let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
@@ -40,6 +40,7 @@ class CoreDataViewController: UIViewController {
         }
         return nil
     }
+    
     // Account
     func findAccount(by id: String) -> Account? {
         let accountRequest = Account.fetchRequest() as NSFetchRequest<Account>
@@ -54,6 +55,7 @@ class CoreDataViewController: UIViewController {
         }
         return nil
     }
+    
     // Card
     func findCard(by id: String) -> Card? {
         let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>

@@ -81,8 +81,10 @@ class CardsViewController: CoreDataViewController {
         }
     }
 }
+
 // MARK: - TableView
 extension CardsViewController: UITableViewDelegate {}
+
 extension CardsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count

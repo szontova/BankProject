@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIViewController {
+    
     // MARK: AlertMesSegue
     func showAlertMessageWithSegue(message: String, segue: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
@@ -23,6 +24,7 @@ extension UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
+    
     // MARK: AlertMessage
     func showAlertMessage(_ message: String, _ title: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)

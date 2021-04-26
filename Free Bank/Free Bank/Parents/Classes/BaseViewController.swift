@@ -187,7 +187,7 @@ class BaseViewController: UIViewController {
     }
     
     func showInfo(_ button: UIButton, _ number: Int, _ text: String) {
-        popTip.bubbleColor = .init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.7)
+        popTip.bubbleColor = .init(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.8)
         let infoString = text
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left

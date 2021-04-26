@@ -121,8 +121,8 @@ extension TransansactionsViewController: UIPickerViewDataSource {
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
-        label.backgroundColor = UIColor.init(red: 181/255, green: 150/255, blue: 142/255, alpha: 1.0)
-        label.textColor = UIColor.white
+        label.backgroundColor = UIColor.init(red: 103/255, green: 134/255, blue: 191/255, alpha: 1.0)
+        label.textColor = UIColor.black
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
         label.layer.frame = CGRect(x: 0, y: 0, width: pickerView.frame.width - 20, height: 24 )
@@ -142,6 +142,7 @@ extension TransansactionsViewController: UIPickerViewDataSource {
 
 // MARK: TableView
 extension TransansactionsViewController: UITableViewDelegate {}
+
 extension TransansactionsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transactions.count

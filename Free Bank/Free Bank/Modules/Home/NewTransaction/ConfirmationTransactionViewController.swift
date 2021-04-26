@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConfirmationTransactionViewController: UIViewController {
+class ConfirmationTransactionViewController: CoreDataViewController {
 
     // MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
@@ -68,7 +68,7 @@ class ConfirmationTransactionViewController: UIViewController {
         total = Int64((amount ?? 0) + (commission ?? 0))
         totalLabel.text = MyCustomVC.getIntBYRbyString(total ?? 0)
         if (amount ?? 0) < 100 || (amount ?? 0) > 250000 {
-            showAlertError(message: "Сумма не должна превышать 2500 BYR")
+            showAlertMessage("Сумма не должна превышать 2500 BYR", "Ошибка")
         } else {
             if addTransaction((total ?? 0), senderType, receiverType) {
             performSegue(withIdentifier: "unwindToTransactionsFromConfirmTransactionSegue", sender: nil)

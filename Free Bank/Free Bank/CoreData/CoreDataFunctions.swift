@@ -7,18 +7,17 @@
 
 import CoreData
 import CryptoKit
-import Foundation
 import UIKit
 
-private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-extension UIViewController {
+class CoreDataViewController: UIViewController {
+        
     // MARK: - FindEntities
     // Individual
     func findIndivididual(by login: String) -> Individual? {
         let individRequest = Individual.fetchRequest() as NSFetchRequest<Individual>
         individRequest.predicate = NSPredicate(format: "login == %@", login)
         do {
-            let items = try context.fetch(individRequest)
+            let items = try CoreDataConstants.context.fetch(individRequest)
             if items.count != 0 {
                 return items[0]
             }
@@ -32,7 +31,7 @@ extension UIViewController {
         let orgRequest = Organization.fetchRequest() as NSFetchRequest<Organization>
         orgRequest.predicate = NSPredicate(format: "prn == %@", prn)
         do {
-            let items = try context.fetch(orgRequest)
+            let items = try CoreDataConstants.context.fetch(orgRequest)
             if items.count != 0 {
             return items[0]
             }
@@ -46,7 +45,7 @@ extension UIViewController {
         let accountRequest = Account.fetchRequest() as NSFetchRequest<Account>
         accountRequest.predicate = NSPredicate(format: "id == %@", id)
         do {
-            let items = try context.fetch(accountRequest)
+            let items = try CoreDataConstants.context.fetch(accountRequest)
             if items.count != 0 {
                 return items[0]
             }
@@ -60,7 +59,7 @@ extension UIViewController {
         let cardRequest = Card.fetchRequest() as NSFetchRequest<Card>
         cardRequest.predicate = NSPredicate(format: "id == %@", id)
         do {
-            let items = try context.fetch(cardRequest)
+            let items = try CoreDataConstants.context.fetch(cardRequest)
             if items.count != 0 {
                 return items[0]
             }
@@ -76,7 +75,7 @@ extension UIViewController {
         let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap { String(format: "%02x", $0)}.joined()
         individRequest.predicate = NSPredicate(format: "login == %@", login)
         do {
-            let items = try context.fetch(individRequest)
+            let items = try CoreDataConstants.context.fetch(individRequest)
             if items.count != 0 {
                 if items[0].password == hashPassword {
                     return true
@@ -93,7 +92,7 @@ extension UIViewController {
         let hashPassword = Insecure.MD5.hash(data: password.data(using: .utf8)!).compactMap { String(format: "%02x", $0)}.joined()
         individRequest.predicate = NSPredicate(format: "prn == %@", prn)
         do {
-            let items = try context.fetch(individRequest)
+            let items = try CoreDataConstants.context.fetch(individRequest)
             if items.count != 0 {
                 if items[0].password == hashPassword {
                     return true
@@ -107,7 +106,7 @@ extension UIViewController {
     // MARK: - AddEntities
     // Card
     func addCardForAccount( _ account: Account) {
-        let newCard = Card(context: context)
+        let newCard = Card(context: CoreDataConstants.context)
         var firsTemplateNumbers = 4725_6900_0000_0000
         switch MyCustomVC.getAccCategory(account) {
         case "S": firsTemplateNumbers += 19_0000_0000
@@ -123,15 +122,15 @@ extension UIViewController {
         newCard.cvv = Int16.random(in: 100..<1000)
         account.addToCards(newCard)
         do {
-            context.insert(newCard)
-            try context.save()
+            CoreDataConstants.context.insert(newCard)
+            try CoreDataConstants.context.save()
         } catch {
             print("addCard: error in saving context")
         }
     }
     // Account
     func addAccount (_ id: String, _ individ: Individual?, _ org: Organization?) {
-        let newAccount = Account(context: context)
+        let newAccount = Account(context: CoreDataConstants.context)
         newAccount.id = id
         if individ != nil {
             individ?.addToAccounts(newAccount)
@@ -140,16 +139,16 @@ extension UIViewController {
             org?.addToAccounts(newAccount)
         }
         do {
-            context.insert(newAccount)
-            try context.save()
+            CoreDataConstants.context.insert(newAccount)
+            try CoreDataConstants.context.save()
         } catch {
             print("addAccount: error in saving context")
         }
     }
     // Individual
     func addIndividal (_ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
-        let newIndivid = Individual(context: context)
-        let newAccount = Account(context: context)
+        let newIndivid = Individual(context: CoreDataConstants.context)
+        let newAccount = Account(context: CoreDataConstants.context)
         newIndivid.fullName = name
         newIndivid.email = email
         newIndivid.login = login
@@ -158,17 +157,17 @@ extension UIViewController {
         newAccount.id = generationIdAccount("S")
         newIndivid.addToAccounts(newAccount)
         do {
-            context.insert(newIndivid)
-            context.insert(newAccount)
-            try context.save()
+            CoreDataConstants.context.insert(newIndivid)
+            CoreDataConstants.context.insert(newAccount)
+            try CoreDataConstants.context.save()
         } catch {
             print("addIndividal: error in add individual")
         }
     }
     // Organization
     func addOrganization ( _ name: String, _ email: String, _ login: String, _ password: String, _ codeWord: String) {
-        let newOrganization = Organization(context: context)
-        let newAccount = Account(context: context)
+        let newOrganization = Organization(context: CoreDataConstants.context)
+        let newAccount = Account(context: CoreDataConstants.context)
         newOrganization.name = name
         newOrganization.email = email
         newOrganization.prn = login
@@ -177,43 +176,43 @@ extension UIViewController {
         newAccount.id = generationIdAccount("S")
         newOrganization.addToAccounts(newAccount)
         do {
-            context.insert(newOrganization)
-            context.insert(newAccount)
-            try context.save()
+            CoreDataConstants.context.insert(newOrganization)
+            CoreDataConstants.context.insert(newAccount)
+            try CoreDataConstants.context.save()
         } catch { print("addOrganization: error in add organization") }
     }
     // Branch
     func addBranch(address: String) {
-        let newBranch = Branch(context: context)
+        let newBranch = Branch(context: CoreDataConstants.context)
         newBranch.id = generationIdBranch()
         newBranch.address = address
         do {
-            context.insert(newBranch)
-            try context.save()
+            CoreDataConstants.context.insert(newBranch)
+            try CoreDataConstants.context.save()
         } catch {
             print("addBranch: error in add address")
         }
     }
     // ATM
     func addATM(address: String) {
-        let newATM = ATM(context: context)
+        let newATM = ATM(context: CoreDataConstants.context)
         newATM.id = generationIdATM()
         newATM.address = address
         do {
-            context.insert(newATM)
-            try context.save()
+            CoreDataConstants.context.insert(newATM)
+            try CoreDataConstants.context.save()
         } catch {
             print("addATM: error in add address")
         }
     }
     // Credit
     func addCredit(_ amount: Int32, _ term: Int16, _ procent: Int16, _ date: Date, _ individ: Individual?, _ org: Organization?) {
-        let newCredit = Credit(context: context)
-        let newAccount = Account(context: context)
+        let newCredit = Credit(context: CoreDataConstants.context)
+        let newAccount = Account(context: CoreDataConstants.context)
         let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
         var bankAccount: Account?
         do {
-            let banks = try context.fetch(bankRequest)
+            let banks = try CoreDataConstants.context.fetch(bankRequest)
             for bank in banks {
                 bankAccount = bank.account
             }
@@ -236,16 +235,16 @@ extension UIViewController {
             org?.addToAccounts(newAccount)
         }
         do {
-            context.insert(newCredit)
-            context.insert(newAccount)
-            try context.save()
+            CoreDataConstants.context.insert(newCredit)
+            CoreDataConstants.context.insert(newAccount)
+            try CoreDataConstants.context.save()
         } catch { print("addCredit: error in add credit") }
         _ = addTransaction(Int64(amount), (nil, bankAccount), (nil, newAccount))
     }
     // Deposit
     func addDeposit(_ amount: Int64, _ term: Int16, _ procent: Int16, _ date: Date, _ revocable: Bool, _ individ: Individual?, _ org: Organization?) {
-        let newDeposit = Deposit(context: context)
-        let newAccount = Account(context: context)
+        let newDeposit = Deposit(context: CoreDataConstants.context)
+        let newAccount = Account(context: CoreDataConstants.context)
         newDeposit.amount = amount
         newDeposit.term = term
         newDeposit.procent = procent
@@ -264,37 +263,37 @@ extension UIViewController {
             org?.addToAccounts(newAccount)
         }
         do {
-            context.insert(newDeposit)
-            context.insert(newAccount)
-            try context.save()
+            CoreDataConstants.context.insert(newDeposit)
+            CoreDataConstants.context.insert(newAccount)
+            try CoreDataConstants.context.save()
         } catch { print("addDeposit: error in add deposit") }
         _ = addTransaction(Int64(amount), (nil, nil), (nil, newAccount))
     }
     // Transaction
     func addTransaction(_ amount: Int64, _ sender: (Card?, Account?), _ receiver: (Card?, Account?)) -> Bool {
-        let newTransaction = Transaction(context: context)
+        let newTransaction = Transaction(context: CoreDataConstants.context)
         let something = "Счёт вне банка"
         var allow = false
         newTransaction.id = generationIdTransaction(amount, sender, receiver)
         newTransaction.amount = amount
         newTransaction.date = MyCustomVC.getDate()
         if let cardSender = sender.0 {
-            if checkAccountBalance(amount, (sender.0?.account!.balance)!) {
+            if BaseVCConstants.base.checkAccountBalance(amount, (sender.0?.account!.balance)!) {
                 cardSender.account?.balance = cardSender.account!.balance - amount
                 cardSender.account?.addToTransactions(newTransaction)
                 newTransaction.sender = String(cardSender.id)
                 allow = true
             } else {
-                showAlertMessage(message: "Недостаточно средств.")
+                showAlertMessage("Недостаточно средств.", "Уведомление")
             }
         } else if let accountSender = sender.1 {
-            if checkAccountBalance(amount, (sender.1?.balance)!) {
+            if BaseVCConstants.base.checkAccountBalance(amount, (sender.1?.balance)!) {
                 accountSender.balance -= amount
                 accountSender.addToTransactions(newTransaction)
                 newTransaction.sender = accountSender.id
                 allow = true
             } else {
-                showAlertMessage(message: "Недостаточно средств.")
+                showAlertMessage("Недостаточно средств.", "Уведомление")
             }
         } else {
             newTransaction.sender = something
@@ -321,8 +320,8 @@ extension UIViewController {
             newTransaction.receiver = something
         }
         do {
-            context.insert(newTransaction)
-            try context.save()
+            CoreDataConstants.context.insert(newTransaction)
+            try CoreDataConstants.context.save()
         } catch { print("addTransaction: error in add transaction") }
         return allow
     }
@@ -334,7 +333,7 @@ extension UIViewController {
         let predicate = NSPredicate(format: "id LIKE %@", "????????????????" + category + "???????????")
         request.predicate = predicate
         do {
-            var items = try context.fetch(request)
+            var items = try CoreDataConstants.context.fetch(request)
             items.sort(by: {str1, str2 in return str1.id! < str2.id!})
             if items.count == 0 {
                 result = "BY00FREE000000FB" + category + "00000000000"
@@ -354,7 +353,7 @@ extension UIViewController {
         var id: Int64 = 0
         let request = Branch.fetchRequest() as NSFetchRequest<Branch>
         do {
-            var items = try context.fetch(request)
+            var items = try CoreDataConstants.context.fetch(request)
             items.sort(by: {str1, str2 in return str1.id < str2.id})
             if items.count == 0 {
                 id = 1
@@ -372,7 +371,7 @@ extension UIViewController {
         var id: Int64 = 0
         let request = ATM.fetchRequest() as NSFetchRequest<ATM>
         do {
-            var items = try context.fetch(request)
+            var items = try CoreDataConstants.context.fetch(request)
             items.sort(by: {str1, str2 in return str1.id < str2.id})
             if items.count == 0 {
                 id = 1
@@ -390,7 +389,7 @@ extension UIViewController {
         var id: Int64 = 1_0000_0000
         let creditRequest = Credit.fetchRequest() as NSFetchRequest<Credit>
         do {
-            var items = try context.fetch(creditRequest)
+            var items = try CoreDataConstants.context.fetch(creditRequest)
             items.sort(by: {return $0.id < $1.id})
             if items.count == 0 { id *= 1 } else {
                 let newid = Int64(items.last!.id / id) + 1
@@ -414,7 +413,7 @@ extension UIViewController {
         var id: Int64 = 1_0000_0000
         let depositRequest = Deposit.fetchRequest() as NSFetchRequest<Deposit>
         do {
-            var items = try context.fetch(depositRequest)
+            var items = try CoreDataConstants.context.fetch(depositRequest)
             items.sort(by: {return $0.id < $1.id})
             if items.count == 0 { id *= 1 } else {
                 let newid = Int64(items.last!.id / id) + 1
@@ -438,7 +437,7 @@ extension UIViewController {
         var id: Int64 = 1_00000
         let transactionRequest = Transaction.fetchRequest() as NSFetchRequest<Transaction>
         do {
-            var items = try context.fetch(transactionRequest)
+            var items = try CoreDataConstants.context.fetch(transactionRequest)
             items.sort(by: {return $0.id < $1.id})
             if items.count == 0 { id *= 1 } else {
                 let newid = Int64(items.last!.id / id) + 1
@@ -462,7 +461,7 @@ extension UIViewController {
     func printAllIndividual() {
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         do {
-            let items = try context.fetch(request)
+            let items = try CoreDataConstants.context.fetch(request)
             for item in 0..<items.count {
                 print(items[item].string())
             }
@@ -472,7 +471,7 @@ extension UIViewController {
     func printAllAccounts() {
         let request = Account.fetchRequest() as NSFetchRequest<Account>
         do {
-            let items = try context.fetch(request)
+            let items = try CoreDataConstants.context.fetch(request)
             for item in 0..<items.count {
                 print(items[item].string())
             }
@@ -482,7 +481,7 @@ extension UIViewController {
     func printAllOrganization() {
         let request = Organization.fetchRequest() as NSFetchRequest<Organization>
         do {
-            let items = try context.fetch(request)
+            let items = try CoreDataConstants.context.fetch(request)
             for item in 0..<items.count {
                 print(items[item].string())
             }
@@ -494,16 +493,16 @@ extension UIViewController {
     func createBank () {
         let bankRequest = Bank.fetchRequest() as NSFetchRequest<Bank>
         do {
-            let banks = try context.fetch(bankRequest)
+            let banks = try CoreDataConstants.context.fetch(bankRequest)
             if banks.isEmpty {
-                let ourBank = Bank(context: context)
-                let bankAccount = Account(context: context)
+                let ourBank = Bank(context: CoreDataConstants.context)
+                let bankAccount = Account(context: CoreDataConstants.context)
                 bankAccount.id = "BY00FREE000000FBA00000000000"
                 bankAccount.balance = 100_000_000
                 ourBank.account = bankAccount
-                context.insert(ourBank)
-                context.insert(bankAccount)
-                try context.save()
+                CoreDataConstants.context.insert(ourBank)
+                CoreDataConstants.context.insert(bankAccount)
+                try CoreDataConstants.context.save()
             } else {
                // print("createBank: bank is here")
             }
@@ -569,14 +568,14 @@ extension UIViewController {
         let request = Individual.fetchRequest() as NSFetchRequest<Individual>
         request.predicate = NSPredicate(format: "login == %@", login)
         do {
-            let items = try context.fetch(request)
+            let items = try CoreDataConstants.context.fetch(request)
             if items.count == 0 {
                 print("deleteIndividual: nobody deleted")
                 return
             }
             for item in 0..<items.count {
-                context.delete(items[item])
-                try context.save()
+                CoreDataConstants.context.delete(items[item])
+                try CoreDataConstants.context.save()
             }
             print("deleteIndividual: \(login) deleted")
         } catch {
@@ -589,34 +588,34 @@ extension UIViewController {
         let request = Organization.fetchRequest() as NSFetchRequest<Organization>
         request.predicate = NSPredicate(format: "prn == %@", prn)
         do {
-            let items = try context.fetch(request)
+            let items = try CoreDataConstants.context.fetch(request)
             if items.count == 0 {
                 print("deleteOrganization: nobody deleted")
                 return
             }
             for item in 0..<items.count {
-                context.delete(items[item])
-                try context.save()
+                CoreDataConstants.context.delete(items[item])
+                try CoreDataConstants.context.save()
             }
             print("deleteOrganization: \(prn) deleted")
         } catch {
             print("deleteOrganization: Error in deleting")
         }
     }
-
+    
     // Account
     func deleteAccount(by id: String) {
         let request = Account.fetchRequest() as NSFetchRequest<Account>
         request.predicate = NSPredicate(format: "id == %@", id)
         do {
-            let items = try context.fetch(request)
+            let items = try CoreDataConstants.context.fetch(request)
             if items.count == 0 {
                 print("deleteAccount: nithing to delete")
                 return
             }
             for item in 0..<items.count {
-                context.delete(items[item])
-                try context.save()
+                CoreDataConstants.context.delete(items[item])
+                try CoreDataConstants.context.save()
             }
             print("deleteAccount: \(id) deleted")
         } catch {
@@ -625,8 +624,8 @@ extension UIViewController {
     }
     func deleteAccount(_ acc: Account) {
         do {
-            context.delete(acc)
-            try context.save()
+            CoreDataConstants.context.delete(acc)
+            try CoreDataConstants.context.save()
         } catch {
             print("deleteAccount: Error in deleting")
         }
@@ -688,7 +687,7 @@ extension Account {
         let newBalance = self.balance + amount
         if newBalance < 10000000 {
             self.balance = newBalance
-            do { try context.save() } catch { print("topUpAccountBalance: error save context") }
+            do { try CoreDataConstants.context.save() } catch { print("topUpAccountBalance: error save context") }
         } else {
             print("topUpAccountBalance: limit reached")
         }

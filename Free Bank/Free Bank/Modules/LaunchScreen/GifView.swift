@@ -14,7 +14,7 @@ class GifView: UIView {
         guard let gifImage = try? UIImage(gifName: "moveCards.gif") else {
             return UIImageView()
         }
-        return UIImageView(gifImage: gifImage, loopCount: 1)
+        return UIImageView(gifImage: gifImage, loopCount: 2)
     }()
 
     override init(frame: CGRect) {
@@ -28,13 +28,13 @@ class GifView: UIView {
     }
     
     private func commonInit() {
-        backgroundColor = UIColor(red: 126/255, green: 154/255, blue: 210/255, alpha: 1)
+        backgroundColor = UIColor.white
         addSubview(logoGifImageView)
         logoGifImageView.translatesAutoresizingMaskIntoConstraints = false
         logoGifImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         logoGifImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        logoGifImageView.widthAnchor.constraint(equalToConstant: 190).isActive = true
-        logoGifImageView.heightAnchor.constraint(equalToConstant: 195).isActive = true
+        logoGifImageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        logoGifImageView.heightAnchor.constraint(equalToConstant: 190).isActive = true
     }
     
     func pinEdgesToSuperView() {

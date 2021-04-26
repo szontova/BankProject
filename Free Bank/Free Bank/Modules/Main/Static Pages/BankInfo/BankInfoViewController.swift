@@ -67,7 +67,8 @@ class BankInfoViewController: UIViewController {
             present(mail, animated: true)
 
         } else {
-            showAlertError(message: "Ошибка при отправлении письма.")
+            showAlertMessage("Ошибка при отправлении письма.", "Ошибка")
+            
         }
     }
 }

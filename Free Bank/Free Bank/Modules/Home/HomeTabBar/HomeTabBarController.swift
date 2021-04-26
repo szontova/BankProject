@@ -13,6 +13,7 @@ class HomeTabBarController: UITabBarController {
     private var login: String?
     private var individual: Individual?
     private var organization: Organization?
+        
     func setLogin(_ login: String) {
         self.login = login
     }
@@ -25,9 +26,9 @@ class HomeTabBarController: UITabBarController {
         if let log = login {
         switch status {
         case 0:
-            self.individual = findIndivididual(by: log)
+            self.individual = CoreDataConstants.db.findIndivididual(by: log)
         case 1:
-            self.organization = findOrganization(by: log)
+            self.organization = CoreDataConstants.db.findOrganization(by: log)
         default: break
         }
         }

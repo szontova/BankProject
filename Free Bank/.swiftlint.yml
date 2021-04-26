@@ -13,11 +13,11 @@ excluded:
 
 # configurated rules
 file_length:
-  warning: 800
+ warning: 800
 
 function_body_length:
  warning: 50
-
+ 
 identifier_name:
   allowed_symbols: ["_"]
   min_length: 1
@@ -27,6 +27,10 @@ line_length:
 
 type_body_length:
   warning: 270
+  
+type_body_length:
+  - 500 # warning
+  - 600 # error
 
 nesting:
   type_level: 2

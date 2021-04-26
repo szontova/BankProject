@@ -8,32 +8,34 @@
 import CoreData
 import UIKit
 
-private let context: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
 class AddressesTableViewController: UITableViewController {
+    
     var branches = [Branch]()
     var atms = [ATM]()
     let branchesRequest = Branch.fetchRequest() as NSFetchRequest<Branch>
     let atmsRequest = ATM.fetchRequest() as NSFetchRequest<ATM>
+    let db = CoreDataViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-            branches = try context.fetch(branchesRequest)
-            atms = try context.fetch(atmsRequest)
+            branches = try CoreDataConstants.context.fetch(branchesRequest)
+            atms = try CoreDataConstants.context.fetch(atmsRequest)
             if branches.isEmpty {
-                createBranches()
-                branches = try context.fetch(branchesRequest)
+                db.createBranches()
+                branches = try CoreDataConstants.context.fetch(branchesRequest)
                 branches.sort(by: {str1, str2 in return str1.address! < str2.address!})
             } else {branches.sort(by: {str1, str2 in return str1.address! < str2.address!})}
             if atms.isEmpty {
-                createATMs()
-                atms = try context.fetch(atmsRequest)
+                db.createATMs()
+                atms = try CoreDataConstants.context.fetch(atmsRequest)
                 atms.sort(by: {str1, str2 in return str1.address! < str2.address!})
             } else {atms.sort(by: {str1, str2 in return str1.address! < str2.address!})}
         } catch {
             print("AddressesTableViewController: Error in get addresses.")
         }
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "mainBackground"))
+        self.tableView.backgroundView?.alpha = 0.5
     }
     // MARK: - TableViewDataSource
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

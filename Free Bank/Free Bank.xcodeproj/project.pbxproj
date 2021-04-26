@@ -10,6 +10,10 @@
 		311B425325EF9B0400F2C412 /* ConfirmationCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */; };
 		311E330E25EE2A8C0048C231 /* NewCredit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311E330D25EE2A8C0048C231 /* NewCredit.storyboard */; };
 		311E331125EE2AA70048C231 /* NewCreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311E331025EE2AA70048C231 /* NewCreditViewController.swift */; };
+		31267E32263760980072BC43 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31267E31263760980072BC43 /* BaseViewController.swift */; };
+		31267E3526376A690072BC43 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31267E3426376A690072BC43 /* StringExtensions.swift */; };
+		31267E38263773ED0072BC43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31267E37263773ED0072BC43 /* Constants.swift */; };
+		31267E3B26377AC00072BC43 /* UITextFieldExtansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31267E3A26377AC00072BC43 /* UITextFieldExtansions.swift */; };
 		31271D6D261C8F5E008EB775 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 31271D6C261C8F5E008EB775 /* .swiftlint.yml */; };
 		31271DD9261CB6E9008EB775 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31271DC5261CB6E9008EB775 /* Transaction+CoreDataClass.swift */; };
 		31271DDA261CB6E9008EB775 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31271DC6261CB6E9008EB775 /* Transaction+CoreDataProperties.swift */; };
@@ -32,9 +36,9 @@
 		31271DEB261CB6E9008EB775 /* Deposit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31271DD7261CB6E9008EB775 /* Deposit+CoreDataClass.swift */; };
 		31271DEC261CB6E9008EB775 /* Deposit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31271DD8261CB6E9008EB775 /* Deposit+CoreDataProperties.swift */; };
 		314182CC263232320000BAF4 /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314182CB263232320000BAF4 /* GifView.swift */; };
-		314182E1263238A20000BAF4 /* moveCards.gif in Resources */ = {isa = PBXBuildFile; fileRef = 314182E0263238A20000BAF4 /* moveCards.gif */; };
 		3148234E25D6D23E008288FC /* ExchangeRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3148234D25D6D23E008288FC /* ExchangeRate.storyboard */; };
 		3148235125D6D258008288FC /* ExchangeRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */; };
+		318C431F2634A25000F0D15B /* moveCards.gif in Resources */ = {isa = PBXBuildFile; fileRef = 318C431E2634A25000F0D15B /* moveCards.gif */; };
 		31AC37EA261B3F2200F0DFF9 /* MyCustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC37E9261B3F2200F0DFF9 /* MyCustomVC.swift */; };
 		31AC37EE261B422000F0DFF9 /* OrgIndivid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC37ED261B422000F0DFF9 /* OrgIndivid.swift */; };
 		31AC37F1261B428100F0DFF9 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC37F0261B428100F0DFF9 /* IntExtensions.swift */; };
@@ -107,6 +111,10 @@
 		311B425225EF9B0400F2C412 /* ConfirmationCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCreditViewController.swift; sourceTree = "<group>"; };
 		311E330D25EE2A8C0048C231 /* NewCredit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewCredit.storyboard; sourceTree = "<group>"; };
 		311E331025EE2AA70048C231 /* NewCreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreditViewController.swift; sourceTree = "<group>"; };
+		31267E31263760980072BC43 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		31267E3426376A690072BC43 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		31267E37263773ED0072BC43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		31267E3A26377AC00072BC43 /* UITextFieldExtansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtansions.swift; sourceTree = "<group>"; };
 		31271D6C261C8F5E008EB775 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		31271DC5261CB6E9008EB775 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		31271DC6261CB6E9008EB775 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -129,9 +137,9 @@
 		31271DD7261CB6E9008EB775 /* Deposit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		31271DD8261CB6E9008EB775 /* Deposit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deposit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		314182CB263232320000BAF4 /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
-		314182E0263238A20000BAF4 /* moveCards.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = moveCards.gif; sourceTree = "<group>"; };
 		3148234D25D6D23E008288FC /* ExchangeRate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExchangeRate.storyboard; sourceTree = "<group>"; };
 		3148235025D6D258008288FC /* ExchangeRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateTableViewController.swift; sourceTree = "<group>"; };
+		318C431E2634A25000F0D15B /* moveCards.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = moveCards.gif; sourceTree = "<group>"; };
 		31AC37E9261B3F2200F0DFF9 /* MyCustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomVC.swift; sourceTree = "<group>"; };
 		31AC37ED261B422000F0DFF9 /* OrgIndivid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgIndivid.swift; sourceTree = "<group>"; };
 		31AC37F0261B428100F0DFF9 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
@@ -301,7 +309,7 @@
 		31AC37DE261B3A4C00F0DFF9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				314182E0263238A20000BAF4 /* moveCards.gif */,
+				318C431E2634A25000F0D15B /* moveCards.gif */,
 				597D66AF25C80FA50051E84A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -341,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				31AC37F9261B43B700F0DFF9 /* CustomUISwitch.swift */,
+				31267E31263760980072BC43 /* BaseViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -358,6 +367,8 @@
 			children = (
 				31AC37F0261B428100F0DFF9 /* IntExtensions.swift */,
 				31AC37F4261B431500F0DFF9 /* UIViewControllerExtensions.swift */,
+				31267E3426376A690072BC43 /* StringExtensions.swift */,
+				31267E3A26377AC00072BC43 /* UITextFieldExtansions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -444,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				31AC37E8261B3DA100F0DFF9 /* Extensions */,
+				31267E37263773ED0072BC43 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -738,11 +750,11 @@
 				5904335125EE751500BF5412 /* CardTableViewCell.xib in Resources */,
 				59ED9D7F25F7DF0900C43CEE /* CreateSalaryProject.storyboard in Resources */,
 				597D66B325C80FA50051E84A /* LaunchScreen.storyboard in Resources */,
+				318C431F2634A25000F0D15B /* moveCards.gif in Resources */,
 				31271D6D261C8F5E008EB775 /* .swiftlint.yml in Resources */,
 				596A698325DE7FEE0068099E /* CollectionViewCell.xib in Resources */,
 				59E5DAAF25CD8DA700354F4B /* SignIn.storyboard in Resources */,
 				59ED9D8C25F7F34500C43CEE /* FormTableViewCell.xib in Resources */,
-				314182E1263238A20000BAF4 /* moveCards.gif in Resources */,
 				59031DB725EF90E400B4DE9D /* CreditTableViewCell.xib in Resources */,
 				59E5DAAB25CD8D0400354F4B /* SignUp.storyboard in Resources */,
 				597D66B025C80FA50051E84A /* Assets.xcassets in Resources */,
@@ -826,13 +838,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31267E32263760980072BC43 /* BaseViewController.swift in Sources */,
 				59A42D0C25ECE3AC002C8EF9 /* AccountsViewController.swift in Sources */,
 				31271DDC261CB6E9008EB775 /* Card+CoreDataProperties.swift in Sources */,
 				31271DE0261CB6E9008EB775 /* Individual+CoreDataProperties.swift in Sources */,
 				596A698225DE7FEE0068099E /* CollectionViewCell.swift in Sources */,
 				59F4BAED25E64AA7002FF477 /* CoreDataFunctions.swift in Sources */,
+				31267E3526376A690072BC43 /* StringExtensions.swift in Sources */,
 				31271DDB261CB6E9008EB775 /* Card+CoreDataClass.swift in Sources */,
 				31271DEB261CB6E9008EB775 /* Deposit+CoreDataClass.swift in Sources */,
+				31267E38263773ED0072BC43 /* Constants.swift in Sources */,
 				597D66AB25C80FA40051E84A /* SignInViewController.swift in Sources */,
 				31271DE9261CB6E9008EB775 /* Bank+CoreDataClass.swift in Sources */,
 				31AC37EA261B3F2200F0DFF9 /* MyCustomVC.swift in Sources */,
@@ -860,6 +875,7 @@
 				59ED9D7C25F7DEEC00C43CEE /* ChangeSalaryProjectViewController.swift in Sources */,
 				5916FA7225EA679D0022A4B0 /* OtherPageHomeViewController.swift in Sources */,
 				5904330F25EE4D9000BF5412 /* CardsViewController.swift in Sources */,
+				31267E3B26377AC00072BC43 /* UITextFieldExtansions.swift in Sources */,
 				31AC37F1261B428100F0DFF9 /* IntExtensions.swift in Sources */,
 				5923D6DF25F115EF00EBA865 /* CreditViewController.swift in Sources */,
 				31271DD9261CB6E9008EB775 /* Transaction+CoreDataClass.swift in Sources */,

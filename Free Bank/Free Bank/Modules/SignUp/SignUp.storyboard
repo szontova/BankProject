@@ -63,7 +63,7 @@
                                 <rect key="frame" x="15" y="278" width="384" height="310"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Bj-UO-Bm4" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="17" width="354" height="40"/>
+                                        <rect key="frame" x="15" y="17" width="329" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="50F-ul-lUJ"/>
@@ -120,7 +120,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCZ-t4-Dor" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="74" width="354" height="40"/>
+                                        <rect key="frame" x="15" y="74" width="329" height="40"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="4xj-uG-3bt"/>
@@ -177,7 +177,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="620-H8-ebs" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="131" width="354" height="40"/>
+                                        <rect key="frame" x="15" y="131" width="329" height="40"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="L6M-uO-JcZ"/>
@@ -234,7 +234,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0tc-uN-0d8" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="188" width="354" height="40"/>
+                                        <rect key="frame" x="15" y="188" width="329" height="40"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9fa-6w-7OE"/>
@@ -291,7 +291,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tfd-jK-YqC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="15" y="245" width="354" height="40"/>
+                                        <rect key="frame" x="15" y="245" width="329" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -346,21 +346,55 @@
                                             <outlet property="delegate" destination="vx4-RO-IRZ" id="FP9-6M-T3c"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1U-f8-kp6">
+                                        <rect key="frame" x="354" y="142.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="fRe-T4-trG"/>
+                                            <constraint firstAttribute="width" constant="25" id="qHa-pu-rfr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="questionmark.circle.fill" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedLoginInfo:" destination="vx4-RO-IRZ" eventType="touchUpInside" id="Mxr-O8-dr3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNe-tg-Y9i">
+                                        <rect key="frame" x="354" y="195.5" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="MWt-Be-FG5"/>
+                                            <constraint firstAttribute="width" constant="25" id="tLs-VL-R7e"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="questionmark.circle.fill" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedPasswordInfo:" destination="vx4-RO-IRZ" eventType="touchUpInside" id="tqu-G8-Y5e"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40343320370000002" green="0.52437698840000002" blue="0.74849867820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Tfd-jK-YqC" firstAttribute="leading" secondItem="N8X-gF-OoV" secondAttribute="leading" constant="15" id="0rb-T8-Jsh"/>
+                                    <constraint firstItem="fNe-tg-Y9i" firstAttribute="leading" secondItem="0tc-uN-0d8" secondAttribute="trailing" constant="10" id="C4f-8d-v1J"/>
                                     <constraint firstItem="3Bj-UO-Bm4" firstAttribute="leading" secondItem="N8X-gF-OoV" secondAttribute="leading" constant="15" id="Itj-SG-tBA"/>
+                                    <constraint firstItem="fNe-tg-Y9i" firstAttribute="centerY" secondItem="0tc-uN-0d8" secondAttribute="centerY" id="JSV-7D-1O1"/>
                                     <constraint firstItem="0tc-uN-0d8" firstAttribute="leading" secondItem="N8X-gF-OoV" secondAttribute="leading" constant="15" id="K3d-Ku-ff9"/>
                                     <constraint firstItem="iCZ-t4-Dor" firstAttribute="top" secondItem="3Bj-UO-Bm4" secondAttribute="bottom" constant="17" id="KC2-6e-Pec"/>
                                     <constraint firstItem="620-H8-ebs" firstAttribute="leading" secondItem="N8X-gF-OoV" secondAttribute="leading" constant="15" id="KIs-q1-0Qi"/>
-                                    <constraint firstItem="3Bj-UO-Bm4" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" id="PMz-3w-wfc"/>
-                                    <constraint firstItem="0tc-uN-0d8" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" id="TtT-Mc-V8N"/>
-                                    <constraint firstItem="iCZ-t4-Dor" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" id="cyD-e6-xpd"/>
-                                    <constraint firstItem="Tfd-jK-YqC" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" id="dr1-Gu-sVP"/>
-                                    <constraint firstItem="620-H8-ebs" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" id="jMT-ER-dKA"/>
+                                    <constraint firstItem="3Bj-UO-Bm4" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" constant="-12.5" id="PMz-3w-wfc"/>
+                                    <constraint firstItem="0tc-uN-0d8" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" constant="-12.5" id="TtT-Mc-V8N"/>
+                                    <constraint firstItem="s1U-f8-kp6" firstAttribute="leading" secondItem="620-H8-ebs" secondAttribute="trailing" constant="10" id="YOQ-2s-fh0"/>
+                                    <constraint firstItem="iCZ-t4-Dor" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" constant="-12.5" id="cyD-e6-xpd"/>
+                                    <constraint firstItem="Tfd-jK-YqC" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" constant="-12.5" id="dr1-Gu-sVP"/>
+                                    <constraint firstItem="620-H8-ebs" firstAttribute="centerX" secondItem="N8X-gF-OoV" secondAttribute="centerX" constant="-12.5" id="jMT-ER-dKA"/>
                                     <constraint firstItem="Tfd-jK-YqC" firstAttribute="bottom" secondItem="N8X-gF-OoV" secondAttribute="bottom" constant="-25" id="jdc-PX-gRo"/>
+                                    <constraint firstItem="s1U-f8-kp6" firstAttribute="centerY" secondItem="620-H8-ebs" secondAttribute="centerY" constant="4" id="kQY-R1-J6n"/>
                                     <constraint firstItem="620-H8-ebs" firstAttribute="top" secondItem="iCZ-t4-Dor" secondAttribute="bottom" constant="17" id="oBj-bV-IgM"/>
                                     <constraint firstItem="0tc-uN-0d8" firstAttribute="top" secondItem="620-H8-ebs" secondAttribute="bottom" constant="17" id="s2i-p2-epw"/>
                                     <constraint firstItem="3Bj-UO-Bm4" firstAttribute="top" secondItem="N8X-gF-OoV" secondAttribute="top" constant="17" id="sjR-nU-grH"/>
@@ -416,8 +450,10 @@
                     <navigationItem key="navigationItem" id="Goa-ah-Om1"/>
                     <connections>
                         <outlet property="emailTextField" destination="iCZ-t4-Dor" id="Kz6-bX-JWe"/>
+                        <outlet property="loginInfoButton" destination="s1U-f8-kp6" id="GvD-qX-Rgu"/>
                         <outlet property="loginTextField" destination="620-H8-ebs" id="Kcv-gl-u0G"/>
                         <outlet property="nameTextField" destination="3Bj-UO-Bm4" id="Tyw-cv-7Ki"/>
+                        <outlet property="passwordInfoButton" destination="fNe-tg-Y9i" id="dfI-Ln-sH9"/>
                         <outlet property="passwordTextField" destination="0tc-uN-0d8" id="gdc-Va-z6s"/>
                         <outlet property="repeatPasswordTextField" destination="Tfd-jK-YqC" id="ujK-yK-O77"/>
                         <outlet property="statusSegmentedControl" destination="11Y-2m-eU0" id="xAu-TK-8cY"/>
@@ -427,7 +463,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWL-4c-mlP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Nbv-s6-FUF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="207" y="779"/>
+            <point key="canvasLocation" x="205.79710144927537" y="778.79464285714278"/>
         </scene>
         <!--End Of Sign Up View Controller-->
         <scene sceneID="CY2-EZ-goK">
@@ -570,24 +606,25 @@
     </scenes>
     <designables>
         <designable name="0tc-uN-0d8">
-            <size key="intrinsicContentSize" width="149" height="34"/>
+            <size key="intrinsicContentSize" width="329" height="41.607421875"/>
         </designable>
         <designable name="3Bj-UO-Bm4">
-            <size key="intrinsicContentSize" width="132" height="34"/>
+            <size key="intrinsicContentSize" width="329" height="41.607421875"/>
         </designable>
         <designable name="620-H8-ebs">
-            <size key="intrinsicContentSize" width="139.5" height="34"/>
+            <size key="intrinsicContentSize" width="329" height="41.607421875"/>
         </designable>
         <designable name="Tfd-jK-YqC">
-            <size key="intrinsicContentSize" width="254.5" height="34"/>
+            <size key="intrinsicContentSize" width="329" height="41.607421875"/>
         </designable>
         <designable name="iCZ-t4-Dor">
-            <size key="intrinsicContentSize" width="134" height="34"/>
+            <size key="intrinsicContentSize" width="329" height="41.607421875"/>
         </designable>
     </designables>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="mainBackground" width="480" height="852"/>
+        <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

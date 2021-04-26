@@ -52,6 +52,7 @@ class ExchangeRateTableViewController: UITableViewController {
     }
     func changeTableBackground() {
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "mainBackground"))
+        self.tableView.backgroundView?.alpha = 0.5
     }
     // MARK: - TableViewDataSource
 

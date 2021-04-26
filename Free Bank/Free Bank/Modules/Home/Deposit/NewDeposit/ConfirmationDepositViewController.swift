@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConfirmationDepositViewController: UIViewController {
+class ConfirmationDepositViewController: CoreDataViewController {
     // MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var amountLabel: UILabel!

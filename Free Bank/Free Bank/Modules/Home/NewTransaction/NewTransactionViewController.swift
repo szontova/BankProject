@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewTransactionViewController: UIViewController {
+class NewTransactionViewController: CoreDataViewController {
     // MARK: - @IBOutlets
     @IBOutlet weak private var navigationBar: UINavigationBar!
     @IBOutlet weak private var cardView: UIView!
@@ -116,9 +116,10 @@ class NewTransactionViewController: UIViewController {
         if receiverTextField.text == "" { result = false }
         if result {
             performSegue(withIdentifier: "toConfirmationTransactionSegue", sender: nil)
-        } else {showAlertError(message: "Неверные данные для проведения операции.")}
+        } else { showAlertMessage("Неверные данные для проведения операции.", "Ошибка") }
     }
 }
+
 // MARK: - Extensions
 extension NewTransactionViewController: OrgIndivid {
     func setIndividual(_ individ: Individual?) {
@@ -128,6 +129,7 @@ extension NewTransactionViewController: OrgIndivid {
         self.organization = org
     }
 }
+
 // MARK: TextFieldDelegate
 extension NewTransactionViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -141,8 +143,10 @@ extension NewTransactionViewController: UITextFieldDelegate {
       self.activeTextField = nil
     }
 }
+
 // MARK: PickerView
 extension NewTransactionViewController: UIPickerViewDelegate {}
+
 extension NewTransactionViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
        return 1

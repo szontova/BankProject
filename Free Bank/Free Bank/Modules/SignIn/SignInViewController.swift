@@ -9,7 +9,7 @@ import MBProgressHUD
 import SkyFloatingLabelTextField
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: BaseViewController {
     // MARK: - @IBOutlets
     @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
     @IBOutlet private weak var loginTextField: SkyFloatingLabelTextField!
@@ -75,26 +75,26 @@ class SignInViewController: UIViewController {
             switch status {
             case 0:
                 if !self.checkLogin(login: login) {return}
-                if let person = self.findIndivididual(by: login) {
+                if let person = CoreDataConstants.db.findIndivididual(by: login) {
                     if person.codeWord == codeWord.lowercased() {
                         self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
-                        self.showAlertError(message: "Кодовое слово введено неверно")
+                        self.showAlertMessage("Кодовое слово введено неверно", "Ошибка")
                     }
                 } else {
-                    self.showAlertError(message: "Пользователь не найден")
+                    self.showAlertMessage("Пользователь не найден", "Ошибка")
                 }
             case 1:
-                if let org = self.findOrganization(by: login) {
+                if let org = CoreDataConstants.db.findOrganization(by: login) {
                     if org.codeWord == codeWord.lowercased() {
                         self.login = login
                         self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                     } else {
-                        self.showAlertError(message: "Кодовое слово введено неверно")
+                        self.showAlertMessage("Кодовое слово введено неверно", "Ошибка")
                     }
                 } else {
-                    self.showAlertError(message: "Организация не найдена")
+                    self.showAlertMessage("Организация не найдена", "Ошибка")
                 }
             default: break
             }
@@ -129,15 +129,15 @@ class SignInViewController: UIViewController {
                 if let connection = reachability?.connection {
                     switch connection {
                     case .wifi, .cellular:
-                        if validIndividual(login, password) {
+                        if CoreDataConstants.db.validIndividual(login, password) {
                             passwordTextField.text = ""
                             self.login = login
                             performSegue(withIdentifier: "toHomeSegue", sender: nil)
                         } else {
-                            showAlertError(message: "Неверный логин и/или пароль.")
+                            showAlertMessage("Неверный логин и/или пароль.", "Ошибка")
                         }
                     case .none, .unavailable:
-                        showAlertError(message: "Нет соединения к интернету. \nПроверьте соединение.")
+                        showAlertMessage("Нет соединения к интернету. \nПроверьте соединение.", "Ошибка")
                     }
                 }
                
@@ -145,15 +145,15 @@ class SignInViewController: UIViewController {
                 if let connection = reachability?.connection {
                     switch connection {
                     case .wifi, .cellular:
-                        if validOrganization(login, password) {
+                        if CoreDataConstants.db.validOrganization(login, password) {
                             passwordTextField.text = ""
                             self.login = login
                             performSegue(withIdentifier: "toHomeSegue", sender: nil)
                         } else {
-                            showAlertError(message: "Неверный логин и/или пароль.")
+                            showAlertMessage("Неверный логин и/или пароль.", "Ошибка")
                         }
                     case .none, .unavailable:
-                        showAlertError(message: "Нет соединения к интернету. \nПроверьте соединение.")
+                        showAlertMessage("Нет соединения к интернету. \nПроверьте соединение.", "Ошибка")
                     }
                 }
             default: break
@@ -184,21 +184,11 @@ class SignInViewController: UIViewController {
         guard segue.destination as? OtherPageHomeViewController != nil else {return}
     }
 }
+
 // MARK: - Extensions
 extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
-}
-
-extension UITextField {
-   @IBInspectable var placeHolderColor: UIColor? {
-        get {
-            return self.placeHolderColor
-        }
-        set {
-            self.attributedPlaceholder = NSAttributedString(string: self.placeholder != nil ? self.placeholder! : "", attributes: [NSAttributedString.Key.foregroundColor: newValue!])
-        }
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewCreditViewController: UIViewController {
+class NewCreditViewController: CoreDataViewController {
 
     // MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
@@ -77,11 +77,11 @@ class NewCreditViewController: UIViewController {
         amount = Int.parse(amountTextField.text ?? "") ?? 0
         term = Int.parse(termTextField.text ?? "") ?? 0
         salary = Int.parse(salaryTextField.text ?? "") ?? 0
-        if checkCreditDatas(amount, term, salary) {
+        if BaseVCConstants.base.checkCreditDatas(amount, term, salary) {
             if checkclientSolvency(amount: amount, term: term, salary: salary) {
                 performSegue(withIdentifier: "toConfirmationCreditSegue", sender: nil)
             } else {
-                showAlertMessage(message: "К сожалению, наш Банк не может предоставить Вам кредит на таких условиях. При данном минимальном доходе Вы можете уменьшить сумму кредита либо увеличить срок.")
+                showAlertMessage("К сожалению, наш Банк не может предоставить Вам кредит на таких условиях. При данном минимальном доходе Вы можете уменьшить сумму кредита либо увеличить срок.", "Уведомление")
             }
         }
     }

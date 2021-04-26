@@ -8,7 +8,7 @@
 import SwiftyGif
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: CoreDataViewController {
     // MARK: - @IBOutlets
     @IBOutlet weak private var collectionView: UICollectionView!
     @IBOutlet weak private var viewFofCollectionView: UIView!

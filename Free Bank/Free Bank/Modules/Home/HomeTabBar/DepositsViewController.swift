@@ -65,7 +65,7 @@ class DepositsViewController: UIViewController {
     // MARK: - @IBActions
     @IBAction private func addDepositButton(_ sender: UIButton) {
         if deposits.count > 1 {
-            showAlertError(message: "На одного пользователя не может быть оформлено не более 2 депозитов")
+            showAlertMessage("На одного пользователя не может быть оформлено не более 2 депозитов", "Уведомление")
         } else {
             performSegue(withIdentifier: "toNewDepositSegue", sender: nil)
         }

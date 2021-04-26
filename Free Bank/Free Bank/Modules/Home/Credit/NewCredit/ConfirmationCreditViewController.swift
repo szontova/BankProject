@@ -8,7 +8,7 @@
 import UIKit
 import UserNotifications
 
-class ConfirmationCreditViewController: UIViewController {
+class ConfirmationCreditViewController: CoreDataViewController {
     // MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
     @IBOutlet private weak var amountLabel: UILabel!

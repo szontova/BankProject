@@ -9,7 +9,7 @@ import Reachability
 import SkyFloatingLabelTextField
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: BaseViewController {
 
     // MARK: - @IBOutlets
     @IBOutlet private weak var nameTextField: SkyFloatingLabelTextField!
@@ -18,6 +18,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet private weak var repeatPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var statusSegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var loginInfoButton: UIButton!
+    @IBOutlet private weak var passwordInfoButton: UIButton!
     private var activeTextField: UITextField?
     private var isMoving = false
     
@@ -108,7 +110,7 @@ class SignUpViewController: UIViewController {
                 case .wifi, .cellular:
                     performSegue(withIdentifier: "endRegSegue", sender: nil)
                 case .none, .unavailable:
-                    showAlertError(message: "Нет соединения к интернету. \nПроверьте соединение.")
+                    showAlertMessage("Нет соединения к интернету. \nПроверьте соединение.", "Уведомление")
                 }
             }
         }
@@ -149,6 +151,14 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    @IBAction private func tappedLoginInfo(_ sender: UIButton) {
+        showInfo(loginInfoButton, 3, "Логин должен содержать:\n- от 8 до 30 символов\n- латиницу, можно как в верхнем регистре,так и в нижнем\n- разрешено использовать цифры\n- разрешено использовать символы '.' и '_'")
+    }
+    
+    @IBAction private func tappedPasswordInfo(_ sender: UIButton) {
+        showInfo(passwordInfoButton, 3, "Пароль должен содержать:\n- от 8 до 50 символов\n- допустимы любые символы ")
+    }
+    
     @IBAction private func loginTextFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if textField == self.loginTextField {
@@ -163,6 +173,7 @@ class SignUpViewController: UIViewController {
         }
     }
 }
+
 // MARK: - Extensions
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

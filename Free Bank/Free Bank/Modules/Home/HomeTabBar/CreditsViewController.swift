@@ -80,12 +80,13 @@ class CreditsViewController: UIViewController {
     }
     @IBAction private func addCredit(_ sender: UIButton) {
         if credits.count > 1 {
-            showAlertError(message: "На одного пользователя не может быть оформлено не более 2 кредитов")
+            showAlertMessage("На одного пользователя не может быть оформлено не более 2 кредитов", "Уведомление")
         } else {
             performSegue(withIdentifier: "toNewCreditSegue", sender: nil)
         }
     }
 }
+
 // MARK: - Extensions
 extension CreditsViewController: OrgIndivid {
     func setIndividual(_ individ: Individual?) {
@@ -96,6 +97,7 @@ extension CreditsViewController: OrgIndivid {
     }
 }
 extension CreditsViewController: UITableViewDelegate {}
+
 extension CreditsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return credits.count

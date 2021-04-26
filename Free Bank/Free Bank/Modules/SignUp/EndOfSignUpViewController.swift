@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EndOfSignUpViewController: UIViewController {
+class EndOfSignUpViewController: CoreDataViewController {
 
     // MARK: - @IBOutlets
     @IBOutlet weak private var codeWordTextField: UITextField!
@@ -59,7 +59,7 @@ class EndOfSignUpViewController: UIViewController {
     @IBAction private func endOgSignUpButton(_ sender: Any) {
         let codeWord = codeWordTextField.text ?? ""
         if codeWord.isEmpty {
-            showAlertError(message: "Введите кодовое слово")
+            showAlertMessage("Введите кодовое слово", "Ошибка")
             return
         } else {
             if name != nil && email != nil && login != nil && password != nil {
@@ -76,6 +76,7 @@ class EndOfSignUpViewController: UIViewController {
         }
     }
 }
+
 // MARK: - Extensions
 extension EndOfSignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

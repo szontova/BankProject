@@ -81,9 +81,9 @@ class AccountsViewController: UIViewController {
         }
         let okAction = UIAlertAction(title: "Зачислить", style: .default) {_ in
             let amount = (Int64(alert.textFields![0].text ?? "") ?? 0 ) * 100
-            if amount > 250000 {self.showAlertError(message: "Сумма не должна превышать 2500 BYR")} else {
+            if amount > 250000 { self.showAlertMessage("Сумма не должна превышать 2500 BYR", "Уведомление") } else {
                 acc.topUpAccountBalance(amount: amount)
-                _  = self.addTransaction(Int64(amount), (nil, nil), (nil, acc))
+                _  = CoreDataConstants.db.addTransaction(Int64(amount), (nil, nil), (nil, acc))
                 self.updateAccounts()
                 DispatchQueue.main.async {
                     self.accountsTableView.reloadData()
@@ -99,7 +99,7 @@ class AccountsViewController: UIViewController {
         let alert = UIAlertController(title: "Деактивация", message: "Вы уверены, что хотите деактивировать данный счёт? После деактивации счёта средства автоматически спишутся на счёт банка и возврату не подлежат.", preferredStyle: .alert)
         alert.view.tintColor = UIColor.black
         let okAction = UIAlertAction(title: "Деактивировать", style: .default) {_ in
-            self.deleteAccount(acc)
+            CoreDataConstants.db.deleteAccount(acc)
             self.updateAccounts()
             DispatchQueue.main.async {
                     self.accountsTableView.reloadData()
@@ -117,9 +117,9 @@ class AccountsViewController: UIViewController {
     }
     @IBAction private func addAccountButton(_ sender: UIButton) {
         if simpleAccounts.count > 2 {
-            showAlertError(message: "На одного пользователя может быть зарегистрировано не более 3 расчётных счетов ")
+            showAlertMessage("На одного пользователя может быть зарегистрировано не более 3 расчётных счетов.", "Ошибка")
         } else {
-            let accountNumber = generationIdAccount("S")
+            let accountNumber = CoreDataConstants.db.generationIdAccount("S")
             let alert = UIAlertController(title: "", message: "\nНомер вашего нового счёта: \n" + accountNumber, preferredStyle: .alert)
             let attributedString = NSAttributedString(string: "Подтверждения создания счёта", attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15), NSAttributedString.Key.foregroundColor: UIColor.black
@@ -127,7 +127,7 @@ class AccountsViewController: UIViewController {
             alert.setValue(attributedString, forKey: "attributedTitle")
             alert.view.tintColor = UIColor.black
             let okAction = UIAlertAction(title: "Подтвердить", style: .default) {_ in
-                self.addAccount(accountNumber, self.individual, self.organization)
+                CoreDataConstants.db.addAccount(accountNumber, self.individual, self.organization)
                 self.updateAccounts()
                 DispatchQueue.main.async {
                     self.accountsTableView.reloadData()
@@ -174,8 +174,8 @@ extension AccountsViewController: UITableViewDataSource {
     // CountOfSections
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.backgroundColor = UIColor.init(red: 206/255, green: 218/255, blue: 255/255, alpha: 1.0)
-        label.textColor = UIColor.white
+        label.backgroundColor = UIColor.clear
+        label.textColor = UIColor.black
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
         label.layer.masksToBounds = true

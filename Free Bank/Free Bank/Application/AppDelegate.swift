@@ -15,27 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        notificationCenter.requestAuthorization(options: [.alert, .sound, .alert]) { (granted, _) in
-            guard granted else {return}
-            self.notificationCenter.getNotificationSettings { (settings) in
-                guard settings.authorizationStatus == .authorized else { return }
-            }
-        }
-        sendNotification()
         return true
     }
     
-    func sendNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "Уведомление"
-        content.body = "Text"
-        content.sound = UNNotificationSound.default
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
-        notificationCenter.add(request) { (error) in
-            print(error?.localizedDescription ?? "Error with Notifications")
-        }
-    }
     // MARK: UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.

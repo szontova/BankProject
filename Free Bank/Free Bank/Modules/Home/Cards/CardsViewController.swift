@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardsViewController: UIViewController {
+class CardsViewController: CoreDataViewController {
 
     // MARK: - @IBOutlets
     @IBOutlet private weak var navigationBar: UINavigationBar!
@@ -57,13 +57,13 @@ class CardsViewController: UIViewController {
                 if cards.count < 3 {
                         addCardForAccount(acc)
                 } else {
-                    showAlertError(message: "На один расчётный счёт может быть зарегистрировано не более 3 карточек")
+                    showAlertMessage("На один расчётный счёт может быть зарегистрировано не более 3 карточек", "Уведомление")
                 }
             case "C":
                 if cards.isEmpty {
                         addCardForAccount(acc)
                 } else {
-                    showAlertError(message: "На один кредитный счёт может быть зарегистрировано не более 1 карточки")
+                    showAlertMessage("На один кредитный счёт может быть зарегистрировано не более 1 карточки", "Уведомление")
                 }
             default: break
             }
